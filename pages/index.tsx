@@ -60,7 +60,8 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 	return {
 		props: {
 			contributionsCollection
-		}
+		},
+		revalidate: 60 * 60 * 24 // on day
 	}
 }
 
