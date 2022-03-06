@@ -2,7 +2,7 @@ import React from 'react'
 import AboutCard from './AboutCard'
 import { Calendar, Award, Book } from 'react-feather'
 
-const About: React.FC = ({}) => {
+const About: React.FC = () => {
 	return (
 		<section className="bg-gray-100 p-6 md:p-10">
 			<div className="mx-auto max-w-7xl">

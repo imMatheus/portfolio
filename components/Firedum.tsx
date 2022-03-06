@@ -14,10 +14,11 @@ import { firedumAdd } from 'firedum'
 await firedumAdd({
     collectionReference: fs.collection('users'),
     fields: {
-        firstName: '',
-        lastName: 'Bar',
+        name: '',
+        email: '',
+		email_verified: false,
     },
-    numberOfDocuments: 10,
+    numberOfDocuments: 3,
 })`
 
 	useEffect(() => {
@@ -27,30 +28,41 @@ await firedumAdd({
 	}, [editorRef, code])
 
 	return (
-		<section className="sticky top-0 h-screen w-screen overflow-hidden bg-white p-6 font-bold lg:p-10">
-			<h2 className="textwhite mb-5 text-7xl font-bold md:mb-8">Firedum 02</h2>
-
-			<div className="gap-5 lg:grid lg:grid-cols-[auto_1fr]">
-				<div className="relative mb-8 w-full transition-transform lg:mb-0 lg:mr-5 lg:w-max lg:hover:rotate-2">
-					<div className="absolute -bottom-3 -right-3 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-4 lg:-right-4">
-						<div className="h-[25px] border-b border-black"></div>
-					</div>
-					<div className="absolute -bottom-1.5 -right-1.5 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-2 lg:-right-2">
-						<div className="h-[25px] border-b border-black"></div>
-					</div>
-					<div className="relative overflow-scroll rounded-md border border-black bg-white">
-						<div className="flex w-full gap-1 p-2">
-							<div className="h-2 w-2 rounded-full border border-black"></div>
-							<div className="h-2 w-2 rounded-full border border-black"></div>
-							<div className="h-2 w-2 rounded-full border border-black"></div>
-						</div>
-						<pre className="w-full border-t border-t-black p-4 text-sm font-thin md:text-base xl:text-lg">
-							<code ref={editorRef}></code>
-						</pre>
-					</div>
+		<section className="sticky top-0 min-h-screen w-screen bg-yellow p-6 font-bold lg:p-10">
+			<div className="sticky top-0">
+				<h2 className="mb-2 text-7xl font-bold">Firedum 02</h2>
+				<p className="mb-2 max-w-4xl text-sm font-medium text-black/80 lg:text-base">
+					Firedum is a npm package that makes it easy to populate a firestore database with mock data. The
+					package can be used to add new and update documents in a firestore collection but can also create
+					users aswell as adding documents for the newly created users.
+				</p>
+				<div className="relative mb-4 inline-block cursor-pointer transition-transform hover:-rotate-2 lg:mb-8">
+					<div className="absolute -right-2 -bottom-2 h-full w-full rounded-md border border-black bg-white"></div>
+					<div className="absolute -right-1 -bottom-1 h-full w-full rounded-md border border-black bg-white"></div>
+					<div className="relative rounded-md border border-black bg-white py-1 px-2">Try it out</div>
 				</div>
+				<div className="gap-5 lg:grid lg:grid-cols-[auto_1fr] lg:grid-rows-1">
+					<div className="relative mb-8 w-full transition-transform lg:mb-0 lg:mr-5 lg:w-max lg:hover:rotate-2">
+						<div className="relative">
+							<div className="absolute -bottom-3 -right-3 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-4 lg:-right-4">
+								<div className="h-[25px] border-b border-black"></div>
+							</div>
+							<div className="absolute -bottom-1.5 -right-1.5 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-2 lg:-right-2">
+								<div className="h-[25px] border-b border-black"></div>
+							</div>
+							<div className="relative flex w-full gap-1 rounded-t-md border border-b-0 border-black bg-white p-2">
+								<div className="h-2 w-2 rounded-full border border-black"></div>
+								<div className="h-2 w-2 rounded-full border border-black"></div>
+								<div className="h-2 w-2 rounded-full border border-black"></div>
+							</div>
+							<pre className="relative w-full rounded-b-md border border-black bg-white p-3 text-xs font-thin lg:p-4 lg:text-sm xl:text-base">
+								<code ref={editorRef}></code>
+							</pre>
+						</div>
+					</div>
 
-				<FirebaseView />
+					<FirebaseView />
+				</div>
 			</div>
 		</section>
 	)
