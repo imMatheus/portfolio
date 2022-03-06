@@ -7,7 +7,7 @@ interface StackCardProps {
 
 const StackCard: React.FC<StackCardProps> = ({ title, children }) => {
 	return (
-		<article className="group relative cursor-pointer transition-transform hover:rotate-2 even:hover:-rotate-2">
+		<article className="relative cursor-pointer transition-transform hover:rotate-2 even:hover:-rotate-2">
 			<div className="absolute -bottom-3 -right-3 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-4 lg:-right-4">
 				<div className="h-[25px] border-b border-black"></div>
 			</div>
