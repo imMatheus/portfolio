@@ -13,14 +13,19 @@ const About: React.FC = ({}) => {
 					odit ullam deserunt saepe omnis.
 				</p>
 				<section className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
-					<AboutCard title="First line of code" subtitle="18 august 2019" date="2019-08-18" Icon={Calendar} />
+					<AboutCard
+						title="First line of code"
+						subtitle="03 september 2019"
+						date="2019-09-03"
+						Icon={Calendar}
+					/>
 					<AboutCard
 						title="First software engineering job"
 						subtitle="16 august 2021"
 						date="2019-08-18"
 						Icon={Award}
 					/>
-					<AboutCard title="Total projects" subtitle="40" date="2019-08-18" Icon={Book} />
+					<AboutCard title="Total projects" subtitle="40" Icon={Book} />
 				</section>
 			</div>
 		</section>
