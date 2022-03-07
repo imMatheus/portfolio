@@ -1,5 +1,5 @@
 import React from 'react'
-import Stack from '@/components/Stack'
+import Stack from '@/components/stack'
 import Firedum from '@/components/Firedum'
 import ProjectsText from './ProjectsText'
 

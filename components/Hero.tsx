@@ -18,7 +18,8 @@ const Hero: React.FC = () => {
 		<main>
 			<header className="mx-auto mb-10 max-w-7xl px-6 py-10 lg:py-20">
 				<h1 className="max-w-3xl font-grotesk text-2xl font-semibold leading-relaxed tracking-wide lg:text-5xl lg:leading-relaxed">
-					Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a<HeaderSpan>front-end engineer</HeaderSpan>
+					Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a
+					<HeaderSpan>full-stack engineer</HeaderSpan>
 				</h1>
 			</header>
 

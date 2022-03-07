@@ -14,10 +14,7 @@ function Text() {
 
 function Column() {
 	return (
-		<div className="flex rotate-3 gap-4 even:-rotate-3">
-			<Text />
-			<Text />
-			<Text />
+		<div className="flex rotate-6 gap-4 even:-rotate-6">
 			<Text />
 			<Text />
 			<Text />
@@ -34,6 +31,10 @@ const ProjectsText: React.FC = ({}) => {
 	return (
 		<section className="sticky top-0 h-screen w-screen overflow-hidden bg-fuchsia font-bold">
 			<div className="relative flex h-screen flex-col items-center justify-center gap-4 p-1">
+				<Column />
+				<Column />
+				<Column />
+				<Column />
 				<Column />
 				<Column />
 				<Column />
