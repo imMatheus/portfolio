@@ -6,6 +6,7 @@ import { ApolloClient, InMemoryCache, createHttpLink, gql } from '@apollo/client
 import { setContext } from '@apollo/client/link/context'
 import Hero from '@/components/Hero'
 import Projects from '@/components/projects'
+import Stack from '@/components/stack'
 
 interface Data {
 	contributionsCollection: any
@@ -59,8 +60,8 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 	return {
 		props: {
 			contributionsCollection
-		},
-		revalidate: 60 * 60 * 24 // on day
+		}
+		// revalidate: 60 * 60 * 24 // on day
 	}
 }
 
@@ -74,6 +75,8 @@ const Home: NextPage<Data> = ({ contributionsCollection }) => {
 			</Head>
 			<Hero />
 			<About />
+			<Stack contributionsCollection={contributionsCollection} />
+
 			<Projects contributionsCollection={contributionsCollection} />
 			<section className="min-h-screen bg-blurple"></section>
 		</div>

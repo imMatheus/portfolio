@@ -1,5 +1,5 @@
 import React from 'react'
-import StackCard from '@/components/stack/StackCard'
+import StackCard from '@/components/ProjectShowCaseCard'
 
 const ProjectsShowCase: React.FC = ({}) => {
 	return (
