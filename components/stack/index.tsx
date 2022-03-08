@@ -6,18 +6,6 @@ interface Props {
 	contributionsCollection: any
 }
 
-function Temp() {
-	return (
-		<div className="relative">
-			<div className="absolute -right-3 -bottom-3 h-full w-full rounded-full bg-amber-500"></div>
-			<div className="absolute -right-1.5 -bottom-1.5 h-full w-full rounded-full bg-amber-400"></div>
-			<h3 className="relative flex aspect-square items-center justify-center rounded-full bg-amber-300 px-5 text-2xl font-light text-amber-900">
-				Javascript
-			</h3>
-		</div>
-	)
-}
-
 const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 	return (
 		<section className="min-h-screen w-screen bg-white p-5 md:p-10">
