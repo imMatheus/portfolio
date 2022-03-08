@@ -28,7 +28,7 @@ await firedumAdd({
 	}, [editorRef, code])
 
 	return (
-		<section className="sticky top-0 min-h-screen w-screen bg-yellow p-6 font-bold lg:p-10">
+		<section className="sticky top-0 min-h-screen w-screen bg-bee p-6 font-bold lg:p-10">
 			<div className="sticky top-0">
 				<h2 className="mb-2 text-7xl font-bold">Firedum 02</h2>
 				<p className="mb-2 max-w-4xl text-sm font-medium text-black/80 lg:text-base">

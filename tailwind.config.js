@@ -7,10 +7,10 @@ module.exports = {
 			},
 			colors: {
 				blurple: '#5865f2',
-				green: '#57f287',
-				yellow: '#fee75c',
+				apple: '#57f287',
+				bee: '#fee75c',
 				fuchsia: '#eb459e',
-				red: '#ed4245',
+				carnelian: '#ed4245',
 				black: '#23272a'
 			}
 		}
