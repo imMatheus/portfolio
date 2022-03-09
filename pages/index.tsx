@@ -67,7 +67,7 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 
 const Home: NextPage<Data> = ({ contributionsCollection }) => {
 	return (
-		<div>
+		<div className="overflow--hidden h-auto">
 			<Head>
 				<title>Matheus mendes</title>
 				<meta name="description" content="Matheus mendes Portfolio" />
@@ -78,7 +78,58 @@ const Home: NextPage<Data> = ({ contributionsCollection }) => {
 			<Stack contributionsCollection={contributionsCollection} />
 
 			<Projects contributionsCollection={contributionsCollection} />
-			<section className="min-h-screen bg-blurple"></section>
+			<section className="min-h-screen bg-blurple p-20">
+				<div className="flex w-full flex-wrap content-start items-start gap-4 bg-red-500">
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] flex-row-reverse rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+					<div className="flex-[1_1_500px] rounded-md bg-green-500 p-4">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum dignissimos enim
+					</div>
+				</div>
+			</section>
 		</div>
 	)
 }

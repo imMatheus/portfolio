@@ -29,7 +29,9 @@ const ContributionSquare: React.FC<ContributionSquareProps> = ({ count, color, c
 	const isTopRank = yLevel <= 2
 	return (
 		<div
-			className={`group relative h-2 w-2 rounded-sm border border-black/10 md:h-2.5 md:w-2.5 xl:h-3 xl:w-3 2xl:h-4 2xl:w-4`}
+			className={`${
+				index > 175 ? 'block' : 'hidden'
+			} group relative h-2 w-2 rounded-[1px] sm:block sm:h-2.5 sm:w-2.5 sm:rounded-sm sm:border sm:border-black/10 xl:h-3 xl:w-3 2xl:h-4 2xl:w-4`}
 			style={{ backgroundColor: color }}
 		>
 			{/* The dialog over the hovered square */}
@@ -38,7 +40,7 @@ const ContributionSquare: React.FC<ContributionSquareProps> = ({ count, color, c
 					isLeft ? '-left-4' : isRight ? '-right-4' : 'left-1/2'
 				} z-10 hidden w-max ${isTopRank ? 'translate-y-full' : '-translate-y-full'} ${
 					!isLeft && !isRight && '-translate-x-1/2'
-				} rounded-md bg-black/90 py-1 px-4 text-xs text-white hover:block group-hover:block md:text-sm`}
+				} rounded-md bg-black/90 py-1 px-4 text-xs text-white group-hover:block sm:hover:block md:text-sm`}
 			>
 				{count == 0
 					? `No contributions on ${date}`
