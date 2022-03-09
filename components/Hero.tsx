@@ -1,5 +1,6 @@
 import React from 'react'
 import ProjectsShowCase from './ProjectsShowCase'
+import { GitHub, Linkedin } from 'react-feather'
 
 const HeaderSpan: React.FC = ({ children }) => {
 	return (
@@ -15,12 +16,16 @@ const HeaderSpan: React.FC = ({ children }) => {
 
 const Hero: React.FC = () => {
 	return (
-		<main>
-			<header className="mx-auto mb-10 max-w-7xl px-6 py-10 lg:py-20">
+		<main className="mx-auto max-w-7xl px-6 py-10 lg:py-20">
+			<header className="mb-10">
 				<h1 className="max-w-3xl font-grotesk text-2xl font-semibold leading-relaxed tracking-wide lg:text-5xl lg:leading-relaxed">
 					Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a
 					<HeaderSpan>full-stack engineer</HeaderSpan>
 				</h1>
+				<div className="flex items-center gap-3">
+					<GitHub className="h-6 w-6" />
+					<Linkedin className="h-6 w-6" />
+				</div>
 			</header>
 
 			<ProjectsShowCase />
