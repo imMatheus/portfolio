@@ -6,7 +6,6 @@ interface ContributionViewProps {
 }
 
 const ContributionView: React.FC<ContributionViewProps> = ({ contributionsCollection }) => {
-	console.log(contributionsCollection)
 	let index = 0
 	return (
 		<div className="w-full max-w-max overflow-x-visible">

@@ -14,7 +14,13 @@ const HeaderSpan: React.FC = ({ children }) => {
 	)
 }
 
-const Hero: React.FC = () => {
+interface Props {
+	pinnedItems: any
+}
+
+const Hero: React.FC<Props> = ({ pinnedItems }) => {
+	console.log(pinnedItems)
+
 	return (
 		<main className="mx-auto max-w-7xl px-6 py-10 lg:py-20">
 			<header className="mb-10">
@@ -28,7 +34,7 @@ const Hero: React.FC = () => {
 				</div>
 			</header>
 
-			<ProjectsShowCase />
+			<ProjectsShowCase pinnedItems={pinnedItems} />
 		</main>
 	)
 }

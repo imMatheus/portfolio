@@ -140,7 +140,7 @@ const FirebaseView: React.FC<FirebaseViewProps> = ({}) => {
 						<p className="text-ellipsis text-sm font-light">{selectedDoc.id}</p>
 					</div>
 					<ul className="space-y-2 overflow-y-scroll p-4">
-						{console.log(Object.keys(selectedDoc.fields))}
+						{/* {console.log(Object.keys(selectedDoc.fields))} */}
 						{Object.keys(selectedDoc.fields).map((field) => {
 							// @ts-ignore
 							const value = selectedDoc.fields[field]

@@ -9,6 +9,7 @@ import Projects from '@/components/projects'
 import Stack from '@/components/stack'
 
 interface Data {
+	pinnedItems: any
 	contributionsCollection: any
 }
 
@@ -35,6 +36,34 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 		query: gql`
 			{
 				user(login: "imMatheus") {
+					pinnedItems(first: 6) {
+						totalCount
+						edges {
+							node {
+								... on Repository {
+									name
+									url
+									refs(refPrefix: "refs/heads/", last: 3) {
+										nodes {
+											target {
+												... on Commit {
+													history {
+														totalCount
+													}
+												}
+											}
+										}
+									}
+									stargazerCount
+									description
+									primaryLanguage {
+										name
+										color
+									}
+								}
+							}
+						}
+					}
 					contributionsCollection {
 						contributionCalendar {
 							totalContributions
@@ -55,17 +84,22 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 		`
 	})
 	const { user } = data
+
+	const pinnedItems = user.pinnedItems.edges.map(({ node }: any) => node)
 	const contributionsCollection = user.contributionsCollection.contributionCalendar
+
+	// console.log(pinnedItems)
 
 	return {
 		props: {
+			pinnedItems,
 			contributionsCollection
 		}
 		// revalidate: 60 * 60 * 24 // on day
 	}
 }
 
-const Home: NextPage<Data> = ({ contributionsCollection }) => {
+const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
 	return (
 		<div className="overflow--hidden h-auto">
 			<Head>
@@ -73,7 +107,7 @@ const Home: NextPage<Data> = ({ contributionsCollection }) => {
 				<meta name="description" content="Matheus mendes Portfolio" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Hero />
+			<Hero pinnedItems={pinnedItems} />
 			<About />
 			<Stack contributionsCollection={contributionsCollection} />
 
