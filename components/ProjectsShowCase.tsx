@@ -20,7 +20,7 @@ const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
 						commits={pinnedItem.refs.nodes[0].target.history.totalCount}
 						key={pinnedItem.name}
 					>
-						A website that aims to simplified all aspects of teaching code in classrooms
+						A website that aims to simplified all aspects of teaching code in classrooms environment
 					</StackCard>
 				))}
 				{/* <StackCard title="Firedum">NPM package to help populate a firebase database with data</StackCard>

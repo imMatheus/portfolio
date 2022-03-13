@@ -94,8 +94,8 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 		props: {
 			pinnedItems,
 			contributionsCollection
-		}
-		// revalidate: 60 * 60 * 24 // on day
+		},
+		revalidate: 60 * 60 * 24 // on day
 	}
 }
 

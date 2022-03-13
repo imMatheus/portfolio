@@ -3,8 +3,8 @@ import StackCard from './StackCard'
 
 const StackGrid: React.FC = ({}) => {
 	return (
-		<div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
-			<div className="flex flex-col gap-3">
+		<div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-3">
+			<div className="flex flex-col gap-3 md:gap-4">
 				<div className="group rounded-md bg-amber-500 text-amber-500">
 					<StackCard title="Javascript" date="2020-2022">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda dicta quisquam
@@ -30,7 +30,7 @@ const StackGrid: React.FC = ({}) => {
 					</StackCard>
 				</div>
 			</div>
-			<div className="flex flex-col gap-3">
+			<div className="flex flex-col gap-3 md:gap-4">
 				<div className="hidden"></div>
 				<div className="group rounded-md bg-sky-400 text-sky-400">
 					<StackCard title="CSS" date="2019-2022">
@@ -55,7 +55,7 @@ const StackGrid: React.FC = ({}) => {
 					</StackCard>
 				</div>
 			</div>
-			<div className="flex flex-col gap-3">
+			<div className="flex flex-col gap-3 md:gap-4">
 				<div className="group rounded-md bg-sky-500 text-sky-500">
 					<StackCard title="React" date="2021-2022">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsam praesentium nobis

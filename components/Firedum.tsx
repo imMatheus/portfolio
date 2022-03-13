@@ -36,10 +36,10 @@ await firedumAdd({
 					package can be used to add new and update documents in a firestore collection but can also create
 					users aswell as adding documents for the newly created users.
 				</p>
-				<div className="relative mb-4 inline-block cursor-pointer transition-transform hover:-rotate-2 lg:mb-8">
+				<div className="relative mb-4 mt-5 inline-block cursor-pointer transition-transform hover:-rotate-2">
 					<div className="absolute -right-2 -bottom-2 h-full w-full rounded-md border border-black bg-white"></div>
 					<div className="absolute -right-1 -bottom-1 h-full w-full rounded-md border border-black bg-white"></div>
-					<div className="relative rounded-md border border-black bg-white py-1 px-2">Try it out</div>
+					<div className="relative rounded-md border border-black bg-white py-1 px-2">Run code</div>
 				</div>
 				<div className="gap-5 lg:grid lg:grid-cols-[auto_1fr] lg:grid-rows-1">
 					<div className="relative mb-8 w-full transition-transform lg:mb-0 lg:mr-5 lg:w-max lg:hover:rotate-2">
