@@ -28,9 +28,9 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 					Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a
 					<HeaderSpan>full-stack engineer</HeaderSpan>
 				</h1>
-				<div className="flex items-center gap-3">
-					<GitHub className="h-6 w-6" />
-					<Linkedin className="h-6 w-6" />
+				<div className="flex items-center gap-4">
+					<GitHub className="h-5 w-5" />
+					<Linkedin className="h-5 w-5" />
 				</div>
 			</header>
 
