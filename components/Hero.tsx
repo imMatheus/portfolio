@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectsShowCase from './ProjectsShowCase'
 import { GitHub, Linkedin } from 'react-feather'
+import Link from 'next/link'
 
 const HeaderSpan: React.FC = ({ children }) => {
 	return (
@@ -29,8 +30,13 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 					<HeaderSpan>full-stack engineer</HeaderSpan>
 				</h1>
 				<div className="flex items-center gap-4">
-					<GitHub className="h-5 w-5" />
-					<Linkedin className="h-5 w-5" />
+					<a href="https://github.com/imMatheus">
+						<GitHub className="h-5 w-5 cursor-pointer" />
+					</a>
+
+					<a href="https://www.linkedin.com/in/matheus-mendes-447993228/">
+						<Linkedin className="h-5 w-5 cursor-pointer" />
+					</a>
 				</div>
 			</header>
 
