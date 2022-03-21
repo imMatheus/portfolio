@@ -16,7 +16,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 			</div>
 
 			<div>
-				<h2 className="mb-2 text-5xl font-bold lg:text-7xl">What am i up too latly?</h2>
+				<h2 className="mb-2 text-5xl font-bold lg:text-7xl">What am i up too lately?</h2>
 				<p className="mb-2 max-w-4xl text-black">
 					I spend most of time writing code for side project of mine with my main focus being on LucioCode. I
 					love learning new stuff and and always try to make sure i understand the technologies I use. Im
