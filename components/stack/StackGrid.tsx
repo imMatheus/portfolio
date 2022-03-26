@@ -3,7 +3,7 @@ import StackCard from './StackCard'
 
 const StackGrid: React.FC = ({}) => {
 	return (
-		<div className="grid aspect-square grid-cols-4 grid-rows-4 gap-1 bg-slate-700 p-1 md:aspect-[10/3] md:grid-rows-3 lg:grid-cols-6 lg:grid-rows-4">
+		<div className="grid aspect-square grid-cols-4 grid-rows-4 gap-1 bg-[#000] p-1 md:aspect-[10/3] md:grid-rows-3 lg:grid-cols-6 lg:grid-rows-4">
 			<div className="bg-red-500 text-red-100 lg:col-span-2">
 				<StackCard>HTML</StackCard>
 			</div>

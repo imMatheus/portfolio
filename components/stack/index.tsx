@@ -12,6 +12,23 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 		<section className="mx-auto min-h-screen w-screen max-w-7xl space-y-8 bg-white p-5 pb-0 md:pt-10 lg:space-y-12">
 			<div>
 				<h2 className="mb-2 text-5xl font-bold lg:text-7xl">What do i know?</h2>
+
+				<h3 className="mt-10 mb-1 text-3xl font-bold">Javascript frameworks</h3>
+				<ul className="mb-20 list-disc space-y-2 pl-5 text-xl">
+					<li>
+						<span className="rounded-md border border-black px-2 py-0">Tailiwnd</span>
+					</li>
+					<li>
+						<span className="rounded-md border border-black px-2 py-0">Tailiwnd</span>
+					</li>
+					<li>
+						<span className="rounded-md border border-black px-2 py-0">Tailiwnd</span>
+					</li>
+					<li>
+						<span className="rounded-md border border-black px-2 py-0">Tailiwnd</span>
+					</li>
+				</ul>
+
 				<StackGrid />
 			</div>
 
