@@ -25,7 +25,7 @@ const About: React.FC = () => {
 						date="2019-08-18"
 						Icon={Award}
 					/>
-					<AboutCard title="Total projects" subtitle="43" Icon={Book} />
+					<AboutCard title="Total projects" subtitle="47" Icon={Book} />
 				</section>
 			</div>
 		</section>
