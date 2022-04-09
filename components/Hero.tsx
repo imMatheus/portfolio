@@ -28,11 +28,11 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 					<HeaderSpan>full-stack engineer</HeaderSpan>
 				</h1>
 				<div className="flex items-center gap-4">
-					<a href="https://github.com/imMatheus">
+					<a href="https://github.com/imMatheus" target="_blank" rel="noreferrer">
 						<GitHub className="h-5 w-5 cursor-pointer" />
 					</a>
 
-					<a href="https://www.linkedin.com/in/matheus-mendes-447993228/">
+					<a href="https://www.linkedin.com/in/matheus-mendes-447993228/" target="_blank" rel="noreferrer">
 						<Linkedin className="h-5 w-5 cursor-pointer" />
 					</a>
 				</div>
