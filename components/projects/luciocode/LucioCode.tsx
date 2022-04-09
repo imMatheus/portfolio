@@ -12,12 +12,12 @@ const LucioCode: React.FC<LucioCodeProps> = ({}) => {
 		<>
 			<ProjectTitle>LucioCode 01</ProjectTitle>
 			<ProjectDescription>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, obcaecati dolore. Iusto tempora porro quasi
-				voluptates, doloremque debitis itaque, aliquid hic, impedit expedita obcaecati nobis! Voluptatum unde
-				totam corporis repudiandae obcaecati harum, ab aut dolore assumenda voluptatem eum alias repellendus
-				sint nulla, nisi iusto quia blanditiis quae impedit quidem fugit vero. Sint nihil natus maiores
-				exercitationem accusamus fugiat cupiditate repellat repudiandae atque culpa excepturi nobis veniam
-				laboriosam, in quod fuga eos, ab voluptatum vero doloribus quam! Facilis eligendi commodi ducimus?
+				LucioCode is a web app that aims to help professors and teachers teach coding to a class of students.
+				The web app comes with an inbuilt IDE to provide code and makes it easy for the teacher to test their
+				students on their ability to solve problems. I think it is a shame that certain classrooms are so behind
+				in development and use old techniques for teaching code, such as having to write your code with a pen
+				and paper. LucioCode hopes to solve those problems and make every aspect of teaching code easier and
+				more fun for everyone.
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/firedum" Icon={GitHub} text="Repository" />
