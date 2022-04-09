@@ -2,10 +2,12 @@ import React, { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/base16/atelier-forest-light.css'
 import FirebaseView from './FirebaseView'
+import { GitHub, Package } from 'react-feather'
 // import 'highlight.js/styles/vs.css'
 
 const Firedum: React.FC = ({}) => {
 	const editorRef = useRef<HTMLElement>(null)
+	const addDocsFunctionRef = useRef(() => {})
 
 	const code = `// index.js / index.ts
 import { firedumAdd } from 'firedum'
@@ -33,14 +35,40 @@ await firedumAdd({
 			<div className="">
 				<h2 className="mb-2 text-7xl font-bold">Firedum 02</h2>
 				<p className="mb-2 max-w-4xl text-sm font-medium text-black/80 lg:text-base">
-					Firedum is a npm package that makes it easy to populate a firestore database with mock data. The
-					package can be used to add new and update documents in a firestore collection but can also create
-					users aswell as adding documents for the newly created users.
+					Firedum is an npm package that makes it easy to populate a firestore database with mock data. The
+					package can be used to add new documents, and update existing documents in a firestore collection
+					but can also create users as well as add documents for the newly created users.
 				</p>
+				<div className="flex gap-4">
+					<a
+						href="https://github.com/imMatheus/firedum"
+						target="_blank"
+						rel="noreferrer"
+						className="flex cursor-pointer items-center gap-1 border-b border-transparent text-sm hover:border-b-black"
+					>
+						<GitHub className="h-4 w-4 flex-shrink-0" /> Repository
+					</a>
+
+					<a
+						href="https://www.npmjs.com/package/firedum"
+						target="_blank"
+						rel="noreferrer"
+						className="flex cursor-pointer items-center gap-1 border-b border-transparent text-sm hover:border-b-black"
+					>
+						<Package className="h-4 w-4 flex-shrink-0" /> NPM page
+					</a>
+				</div>
 				<div className="relative mb-4 mt-5 inline-block cursor-pointer transition-transform hover:-rotate-2">
 					<div className="absolute -right-2 -bottom-2 h-full w-full rounded-md border border-black bg-white"></div>
 					<div className="absolute -right-1 -bottom-1 h-full w-full rounded-md border border-black bg-white"></div>
-					<button className="relative rounded-md border border-black bg-white py-1 px-2">Run code</button>
+					<button
+						onClick={() => {
+							addDocsFunctionRef.current()
+						}}
+						className="relative rounded-md border border-black bg-white py-1 px-2"
+					>
+						Run code
+					</button>
 				</div>
 				<div className="gap-5 lg:grid lg:grid-cols-[auto_1fr] lg:grid-rows-1">
 					<div className="relative mb-8 w-full transition-transform lg:mb-0 lg:mr-5 lg:w-max lg:hover:rotate-2">
@@ -62,7 +90,7 @@ await firedumAdd({
 						</div>
 					</div>
 
-					<FirebaseView />
+					<FirebaseView addDocsFunctionRef={addDocsFunctionRef} />
 				</div>
 			</div>
 		</section>

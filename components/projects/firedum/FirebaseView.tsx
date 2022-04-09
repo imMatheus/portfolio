@@ -6,14 +6,16 @@ import { ChatsType, UsersType } from './FirebaseTypes'
 import { defaultCollections } from './DefualtCollection'
 import { addedCollection } from './AddedCollection'
 
-interface FirebaseViewProps {}
+interface FirebaseViewProps {
+	addDocsFunctionRef: React.MutableRefObject<() => void>
+}
 
-const FirebaseView: React.FC<FirebaseViewProps> = ({}) => {
+const FirebaseView: React.FC<FirebaseViewProps> = ({ addDocsFunctionRef }) => {
 	const [collections, setCollections] = useState(defaultCollections)
 	const [selectedCollection, setSelectedCollection] = useState<'chats' | 'users'>('users')
 	const [selectedDoc, setSelectedDoc] = useState<ChatsType | UsersType>(collections[selectedCollection][0])
 
-	function addDocs() {
+	addDocsFunctionRef.current = function addDocs() {
 		setSelectedCollection('users')
 
 		setCollections({
@@ -40,7 +42,7 @@ const FirebaseView: React.FC<FirebaseViewProps> = ({}) => {
 				<ChevronRight className="h-5 w-5" />
 				<span className="text-sm">{selectedDoc.id}</span>
 				<RefreshCw className="cursor ml-auto h-4 w-4 cursor-pointer" type="button" onClick={resetCollections} />
-				<button onClick={addDocs}>add</button>
+				{/* <button onClick={addDocs}>add</button> */}
 			</div>
 			<div className="grid flex-1 grid-cols-4 grid-rows-1 overflow-hidden">
 				<div className="border-r border-r-black/20">
