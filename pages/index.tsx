@@ -88,8 +88,6 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 	const pinnedItems = user.pinnedItems.edges.map(({ node }: any) => node)
 	const contributionsCollection = user.contributionsCollection.contributionCalendar
 
-	// console.log(pinnedItems)
-
 	return {
 		props: {
 			pinnedItems,

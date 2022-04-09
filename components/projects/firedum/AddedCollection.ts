@@ -11,6 +11,14 @@ export const addedCollection: { users: UsersType[] } = {
 			}
 		},
 		{
+			id: 'awsqqRs',
+			fields: {
+				name: 'Viggo Skoog',
+				email: 'vigge_skoog57@gmail.com',
+				email_verified: false
+			}
+		},
+		{
 			id: 'rvplL2x',
 			fields: {
 				name: 'Marlo Pato',

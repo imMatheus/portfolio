@@ -20,8 +20,6 @@ interface Props {
 }
 
 const Hero: React.FC<Props> = ({ pinnedItems }) => {
-	console.log(pinnedItems)
-
 	return (
 		<main className="mx-auto max-w-7xl px-6 py-10 lg:py-20">
 			<header className="mb-10">

@@ -24,6 +24,7 @@ const FirebaseView: React.FC<FirebaseViewProps> = ({}) => {
 
 	function resetCollections() {
 		setCollections(defaultCollections)
+		setSelectedDoc(defaultCollections[selectedCollection][0])
 	}
 
 	useEffect(() => {
@@ -75,6 +76,7 @@ const FirebaseView: React.FC<FirebaseViewProps> = ({}) => {
 									onClick={() => setSelectedDoc(doc)}
 									selected={selectedDoc.id === doc.id}
 									key={doc.id}
+									isNew={!!addedCollection.users.some((document) => document.id === doc.id)}
 								>
 									{doc.id}
 								</FirebaseListItem>
