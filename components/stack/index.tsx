@@ -9,7 +9,7 @@ interface Props {
 
 const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 	return (
-		<section className="mx-auto min-h-screen w-screen max-w-7xl space-y-8 bg-white p-5 pb-0 md:pt-10 lg:space-y-12">
+		<section className="mx-auto w-screen max-w-7xl space-y-8 bg-white p-5 pb-0 md:pt-10 lg:space-y-12">
 			<div>
 				<h2 className="mb-2 text-5xl font-bold lg:text-7xl">What do i know?</h2>
 
