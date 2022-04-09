@@ -75,13 +75,15 @@ const ColorCard: React.FC<ColorCardProps> = ({ color, index, colors, setColors }
 				</>
 			)}
 
-			<div className="group md:absolute md:inset-0">
-				<div className="md:absolute md:left-1/2 md:top-1/2 md:hidden md:-translate-x-1/2 md:-translate-y-1/2 md:group-hover:block">
-					<div className="mb-4 cursor-pointer transition-colors last:mb-0" onClick={removeColor}>
-						<X />
+			{colors.length > 2 && (
+				<div className="group md:absolute md:inset-0">
+					<div className="md:absolute md:left-1/2 md:top-1/2 md:hidden md:-translate-x-1/2 md:-translate-y-1/2 md:group-hover:block">
+						<div className="mb-4 cursor-pointer transition-colors last:mb-0" onClick={removeColor}>
+							<X />
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 			<p className="text-lg font-semibold">{color}</p>
 		</div>
 	)
