@@ -15,6 +15,7 @@ const ColorCard: React.FC<ColorCardProps> = ({ color, index, colors, setColors }
 
 	function removeColor() {
 		const _colors = [...colors]
+		if (_colors.length < 3) return
 		_colors.splice(index, 1)
 		setColors(_colors)
 	}
@@ -34,7 +35,7 @@ const ColorCard: React.FC<ColorCardProps> = ({ color, index, colors, setColors }
 	}
 	return (
 		<div
-			className={`relative flex flex-1 items-center justify-between px-10 md:items-end md:justify-center md:px-0 md:pb-4 ${
+			className={`relative flex flex-1 flex-row-reverse items-center justify-between px-10 md:items-end md:justify-center md:px-0 md:pb-4 ${
 				isLight ? 'text-black' : 'text-white'
 			}`}
 			style={{ backgroundColor: color }}
@@ -42,12 +43,14 @@ const ColorCard: React.FC<ColorCardProps> = ({ color, index, colors, setColors }
 			{colors.length < 8 && (
 				<>
 					{index === 0 && (
-						<div className="group left-0 top-0 bottom-0 z-30 hidden w-1/3 cursor-pointer items-center justify-center text-black md:absolute ">
+						<div className="group absolute left-0 top-0 bottom-0 z-30 hidden w-1/3 cursor-pointer items-center justify-center text-black md:flex ">
 							<div
 								onClick={() => {
-									const newColors = chroma.scale(['#ffffff', colors[index]]).mode('lch').colors(3)
+									const _colors = [...colors]
+									const newColors = chroma.scale(['#ffffff', _colors[index]]).mode('lch').colors(3)
 
-									colors.unshift(newColors[1].replaceAll('#', ''))
+									_colors.unshift(newColors[1])
+									setColors(_colors)
 								}}
 								className="z-10 hidden h-11 w-11 items-center justify-center rounded-full bg-gray-100 shadow-md group-hover:flex"
 							>
@@ -57,8 +60,8 @@ const ColorCard: React.FC<ColorCardProps> = ({ color, index, colors, setColors }
 					)}
 
 					<div
-						className={`group right-0 top-0 bottom-0 z-30 flex hidden w-1/3 cursor-pointer items-center justify-center text-black md:absolute ${
-							index === colors.length - 1 ? '-translate-x-1/5' : 'translate-x-1/2'
+						className={`group absolute right-0 top-0 bottom-0 z-30 hidden w-1/3 cursor-pointer items-center justify-center text-black md:flex ${
+							index === colors.length - 1 ? 'md:-translate-x-1/5' : 'md:translate-x-1/2'
 						}`}
 					>
 						<div
@@ -71,7 +74,6 @@ const ColorCard: React.FC<ColorCardProps> = ({ color, index, colors, setColors }
 				</>
 			)}
 
-			<p className="text-lg font-semibold">{color}</p>
 			<div className="group md:absolute md:inset-0">
 				<div className="md:absolute md:left-1/2 md:top-1/2 md:hidden md:-translate-x-1/2 md:-translate-y-1/2 md:group-hover:block">
 					<div className="mb-4 cursor-pointer transition-colors last:mb-0" onClick={removeColor}>
@@ -79,6 +81,7 @@ const ColorCard: React.FC<ColorCardProps> = ({ color, index, colors, setColors }
 					</div>
 				</div>
 			</div>
+			<p className="text-lg font-semibold">{color}</p>
 		</div>
 	)
 }
