@@ -8,11 +8,12 @@ const Firedum: React.FC = ({}) => {
 	const editorRef = useRef<HTMLElement>(null)
 
 	const code = `// index.js / index.ts
-import { fs } from './firebase'
 import { firedumAdd } from 'firedum'
+import { fs } from './firebase'
+import { collection } from 'firebase/firestore'
 
 await firedumAdd({
-    collectionReference: fs.collection('users'),
+    collectionReference: collection('users'),
     fields: {
         name: '',
         email: '',
@@ -28,8 +29,8 @@ await firedumAdd({
 	}, [editorRef, code])
 
 	return (
-		<section className="sticky top-0 min-h-screen w-screen bg-bee p-6 font-bold lg:p-10">
-			<div className="sticky top-0">
+		<section className="min-h-screen w-screen bg-bee p-6 font-bold lg:p-10">
+			<div className="">
 				<h2 className="mb-2 text-7xl font-bold">Firedum 02</h2>
 				<p className="mb-2 max-w-4xl text-sm font-medium text-black/80 lg:text-base">
 					Firedum is a npm package that makes it easy to populate a firestore database with mock data. The
@@ -39,7 +40,7 @@ await firedumAdd({
 				<div className="relative mb-4 mt-5 inline-block cursor-pointer transition-transform hover:-rotate-2">
 					<div className="absolute -right-2 -bottom-2 h-full w-full rounded-md border border-black bg-white"></div>
 					<div className="absolute -right-1 -bottom-1 h-full w-full rounded-md border border-black bg-white"></div>
-					<div className="relative rounded-md border border-black bg-white py-1 px-2">Run code</div>
+					<button className="relative rounded-md border border-black bg-white py-1 px-2">Run code</button>
 				</div>
 				<div className="gap-5 lg:grid lg:grid-cols-[auto_1fr] lg:grid-rows-1">
 					<div className="relative mb-8 w-full transition-transform lg:mb-0 lg:mr-5 lg:w-max lg:hover:rotate-2">

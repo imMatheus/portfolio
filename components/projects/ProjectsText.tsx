@@ -29,7 +29,7 @@ function Column() {
 
 const ProjectsText: React.FC = ({}) => {
 	return (
-		<section className="sticky top-0 h-screen w-screen overflow-hidden bg-fuchsia font-bold">
+		<section className="h-screen w-screen overflow-hidden bg-fuchsia font-bold">
 			<div className="relative flex h-screen flex-col items-center justify-center gap-4 p-1">
 				<Column />
 				<Column />
