@@ -21,8 +21,8 @@ const About: React.FC = () => {
 					/>
 					<AboutCard
 						title="First software engineering job"
-						subtitle="16 august 2021"
-						date="2019-08-18"
+						subtitle="03 juli 2021"
+						date="2021-06-03"
 						Icon={Award}
 					/>
 					<AboutCard title="Total projects" subtitle="52" Icon={Book} />

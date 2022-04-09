@@ -110,7 +110,6 @@ const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
 			<Stack contributionsCollection={contributionsCollection} />
 
 			<Projects contributionsCollection={contributionsCollection} />
-			<section className="min-h-screen bg-blurple p-10"></section>
 		</div>
 	)
 }

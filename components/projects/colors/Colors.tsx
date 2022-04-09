@@ -37,7 +37,7 @@ const Coolors: React.FC = ({}) => {
 	}
 
 	return (
-		<section className="bg-apple">
+		<section className="bg-carnelian">
 			<ProjectWrapper>
 				<ProjectTitle>Colors 04</ProjectTitle>
 				<ProjectDescription>

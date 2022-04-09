@@ -34,10 +34,6 @@ const Projects: React.FC<Props> = ({}) => {
 			</section>
 
 			<Coolors />
-
-			<section className="min-h-screen w-screen overflow-hidden bg-carnelian p-10 font-bold">
-				<h2 className="text-7xl font-bold">Design skills 03</h2>
-			</section>
 		</div>
 	)
 }
