@@ -33,6 +33,7 @@ const ColorCard: React.FC<ColorCardProps> = ({ color, index, colors, setColors }
 		console.log(_colors)
 		setColors(_colors)
 	}
+
 	return (
 		<div
 			className={`relative flex flex-1 flex-row-reverse items-center justify-between px-10 md:items-end md:justify-center md:px-0 md:pb-4 ${

@@ -11,6 +11,23 @@ export const addedCollection: { users: UsersType[] } = {
 			}
 		},
 		{
+			id: 'ekK0qZq',
+			fields: {
+				name: 'Leo Swana',
+				email: 'LeoSwana@apple.com',
+				email_verified: false
+			}
+		},
+		{
+			id: 'evcLMq0',
+			fields: {
+				name: 'Ajob Abdinur',
+				email: 'ayyeABD18@lidl.se',
+				email_verified: false
+			}
+		},
+
+		{
 			id: 'awsqqRs',
 			fields: {
 				name: 'Viggo Skoog',
