@@ -93,7 +93,7 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 			pinnedItems,
 			contributionsCollection
 		},
-		revalidate: 60 * 60 * 24 // on day
+		revalidate: 60 * 60 * 12 // 12 hours
 	}
 }
 
