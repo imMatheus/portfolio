@@ -8,8 +8,8 @@ interface Props {
 const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
 	return (
 		<>
-			<h2 className="mb-5 text-center text-4xl font-semibold">Some of my projects</h2>
-			<section className="mx-auto mb-12 grid max-w-[85rem] grid-cols-1 justify-center gap-6 bg-blue-600/0 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+			<h2 className="mb-5 text-center text-3xl font-semibold sm:text-4xl">Some of my projects</h2>
+			<section className="mx-auto mb-12 grid max-w-[85rem] grid-cols-1 justify-center gap-6 bg-blue-600/0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
 				{pinnedItems?.map((pinnedItem: any) => (
 					<StackCard
 						title={pinnedItem.name}
