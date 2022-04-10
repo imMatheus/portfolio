@@ -99,7 +99,7 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 
 const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
 	return (
-		<div className="overflow--hidden h-auto 2xl:text-[20px]">
+		<div className="overflow--hidden h-auto border-black text-black 2xl:text-[20px]">
 			<Head>
 				<title>Matheus mendes</title>
 				<meta name="description" content="Matheus mendes Portfolio" />

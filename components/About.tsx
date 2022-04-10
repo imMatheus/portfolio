@@ -8,15 +8,19 @@ const About: React.FC = () => {
 			<div className="mx-auto max-w-7xl">
 				<h2 className="mb-3 text-4xl font-bold">About me</h2>
 				<p className="mb-2 max-w-[80ch] text-sm md:mb-4">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aperiam repellat. Voluptas quas
-					libero minima ea incidunt! Inventore similique ipsa, animi magnam culpa quia aliquid, reiciendis,
-					odit ullam deserunt saepe omnis.
+					I am a full-stack developer with a lot of experience in web applications and apps. I have a big
+					passion for programming and I always try my best to keep evolving in my role as a developer by
+					learning new things. <br /> <br /> I have professional experience working with the MERN stack
+					(MongoDB, Express, React, Node.js), Typescript, Firebase, and React Native. But my arsenal of tools
+					spread much more than I can fit here. <br />
+					<br /> At my current job, I work with introducing and teaching new technologies to passionate
+					students at a programming Bootcamp in central Stockholm.
 				</p>
 				<section className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
 					<AboutCard
 						title="First line of code"
-						subtitle="03 september 2019"
-						date="2019-09-03"
+						subtitle="07 september 2019"
+						date="2019-09-07"
 						Icon={Calendar}
 					/>
 					<AboutCard

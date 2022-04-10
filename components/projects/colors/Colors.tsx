@@ -37,22 +37,21 @@ const Coolors: React.FC = ({}) => {
 	}
 
 	return (
-		<section className="bg-carnelian">
+		<section className="bg-black text-white">
 			<ProjectWrapper>
 				<ProjectTitle>Colors 04</ProjectTitle>
 				<ProjectDescription>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit nisi natus eveniet
-					aspernatur excepturi sed, sit delectus fuga magnam voluptatibus. Reiciendis ex quaerat reprehenderit
-					culpa, voluptatem dolor dolorem inventore sunt enim repudiandae dicta voluptatibus hic modi animi
-					officia aliquid expedita quia consequatur quo eligendi repellendus quam. Nam sapiente nesciunt,
-					porro libero consequuntur eius corporis temporibus, accusantium iure delectus, asperiores eum.
+					This project is a smaller project that generates color palettes by first randomly generating two
+					colors, then creating a linear gradient from those two colors. The project is heavily inspired by
+					one of my favorite websites as a front-end engineer, coolors.co
 				</ProjectDescription>
 				<LinkWrapper>
-					<Link href="https://github.com/imMatheus/colors" Icon={GitHub} text="Repository" />
+					<Link href="https://github.com/imMatheus/colors" Icon={GitHub} text="Repository" isWhite />
 					<Link
 						href="https://gifted-gates-8403ec.netlify.app/0d50e1-0075e4-0082b0-00876d-3e863c"
 						Icon={ExternalLink}
 						text="Live site"
+						isWhite
 					/>
 				</LinkWrapper>
 				<ActionButton onClick={updateColors}>Get new palette</ActionButton>
