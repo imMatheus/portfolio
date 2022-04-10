@@ -7,7 +7,7 @@ const About: React.FC = () => {
 		<section className="bg-gray-100 p-6 md:p-10">
 			<div className="mx-auto max-w-7xl">
 				<h2 className="mb-3 text-4xl font-bold">About me</h2>
-				<p className="mb-2 max-w-[80ch] text-sm md:mb-4">
+				<p className="mb-2 max-w-[80ch] text-base md:mb-4">
 					I am a full-stack developer with a lot of experience in web applications and apps. I have a big
 					passion for programming and I always try my best to keep evolving in my role as a developer by
 					learning new things. <br /> <br /> I have professional experience working with the MERN stack

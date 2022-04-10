@@ -6,9 +6,9 @@ const OnTheHorizon: React.FC<OnTheHorizonProps> = ({}) => {
 	return (
 		<div className="text-center">
 			<h2 className="mb-2 text-5xl font-bold lg:text-7xl">On the horizon</h2>
-			<p className="mx-auto max-w-4xl">
-				I have no intention to stop learning new things. As of right now I am learning Nest.js, Graphql and
-				Svelte.js
+			<p className="mx-auto max-w-4xl text-base">
+				I have no intention to stop learning new things. As of right now I am planing on learning Postgres,
+				Prisma and Kubernetes
 			</p>
 
 			<div className="flex items-center justify-center p-5 pb-0">

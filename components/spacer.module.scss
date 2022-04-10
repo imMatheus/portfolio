@@ -1,0 +1,12 @@
+.spacer {
+	@apply h-[130%];
+	aspect-ratio: 1000/200;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-image: url('/wave.svg');
+	top: 0;
+}

@@ -29,20 +29,24 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 			<div>
 				<Title>What do i know?</Title>
 
-				<h3 className="mb-1 text-2xl font-bold">Front-end development</h3>
-				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
-					<CompetentChip className="bg-red-0">HTML</CompetentChip>
-					<CompetentChip>CSS</CompetentChip>
-					<CompetentChip>SASS/SCSS</CompetentChip>
-					<CompetentChip>Tailiwnd</CompetentChip>
-					<CompetentChip>UI/UX</CompetentChip>
-					<CompetentChip>React</CompetentChip>
-					<CompetentChip>React Native</CompetentChip>
-					<CompetentChip>Redux</CompetentChip>
-					<CompetentChip>Next.js</CompetentChip>
-					<CompetentChip>Svelte</CompetentChip>
-					<CompetentChip>Svelte Kit</CompetentChip>
-				</ul>
+				<div className="relative mb-5">
+					<h3 className="mb-1 text-2xl font-bold">Front-end development</h3>
+					<ul className="flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
+						<CompetentChip className="bg-red-0">HTML</CompetentChip>
+						<CompetentChip>CSS</CompetentChip>
+						<CompetentChip>SASS/SCSS</CompetentChip>
+						<CompetentChip>Tailiwnd</CompetentChip>
+						<CompetentChip>Bootstrap</CompetentChip>
+						<CompetentChip>Material UI</CompetentChip>
+						<CompetentChip>UI/UX</CompetentChip>
+						<CompetentChip>React</CompetentChip>
+						<CompetentChip>React Native</CompetentChip>
+						<CompetentChip>Redux</CompetentChip>
+						<CompetentChip>Next.js</CompetentChip>
+						<CompetentChip>Svelte</CompetentChip>
+						<CompetentChip>Svelte Kit</CompetentChip>
+					</ul>
+				</div>
 
 				<h3 className="mb-1 text-2xl font-bold">API</h3>
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
@@ -88,7 +92,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 
 			<div>
 				<Title>What am i up too lately?</Title>
-				<p className="mb-2 max-w-4xl text-black">
+				<p className="mb-2 max-w-4xl text-base text-black">
 					I spend most of time writing code for side project of mine with my main focus being on LucioCode. I
 					love learning new stuff and and always try to make sure i understand the technologies I use. Im
 					always up for a challenge and love coding challenges from CSS battles and LeetCode

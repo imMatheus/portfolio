@@ -1,7 +1,7 @@
 import React from 'react'
 import ProjectsShowCase from './ProjectsShowCase'
 import { GitHub, Linkedin } from 'react-feather'
-import Link from 'next/link'
+import styles from './spacer.module.scss'
 
 const HeaderSpan: React.FC = ({ children }) => {
 	return (
@@ -21,25 +21,36 @@ interface Props {
 
 const Hero: React.FC<Props> = ({ pinnedItems }) => {
 	return (
-		<main className="mx-auto max-w-7xl px-6 py-10 lg:py-20">
-			<header className="mb-10">
-				<h1 className="max-w-3xl font-grotesk text-2xl font-semibold leading-relaxed tracking-wide lg:text-5xl lg:leading-relaxed">
-					Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a
-					<HeaderSpan>full-stack engineer</HeaderSpan>
-				</h1>
-				<div className="flex items-center gap-4">
-					<a href="https://github.com/imMatheus" target="_blank" rel="noreferrer">
-						<GitHub className="h-5 w-5 cursor-pointer" />
-					</a>
+		<div className="relative">
+			{/* <div className="absolute top-36 left-1/2 h-20 w-[50vw] animate-spin bg-apple"></div>
+			<div className="absolute top-60 left-1/2 h-20 w-[250vw] -translate-x-1/2 rotate-6 bg-bee "></div>
+			<div className="absolute bottom-96 left-1/2 h-20 w-[250vw] -translate-x-1/2 rotate-3 bg-carnelian"></div> */}
+			<main className="relative mx-auto max-w-7xl px-6 py-10 lg:py-20">
+				<header className="mb-10">
+					<h1 className="max-w-3xl font-grotesk text-2xl font-semibold leading-relaxed tracking-wide sm:text-3xl lg:text-5xl lg:leading-relaxed">
+						Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a
+						<HeaderSpan>full-stack engineer</HeaderSpan>
+					</h1>
+					<div className="flex items-center gap-4">
+						<a href="https://github.com/imMatheus" target="_blank" rel="noreferrer">
+							<GitHub className="h-6 w-6 cursor-pointer" />
+						</a>
 
-					<a href="https://www.linkedin.com/in/matheus-mendes-447993228/" target="_blank" rel="noreferrer">
-						<Linkedin className="h-5 w-5 cursor-pointer" />
-					</a>
-				</div>
-			</header>
+						<a
+							href="https://www.linkedin.com/in/matheus-mendes-447993228/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<Linkedin className="h-6 w-6 cursor-pointer" />
+						</a>
+					</div>
+				</header>
 
-			<ProjectsShowCase pinnedItems={pinnedItems} />
-		</main>
+				<ProjectsShowCase pinnedItems={pinnedItems} />
+			</main>
+
+			<div className={styles.spacer}></div>
+		</div>
 	)
 }
 
