@@ -6,7 +6,7 @@ import { GitHub, ExternalLink } from 'react-feather'
 import ProjectDescription from '../ProjectDescription'
 import { marked } from 'marked'
 import hljs from 'highlight.js/lib/core'
-import 'highlight.js/styles/base16/monokai.css'
+// import 'highlight.js/styles/base16/monokai.css'
 // import 'highlight.js/styles/base16/.css'
 // import 'highlight.js/styles/base16/.css'
 // import 'highlight.js/styles/base16/dracula.css'
@@ -46,11 +46,9 @@ const Blog: React.FC<BlogProps> = ({}) => {
 		<>
 			<ProjectTitle>Blog 03</ProjectTitle>
 			<ProjectDescription>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit nisi natus eveniet aspernatur
-				excepturi sed, sit delectus fuga magnam voluptatibus. Reiciendis ex quaerat reprehenderit culpa,
-				voluptatem dolor dolorem inventore sunt enim repudiandae dicta voluptatibus hic modi animi officia
-				aliquid expedita quia consequatur quo eligendi repellendus quam. Nam sapiente nesciunt, porro libero
-				consequuntur eius corporis temporibus, accusantium iure delectus, asperiores eum.
+				A very simple blog built with Next.js and tailwind. As of now, the blog does not contain many articles,
+				but it was a fun project and one of the first things I built with Next.js. I have plans on updating the
+				project but it&apos;s not something on my near bucket list, unfortunately.
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/blog" Icon={GitHub} text="Repository" />
@@ -58,7 +56,7 @@ const Blog: React.FC<BlogProps> = ({}) => {
 			</LinkWrapper>
 			<article className="mt-5 max-w-4xl rounded-md bg-gray-100 p-6">
 				<h2 className="mb-2 text-4xl font-extrabold">How to center a div</h2>
-				<p className="mb-4 text-sm font-semibold italic text-gray-600">2022/12/18 - Matheus mendes</p>
+				<p className="mb-4 text-sm font-semibold italic text-gray-600">2022/12/18 - Matheus Mendes</p>
 				<div className="prose prose-invert prose-gray" ref={divRef}></div>
 			</article>
 		</>

@@ -8,7 +8,8 @@ import Link from '../Link'
 import LinkWrapper from '../LinkWrapper'
 import ProjectDescription from '../ProjectDescription'
 import ActionButton from '../ActionButton'
-// import 'highlight.js/styles/vs.css'
+import 'highlight.js/styles/base16/solarized-dark.css'
+// import 'highlight.js/styles/rainbow.css'
 
 const Firedum: React.FC = ({}) => {
 	const editorRef = useRef<HTMLElement>(null)
@@ -70,7 +71,7 @@ await firedumAdd({
 							<div className="h-2 w-2 rounded-full border border-black"></div>
 							<div className="h-2 w-2 rounded-full border border-black"></div>
 						</div>
-						<pre className="relative w-full rounded-b-md border border-black bg-white p-3 text-xs font-thin lg:p-4 lg:text-sm xl:text-base">
+						<pre className="relative w-full overflow-x-scroll rounded-b-md border border-black bg-white p-3 text-sm font-thin lg:p-4 xl:text-base">
 							<code ref={editorRef}></code>
 						</pre>
 					</div>

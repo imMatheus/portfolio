@@ -17,3 +17,7 @@ html {
 		-moz-text-fill-color: transparent;
 	}
 }
+
+.hljs {
+	background-color: transparent !important;
+}
