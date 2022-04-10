@@ -27,7 +27,7 @@ const Projects: React.FC<Props> = ({}) => {
 					<Firedum />
 				</ProjectWrapper>
 			</section>
-			<section className="bg-blurple">
+			<section className="bg-white">
 				<ProjectWrapper>
 					<Blog />
 				</ProjectWrapper>
