@@ -45,6 +45,7 @@ const ProjectsText: React.FC = ({}) => {
 				<Column />
 				<Column />
 				<Column />
+				<Column />
 			</div>
 		</section>
 	)
