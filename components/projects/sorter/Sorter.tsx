@@ -103,7 +103,7 @@ const Sorter: React.FC = ({}) => {
 				<Link href="https://fantastic-faun-a021c6.netlify.app/" Icon={ExternalLink} text="Live site" />
 			</LinkWrapper>
 
-			<div className="flex flex-wrap items-center gap-6 lg:gap-8">
+			<div className="flex flex-wrap items-center gap-x-6 lg:gap-x-8">
 				<div className="flex min-w-[11rem] flex-col">
 					<label htmlFor="sorter-number-of-bars" className="text-lg font-bold">
 						Number of bars: {numberOfBars}

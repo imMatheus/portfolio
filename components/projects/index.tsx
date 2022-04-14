@@ -46,6 +46,7 @@ const Projects: React.FC<Props> = ({}) => {
 					<Blog />
 				</ProjectWrapper>
 			</section>
+			<Spacer url="white-white.svg" />
 		</div>
 	)
 }

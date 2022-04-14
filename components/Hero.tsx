@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectsShowCase from './ProjectsShowCase'
-import { GitHub, Linkedin } from 'react-feather'
+import { GitHub, Linkedin, Instagram } from 'react-feather'
 import styles from './spacer.module.scss'
 
 const HeaderSpan: React.FC = ({ children }) => {
@@ -45,6 +45,9 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 							rel="noreferrer"
 						>
 							<Linkedin className="h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
+						</a>
+						<a href="https://www.instagram.com/matheus.mendeszsz/" target="_blank" rel="noreferrer">
+							<Instagram className="h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
 						</a>
 					</div>
 				</header>
