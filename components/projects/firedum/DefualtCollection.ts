@@ -31,14 +31,14 @@ export const defaultCollections: CollectionType = {
 		{
 			id: '4K0UKpB',
 			fields: {
-				name: 'Titanic swim team 🏊🏻‍♂️',
+				name: 'Hypertext Assassins',
 				members: ['"aa"', '"bb"', '"yy"']
 			}
 		},
 		{
 			id: '05c1Y2w',
 			fields: {
-				name: '9/11 flight crew ✈️',
+				name: 'Callback Cats',
 				members: ['"aa"', '"yy"']
 			}
 		}
