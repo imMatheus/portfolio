@@ -27,10 +27,13 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 			<div className="absolute bottom-96 left-1/2 h-20 w-[250vw] -translate-x-1/2 rotate-3 bg-carnelian"></div> */}
 			<main className="relative mx-auto max-w-7xl px-6 py-10 lg:py-20">
 				<header className="mb-10">
-					<h1 className="mb-3 max-w-3xl font-grotesk text-lg font-semibold leading-relaxed tracking-wide sm:mb-5 sm:text-3xl lg:text-5xl lg:leading-relaxed">
+					<h1 className="max-w-3xl font-grotesk text-lg font-semibold leading-relaxed tracking-wide sm:text-3xl lg:text-5xl lg:leading-relaxed">
 						Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a
 						<HeaderSpan>full-stack engineer</HeaderSpan>
 					</h1>
+					<p className="my-3 text-lg font-semibold">
+						Young tech enthusiast specialising in web and app development
+					</p>
 					<div className="flex items-center gap-4">
 						<a href="https://github.com/imMatheus" target="_blank" rel="noreferrer">
 							<GitHub className="h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />

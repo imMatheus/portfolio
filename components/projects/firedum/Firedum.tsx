@@ -38,7 +38,7 @@ await firedumAdd({
 
 	return (
 		<>
-			<ProjectTitle>Firedum 02</ProjectTitle>
+			<ProjectTitle>Firedum</ProjectTitle>
 			<ProjectDescription>
 				Firedum is an npm package that makes it easy to populate a firestore database with mock data. The
 				package can be used to add new documents, and update existing documents in a firestore collection but

@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const ProjectWrapper: React.FC = ({ children }) => {
-	return <div className="w-screen overflow-hidden p-4 sm:p-8">{children}</div>
+	return <div className="mx-auto w-screen max-w-7xl overflow-hidden p-4 sm:py-6 sm:px-8">{children}</div>
 }
 
 const Projects: React.FC<Props> = ({}) => {
@@ -30,20 +30,20 @@ const Projects: React.FC<Props> = ({}) => {
 					<Firedum />
 				</ProjectWrapper>
 			</section>
-			<Spacer url="bee-white.svg" />
+			<Spacer url="bee-blurple.svg" />
+			<section className="bg-blurple">
+				<ProjectWrapper>
+					<Sorter />
+				</ProjectWrapper>
+			</section>
+			<Spacer url="blurple-black.svg" />
+
+			<Coolors />
+			<Spacer url="black-white.svg" />
+
 			<section className="bg-white">
 				<ProjectWrapper>
 					<Blog />
-				</ProjectWrapper>
-			</section>
-			<Spacer url="white-black.svg" />
-
-			<Coolors />
-			<Spacer url="black-red.svg" />
-
-			<section className="bg-carnelian">
-				<ProjectWrapper>
-					<Sorter />
 				</ProjectWrapper>
 			</section>
 		</div>

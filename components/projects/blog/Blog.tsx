@@ -44,7 +44,7 @@ const Blog: React.FC<BlogProps> = ({}) => {
 
 	return (
 		<>
-			<ProjectTitle>Blog 03</ProjectTitle>
+			<ProjectTitle>Blog</ProjectTitle>
 			<ProjectDescription>
 				A very simple blog built with Next.js and tailwind. As of now, the blog does not contain many articles,
 				but it was a fun project and one of the first things I built with Next.js. I have plans on updating the

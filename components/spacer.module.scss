@@ -1,5 +1,5 @@
 .spacer {
-	@apply h-[130%];
+	@apply h-[100%];
 	aspect-ratio: 1000/200;
 	width: 100%;
 	position: absolute;
@@ -7,6 +7,6 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	background-image: url('/wave.svg');
+	background-image: url('/wave-1.svg');
 	top: 0;
 }

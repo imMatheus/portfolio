@@ -5,6 +5,7 @@ import LinkWrapper from '../LinkWrapper'
 import { GitHub, ExternalLink } from 'react-feather'
 import ProjectDescription from '../ProjectDescription'
 import ActionButton from '../ActionButton'
+import { Slider } from '@mantine/core'
 
 const Sorter: React.FC = ({}) => {
 	const [numberOfBars, setNumberOfBars] = useState(5)
@@ -89,7 +90,7 @@ const Sorter: React.FC = ({}) => {
 
 	return (
 		<>
-			<ProjectTitle>Sorter 05</ProjectTitle>
+			<ProjectTitle>Sorting Algorithm Visualizer</ProjectTitle>
 			<ProjectDescription>
 				This project holds a special part in my heart as it was the first semi-big project I completed after
 				around 3 months of coding experience. It took many sleepless nights but I came through in the end. I am
@@ -103,37 +104,47 @@ const Sorter: React.FC = ({}) => {
 			</LinkWrapper>
 
 			<div className="flex flex-wrap items-center gap-6 lg:gap-8">
-				<div className="flex flex-col items-center">
+				<div className="flex min-w-[11rem] flex-col">
 					<label htmlFor="sorter-number-of-bars" className="text-lg font-bold">
 						Number of bars: {numberOfBars}
 					</label>
-					<input
-						type="range"
-						name="sorter-number-of-bars"
-						id="sorter-number-of-bars"
-						// className="form-range h-6 w-20 appearance-none bg-pink-700 bg-transparent p-0 focus:shadow-none focus:outline-none focus:ring-0"
-						disabled={loading}
-						value={numberOfBars}
-						onChange={(e) => setNumberOfBars(parseInt(e.target.value))}
-						min={5}
-						max={60}
-					/>
+					<div className="w-36 flex-col items-center">
+						<Slider
+							name="sorter-number-of-bars"
+							id="sorter-number-of-bars"
+							color="dark"
+							disabled={loading}
+							value={numberOfBars}
+							onChange={setNumberOfBars}
+							min={5}
+							max={60}
+							showLabelOnHover={false}
+							// step={0.1}
+							// styles={{ markLabel: { display: 'none' } }}
+						/>
+					</div>
 				</div>
-				<div className="flex flex-col items-center">
+
+				<div className="flex min-w-[14rem] flex-col">
 					<label htmlFor="sorter-animation-speed" className="text-lg font-bold">
 						Animation speed: {animationSpeed}ms
 					</label>
 
-					<input
-						type="range"
-						name="sorter-animation-speed"
-						id="sorter-animation-speed"
-						disabled={loading}
-						value={animationSpeed}
-						onChange={(e) => setAnimationSpeed(parseInt(e.target.value))}
-						min={1}
-						max={1000}
-					/>
+					<div className="w-36 flex-col items-center">
+						<Slider
+							name="sorter-animation-speed"
+							id="sorter-animation-speed"
+							color="dark"
+							disabled={loading}
+							value={animationSpeed}
+							onChange={setAnimationSpeed}
+							min={1}
+							max={1000}
+							showLabelOnHover={false}
+							// step={0.1}
+							// styles={{ markLabel: { display: 'none' } }}
+						/>
+					</div>
 				</div>
 				<ActionButton onClick={() => setNumbers(getRandomBars())} disabled={loading}>
 					Generate new array
@@ -159,7 +170,7 @@ const Sorter: React.FC = ({}) => {
 										? '#fee75c'
 										: number.state === State.FINAL
 										? '#57f287'
-										: '#5865f2'
+										: '#fff'
 							}}
 							key={index}
 						></div>

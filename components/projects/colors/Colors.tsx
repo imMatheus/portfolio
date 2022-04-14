@@ -39,7 +39,7 @@ const Coolors: React.FC = ({}) => {
 	return (
 		<section className="bg-black text-white">
 			<ProjectWrapper>
-				<ProjectTitle>Colors 04</ProjectTitle>
+				<ProjectTitle>Colors</ProjectTitle>
 				<ProjectDescription>
 					This project is a smaller project that generates color palettes by first randomly generating two
 					colors, then creating a linear gradient from those two colors. The project is heavily inspired by
@@ -55,7 +55,7 @@ const Coolors: React.FC = ({}) => {
 					/>
 				</LinkWrapper>
 				<ActionButton onClick={updateColors}>Get new palette</ActionButton>
-				<div className="flex h-[80vh] w-full flex-col overflow-hidden rounded-md border-0 border-black/100 md:h-[50vh] md:flex-row">
+				<div className="flex h-[80vh] max-h-[500px] w-full flex-col overflow-hidden rounded-md border-0 border-black/100 md:h-[50vh] md:flex-row">
 					{colors.map((color, i) => (
 						<ColorCard key={i} color={color} index={i} colors={colors} setColors={setColors} />
 					))}

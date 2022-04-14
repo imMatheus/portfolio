@@ -8,7 +8,7 @@ import ProjectDescription from '../ProjectDescription'
 const LucioCode: React.FC = ({}) => {
 	return (
 		<>
-			<ProjectTitle>LucioCode 01</ProjectTitle>
+			<ProjectTitle>LucioCode</ProjectTitle>
 			<ProjectDescription>
 				LucioCode is a web app that aims to help professors and teachers teach coding to a class of students.
 				The web app comes with an inbuilt IDE to provide code and makes it easy for the teacher to test their

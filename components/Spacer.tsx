@@ -7,8 +7,11 @@ interface SpacerProps {
 
 const Spacer: React.FC<SpacerProps> = ({ url }) => {
 	return (
-		<div className="relative aspect-[100/20] w-full">
-			<div className={styles.spacer} style={{ height: '100%', backgroundImage: `url('${url}')` }}></div>
+		<div className="relative aspect-[100/20] !max-h-[400px] w-full">
+			<div
+				className={styles.spacer}
+				style={{ height: '100%', maxHeight: '400px', backgroundImage: `url('${url}')` }}
+			></div>
 		</div>
 	)
 }
