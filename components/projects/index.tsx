@@ -17,7 +17,7 @@ export const ProjectWrapper: React.FC = ({ children }) => {
 const Projects: React.FC<Props> = ({}) => {
 	return (
 		<div className="relative w-screen">
-			<ProjectsText />
+			{/* <ProjectsText /> */}
 			<section className="bg-apple">
 				<ProjectWrapper>
 					<LucioCode />
