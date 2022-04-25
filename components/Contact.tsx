@@ -25,9 +25,7 @@ const Contact: React.FC = ({}) => {
 						<Linkedin className="h-5 w-5 cursor-pointer 2xl:h-6 2xl:w-6" />
 					</a>
 
-					<a href="https://www.instagram.com/matheus.mendeszsz/" target="_blank" rel="noreferrer">
-						<Instagram className="h-5 w-5 cursor-pointer 2xl:h-6 2xl:w-6" />
-					</a>
+					
 				</div>
 			</div>
 		</div>
