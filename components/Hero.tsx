@@ -46,9 +46,7 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 						>
 							<Linkedin className="h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
 						</a>
-						<a href="https://www.instagram.com/matheus.mendeszsz/" target="_blank" rel="noreferrer">
-							<Instagram className="h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
-						</a>
+						
 					</div>
 				</header>
 
