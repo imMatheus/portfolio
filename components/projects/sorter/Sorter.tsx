@@ -61,9 +61,7 @@ const Sorter: React.FC = ({}) => {
 
 			for (let i = 0; i < _numbers.length; i++) {
 				for (let j = 0; j < _numbers.length - i - 1; j++) {
-					_numbers = _numbers.map((num, index) =>
-						index < _numbers.length - i ? { ...num, state: State.STALE } : num
-					)
+					_numbers = _numbers.map((num, index) => (index < _numbers.length - i ? { ...num, state: State.STALE } : num))
 					_numbers[j].state = State.FOCUS
 					_numbers[j + 1].state = State.FOCUS
 					await sleep(animationSpeed / 2)
@@ -89,14 +87,14 @@ const Sorter: React.FC = ({}) => {
 	const DELAY = 200
 
 	return (
-		<>
+		<div id="sorter">
 			<ProjectTitle>Sorting Algorithm Visualizer</ProjectTitle>
 			<ProjectDescription>
-				This project holds a special part in my heart as it was the first semi-big project I completed after
-				around 3 months of coding experience. It took many sleepless nights but I came through in the end. I am
-				interested in computer science to the point where I started watching Harvard&apos;s algorithms and data
-				structures on YouTube. The project down below is pretty straightforward, it demonstrates the most basic
-				of sorting algorithms, Bubble sort.
+				This project holds a special part in my heart as it was the first semi-big project I completed after around 3
+				months of coding experience. It took many sleepless nights but I came through in the end. I am interested in
+				computer science to the point where I started watching Harvard&apos;s algorithms and data structures on YouTube.
+				The project down below is pretty straightforward, it demonstrates the most basic of sorting algorithms, Bubble
+				sort.
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/Sorting-algo-Visualizer" Icon={GitHub} text="Repository" />
@@ -177,7 +175,7 @@ const Sorter: React.FC = ({}) => {
 					)
 				})}
 			</div>
-		</>
+		</div>
 	)
 }
 

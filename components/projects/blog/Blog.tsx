@@ -43,12 +43,12 @@ const Blog: React.FC<BlogProps> = ({}) => {
 	}, [markdown])
 
 	return (
-		<>
+		<div id="blog">
 			<ProjectTitle>Blog</ProjectTitle>
 			<ProjectDescription>
-				A very simple blog built with Next.js and tailwind. As of now, the blog does not contain many articles,
-				but it was a fun project and one of the first things I built with Next.js. I have plans on updating the
-				project but it&apos;s not something on my near bucket list, unfortunately.
+				A very simple blog built with Next.js and tailwind. As of now, the blog does not contain many articles, but it
+				was a fun project and one of the first things I built with Next.js. I have plans on updating the project but
+				it&apos;s not something on my near bucket list, unfortunately.
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/blog" Icon={GitHub} text="Repository" />
@@ -59,7 +59,7 @@ const Blog: React.FC<BlogProps> = ({}) => {
 				<p className="mb-4 text-sm font-semibold italic text-gray-600">2022/12/18 - Matheus Mendes</p>
 				<div className="prose prose-invert prose-gray" ref={divRef}></div>
 			</article>
-		</>
+		</div>
 	)
 }
 
