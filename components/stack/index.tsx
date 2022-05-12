@@ -64,9 +64,13 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					<CompetentChip>JWT</CompetentChip>
 					<CompetentChip>Cookies</CompetentChip>
 					<CompetentChip>Passport.js</CompetentChip>
+					<CompetentChip>NoSQL</CompetentChip>
 					<CompetentChip>MongoDB</CompetentChip>
 					<CompetentChip>Mongoose</CompetentChip>
 					<CompetentChip>Firebase</CompetentChip>
+					<CompetentChip>SQL</CompetentChip>
+					<CompetentChip>PostgreSQL</CompetentChip>
+					<CompetentChip>Prisma</CompetentChip>
 				</ul>
 
 				<h3 className="mb-1 text-2xl font-bold">Languages</h3>
