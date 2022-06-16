@@ -32,7 +32,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				<div className="relative mb-5">
 					<h3 className="mb-1 text-2xl font-bold">Front-end development</h3>
 					<ul className="flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
-						<CompetentChip className="bg-red-0">HTML</CompetentChip>
+						<CompetentChip>HTML</CompetentChip>
 						<CompetentChip>CSS</CompetentChip>
 						<CompetentChip>SASS/SCSS</CompetentChip>
 						<CompetentChip>Tailiwnd</CompetentChip>
@@ -70,6 +70,8 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					<CompetentChip>Firebase</CompetentChip>
 					<CompetentChip>SQL</CompetentChip>
 					<CompetentChip>PostgreSQL</CompetentChip>
+					<CompetentChip>MySQL</CompetentChip>
+					<CompetentChip>PlanetScale</CompetentChip>
 					<CompetentChip>Prisma</CompetentChip>
 				</ul>
 
@@ -90,6 +92,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					<CompetentChip>GitHub</CompetentChip>
 					<CompetentChip>Jest</CompetentChip>
 					<CompetentChip>EsLint</CompetentChip>
+					<CompetentChip>Prettier</CompetentChip>
 					<CompetentChip>Cypress</CompetentChip>
 				</ul>
 			</div>
