@@ -35,9 +35,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 						<CompetentChip>HTML</CompetentChip>
 						<CompetentChip>CSS</CompetentChip>
 						<CompetentChip>SASS/SCSS</CompetentChip>
-						<CompetentChip>Tailiwnd</CompetentChip>
-						<CompetentChip>Bootstrap</CompetentChip>
-						<CompetentChip>Material UI</CompetentChip>
+						<CompetentChip>Tailwind</CompetentChip>
 						<CompetentChip>UI/UX</CompetentChip>
 						<CompetentChip>React</CompetentChip>
 						<CompetentChip>React Native</CompetentChip>
@@ -63,7 +61,6 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					<CompetentChip>Nest.js</CompetentChip>
 					<CompetentChip>JWT</CompetentChip>
 					<CompetentChip>Cookies</CompetentChip>
-					<CompetentChip>Passport.js</CompetentChip>
 					<CompetentChip>NoSQL</CompetentChip>
 					<CompetentChip>MongoDB</CompetentChip>
 					<CompetentChip>Mongoose</CompetentChip>
@@ -92,7 +89,6 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					<CompetentChip>GitHub</CompetentChip>
 					<CompetentChip>Jest</CompetentChip>
 					<CompetentChip>EsLint</CompetentChip>
-					<CompetentChip>Prettier</CompetentChip>
 					<CompetentChip>Cypress</CompetentChip>
 				</ul>
 			</div>
