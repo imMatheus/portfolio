@@ -42,7 +42,6 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 						<CompetentChip>Redux</CompetentChip>
 						<CompetentChip>Next.js</CompetentChip>
 						<CompetentChip>Svelte</CompetentChip>
-						<CompetentChip>Svelte Kit</CompetentChip>
 					</ul>
 				</div>
 
@@ -59,15 +58,10 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
 					<CompetentChip>Express</CompetentChip>
 					<CompetentChip>Nest.js</CompetentChip>
-					<CompetentChip>JWT</CompetentChip>
-					<CompetentChip>Cookies</CompetentChip>
-					<CompetentChip>NoSQL</CompetentChip>
 					<CompetentChip>MongoDB</CompetentChip>
 					<CompetentChip>Mongoose</CompetentChip>
 					<CompetentChip>Firebase</CompetentChip>
 					<CompetentChip>SQL</CompetentChip>
-					<CompetentChip>PostgreSQL</CompetentChip>
-					<CompetentChip>MySQL</CompetentChip>
 					<CompetentChip>PlanetScale</CompetentChip>
 					<CompetentChip>Prisma</CompetentChip>
 				</ul>
