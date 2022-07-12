@@ -4,6 +4,7 @@ import Link from '../Link'
 import LinkWrapper from '../LinkWrapper'
 import { GitHub, ExternalLink } from 'react-feather'
 import ProjectDescription from '../ProjectDescription'
+import Demo from './Demo'
 
 const LucioCode: React.FC = ({}) => {
 	return (
@@ -22,6 +23,7 @@ const LucioCode: React.FC = ({}) => {
 				<Link href="https://github.com/imMatheus/firedum" Icon={GitHub} text="Repository" />
 				<Link href="https://lucioocode.web.app/" Icon={ExternalLink} text="Live site" />
 			</LinkWrapper>
+			<Demo />
 		</div>
 	)
 }

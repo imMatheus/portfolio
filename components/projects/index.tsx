@@ -6,6 +6,7 @@ import Blog from './blog/Blog'
 import Coolors from './colors/Colors'
 import Sorter from './sorter/Sorter'
 import Spacer from '../Spacer'
+import Twitter from './twitter/Twitter'
 interface Props {
 	contributionsCollection: any
 }
@@ -24,7 +25,15 @@ const Projects: React.FC<Props> = ({}) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="apple-bee.svg" />
+			<Spacer url="apple-black.svg" />
+
+			<section className="bg-[#000]">
+				<ProjectWrapper>
+					<Twitter />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer url="black-bee.svg" />
 			<section className="bg-bee">
 				<ProjectWrapper>
 					<Firedum />

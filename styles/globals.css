@@ -18,6 +18,25 @@ html {
 		-moz-background-clip: text;
 		-moz-text-fill-color: transparent;
 	}
+
+	.text-one-line {
+		overflow-wrap: break-word;
+		text-overflow: ellipsis;
+		white-space: unset;
+		display: -webkit-box;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+	}
+	.text-two-line {
+		overflow-wrap: break-word;
+		text-overflow: ellipsis;
+		white-space: unset;
+		display: -webkit-box;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
 }
 
 .hljs {

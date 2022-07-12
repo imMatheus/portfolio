@@ -11,7 +11,15 @@ module.exports = {
 				bee: '#fee75c',
 				fuchsia: '#eb459e',
 				carnelian: '#ed4245',
-				black: '#23272a'
+				black: '#23272a',
+				'twitter-blue': 'rgb(29 155 240)',
+				'twitter-dark-bg': 'rgb(0 0 0 )',
+				'twitter-dark-text': 'rgb(231 233 234)',
+				'twitter-white-bg': 'rgb(255 255 255)',
+				'twitter-white-text': 'rgb(15 20 25)',
+				'twitter-white-text-grayed': 'rgb(83 100 113)',
+				'twitter-olive': '#00ba7c',
+				'twitter-candy-pink': '#f91880'
 			}
 		}
 	},

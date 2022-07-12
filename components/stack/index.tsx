@@ -17,7 +17,7 @@ interface ComponentChipProps {
 
 const CompetentChip: React.FC<ComponentChipProps> = ({ className, children }) => {
 	return (
-		<li>
+		<li className="transition-transform odd:hover:rotate-3 even:hover:-rotate-3">
 			<span className={`rounded-md border px-3 py-0.5 text-base ${className}`}>{children}</span>
 		</li>
 	)
@@ -93,9 +93,9 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 			<div>
 				<Title>What am i up too lately?</Title>
 				<p className="mb-2 max-w-4xl text-base text-black">
-					I spend most of time writing code for side project of mine with my main focus being on LucioCode. I
-					love learning new stuff and and always try to make sure i understand the technologies I use. Im
-					always up for a challenge and love coding challenges from CSS battles and LeetCode
+					I spend most of time writing code for side project of mine with my main focus being on LucioCode. I love
+					learning new stuff and and always try to make sure i understand the technologies I use. Im always up for a
+					challenge and love coding challenges from CSS battles and LeetCode
 				</p>
 				<ContributionView contributionsCollection={contributionsCollection} />
 			</div>
