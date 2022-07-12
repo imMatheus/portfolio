@@ -20,7 +20,7 @@ const LucioCode: React.FC = ({}) => {
 				be. But a new, updated version is coming in a near future
 			</ProjectDescription>
 			<LinkWrapper>
-				<Link href="https://github.com/imMatheus/firedum" Icon={GitHub} text="Repository" />
+				<Link href="https://github.com/imMatheus/lucio/tree/old_master" Icon={GitHub} text="Repository" />
 				<Link href="https://lucioocode.web.app/" Icon={ExternalLink} text="Live site" />
 			</LinkWrapper>
 			<Demo />

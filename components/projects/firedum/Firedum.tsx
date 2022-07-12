@@ -42,7 +42,7 @@ await firedumAdd({
 			<ProjectDescription>
 				Firedum is an npm package that makes it easy to populate a firestore database with mock data. The package can be
 				used to add new documents, update existing documents in a firestore collection but can also create users as well
-				as add documents for the newly created users. Underneath the hood, firedum uses faker.js to generate relative
+				as add documents for the newly created users. Underneath the hood, firedum uses faker.js to generate relevante
 				mock data
 			</ProjectDescription>
 			<LinkWrapper>

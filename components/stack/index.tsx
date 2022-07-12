@@ -32,12 +32,10 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				<div className="relative mb-5">
 					<h3 className="mb-1 text-2xl font-bold">Front-end development</h3>
 					<ul className="flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
-						<CompetentChip className="bg-red-0">HTML</CompetentChip>
+						<CompetentChip>HTML</CompetentChip>
 						<CompetentChip>CSS</CompetentChip>
 						<CompetentChip>SASS/SCSS</CompetentChip>
-						<CompetentChip>Tailiwnd</CompetentChip>
-						<CompetentChip>Bootstrap</CompetentChip>
-						<CompetentChip>Material UI</CompetentChip>
+						<CompetentChip>Tailwind</CompetentChip>
 						<CompetentChip>UI/UX</CompetentChip>
 						<CompetentChip>React</CompetentChip>
 						<CompetentChip>React Native</CompetentChip>
@@ -63,10 +61,15 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					<CompetentChip>Nest.js</CompetentChip>
 					<CompetentChip>JWT</CompetentChip>
 					<CompetentChip>Cookies</CompetentChip>
-					<CompetentChip>Passport.js</CompetentChip>
+					<CompetentChip>NoSQL</CompetentChip>
 					<CompetentChip>MongoDB</CompetentChip>
 					<CompetentChip>Mongoose</CompetentChip>
 					<CompetentChip>Firebase</CompetentChip>
+					<CompetentChip>SQL</CompetentChip>
+					<CompetentChip>PostgreSQL</CompetentChip>
+					<CompetentChip>MySQL</CompetentChip>
+					<CompetentChip>PlanetScale</CompetentChip>
+					<CompetentChip>Prisma</CompetentChip>
 				</ul>
 
 				<h3 className="mb-1 text-2xl font-bold">Languages</h3>

@@ -87,7 +87,7 @@ const Sorter: React.FC = ({}) => {
 	const DELAY = 200
 
 	return (
-		<div id="sorter">
+		<div id="sorter" className="text-white">
 			<ProjectTitle>Sorting Algorithm Visualizer</ProjectTitle>
 			<ProjectDescription>
 				This project holds a special part in my heart as it was the first semi-big project I completed after around 3
