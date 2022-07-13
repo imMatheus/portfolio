@@ -23,7 +23,7 @@ const LucioCode: React.FC = ({}) => {
 				<Link href="https://github.com/imMatheus/lucio/tree/old_master" Icon={GitHub} text="Repository" />
 				<Link href="https://lucioocode.web.app/" Icon={ExternalLink} text="Live site" />
 			</LinkWrapper>
-			<Demo />
+			{/* <Demo /> */}
 		</div>
 	)
 }
