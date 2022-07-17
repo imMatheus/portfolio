@@ -41,7 +41,7 @@ const Coolors: React.FC = ({}) => {
 			<ProjectWrapper>
 				<ProjectTitle>Colors</ProjectTitle>
 				<ProjectDescription>
-					This project is a smaller project that generates color palettes by first randomly generating two colors, then
+					This is a smaller project that generates color palettes by first randomly generating two colors, then
 					creating a linear gradient from those two colors. The project is heavily inspired by one of my favorite
 					websites as a front-end engineer, coolors.co
 				</ProjectDescription>
