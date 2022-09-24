@@ -17,7 +17,7 @@ const Twitter: React.FC = ({}) => {
 			</ProjectDescription> */}
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/twitter-clone" Icon={GitHub} text="Repository" isWhite />
-				<Link href="https://matus-Twitter.vercel.app/" Icon={ExternalLink} text="Live site" isWhite />
+				<Link href="https://twitter-clone-immatheus.vercel.app" Icon={ExternalLink} text="Live site" isWhite />
 			</LinkWrapper>
 			<Card />
 		</div>
