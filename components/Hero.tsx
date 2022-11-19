@@ -32,12 +32,19 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 					</h1>
 					<p className="my-3 text-lg font-semibold">Young tech enthusiast specialising in web and app development</p>
 					<div className="flex items-center gap-4">
-						<a href="https://github.com/imMatheus" target="_blank" rel="noreferrer">
-							<GitHub className="h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
+						<a href="https://github.com/imMatheus" target="_blank" rel="noreferrer" className="group relative">
+							<div className="absolute top-1/2 left-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors group-hover:bg-gray-800/20 sm:h-10 sm:w-10"></div>
+							<GitHub className="relative h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
 						</a>
 
-						<a href="https://www.linkedin.com/in/matheus-mendes-447993228/" target="_blank" rel="noreferrer">
-							<Linkedin className="h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
+						<a
+							href="https://www.linkedin.com/in/matheus-mendes-447993228/"
+							target="_blank"
+							rel="noreferrer"
+							className="group relative"
+						>
+							<div className="absolute top-1/2 left-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors group-hover:bg-gray-800/20 sm:h-10 sm:w-10"></div>
+							<Linkedin className="relative h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
 						</a>
 					</div>
 				</header>

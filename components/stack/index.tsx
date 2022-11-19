@@ -49,6 +49,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
 					<CompetentChip>REST</CompetentChip>
 					<CompetentChip>AXIOS</CompetentChip>
+					<CompetentChip>tRPC</CompetentChip>
 					<CompetentChip>Node.js</CompetentChip>
 					<CompetentChip>GraphQL</CompetentChip>
 					<CompetentChip>Apollo</CompetentChip>

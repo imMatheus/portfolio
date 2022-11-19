@@ -25,7 +25,7 @@ const Card: React.FC = ({}) => {
 			<div className="flex items-start gap-3 p-3 xl:gap-4 xl:p-4">
 				<div className="flex flex-col items-end">
 					<div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-full bg-white xl:h-12 xl:w-12">
-						<Image layout="fill" objectFit="cover" src="/profile-square-2-small.jpeg" alt={`Matheus profile image`} />
+						<Image layout="fill" objectFit="cover" src="/p-2-medium.jpeg" alt={`Matheus profile image`} />
 					</div>
 				</div>
 
