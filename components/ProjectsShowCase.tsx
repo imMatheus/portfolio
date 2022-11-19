@@ -6,7 +6,7 @@ interface Props {
 }
 
 const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
-	const projectLinks = ['luciocode', 'twitter', 'firedum', 'sorter', 'colors', 'blog']
+	const projectLinks = ['luciocode', 'twitter', 'firedum', 'sorter', 'colors', 'rubiks-cube']
 	return (
 		<>
 			<h2 className="mb-5 text-center text-3xl font-semibold sm:text-4xl">Some of my projects</h2>

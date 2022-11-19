@@ -1,12 +1,11 @@
 import React from 'react'
-import Firedum from '@/components/projects/firedum/Firedum'
-import ProjectsText from './ProjectsText'
+import Firedum from './firedum/Firedum'
 import LucioCode from './luciocode/LucioCode'
-import Blog from './blog/Blog'
 import Coolors from './colors/Colors'
 import Sorter from './sorter/Sorter'
 import Spacer from '../Spacer'
 import Twitter from './twitter/Twitter'
+import Cube from './rubics-cube'
 interface Props {
 	contributionsCollection: any
 }
@@ -52,7 +51,7 @@ const Projects: React.FC<Props> = ({}) => {
 
 			<section className="bg-white">
 				<ProjectWrapper>
-					<Blog />
+					<Cube />
 				</ProjectWrapper>
 			</section>
 			<Spacer url="white-white.svg" />

@@ -1,0 +1,28 @@
+$cube_size: 70px;
+.cube-container {
+	width: $cube_size * 3;
+	height: $cube_size * 3;
+	z-index: 99999999;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotateY(35deg) rotateX(-35deg) rotateZ(0deg);
+	animation: rotate-container 7000ms infinite ease-in-out;
+
+	@keyframes rotate-container {
+		0%,
+		100% {
+			transform: rotateY(35deg) rotateX(-35deg) rotateZ(0deg);
+		}
+
+		25% {
+			transform: rotateY(145deg) rotateX(-180deg) rotateZ(60deg);
+		}
+		50% {
+			transform: rotateY(450deg) rotateX(-300deg) rotateZ(0deg);
+		}
+
+		75% {
+			transform: rotateY(220deg) rotateX(-100deg) rotateZ(20deg);
+		}
+	}
+}
