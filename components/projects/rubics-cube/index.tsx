@@ -11,9 +11,8 @@ const RubiksCube: React.FC = ({}) => {
 		<div id="rubiks-cube">
 			<ProjectTitle>CSS only Rubiks cube</ProjectTitle>
 			<ProjectDescription>
-				A very simple blog built with Next.js and tailwind. As of now, the blog does not contain many articles, but it
-				was a fun project and one of the first things I built with Next.js. I have plans on updating the project but
-				it&apos;s not something on my near bucket list, unfortunately.
+				The project you find below was made with a total of ZERO lines of Javascript, its all just CSS. Every animation,
+				hover effect and button click is just ta combination of some clever CSS code
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/css-only-rubiks-cube" Icon={GitHub} text="Repository" />
