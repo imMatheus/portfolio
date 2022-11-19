@@ -10,9 +10,9 @@ const FirebaseListItem: React.FC<FirebaseListItemProps> = ({ selected, onClick, 
 	return (
 		<li
 			onClick={onClick}
-			className={`cursor-pointer py-3 pl-10 pr-4 text-sm font-light hover:bg-black/10 ${
-				isNew ? styles.newDoc : ''
-			} ${selected ? 'bg-black/10' : ''}`}
+			className={`cursor-pointer py-3 pl-10 pr-4 text-sm font-light hover:bg-black/10 ${isNew ? styles.newDoc : ''} ${
+				selected ? 'bg-black/10' : ''
+			}`}
 		>
 			{children}
 		</li>

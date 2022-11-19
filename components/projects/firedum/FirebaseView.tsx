@@ -51,16 +51,10 @@ const FirebaseView: React.FC<FirebaseViewProps> = ({ addDocsFunctionRef }) => {
 						<p className="text-sm font-light">Your database</p>
 					</div>
 					<ul className="overflow-y-scroll">
-						<FirebaseListItem
-							selected={selectedCollection === 'chats'}
-							onClick={() => setSelectedCollection('chats')}
-						>
+						<FirebaseListItem selected={selectedCollection === 'chats'} onClick={() => setSelectedCollection('chats')}>
 							chats
 						</FirebaseListItem>
-						<FirebaseListItem
-							selected={selectedCollection === 'users'}
-							onClick={() => setSelectedCollection('users')}
-						>
+						<FirebaseListItem selected={selectedCollection === 'users'} onClick={() => setSelectedCollection('users')}>
 							users
 						</FirebaseListItem>
 					</ul>

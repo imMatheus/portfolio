@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"format": "prettier --write --plugin-search-dir=. ."
+		"format": "prettier --write ."
 	},
 	"dependencies": {
 		"@apollo/client": "^3.5.10",

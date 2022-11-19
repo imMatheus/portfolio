@@ -28,25 +28,17 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 			<main className="relative mx-auto max-w-7xl px-6 py-10 lg:py-20">
 				<header className="mb-10">
 					<h1 className="max-w-3xl font-grotesk text-lg font-semibold leading-relaxed tracking-wide sm:text-3xl lg:text-5xl lg:leading-relaxed">
-						Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a
-						<HeaderSpan>full-stack engineer</HeaderSpan>
+						Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a<HeaderSpan>full-stack engineer</HeaderSpan>
 					</h1>
-					<p className="my-3 text-lg font-semibold">
-						Young tech enthusiast specialising in web and app development
-					</p>
+					<p className="my-3 text-lg font-semibold">Young tech enthusiast specialising in web and app development</p>
 					<div className="flex items-center gap-4">
 						<a href="https://github.com/imMatheus" target="_blank" rel="noreferrer">
 							<GitHub className="h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
 						</a>
 
-						<a
-							href="https://www.linkedin.com/in/matheus-mendes-447993228/"
-							target="_blank"
-							rel="noreferrer"
-						>
+						<a href="https://www.linkedin.com/in/matheus-mendes-447993228/" target="_blank" rel="noreferrer">
 							<Linkedin className="h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
 						</a>
-						
 					</div>
 				</header>
 

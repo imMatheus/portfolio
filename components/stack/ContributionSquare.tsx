@@ -51,9 +51,7 @@ const ContributionSquare: React.FC<ContributionSquareProps> = ({ count, color, c
 			{/* The triangle */}
 			<div
 				className={`absolute ${
-					isTopRank
-						? '-bottom-1 z-10 translate-y-full -rotate-[135deg]'
-						: '-top-1 -translate-y-full rotate-45'
+					isTopRank ? '-bottom-1 z-10 translate-y-full -rotate-[135deg]' : '-top-1 -translate-y-full rotate-45'
 				} right-1/2 hidden h-2 w-2 translate-x-1/2 bg-gradient-to-br from-[#0000_50%] to-[rgb(35_39_42_/_0.9)_50%] hover:block group-hover:block`}
 			></div>
 		</div>
