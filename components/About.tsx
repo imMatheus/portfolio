@@ -18,7 +18,7 @@ const About: React.FC = () => {
 				<section className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
 					<AboutCard title="First line of code" subtitle="07 september 2019" date="2019-09-07" Icon={Calendar} />
 					<AboutCard title="First software engineering job" subtitle="03 juli 2021" date="2021-06-03" Icon={Award} />
-					<AboutCard title="Total projects" subtitle="66" Icon={Book} />
+					<AboutCard title="Total projects" subtitle="90" Icon={Book} />
 				</section>
 			</div>
 		</section>
