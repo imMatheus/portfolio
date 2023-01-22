@@ -9,16 +9,6 @@ interface ContributionSquareProps {
 }
 
 const ContributionSquare: React.FC<ContributionSquareProps> = ({ count, color, contributionLevel, date, index }) => {
-	// const color =
-	// 	contributionLevel === 'NONE'
-	// 		? 'bg-gray-300'
-	// 		: contributionLevel === 'FIRST_QUARTILE'
-	// 		? 'bg-rose-300'
-	// 		: contributionLevel === 'SECOND_QUARTILE'
-	// 		? 'bg-rose-500'
-	// 		: contributionLevel === 'THIRD_QUARTILE'
-	// 		? 'bg-rose-700'
-	// 		: 'bg-rose-900'
 	const minIndex = 50
 	const maxIndex = 330
 
@@ -31,7 +21,7 @@ const ContributionSquare: React.FC<ContributionSquareProps> = ({ count, color, c
 		<div
 			className={`${
 				index > 175 ? 'block' : 'hidden'
-			} group relative h-2 w-2 rounded-[1px] sm:block sm:h-2.5 sm:w-2.5 sm:rounded-sm sm:border sm:border-black/10 xl:h-3 xl:w-3 2xl:h-4 2xl:w-4`}
+			} group relative h-2 w-2 rounded-[1px] sm:block sm:h-2.5 sm:w-2.5 sm:rounded-sm sm:border sm:border-black/10 xl:h-4 xl:w-4`}
 			style={{ backgroundColor: color }}
 		>
 			{/* The dialog over the hovered square */}
