@@ -12,7 +12,7 @@ const RubiksCube: React.FC = ({}) => {
 			<ProjectTitle>CSS only Rubiks cube</ProjectTitle>
 			<ProjectDescription>
 				The project you find below was made with a total of ZERO lines of Javascript, its all just CSS. Every animation,
-				hover effect and button click is just ta combination of some clever CSS code
+				hover effect and button click is just a combination of some clever CSS code
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/css-only-rubiks-cube" Icon={GitHub} text="Repository" />
