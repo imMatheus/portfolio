@@ -67,7 +67,7 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 	}
 
 	return (
-		<div className="flex min-h-[250px] flex-1 flex-col overflow-y-scroll md:max-h-[550px]">
+		<div className="flex min-h-[250px] flex-1 flex-col overflow-y-scroll md:max-h-[640px]">
 			<div className="flex-1 bg-[#1e1e1e] pt-3">
 				<Editor
 					// height="95%"
