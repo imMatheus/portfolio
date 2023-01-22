@@ -115,9 +115,6 @@ const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
 
 			<Projects contributionsCollection={contributionsCollection} />
 			<Contact />
-			<footer className="mx-auto max-w-7xl py-6 text-center">
-				Copyright © 2022 Matheus Mendes, All rights reserved.
-			</footer>
 		</div>
 	)
 }
