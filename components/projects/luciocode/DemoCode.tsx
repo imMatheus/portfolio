@@ -11,12 +11,13 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 	const [loading, setLoading] = useState(false)
 	const [selectedIndex, setSelectedIndex] = useState(0)
 
+	const cases = [
+		['5, 7', '12'],
+		['9, 10', '19']
+	] as const
+
 	const runCodeHandler = async () => {
 		setLoading(true)
-		const cases = [
-			['5, 7', '12'],
-			['9, 10', '19']
-		] as const
 		let answers: { input: string; output: string; correct: boolean }[] = []
 
 		// a sleep function that blocks code from running for 'ms' millisecs
@@ -147,6 +148,10 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 								<h3 className="mb-1 mt-6 text-lg font-bold">Output</h3>
 								<pre className="rounded-md bg-[#1e1e1e] p-4">
 									<code>{testOutputs[selectedIndex].output}</code>
+								</pre>
+								<h3 className="mb-1 mt-6 text-lg font-bold">Expected Output</h3>
+								<pre className="rounded-md bg-[#1e1e1e] p-4">
+									<code>{cases[selectedIndex][1]}</code>
 								</pre>
 							</div>
 						</div>
