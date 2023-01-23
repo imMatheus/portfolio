@@ -92,7 +92,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				<Title>What am i up too lately?</Title>
 				<p className="mb-2 max-w-4xl text-base text-black">
 					I spend most of my time writing code for my side projects. I love learning new stuff and always try 
-					to make sure I understand the technologies I use. As a competitive person, I'm always up for a challenge 
+					to make sure I understand the technologies I use. As a competitive person, I&apos;m always up for a challenge 
 					and love putting my skills to the test on websites like CSS Battles and LeetCode
 				</p>
 				<ContributionView contributionsCollection={contributionsCollection} />
