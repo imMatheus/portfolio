@@ -21,11 +21,8 @@ interface Props {
 
 const Hero: React.FC<Props> = ({ pinnedItems }) => {
 	return (
-		<div className="relative">
-			{/* <div className="absolute top-36 left-1/2 h-20 w-[50vw] animate-spin bg-apple"></div>
-			<div className="absolute top-60 left-1/2 h-20 w-[250vw] -translate-x-1/2 rotate-6 bg-bee "></div>
-			<div className="absolute bottom-96 left-1/2 h-20 w-[250vw] -translate-x-1/2 rotate-3 bg-carnelian"></div> */}
-			<main className="relative mx-auto max-w-7xl px-6 py-10 lg:py-20">
+		<div className="relative px-6 py-10 lg:py-20">
+			<main className="relative mx-auto max-w-7xl">
 				<header className="mb-10">
 					<h1 className="max-w-3xl font-grotesk text-lg font-semibold leading-relaxed tracking-wide sm:text-3xl lg:text-5xl lg:leading-relaxed">
 						Hello! Im<HeaderSpan>Matheus Mendes</HeaderSpan> and im a<HeaderSpan>full-stack engineer</HeaderSpan>
