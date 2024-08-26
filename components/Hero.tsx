@@ -35,7 +35,7 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 						</a>
 
 						<a
-							href="https://www.linkedin.com/in/matheus-mendes-447993228/"
+							href="https://www.linkedin.com/in/matheus-mendes-dev/"
 							target="_blank"
 							rel="noreferrer"
 							className="group relative"
