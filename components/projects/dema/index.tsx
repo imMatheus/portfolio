@@ -8,7 +8,7 @@ import { Demo } from './Demo'
 
 const Dema: React.FC = ({}) => {
 	return (
-		<div id="dema" className="pb-5">
+		<div id="dema" className="pb-5 font-sans">
 			<ProjectTitle>Dema.ai</ProjectTitle>
 			<ProjectDescription>Software engineer</ProjectDescription>
 			<LinkWrapper>

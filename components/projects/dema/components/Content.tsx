@@ -1,6 +1,7 @@
 import React from 'react'
 import { RightPanel } from './RightPanel'
 import { ChartView } from './ChartView'
+import { TableView } from './TableView'
 
 interface ContentProps {}
 
@@ -18,8 +19,11 @@ export const Content: React.FC<ContentProps> = ({}) => {
 				</div>
 			</div>
 			<div className="flex h-full">
-				<div className="h-96 flex-1">
-					<ChartView />
+				<div className=" flex-1">
+					<div className="border-b pb-3 pt-3">
+						<ChartView />
+					</div>
+					<TableView />
 				</div>
 				<RightPanel />
 			</div>

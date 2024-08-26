@@ -1,98 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, XAxis, YAxis } from 'recharts'
 
-import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from './chart'
-
-const chartData = [
-	{ date: '2024-05-01', desktop: 165, mobile: 220 },
-	{ date: '2024-05-02', desktop: 293, mobile: 310 },
-	{ date: '2024-05-03', desktop: 247, mobile: 190 },
-	{ date: '2024-05-04', desktop: 385, mobile: 420 },
-	{ date: '2024-05-05', desktop: 481, mobile: 390 },
-	{ date: '2024-05-06', desktop: 498, mobile: 520 },
-	{ date: '2024-05-07', desktop: 388, mobile: 300 },
-	{ date: '2024-05-08', desktop: 149, mobile: 210 },
-	{ date: '2024-05-09', desktop: 227, mobile: 180 },
-	{ date: '2024-05-10', desktop: 293, mobile: 330 },
-	{ date: '2024-05-11', desktop: 335, mobile: 270 },
-	{ date: '2024-05-12', desktop: 197, mobile: 240 },
-	{ date: '2024-05-13', desktop: 197, mobile: 160 },
-	{ date: '2024-05-14', desktop: 448, mobile: 490 },
-	{ date: '2024-05-15', desktop: 473, mobile: 380 },
-	{ date: '2024-05-16', desktop: 338, mobile: 400 },
-	{ date: '2024-05-17', desktop: 499, mobile: 420 },
-	{ date: '2024-05-18', desktop: 315, mobile: 350 },
-	{ date: '2024-05-19', desktop: 235, mobile: 180 },
-	{ date: '2024-05-20', desktop: 177, mobile: 230 },
-	{ date: '2024-05-21', desktop: 82, mobile: 140 },
-	{ date: '2024-05-22', desktop: 81, mobile: 120 },
-	{ date: '2024-05-23', desktop: 252, mobile: 290 },
-	{ date: '2024-05-24', desktop: 294, mobile: 220 },
-	{ date: '2024-05-25', desktop: 201, mobile: 250 },
-	{ date: '2024-05-26', desktop: 213, mobile: 170 },
-	{ date: '2024-05-27', desktop: 420, mobile: 460 },
-	{ date: '2024-05-28', desktop: 233, mobile: 190 },
-	{ date: '2024-05-29', desktop: 78, mobile: 130 },
-	{ date: '2024-05-30', desktop: 340, mobile: 280 },
-	{ date: '2024-05-31', desktop: 178, mobile: 230 },
-	{ date: '2024-06-01', desktop: 178, mobile: 200 },
-	{ date: '2024-06-02', desktop: 470, mobile: 410 },
-	{ date: '2024-06-03', desktop: 103, mobile: 160 },
-	{ date: '2024-06-04', desktop: 439, mobile: 380 },
-	{ date: '2024-06-05', desktop: 88, mobile: 140 },
-	{ date: '2024-06-06', desktop: 294, mobile: 250 },
-	{ date: '2024-06-07', desktop: 323, mobile: 370 },
-	{ date: '2024-06-08', desktop: 385, mobile: 320 },
-	{ date: '2024-06-09', desktop: 438, mobile: 480 },
-	{ date: '2024-06-10', desktop: 155, mobile: 200 },
-	{ date: '2024-06-11', desktop: 92, mobile: 150 },
-	{ date: '2024-06-12', desktop: 492, mobile: 420 },
-	{ date: '2024-06-13', desktop: 81, mobile: 130 },
-	{ date: '2024-06-14', desktop: 426, mobile: 380 },
-	{ date: '2024-06-15', desktop: 307, mobile: 350 },
-	{ date: '2024-06-16', desktop: 371, mobile: 310 },
-	{ date: '2024-06-17', desktop: 475, mobile: 520 },
-	{ date: '2024-06-18', desktop: 107, mobile: 170 },
-	{ date: '2024-06-19', desktop: 341, mobile: 290 },
-	{ date: '2024-06-20', desktop: 408, mobile: 450 },
-	{ date: '2024-06-21', desktop: 169, mobile: 210 },
-	{ date: '2024-06-22', desktop: 317, mobile: 270 },
-	{ date: '2024-06-23', desktop: 480, mobile: 530 },
-	{ date: '2024-06-24', desktop: 132, mobile: 180 },
-	{ date: '2024-06-25', desktop: 141, mobile: 190 },
-	{ date: '2024-06-26', desktop: 434, mobile: 380 },
-	{ date: '2024-06-27', desktop: 448, mobile: 490 },
-	{ date: '2024-06-28', desktop: 149, mobile: 200 },
-	{ date: '2024-06-29', desktop: 103, mobile: 160 },
-	{ date: '2024-06-30', desktop: 446, mobile: 400 }
-]
+import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '../../../ui/chart'
+import { Switch } from '@/components/ui/switch'
+import { chartGraphAtom } from '../state'
+import { useAtom } from 'jotai'
 
 const chartConfig = {
-	desktop: {
-		label: 'Desktop',
-		color: 'hsl(var(--chart-1))'
+	actual: {
+		label: 'Actual',
+		color: '#9C8EF0'
 	},
-	mobile: {
-		label: 'Mobile',
-		color: 'hsl(var(--chart-2))'
+	previous: {
+		label: 'Previous',
+		color: '#B2B2AC'
 	}
 }
 
 export const ChartView: React.FC = ({}) => {
+	const [showCompare, setShowCompare] = useState(true)
+	const [chartGraph] = useAtom(chartGraphAtom)
+
 	return (
-		<div className="px-3 py-10">
+		<div className="">
+			<div className="mb-4 flex items-center justify-end gap-2 px-4">
+				<p className="text-xs">Show compare</p>
+				<Switch checked={showCompare} onCheckedChange={setShowCompare} />
+			</div>
+
 			<ChartContainer config={chartConfig} className="h-[250px] aspect-auto w-full">
 				<BarChart
 					accessibilityLayer
 					data={chartData}
 					margin={{
-						left: 12,
+						left: 30,
 						right: 12
 					}}
 					barGap={1}
 				>
-					<CartesianGrid vertical={false} />
 					<XAxis
 						dataKey="date"
 						tickLine={false}
@@ -107,12 +53,16 @@ export const ChartView: React.FC = ({}) => {
 							})
 						}}
 					/>
-					<YAxis tickLine={false} axisLine={false} tickMargin={8} tickFormatter={(value) => `${value}`} />
+					<YAxis
+						tickLine={false}
+						axisLine={false}
+						tickMargin={8}
+						tickFormatter={(value) => `${Number(value).toLocaleString('en-US')}`}
+					/>
 					<ChartTooltip
 						content={
 							<ChartTooltipContent
-								className="w-[150px]"
-								nameKey="views"
+								className="min-w-[150px]"
 								labelFormatter={(value) => {
 									return new Date(value).toLocaleDateString('en-US', {
 										month: 'short',
@@ -123,10 +73,75 @@ export const ChartView: React.FC = ({}) => {
 							/>
 						}
 					/>
-					<Bar dataKey="desktop" fill="var(--color-desktop)" />
-					<Bar dataKey="mobile" fill="var(--color-mobile)" />
+					<ChartLegend content={<ChartLegendContent />} />
+					<Bar isAnimationActive={false} dataKey="actual" fill="var(--color-actual)" />
+					{showCompare && <Bar isAnimationActive={false} dataKey="previous" fill="var(--color-previous)" />}
 				</BarChart>
 			</ChartContainer>
 		</div>
 	)
 }
+
+const chartData = [
+	{ date: '2024-05-01', actual: 165335, previous: 295320 },
+	{ date: '2024-05-02', actual: 295333, previous: 395310 },
+	{ date: '2024-05-03', actual: 245337, previous: 195390 },
+	{ date: '2024-05-04', actual: 385335, previous: 495320 },
+	{ date: '2024-05-05', actual: 485331, previous: 395390 },
+	{ date: '2024-05-06', actual: 495338, previous: 595320 },
+	{ date: '2024-05-07', actual: 385338, previous: 395300 },
+	{ date: '2024-05-08', actual: 145339, previous: 295310 },
+	{ date: '2024-05-09', actual: 225337, previous: 195380 },
+	{ date: '2024-05-10', actual: 295333, previous: 395330 },
+	{ date: '2024-05-11', actual: 335335, previous: 295370 },
+	{ date: '2024-05-12', actual: 195337, previous: 295340 },
+	{ date: '2024-05-13', actual: 195337, previous: 195360 },
+	{ date: '2024-05-14', actual: 445338, previous: 495390 },
+	{ date: '2024-05-15', actual: 475333, previous: 395380 },
+	{ date: '2024-05-16', actual: 335338, previous: 495300 },
+	{ date: '2024-05-17', actual: 495339, previous: 495320 },
+	{ date: '2024-05-18', actual: 315335, previous: 395350 },
+	{ date: '2024-05-19', actual: 235335, previous: 195380 },
+	{ date: '2024-05-20', actual: 175337, previous: 295330 },
+	{ date: '2024-05-21', actual: 82533, previous: 149530 },
+	{ date: '2024-05-22', actual: 81533, previous: 129530 },
+	{ date: '2024-05-23', actual: 255332, previous: 295390 },
+	{ date: '2024-05-24', actual: 295334, previous: 295320 },
+	{ date: '2024-05-25', actual: 205331, previous: 295350 },
+	{ date: '2024-05-26', actual: 215333, previous: 195370 },
+	{ date: '2024-05-27', actual: 425330, previous: 495360 },
+	{ date: '2024-05-28', actual: 235333, previous: 195390 },
+	{ date: '2024-05-29', actual: 78533, previous: 139530 },
+	{ date: '2024-05-30', actual: 345330, previous: 295380 },
+	{ date: '2024-05-31', actual: 175338, previous: 295330 },
+	{ date: '2024-06-01', actual: 175338, previous: 295300 },
+	{ date: '2024-06-02', actual: 475330, previous: 495310 },
+	{ date: '2024-06-03', actual: 105333, previous: 195360 },
+	{ date: '2024-06-04', actual: 435339, previous: 395380 },
+	{ date: '2024-06-05', actual: 88533, previous: 149530 },
+	{ date: '2024-06-06', actual: 295334, previous: 295350 },
+	{ date: '2024-06-07', actual: 325333, previous: 395370 },
+	{ date: '2024-06-08', actual: 385335, previous: 395320 },
+	{ date: '2024-06-09', actual: 435338, previous: 495380 },
+	{ date: '2024-06-10', actual: 155335, previous: 295300 },
+	{ date: '2024-06-11', actual: 92533, previous: 159530 },
+	{ date: '2024-06-12', actual: 495332, previous: 495320 },
+	{ date: '2024-06-13', actual: 81533, previous: 139530 },
+	{ date: '2024-06-14', actual: 425336, previous: 395380 },
+	{ date: '2024-06-15', actual: 305337, previous: 395350 },
+	{ date: '2024-06-16', actual: 375331, previous: 395310 },
+	{ date: '2024-06-17', actual: 475335, previous: 595320 },
+	{ date: '2024-06-18', actual: 105337, previous: 195370 },
+	{ date: '2024-06-19', actual: 345331, previous: 295390 },
+	{ date: '2024-06-20', actual: 405338, previous: 495350 },
+	{ date: '2024-06-21', actual: 165339, previous: 295310 },
+	{ date: '2024-06-22', actual: 315337, previous: 295370 },
+	{ date: '2024-06-23', actual: 485330, previous: 595330 },
+	{ date: '2024-06-24', actual: 135332, previous: 195380 },
+	{ date: '2024-06-25', actual: 145331, previous: 195390 },
+	{ date: '2024-06-26', actual: 435334, previous: 395380 },
+	{ date: '2024-06-27', actual: 445338, previous: 495390 },
+	{ date: '2024-06-28', actual: 145339, previous: 295300 },
+	{ date: '2024-06-29', actual: 105333, previous: 195360 },
+	{ date: '2024-06-30', actual: 445336, previous: 495300 }
+]
