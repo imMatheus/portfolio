@@ -4,7 +4,7 @@ interface ComponentDemoProps {}
 
 export const ComponentDemo: React.FC<ComponentDemoProps> = ({}) => {
 	return (
-		<div className="vercel-ui-style-wrapper">
+		<div className="">
 			<section className="grid grid-rows-[repeat(2,calc(fit-content/2))] gap-[1px] border border-[var(--ds-gray-200)] bg-[var(--ds-gray-200)] md:grid-cols-2">
 				<div className="group relative flex h-full flex-col gap-6 bg-[var(--ds-background-200)] p-8 hover:bg-[var(--ds-background-100)]">
 					<div className="pointer-events-none flex-1">

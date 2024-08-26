@@ -10,19 +10,32 @@ interface VercelUiProps {}
 
 const VercelUi: React.FC<VercelUiProps> = ({}) => {
 	return (
-		<div id="vercel-ui" className="font-sans text-white">
+		<div id="vercel-ui" className="vercel-ui-style-wrapper font-sans text-white">
 			<ProjectTitle>Vercel UI</ProjectTitle>
-			{/* <ProjectDescription>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit illum inventore nisi eos quis sequi aperiam
-				non earum sapiente. Debitis aperiam dignissimos quia sint earum fugit officiis! Autem minima reprehenderit
-				suscipit vero, rerum odio sed quis nesciunt repellat doloremque reiciendis esse corporis eos hic ad aspernatur
-				perferendis illum itaque. Sit.
-			</ProjectDescription> */}
+			<ProjectDescription>Design library inspired by Vercels design system</ProjectDescription>
 			<LinkWrapper>
-				<Link href="https://github.com/imMatheus/vercel-ui" Icon={GitHub} text="Repository" />
-				<Link href="https://vercel-ui-phi.vercel.app/" Icon={ExternalLink} text="Live site" />
+				{/* <Link href="https://github.com/imMatheus/vercel-ui" Icon={GitHub} text="Repository" />
+				<Link href="https://vercel-ui-phi.vercel.app/" Icon={ExternalLink} text="Live site" /> */}
+				<a
+					className="flex h-8 max-w-full select-none items-center justify-center gap-0.5 text-ellipsis rounded-md border border-transparent bg-[var(--ds-gray-1000)] px-1.5 text-sm font-medium leading-5 text-[var(--ds-background-100)] transition-colors hover:bg-[#ccc]"
+					target="_blank"
+					rel="noreferrer"
+					href="https://github.com/imMatheus/vercel-ui"
+				>
+					<GitHub className="h-4 w-4 flex-shrink-0" /> Repository
+				</a>
+				<a
+					className="flex h-8 max-w-full select-none items-center justify-center gap-0.5 text-ellipsis rounded-md border border-transparent bg-[var(--ds-gray-1000)] px-1.5 text-sm font-medium leading-5 text-[var(--ds-background-100)] transition-colors hover:bg-[#ccc]"
+					target="_blank"
+					rel="noreferrer"
+					href="https://github.com/imMatheus/vercel-ui"
+				>
+					<ExternalLink className="h-4 w-4 flex-shrink-0" /> Live site
+				</a>
 			</LinkWrapper>
-			<ComponentDemo />
+			<div className="mt-6">
+				<ComponentDemo />
+			</div>
 		</div>
 	)
 }
