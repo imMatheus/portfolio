@@ -1,7 +1,5 @@
-'use client'
-
 import { cn } from 'lib/utils'
-import * as React from 'react'
+import { ComponentType, createContext, forwardRef, ReactNode, useContext, useId, useMemo } from 'react'
 import * as RechartsPrimitive from 'recharts'
 
 // Format: { THEME_NAME: CSS_SELECTOR }
@@ -9,8 +7,8 @@ const THEMES = { light: '', dark: '.dark' } as const
 
 export type ChartConfig = {
 	[k in string]: {
-		label?: React.ReactNode
-		icon?: React.ComponentType
+		label?: ReactNode
+		icon?: ComponentType
 	} & ({ color?: string; theme?: never } | { color?: never; theme: Record<keyof typeof THEMES, string> })
 }
 
@@ -18,10 +16,10 @@ type ChartContextProps = {
 	config: ChartConfig
 }
 
-const ChartContext = React.createContext<ChartContextProps | null>(null)
+const ChartContext = createContext<ChartContextProps | null>(null)
 
 function useChart() {
-	const context = React.useContext(ChartContext)
+	const context = useContext(ChartContext)
 
 	if (!context) {
 		throw new Error('useChart must be used within a <ChartContainer />')
@@ -30,14 +28,14 @@ function useChart() {
 	return context
 }
 
-const ChartContainer = React.forwardRef<
+const ChartContainer = forwardRef<
 	HTMLDivElement,
 	React.ComponentProps<'div'> & {
 		config: ChartConfig
 		children: React.ComponentProps<typeof RechartsPrimitive.ResponsiveContainer>['children']
 	}
 >(({ id, className, children, config, ...props }, ref) => {
-	const uniqueId = React.useId()
+	const uniqueId = useId()
 	const chartId = `chart-${id || uniqueId.replace(/:/g, '')}`
 
 	return (
@@ -46,7 +44,7 @@ const ChartContainer = React.forwardRef<
 				data-chart={chartId}
 				ref={ref}
 				className={cn(
-					"[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",
+					"flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",
 					className
 				)}
 				{...props}
@@ -90,7 +88,7 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip
 
-const ChartTooltipContent = React.forwardRef<
+const ChartTooltipContent = forwardRef<
 	HTMLDivElement,
 	React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
 		React.ComponentProps<'div'> & {
@@ -121,7 +119,7 @@ const ChartTooltipContent = React.forwardRef<
 	) => {
 		const { config } = useChart()
 
-		const tooltipLabel = React.useMemo(() => {
+		const tooltipLabel = useMemo(() => {
 			if (hideLabel || !payload?.length) {
 				return null
 			}
@@ -155,7 +153,7 @@ const ChartTooltipContent = React.forwardRef<
 			<div
 				ref={ref}
 				className={cn(
-					'min-w-[8rem] grid items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl',
+					'grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl',
 					className
 				)}
 			>
@@ -170,7 +168,7 @@ const ChartTooltipContent = React.forwardRef<
 							<div
 								key={item.dataKey}
 								className={cn(
-									'[&>svg]:h-2.5 [&>svg]:w-2.5 flex w-full flex-wrap items-stretch gap-2 [&>svg]:text-muted-foreground',
+									'flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground',
 									indicator === 'dot' && 'items-center'
 								)}
 							>
@@ -183,10 +181,10 @@ const ChartTooltipContent = React.forwardRef<
 										) : (
 											!hideIndicator && (
 												<div
-													className={cn('border-[--color-border] bg-[--color-bg] rounded-[2px] shrink-0', {
+													className={cn('shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]', {
 														'h-2.5 w-2.5': indicator === 'dot',
 														'w-1': indicator === 'line',
-														'border-[1.5px] w-0 border-dashed bg-transparent': indicator === 'dashed',
+														'w-0 border-[1.5px] border-dashed bg-transparent': indicator === 'dashed',
 														'my-0.5': nestLabel && indicator === 'dashed'
 													})}
 													style={
@@ -228,7 +226,7 @@ ChartTooltipContent.displayName = 'ChartTooltip'
 
 const ChartLegend = RechartsPrimitive.Legend
 
-const ChartLegendContent = React.forwardRef<
+const ChartLegendContent = forwardRef<
 	HTMLDivElement,
 	React.ComponentProps<'div'> &
 		Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
@@ -260,7 +258,7 @@ const ChartLegendContent = React.forwardRef<
 							<itemConfig.icon />
 						) : (
 							<div
-								className="rounded-[2px] h-2 w-2 shrink-0"
+								className="h-2 w-2 shrink-0 rounded-[2px]"
 								style={{
 									backgroundColor: item.color
 								}}
