@@ -6,6 +6,7 @@ import Spacer from '../Spacer'
 import Twitter from './twitter/Twitter'
 import Cube from './rubics-cube'
 import Dema from './dema'
+import VercelUi from './vercel-ui/VercelUi'
 interface Props {
 	contributionsCollection: any
 }
@@ -20,6 +21,14 @@ const Projects: React.FC<Props> = ({}) => {
 			<section className="bg-dema">
 				<ProjectWrapper>
 					<Dema />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer url="dema-black.svg" />
+
+			<section className="bg-[#000]">
+				<ProjectWrapper>
+					<VercelUi />
 				</ProjectWrapper>
 			</section>
 
