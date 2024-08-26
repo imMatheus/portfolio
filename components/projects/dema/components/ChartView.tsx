@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
-
+import { useState } from 'react'
 import { Area, AreaChart, Bar, BarChart, Line, LineChart, XAxis, YAxis } from 'recharts'
-
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '../../../ui/chart'
 import { Switch } from '@/components/ui/switch'
 
