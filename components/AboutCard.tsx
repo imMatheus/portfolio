@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { type ReactNode } from 'react'
 import { Icon as IconType } from 'react-feather'
 
 interface AboutCardProps {
 	title: string
-	subtitle: string
+	subtitle: ReactNode
 	Icon: IconType
 	date?: string
 }

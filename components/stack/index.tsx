@@ -33,24 +33,20 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				<div className="relative mb-5">
 					<h3 className="mb-1 text-2xl font-bold">Front-end development</h3>
 					<ul className="flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
-						<CompetentChip>HTML</CompetentChip>
-						<CompetentChip>CSS</CompetentChip>
-						<CompetentChip>SASS/SCSS</CompetentChip>
-						<CompetentChip>Tailwind</CompetentChip>
-						<CompetentChip>Chakra UI</CompetentChip>
-						<CompetentChip>UI/UX</CompetentChip>
 						<CompetentChip>React</CompetentChip>
 						<CompetentChip>React Native</CompetentChip>
 						<CompetentChip>Redux</CompetentChip>
 						<CompetentChip>Next.js</CompetentChip>
 						<CompetentChip>Svelte</CompetentChip>
+						<CompetentChip>Tailwind</CompetentChip>
+						<CompetentChip>Chakra UI</CompetentChip>
+						<CompetentChip>SASS</CompetentChip>
 					</ul>
 				</div>
 
 				<h3 className="mb-1 text-2xl font-bold">API</h3>
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
 					<CompetentChip>REST</CompetentChip>
-					<CompetentChip>AXIOS</CompetentChip>
 					<CompetentChip>tRPC</CompetentChip>
 					<CompetentChip>Node.js</CompetentChip>
 					<CompetentChip>GraphQL</CompetentChip>
@@ -59,14 +55,13 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 
 				<h3 className="mb-1 text-2xl font-bold">Back-end development</h3>
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
+					<CompetentChip>SQL</CompetentChip>
 					<CompetentChip>Express</CompetentChip>
 					<CompetentChip>Nest.js</CompetentChip>
 					<CompetentChip>MongoDB</CompetentChip>
 					<CompetentChip>Mongoose</CompetentChip>
-					<CompetentChip>Firebase</CompetentChip>
-					<CompetentChip>SQL</CompetentChip>
-					<CompetentChip>PlanetScale</CompetentChip>
 					<CompetentChip>Prisma</CompetentChip>
+					<CompetentChip>Firebase</CompetentChip>
 				</ul>
 
 				<h3 className="mb-1 text-2xl font-bold">Languages</h3>
@@ -82,11 +77,9 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				<h3 className="mb-1 text-2xl font-bold">Devops & CI/CD</h3>
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
 					<CompetentChip>Docker</CompetentChip>
-					<CompetentChip>Git</CompetentChip>
-					<CompetentChip>GitHub</CompetentChip>
 					<CompetentChip>Jest</CompetentChip>
 					<CompetentChip>EsLint</CompetentChip>
-					<CompetentChip>Cypress</CompetentChip>
+					<CompetentChip>Puppeteer</CompetentChip>
 				</ul>
 			</div>
 
