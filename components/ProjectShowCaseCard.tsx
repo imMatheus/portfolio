@@ -9,7 +9,7 @@ interface ProjectShowCaseCardProps {
 	description: string
 	link: string
 	commits: number
-	children: React.ReactNode
+	isWork?: boolean
 }
 
 const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
@@ -20,7 +20,7 @@ const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
 	commits,
 	link,
 	description,
-	children
+	isWork
 }) => {
 	return (
 		<a href={`#${link}`}>
@@ -44,14 +44,31 @@ const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
 						</div>
 						<div className="mt-auto flex flex-wrap gap-4 pt-4">
 							<div className="flex items-center gap-1 text-xs">
-								<div className="h-2 w-2 rounded-full" style={{ backgroundColor: color }}></div> {language}
+								<div
+									className="h-2 w-2 rounded-full"
+									style={{ backgroundColor: language === 'HTML' ? '#563d7c' : color }}
+								></div>{' '}
+								{language === 'HTML' ? 'CSS' : language}
 							</div>
-							<div className="flex items-center gap-0.5 text-xs">
-								<Star className="-mt-[1px] h-4 w-4" /> {stars}
-							</div>
-							<div className="flex items-center gap-0.5 text-xs">
-								<GitCommit className="-mt-[1px] h-4 w-4" /> {commits}
-							</div>
+							{stars ? (
+								<div className="flex items-center gap-0.5 text-xs">
+									<Star className="-mt-[1px] h-4 w-4" /> {stars}
+								</div>
+							) : null}
+							{commits ? (
+								<div className="flex items-center gap-0.5 text-xs">
+									<GitCommit className="-mt-[1px] h-4 w-4" /> {commits}
+								</div>
+							) : null}
+							{isWork ? (
+								<p className="border border-dotted  border-amber-600 bg-amber-200 px-2 py-0.5 text-[9px] leading-none text-amber-900">
+									Work
+								</p>
+							) : (
+								<p className="border border-dotted  border-blue-600 bg-blue-200 px-2 py-0.5 text-[9px] leading-none text-blue-900">
+									Sideproject
+								</p>
+							)}
 						</div>
 					</div>
 				</div>

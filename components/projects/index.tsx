@@ -32,36 +32,39 @@ const Projects: React.FC<Props> = ({}) => {
 				</ProjectWrapper>
 			</section>
 
-			<section className="bg-apple">
-				<ProjectWrapper>
-					<LucioCode />
-				</ProjectWrapper>
-			</section>
-
-			<Spacer url="apple-black.svg" />
-
-			<section className="bg-[#000]">
-				<ProjectWrapper>
-					<Twitter />
-				</ProjectWrapper>
-			</section>
-
-			<Spacer url="black-bee.svg" />
-
-			<Spacer url="bee-blurple.svg" />
-			<section className="bg-blurple">
-				<ProjectWrapper>
-					<Sorter />
-				</ProjectWrapper>
-			</section>
-			<Spacer url="blurple-white.svg" />
+			<Spacer url="black-white.svg" />
 
 			<section className="bg-white">
 				<ProjectWrapper>
 					<Cube />
 				</ProjectWrapper>
 			</section>
-			<Spacer url="white-white.svg" />
+
+			<Spacer url="white-apple.svg" />
+
+			<section className="bg-apple">
+				<ProjectWrapper>
+					<LucioCode />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer url="apple-white.svg" />
+
+			{/* <section className="bg-[#000]">
+				<ProjectWrapper>
+					<Twitter />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer url="black-bee.svg" /> */}
+
+			{/* <Spacer url="bee-blurple.svg" />
+			<section className="bg-blurple">
+				<ProjectWrapper>
+					<Sorter />
+				</ProjectWrapper>
+			</section>
+			<Spacer url="blurple-white.svg" /> */}
 		</div>
 	)
 }

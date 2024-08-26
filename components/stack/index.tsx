@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren, ReactNode } from 'react'
 import ContributionView from './ContributionView'
 import OnTheHorizon from './OnTheHorizon'
 import StackGrid from './StackGrid'
@@ -7,12 +7,13 @@ interface Props {
 	contributionsCollection: any
 }
 
-const Title: React.FC = ({ children }) => {
+const Title: React.FC<PropsWithChildren> = ({ children }) => {
 	return <h2 className="mb-3 text-5xl font-bold lg:text-7xl">{children}</h2>
 }
 
 interface ComponentChipProps {
 	className?: string
+	children?: ReactNode
 }
 
 const CompetentChip: React.FC<ComponentChipProps> = ({ className, children }) => {
