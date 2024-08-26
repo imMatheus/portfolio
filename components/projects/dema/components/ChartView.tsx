@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Bar, BarChart, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, Line, LineChart, XAxis, YAxis } from 'recharts'
 
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '../../../ui/chart'
 import { Switch } from '@/components/ui/switch'
@@ -29,54 +29,121 @@ export const ChartView: React.FC = ({}) => {
 				<Switch checked={showCompare} onCheckedChange={setShowCompare} />
 			</div>
 
-			<ChartContainer config={chartConfig} className="h-[250px] aspect-auto w-full">
-				<BarChart
-					accessibilityLayer
-					data={chartData}
-					margin={{
-						left: 30,
-						right: 12
-					}}
-					barGap={1}
-				>
-					<XAxis
-						dataKey="date"
-						tickLine={false}
-						axisLine={false}
-						tickMargin={8}
-						minTickGap={32}
-						tickFormatter={(value) => {
-							const date = new Date(value)
-							return date.toLocaleDateString('en-US', {
-								month: 'short',
-								day: 'numeric'
-							})
+			<ChartContainer config={chartConfig} className="h-[250px] aspect-auto w-full px-4">
+				{chartGraph === 'line' ? (
+					<LineChart
+						accessibilityLayer
+						data={chartData}
+						margin={{
+							left: 12,
+							right: 12
 						}}
-					/>
-					<YAxis
-						tickLine={false}
-						axisLine={false}
-						tickMargin={8}
-						tickFormatter={(value) => `${Number(value).toLocaleString('en-US')}`}
-					/>
-					<ChartTooltip
-						content={
-							<ChartTooltipContent
-								className="min-w-[150px]"
-								labelFormatter={(value) => {
-									return new Date(value).toLocaleDateString('en-US', {
-										month: 'short',
-										day: 'numeric',
-										year: 'numeric'
-									})
-								}}
+					>
+						<XAxis
+							dataKey="date"
+							tickLine={false}
+							axisLine={false}
+							tickMargin={8}
+							minTickGap={32}
+							tickFormatter={(value) => {
+								const date = new Date(value)
+								return date.toLocaleDateString('en-US', {
+									month: 'short',
+									day: 'numeric'
+								})
+							}}
+						/>
+						<YAxis
+							tickLine={false}
+							axisLine={false}
+							tickMargin={8}
+							tickFormatter={(value) => `${Number(value).toLocaleString('en-US')}`}
+						/>
+						<ChartTooltip
+							content={
+								<ChartTooltipContent
+									className="w-[150px]"
+									labelFormatter={(value) => {
+										return new Date(value).toLocaleDateString('en-US', {
+											month: 'short',
+											day: 'numeric',
+											year: 'numeric'
+										})
+									}}
+								/>
+							}
+						/>
+						{showCompare && (
+							<Line
+								dataKey="previous"
+								isAnimationActive={false}
+								stroke={`var(--color-previous)`}
+								strokeWidth={2}
+								type="linear"
+								dot={false}
+								radius={0}
 							/>
-						}
-					/>
-					<ChartLegend content={<ChartLegendContent />} />
-					<Bar isAnimationActive={false} dataKey="actual" fill="var(--color-actual)" />
-					{showCompare && <Bar isAnimationActive={false} dataKey="previous" fill="var(--color-previous)" />}
-				</BarChart>
+						)}
+						<Line
+							dataKey="actual"
+							isAnimationActive={false}
+							stroke={`var(--color-actual)`}
+							strokeWidth={2}
+							type="linear"
+							dot={false}
+							radius={0}
+						/>
+						<ChartLegend content={<ChartLegendContent />} />
+					</LineChart>
+				) : (
+					<BarChart
+						accessibilityLayer
+						data={chartData}
+						margin={{
+							left: 12,
+							right: 12
+						}}
+						barGap={1}
+					>
+						<XAxis
+							dataKey="date"
+							tickLine={false}
+							axisLine={false}
+							tickMargin={8}
+							minTickGap={32}
+							tickFormatter={(value) => {
+								const date = new Date(value)
+								return date.toLocaleDateString('en-US', {
+									month: 'short',
+									day: 'numeric'
+								})
+							}}
+						/>
+						<YAxis
+							tickLine={false}
+							axisLine={false}
+							tickMargin={8}
+							tickFormatter={(value) => `${Number(value).toLocaleString('en-US')}`}
+						/>
+						<ChartTooltip
+							content={
+								<ChartTooltipContent
+									className="min-w-[150px]"
+									labelFormatter={(value) => {
+										return new Date(value).toLocaleDateString('en-US', {
+											month: 'short',
+											day: 'numeric',
+											year: 'numeric'
+										})
+									}}
+								/>
+							}
+						/>
+						<Bar isAnimationActive={false} dataKey="actual" fill="var(--color-actual)" />
+						{showCompare && <Bar isAnimationActive={false} dataKey="previous" fill="var(--color-previous)" />}
+						<ChartLegend content={<ChartLegendContent />} />
+					</BarChart>
+				)}
 			</ChartContainer>
 		</div>
 	)
@@ -85,8 +152,8 @@ export const ChartView: React.FC = ({}) => {
 const chartData = [
 	{ date: '2024-05-01', actual: 165335, previous: 295320 },
 	{ date: '2024-05-02', actual: 295333, previous: 395310 },
-	{ date: '2024-05-03', actual: 245337, previous: 195390 },
-	{ date: '2024-05-04', actual: 385335, previous: 495320 },
+	{ date: '2024-05-03', actual: 0, previous: 195390 },
+	{ date: '2024-05-04', actual: 385335, previous: 0 },
 	{ date: '2024-05-05', actual: 485331, previous: 395390 },
 	{ date: '2024-05-06', actual: 495338, previous: 595320 },
 	{ date: '2024-05-07', actual: 385338, previous: 395300 },
@@ -99,7 +166,7 @@ const chartData = [
 	{ date: '2024-05-14', actual: 445338, previous: 495390 },
 	{ date: '2024-05-15', actual: 475333, previous: 395380 },
 	{ date: '2024-05-16', actual: 335338, previous: 495300 },
-	{ date: '2024-05-17', actual: 495339, previous: 495320 },
+	{ date: '2024-05-17', actual: 495339, previous: 0 },
 	{ date: '2024-05-18', actual: 315335, previous: 395350 },
 	{ date: '2024-05-19', actual: 235335, previous: 195380 },
 	{ date: '2024-05-20', actual: 175337, previous: 295330 },
@@ -109,7 +176,7 @@ const chartData = [
 	{ date: '2024-05-24', actual: 295334, previous: 295320 },
 	{ date: '2024-05-25', actual: 205331, previous: 295350 },
 	{ date: '2024-05-26', actual: 215333, previous: 195370 },
-	{ date: '2024-05-27', actual: 425330, previous: 495360 },
+	{ date: '2024-05-27', actual: 0, previous: 494360 },
 	{ date: '2024-05-28', actual: 235333, previous: 195390 },
 	{ date: '2024-05-29', actual: 78533, previous: 139530 },
 	{ date: '2024-05-30', actual: 345330, previous: 295380 },
@@ -122,7 +189,7 @@ const chartData = [
 	{ date: '2024-06-06', actual: 295334, previous: 295350 },
 	{ date: '2024-06-07', actual: 325333, previous: 395370 },
 	{ date: '2024-06-08', actual: 385335, previous: 395320 },
-	{ date: '2024-06-09', actual: 435338, previous: 495380 },
+	{ date: '2024-06-09', actual: 0, previous: 0 },
 	{ date: '2024-06-10', actual: 155335, previous: 295300 },
 	{ date: '2024-06-11', actual: 92533, previous: 159530 },
 	{ date: '2024-06-12', actual: 495332, previous: 495320 },
