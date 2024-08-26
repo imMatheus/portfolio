@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Area, AreaChart, Bar, BarChart, Line, LineChart, XAxis, YAxis } from 'recharts'
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '../../../ui/chart'
-// import { Switch } from '@/components/ui/switch'
+import { Switch } from '@/components/ui/switch'
 
 const chartConfig = {
 	actual: {
@@ -60,10 +60,10 @@ export const ChartView: React.FC<{ chartGraph: 'line' | 'column' | 'area' }> = (
 
 	return (
 		<div className="">
-			{/* <div className="mb-4 flex items-center justify-end gap-2 px-4">
+			<div className="mb-4 flex items-center justify-end gap-2 px-4">
 				<p className="text-xs">Show compare</p>
 				<Switch checked={showCompare} onCheckedChange={setShowCompare} />
-			</div> */}
+			</div>
 
 			<ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full px-4">
 				{chartGraph === 'line' ? (
