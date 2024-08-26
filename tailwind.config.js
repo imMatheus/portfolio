@@ -11,6 +11,9 @@ module.exports = {
 				bee: '#fee75c',
 				fuchsia: '#eb459e',
 				carnelian: '#ed4245',
+				dema: '#d8ff43',
+				'dema-dark': '#99c100',
+				'dema-blue': '#1C58FD',
 				black: '#23272a',
 				'twitter-blue': 'rgb(29 155 240)',
 				'twitter-dark-bg': 'rgb(0 0 0 )',
@@ -19,7 +22,40 @@ module.exports = {
 				'twitter-white-text': 'rgb(15 20 25)',
 				'twitter-white-text-grayed': 'rgb(83 100 113)',
 				'twitter-olive': '#00ba7c',
-				'twitter-candy-pink': '#f91880'
+				'twitter-candy-pink': '#f91880',
+				border: 'hsl(var(--border))',
+				input: 'hsl(var(--input))',
+				ring: 'hsl(var(--ring))',
+				background: 'hsl(var(--background))',
+				foreground: 'hsl(var(--foreground))',
+				primary: {
+					DEFAULT: 'hsl(var(--primary))',
+					foreground: 'hsl(var(--primary-foreground))'
+				},
+				secondary: {
+					DEFAULT: 'hsl(var(--secondary))',
+					foreground: 'hsl(var(--secondary-foreground))'
+				},
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive))',
+					foreground: 'hsl(var(--destructive-foreground))'
+				},
+				muted: {
+					DEFAULT: 'hsl(var(--muted))',
+					foreground: 'hsl(var(--muted-foreground))'
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					foreground: 'hsl(var(--accent-foreground))'
+				},
+				popover: {
+					DEFAULT: 'hsl(var(--popover))',
+					foreground: 'hsl(var(--popover-foreground))'
+				},
+				card: {
+					DEFAULT: 'hsl(var(--card))',
+					foreground: 'hsl(var(--card-foreground))'
+				}
 			}
 		}
 	},

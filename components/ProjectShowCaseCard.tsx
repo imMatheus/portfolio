@@ -9,6 +9,7 @@ interface ProjectShowCaseCardProps {
 	description: string
 	link: string
 	commits: number
+	children: React.ReactNode
 }
 
 const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
@@ -18,7 +19,8 @@ const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
 	language,
 	commits,
 	link,
-	description
+	description,
+	children
 }) => {
 	return (
 		<a href={`#${link}`}>

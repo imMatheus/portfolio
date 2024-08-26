@@ -1,9 +1,0 @@
-.newDoc {
-	animation: 2000ms greenFadeIn ease-in;
-}
-
-@keyframes greenFadeIn {
-	from {
-		@apply bg-green-400/80 text-green-900;
-	}
-}

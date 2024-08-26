@@ -3,7 +3,7 @@ import ProjectsShowCase from './ProjectsShowCase'
 import { GitHub, Linkedin, Instagram } from 'react-feather'
 import styles from './spacer.module.scss'
 
-const HeaderSpan: React.FC = ({ children }) => {
+const HeaderSpan: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 	return (
 		<span className="mx-1 inline-block transition-transform hover:rotate-2 even:hover:-rotate-2">
 			<span className="relative">

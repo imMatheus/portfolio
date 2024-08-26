@@ -33,7 +33,6 @@ const Blog: React.FC<BlogProps> = ({}) => {
 				gfm: true,
 				breaks: false,
 				sanitize: false,
-				smartLists: true,
 				smartypants: false,
 				xhtml: false
 			})
@@ -57,7 +56,7 @@ const Blog: React.FC<BlogProps> = ({}) => {
 			<article className="mt-5 max-w-4xl rounded-md bg-gray-100 p-6">
 				<h2 className="mb-2 text-4xl font-extrabold">How to center a div</h2>
 				<p className="mb-4 text-sm font-semibold italic text-gray-600">2022/12/18 - Matheus Mendes</p>
-				<div className="prose prose-invert prose-gray" ref={divRef}></div>
+				<div className="prose prose-gray prose-invert" ref={divRef}></div>
 			</article>
 		</div>
 	)

@@ -11,17 +11,21 @@ interface MarkedProps {
 
 const Marked: React.FC<MarkedProps> = ({ href, children }) => {
 	return (
-		<Link href={href} passHref>
-			<a className="inline-block text-twitter-blue hover:underline" target="_blank" rel="noopener">
-				{children}
-			</a>
+		<Link
+			href={href}
+			passHref
+			className="inline-block text-twitter-blue hover:underline"
+			target="_blank"
+			rel="noopener"
+		>
+			{children}
 		</Link>
 	)
 }
 
 const Card: React.FC = ({}) => {
 	return (
-		<article className="mt-2 max-w-3xl rounded-md bg-white text-[rgb(15_20_25)] transition-colors">
+		<article className="text-[rgb(15_20_25)] mt-2 max-w-3xl rounded-md bg-white transition-colors">
 			<div className="flex items-start gap-3 p-3 xl:gap-4 xl:p-4">
 				<div className="flex flex-col items-end">
 					<div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-full bg-white xl:h-12 xl:w-12">
@@ -40,7 +44,7 @@ const Card: React.FC = ({}) => {
 
 						<div className="relative ml-auto">
 							<div className="group relative">
-								<div className="group-hover:bg-carolina/20 absolute top-1/2 left-1/2 h-7 w-7 -translate-y-1/2 -translate-x-1/2 rounded-full bg-transparent transition-colors"></div>
+								<div className="group-hover:bg-carolina/20 absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors"></div>
 								<MoreHorizontal className="text-text-grayed group-hover:text-carolina relative h-4 w-4" />
 							</div>
 						</div>

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
-const LinkWrapper: React.FC = ({ children }) => {
+const LinkWrapper: React.FC<PropsWithChildren> = ({ children }) => {
 	return <div className="flex gap-4">{children}</div>
 }
 

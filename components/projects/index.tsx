@@ -1,11 +1,11 @@
 import React from 'react'
-import Firedum from './firedum/Firedum'
 import LucioCode from './luciocode/LucioCode'
-import Coolors from './colors/Colors'
+
 import Sorter from './sorter/Sorter'
 import Spacer from '../Spacer'
 import Twitter from './twitter/Twitter'
 import Cube from './rubics-cube'
+import Dema from './dema'
 interface Props {
 	contributionsCollection: any
 }
@@ -17,7 +17,12 @@ export const ProjectWrapper: React.FC = ({ children }) => {
 const Projects: React.FC<Props> = ({}) => {
 	return (
 		<div className="relative w-screen">
-			{/* <ProjectsText /> */}
+			<section className="bg-dema">
+				<ProjectWrapper>
+					<Dema />
+				</ProjectWrapper>
+			</section>
+
 			<section className="bg-apple">
 				<ProjectWrapper>
 					<LucioCode />
@@ -33,21 +38,14 @@ const Projects: React.FC<Props> = ({}) => {
 			</section>
 
 			<Spacer url="black-bee.svg" />
-			<section className="bg-bee">
-				<ProjectWrapper>
-					<Firedum />
-				</ProjectWrapper>
-			</section>
+
 			<Spacer url="bee-blurple.svg" />
 			<section className="bg-blurple">
 				<ProjectWrapper>
 					<Sorter />
 				</ProjectWrapper>
 			</section>
-			<Spacer url="blurple-black.svg" />
-
-			<Coolors />
-			<Spacer url="black-white.svg" />
+			<Spacer url="blurple-white.svg" />
 
 			<section className="bg-white">
 				<ProjectWrapper>

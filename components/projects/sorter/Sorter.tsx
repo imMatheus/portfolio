@@ -5,7 +5,6 @@ import LinkWrapper from '../LinkWrapper'
 import { GitHub, ExternalLink } from 'react-feather'
 import ProjectDescription from '../ProjectDescription'
 import ActionButton from '../ActionButton'
-import { Slider } from '@mantine/core'
 
 const Sorter: React.FC = ({}) => {
 	const [numberOfBars, setNumberOfBars] = useState(5)
@@ -102,12 +101,22 @@ const Sorter: React.FC = ({}) => {
 			</LinkWrapper>
 
 			<div className="flex flex-wrap items-center gap-x-6 lg:gap-x-8">
-				<div className="flex min-w-[11rem] flex-col">
+				<div className="min-w-[11rem] flex flex-col">
 					<label htmlFor="sorter-number-of-bars" className="text-lg font-bold">
 						Number of bars: {numberOfBars}
 					</label>
 					<div className="w-36 flex-col items-center">
-						<Slider
+						<input
+							type="range"
+							disabled={loading}
+							value={numberOfBars}
+							onChange={(e) => setNumberOfBars(Number(e.target.value))}
+							min={5}
+							max={60}
+							name="sorter-number-of-bars"
+							id="sorter-number-of-bars"
+						/>
+						{/* <Slider
 							name="sorter-number-of-bars"
 							id="sorter-number-of-bars"
 							color="dark"
@@ -119,17 +128,27 @@ const Sorter: React.FC = ({}) => {
 							showLabelOnHover={false}
 							// step={0.1}
 							// styles={{ markLabel: { display: 'none' } }}
-						/>
+						/> */}
 					</div>
 				</div>
 
-				<div className="flex min-w-[14rem] flex-col">
+				<div className="min-w-[14rem] flex flex-col">
 					<label htmlFor="sorter-animation-speed" className="text-lg font-bold">
 						Animation speed: {animationSpeed}ms
 					</label>
 
 					<div className="w-36 flex-col items-center">
-						<Slider
+						<input
+							type="range"
+							disabled={loading}
+							value={animationSpeed}
+							onChange={(e) => setAnimationSpeed(Number(e.target.value))}
+							min={1}
+							max={1000}
+							name="sorter-animation-speed"
+							id="sorter-animation-speed"
+						/>
+						{/* <Slider
 							name="sorter-animation-speed"
 							id="sorter-animation-speed"
 							color="dark"
@@ -141,7 +160,7 @@ const Sorter: React.FC = ({}) => {
 							showLabelOnHover={false}
 							// step={0.1}
 							// styles={{ markLabel: { display: 'none' } }}
-						/>
+						/> */}
 					</div>
 				</div>
 				<ActionButton onClick={() => setNumbers(getRandomBars())} disabled={loading}>
