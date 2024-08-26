@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Area, AreaChart, Bar, BarChart, Line, LineChart, XAxis, YAxis } from 'recharts'
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '../../../ui/chart'
-import { Switch } from '@/components/ui/switch'
+import { cn } from 'lib/utils'
 
 const chartConfig = {
 	actual: {
@@ -62,7 +62,23 @@ export const ChartView: React.FC<{ chartGraph: 'line' | 'column' | 'area' }> = (
 		<div className="">
 			<div className="mb-4 flex items-center justify-end gap-2 px-4">
 				<p className="text-xs">Show compare</p>
-				<Switch checked={showCompare} onCheckedChange={setShowCompare} />
+				<button
+					type="button"
+					role="switch"
+					aria-checked={showCompare}
+					className={cn(
+						'relative inline-flex h-4 w-7 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50',
+						showCompare ? 'bg-dema-blue' : 'bg-input'
+					)}
+					onClick={() => setShowCompare((c) => !c)}
+				>
+					<span
+						className={cn(
+							'pointer-events-none block h-3 w-3 rounded-full bg-background shadow-lg ring-0 transition-transform',
+							showCompare ? 'translate-x-3' : 'translate-x-0'
+						)}
+					/>
+				</button>
 			</div>
 
 			<ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full px-4">
