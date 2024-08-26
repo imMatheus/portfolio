@@ -10,7 +10,15 @@ const Dema: React.FC = ({}) => {
 	return (
 		<div id="dema" className="pb-5 font-sans">
 			<ProjectTitle>Dema.ai</ProjectTitle>
-			<ProjectDescription>Software engineer</ProjectDescription>
+			<ProjectDescription>
+				<p>Software engineer, April 2023 - Now</p>
+				<br />
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cumque ea corporis! Doloribus at eveniet
+					consequatur iusto suscipit, inventore praesentium obcaecati blanditiis, est repellat itaque ea earum error qui
+					rem.
+				</p>
+			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://dema.ai/" Icon={ExternalLink} text="Live site" />
 			</LinkWrapper>

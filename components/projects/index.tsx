@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import LucioCode from './luciocode/LucioCode'
 
 import Sorter from './sorter/Sorter'
@@ -10,8 +10,8 @@ interface Props {
 	contributionsCollection: any
 }
 
-export const ProjectWrapper: React.FC = ({ children }) => {
-	return <div className="mx-auto w-screen max-w-7xl overflow-hidden p-4 sm:py-6 sm:px-8">{children}</div>
+export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
+	return <div className="mx-auto w-screen max-w-7xl overflow-hidden p-4 sm:px-8 sm:py-6">{children}</div>
 }
 
 const Projects: React.FC<Props> = ({}) => {
