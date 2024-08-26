@@ -12,11 +12,11 @@ const Dema: React.FC = ({}) => {
 			<ProjectTitle>Dema.ai</ProjectTitle>
 			<ProjectDescription>
 				Software engineer, April 2023 - Now
-				<br />
+				{/* <br />
 				<br />
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cumque ea corporis! Doloribus at eveniet
 				consequatur iusto suscipit, inventore praesentium obcaecati blanditiis, est repellat itaque ea earum error qui
-				rem.
+				rem. */}
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://dema.ai/" Icon={ExternalLink} text="Live site" />

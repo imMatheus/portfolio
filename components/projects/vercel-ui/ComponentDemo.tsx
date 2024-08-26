@@ -5,36 +5,17 @@ interface ComponentDemoProps {}
 export const ComponentDemo: React.FC<ComponentDemoProps> = ({}) => {
 	return (
 		<div className="vercel-ui-style-wrapper">
-			<section className="grid grid-rows-[repeat(2,calc(fit-content/2))] gap-[1px] border-y border-y-[var(--ds-gray-200)] bg-[var(--ds-gray-200)] md:grid-cols-2">
-				<a
-					className="group relative flex h-full flex-col gap-6 bg-[--ds-background-200] p-8 hover:bg-[var(--ds-background-100)]"
-					href="/docs/components"
-				>
+			<section className="grid grid-rows-[repeat(2,calc(fit-content/2))] gap-[1px] border border-[var(--ds-gray-200)] bg-[var(--ds-gray-200)] md:grid-cols-2">
+				<div className="group relative flex h-full flex-col gap-6 bg-[var(--ds-background-200)] p-8 hover:bg-[var(--ds-background-100)]">
 					<div className="pointer-events-none flex-1">
 						<div className="flex flex-wrap gap-4 [&>*]:!text-[var(--ds-gray-700)]">
-							<div className="bg-background-100 border-gray-alpha-400 text-gray-1000 relative w-[214px] max-w-full rounded-md border py-2.5 pl-3 pr-12 md:w-[246px]">
+							<div className="relative w-[214px] max-w-full rounded-md border border-[var(--ds-gray-alpha-400)] bg-[var(--ds-background-100)] py-2.5 pl-3 pr-12 text-[var(--ds-gray-1000)] md:w-[246px]">
 								<div className="flex-1">
 									<pre className="overflow-y-auto text-[13px] before:select-none before:content-['$_']">
 										npm init next-app
 									</pre>
 								</div>
 								<button className="absolute right-1 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center">
-									<div className="fill-mode-forwards animate-copy-button-fadeOut absolute duration-150 ease-out">
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											strokeWidth="2"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											className="h-4 w-4"
-										>
-											<polyline points="20 6 9 17 4 12"></polyline>
-										</svg>
-									</div>
 									<div className="fill-mode-forwards animate-copy-button-fadeIn absolute duration-150 ease-out">
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +35,7 @@ export const ComponentDemo: React.FC<ComponentDemoProps> = ({}) => {
 									</div>
 								</button>
 							</div>
-							<button className="bg-background-100 border-gray-alpha-400 text-gray-1000 hover:bg-gray-alpha-200 flex h-10 max-w-full select-none items-center justify-center gap-0.5 rounded-md border px-2.5 text-sm font-medium leading-5 transition-colors disabled:cursor-not-allowed disabled:border-gray-400 disabled:bg-gray-100 disabled:text-gray-700">
+							<button className="flex h-10 max-w-full select-none items-center justify-center gap-0.5 rounded-md border border-[var(--ds-gray-alpha-400)] bg-[var(--ds-background-100)] px-2.5 text-sm font-medium leading-5 text-[var(--ds-gray-1000)] transition-colors hover:bg-[var(--ds-gray-alpha-200)] disabled:cursor-not-allowed disabled:border-[var(--ds-gray-400)] disabled:bg-gray-100 disabled:text-[var(--ds-gray-700)]">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="24"
@@ -74,13 +55,13 @@ export const ComponentDemo: React.FC<ComponentDemoProps> = ({}) => {
 								</svg>
 								<span className="text-ellipsis px-1.5">Collaborate</span>
 							</button>
-							<div className="border-gray-alpha-400 bg-background-100 focus-within:shadow-input-ring relative flex h-10 w-[200px] overflow-hidden rounded-md border text-sm transition-shadow duration-150 [--icon-size:16px] md:w-[234px]">
-								<span className="bg-background-200 flex shrink-0 items-center px-3 text-gray-700 [&>svg]:h-[var(--icon-size)] [&>svg]:w-[var(--icon-size)]">
+							<div className="focus-within:shadow-input-ring relative flex h-10 w-[200px] overflow-hidden rounded-md border border-[var(--ds-gray-alpha-400)] bg-[var(--ds-background-100)] text-sm transition-shadow duration-150 [--icon-size:16px] md:w-[234px]">
+								<span className="flex shrink-0 items-center bg-[var(--ds-background-200)] px-3 text-[var(--ds-gray-700)] [&>svg]:h-[var(--icon-size)] [&>svg]:w-[var(--icon-size)]">
 									Label
 								</span>
 								<input
 									id=":S1:"
-									className="disabled:bg-background-200 bg-transparent pl-3 pr-3 outline-none placeholder:text-gray-700 disabled:cursor-not-allowed disabled:text-gray-700 disabled:placeholder:text-gray-500"
+									className="bg-transparent pl-3 pr-3 outline-none placeholder:text-[var(--ds-gray-700)] disabled:cursor-not-allowed disabled:bg-[var(--ds-background-200)] disabled:text-[var(--ds-gray-700)] disabled:placeholder:text-[var(--ds-gray-500)]"
 									placeholder="Value"
 								/>
 							</div>
@@ -88,7 +69,7 @@ export const ComponentDemo: React.FC<ComponentDemoProps> = ({}) => {
 					</div>
 					<div>
 						<p
-							className="truncate [color:hsl(var(--text-color))] [font-size:var(--text-size)] [font-weight:var(--text-weight)] [letter-spacing:var(--text-letter-spacing)] [line-height:var(--text-line-height)] [text-transform:var(--text-transform)]"
+							className="truncate [color:var(--text-color)] [font-size:var(--text-size)] [font-weight:var(--text-weight)] [letter-spacing:var(--text-letter-spacing)] [line-height:var(--text-line-height)] [text-transform:var(--text-transform)]"
 							style={
 								{
 									'--text-size': '1rem',
@@ -102,7 +83,7 @@ export const ComponentDemo: React.FC<ComponentDemoProps> = ({}) => {
 							Components
 						</p>
 						<p
-							className="truncate [color:hsl(var(--text-color))] [font-size:var(--text-size)] [font-weight:var(--text-weight)] [letter-spacing:var(--text-letter-spacing)] [line-height:var(--text-line-height)] [text-transform:var(--text-transform)]"
+							className="truncate [color:var(--text-color)] [font-size:var(--text-size)] [font-weight:var(--text-weight)] [letter-spacing:var(--text-letter-spacing)] [line-height:var(--text-line-height)] [text-transform:var(--text-transform)]"
 							style={
 								{
 									'--text-size': '1rem',
@@ -116,43 +97,40 @@ export const ComponentDemo: React.FC<ComponentDemoProps> = ({}) => {
 							Building blocks for React applications
 						</p>
 					</div>
-					<div className="z-100 pointer-events-none absolute inset-0 border border-blue-700 opacity-0 group-focus-visible:opacity-100"></div>
-				</a>
-				<a
-					className="bg-background-200 hover:bg-background-100 group relative flex h-full flex-col gap-6 p-8"
-					href="/docs/colors"
-				>
+					<div className="z-100 pointer-events-none absolute inset-0 border border-[var(--ds-blue-700)] opacity-0 group-focus-visible:opacity-100"></div>
+				</div>
+				<div className="group relative flex h-full flex-col gap-6 bg-[var(--ds-background-200)] p-8 hover:bg-[var(--ds-background-100)]">
 					<div className="pointer-events-none flex-1">
 						<div className="flex justify-between">
-							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border">
-								<div className="h-[72px] w-2 rounded-full bg-gray-800"></div>
+							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border border-[var(--border)]">
+								<div className="h-[72px] w-2 rounded-full bg-[var(--ds-gray-800)]"></div>
 							</div>
-							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border">
-								<div className="h-[72px] w-2 rounded-full bg-blue-800"></div>
+							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border border-[var(--border)]">
+								<div className="h-[72px] w-2 rounded-full bg-[var(--ds-blue-800)]"></div>
 							</div>
-							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border">
-								<div className="h-[72px] w-2 rounded-full bg-purple-800"></div>
+							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border border-[var(--border)]">
+								<div className="h-[72px] w-2 rounded-full bg-[var(--ds-purple-800)]"></div>
 							</div>
-							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border">
-								<div className="h-[72px] w-2 rounded-full bg-pink-800"></div>
+							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border border-[var(--border)]">
+								<div className="h-[72px] w-2 rounded-full bg-[var(--ds-pink-800)]"></div>
 							</div>
-							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border">
-								<div className="h-[72px] w-2 rounded-full bg-red-800"></div>
+							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border border-[var(--border)]">
+								<div className="h-[72px] w-2 rounded-full bg-[var(--ds-red-800)]"></div>
 							</div>
-							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border">
-								<div className="h-[72px] w-2 rounded-full bg-amber-800"></div>
+							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border border-[var(--border)]">
+								<div className="h-[72px] w-2 rounded-full bg-[var(--ds-amber-800)]"></div>
 							</div>
-							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border">
-								<div className="h-[72px] w-2 rounded-full bg-green-800"></div>
+							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border border-[var(--border)]">
+								<div className="h-[72px] w-2 rounded-full bg-[var(--ds-green-800)]"></div>
 							</div>
-							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border">
-								<div className="h-[72px] w-2 rounded-full bg-teal-800"></div>
+							<div className="bg-background-200 flex h-24 w-8 items-center justify-center rounded-full border border-[var(--border)]">
+								<div className="h-[72px] w-2 rounded-full bg-[var(--ds-teal-800)]"></div>
 							</div>
 						</div>
 					</div>
 					<div>
 						<p
-							className="truncate [color:hsl(var(--text-color))] [font-size:var(--text-size)] [font-weight:var(--text-weight)] [letter-spacing:var(--text-letter-spacing)] [line-height:var(--text-line-height)] [text-transform:var(--text-transform)]"
+							className="truncate [color:var(--text-color)] [font-size:var(--text-size)] [font-weight:var(--text-weight)] [letter-spacing:var(--text-letter-spacing)] [line-height:var(--text-line-height)] [text-transform:var(--text-transform)]"
 							style={
 								{
 									'--text-size': '1rem',
@@ -166,7 +144,7 @@ export const ComponentDemo: React.FC<ComponentDemoProps> = ({}) => {
 							Colors
 						</p>
 						<p
-							className="truncate [color:hsl(var(--text-color))] [font-size:var(--text-size)] [font-weight:var(--text-weight)] [letter-spacing:var(--text-letter-spacing)] [line-height:var(--text-line-height)] [text-transform:var(--text-transform)]"
+							className="truncate [color:var(--text-color)] [font-size:var(--text-size)] [font-weight:var(--text-weight)] [letter-spacing:var(--text-letter-spacing)] [line-height:var(--text-line-height)] [text-transform:var(--text-transform)]"
 							style={
 								{
 									'--text-size': '1rem',
@@ -180,8 +158,8 @@ export const ComponentDemo: React.FC<ComponentDemoProps> = ({}) => {
 							A high contrast, accessible color system.
 						</p>
 					</div>
-					<div className="z-100 pointer-events-none absolute inset-0 border border-blue-700 opacity-0 group-focus-visible:opacity-100"></div>
-				</a>
+					<div className="z-100 pointer-events-none absolute inset-0 border border-[var(--ds-blue-700)] opacity-0 group-focus-visible:opacity-100"></div>
+				</div>
 			</section>
 		</div>
 	)

@@ -47,6 +47,7 @@ export const ChartView: React.FC = ({}) => {
 			<ChartTooltip
 				content={
 					<ChartTooltipContent
+						indicator={chartGraph === 'column' ? 'dot' : 'line'}
 						className="min-w-[150px]"
 						labelFormatter={(value) => {
 							return new Date(value).toLocaleDateString('en-US', {

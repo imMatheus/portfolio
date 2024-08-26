@@ -10,14 +10,14 @@ interface VercelUiProps {}
 
 const VercelUi: React.FC<VercelUiProps> = ({}) => {
 	return (
-		<div id="vercel-ui" className="text-white">
+		<div id="vercel-ui" className="font-sans text-white">
 			<ProjectTitle>Vercel UI</ProjectTitle>
-			<ProjectDescription>
+			{/* <ProjectDescription>
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit illum inventore nisi eos quis sequi aperiam
 				non earum sapiente. Debitis aperiam dignissimos quia sint earum fugit officiis! Autem minima reprehenderit
 				suscipit vero, rerum odio sed quis nesciunt repellat doloremque reiciendis esse corporis eos hic ad aspernatur
 				perferendis illum itaque. Sit.
-			</ProjectDescription>
+			</ProjectDescription> */}
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/vercel-ui" Icon={GitHub} text="Repository" />
 				<Link href="https://vercel-ui-phi.vercel.app/" Icon={ExternalLink} text="Live site" />
