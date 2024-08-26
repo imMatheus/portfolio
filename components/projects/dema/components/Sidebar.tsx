@@ -135,10 +135,10 @@ export const Sidebar: React.FC = () => {
 						aria-hidden="true"
 					>
 						<rect width="16" height="16" rx="1" fill="#D8FF43"></rect>
-						<g clip-path="url(#clip0_2375_12269)">
+						<g clipPath="url(#clip0_2375_12269)">
 							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
+								fillRule="evenodd"
+								clipRule="evenodd"
 								d="M12.3478 2.81812H2V5.50322H12.3478V2.81812ZM12.3478 10.4966H2V13.1817H12.3478V10.4966ZM2 6.65738H5.1312V9.34249H2V6.65738ZM13.9131 6.65738H10.7819V9.34249H13.9131V6.65738Z"
 								fill="#272725"
 							></path>

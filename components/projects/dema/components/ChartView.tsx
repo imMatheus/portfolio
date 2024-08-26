@@ -4,8 +4,6 @@ import { Area, AreaChart, Bar, BarChart, Line, LineChart, XAxis, YAxis } from 'r
 
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '../../../ui/chart'
 import { Switch } from '@/components/ui/switch'
-import { chartGraphAtom } from '../state'
-import { useAtom } from 'jotai'
 
 const chartConfig = {
 	actual: {
@@ -18,9 +16,8 @@ const chartConfig = {
 	}
 }
 
-export const ChartView: React.FC = ({}) => {
+export const ChartView: React.FC<{ chartGraph: 'line' | 'column' | 'area' }> = ({ chartGraph }) => {
 	const [showCompare, setShowCompare] = useState(true)
-	const [chartGraph] = useAtom(chartGraphAtom)
 
 	const sharedComponents = (
 		<>

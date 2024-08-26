@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Editor, { useMonaco } from '@monaco-editor/react'
+import React, { useState } from 'react'
+import Editor from '@monaco-editor/react'
 import classNames from 'classnames'
 
 interface DemoCodeProps {}
@@ -124,7 +124,7 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 										}}
 										key={i}
 										className={classNames(
-											'relative cursor-pointer rounded-md bg-[#1e1e1e] py-1 px-3 text-xs 2xl:text-sm',
+											'relative cursor-pointer rounded-md bg-[#1e1e1e] px-3 py-1 text-xs 2xl:text-sm',
 											selectedIndex === i && 'opacity-70'
 										)}
 									>

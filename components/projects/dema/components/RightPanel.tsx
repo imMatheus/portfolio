@@ -1,19 +1,18 @@
-import { useAtom } from 'jotai'
 import React from 'react'
-import { chartGraphAtom } from '../state'
 import { cn } from 'lib/utils'
 
-interface RightPanelProps {}
+interface RightPanelProps {
+	chartGraph: 'line' | 'column' | 'area'
+	setChartGraph: React.Dispatch<React.SetStateAction<'line' | 'column' | 'area'>>
+}
 
-export const RightPanel: React.FC<RightPanelProps> = ({}) => {
-	const [chartGraph, setChartGraphAtom] = useAtom(chartGraphAtom)
-
+export const RightPanel: React.FC<RightPanelProps> = ({ chartGraph, setChartGraph }) => {
 	return (
 		<div className="hidden min-w-48 flex-shrink-0 border-l md:block">
 			<div className="p-4">
 				<p className="mb-4 text-neutral-800">Report details</p>
 				<button className="mb-2 flex min-h-8 items-center gap-2 border border-neutral-400 px-2 text-sm hover:bg-neutral-100 focus:bg-neutral-200">
-					<div className="bg-[#9C8EF0] h-4 w-4 text-center text-xs text-white">1</div>
+					<div className="h-4 w-4 bg-[#9C8EF0] text-center text-xs text-white">1</div>
 					Visits
 				</button>
 
@@ -21,9 +20,9 @@ export const RightPanel: React.FC<RightPanelProps> = ({}) => {
 					<button
 						className={cn(
 							'flex h-8 w-8 cursor-pointer items-center justify-center bg-neutral-200 text-gray-700',
-							chartGraph === 'line' && 'border-[rgba(39,_39,_37,_0.16)] border bg-white text-gray-900 shadow'
+							chartGraph === 'line' && 'border border-[rgba(39,_39,_37,_0.16)] bg-white text-gray-900 shadow'
 						)}
-						onClick={() => setChartGraphAtom('line')}
+						onClick={() => setChartGraph('line')}
 					>
 						<svg
 							width="24"
@@ -47,9 +46,9 @@ export const RightPanel: React.FC<RightPanelProps> = ({}) => {
 					<button
 						className={cn(
 							'flex h-8 w-8 cursor-pointer items-center justify-center bg-neutral-200 text-gray-700',
-							chartGraph === 'column' && 'border-[rgba(39,_39,_37,_0.16)] border bg-white text-gray-900 shadow'
+							chartGraph === 'column' && 'border border-[rgba(39,_39,_37,_0.16)] bg-white text-gray-900 shadow'
 						)}
-						onClick={() => setChartGraphAtom('column')}
+						onClick={() => setChartGraph('column')}
 					>
 						<svg
 							width="24"
@@ -73,9 +72,9 @@ export const RightPanel: React.FC<RightPanelProps> = ({}) => {
 					<button
 						className={cn(
 							'flex h-8 w-8 cursor-pointer items-center justify-center bg-neutral-200 text-gray-700',
-							chartGraph === 'area' && 'border-[rgba(39,_39,_37,_0.16)] border bg-white text-gray-900 shadow'
+							chartGraph === 'area' && 'border border-[rgba(39,_39,_37,_0.16)] bg-white text-gray-900 shadow'
 						)}
-						onClick={() => setChartGraphAtom('area')}
+						onClick={() => setChartGraph('area')}
 					>
 						<svg
 							width="24"
