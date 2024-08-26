@@ -9,12 +9,12 @@ export const RightPanel: React.FC<RightPanelProps> = ({}) => {
 	const [chartGraph, setChartGraphAtom] = useAtom(chartGraphAtom)
 
 	return (
-		<div className="hidden flex-shrink-0 border-l md:block">
+		<div className="hidden min-w-48 flex-shrink-0 border-l md:block">
 			<div className="p-4">
 				<p className="mb-4 text-neutral-800">Report details</p>
-				<button className="mb-2 flex min-h-8 items-center gap-2 border px-2 text-sm hover:bg-neutral-100 focus:bg-neutral-200">
-					<div className="h-4 w-4 bg-purple-500 text-center text-xs text-white">1</div>
-					Net gross profit
+				<button className="mb-2 flex min-h-8 items-center gap-2 border border-neutral-400 px-2 text-sm hover:bg-neutral-100 focus:bg-neutral-200">
+					<div className="bg-[#9C8EF0] h-4 w-4 text-center text-xs text-white">1</div>
+					Visits
 				</button>
 
 				<div className="flex flex-wrap gap-y-1">
