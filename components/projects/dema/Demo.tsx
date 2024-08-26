@@ -2,11 +2,14 @@ import React from 'react'
 import { Nav } from './components/Nav'
 import { Sidebar } from './components/Sidebar'
 import { Content } from './components/Content'
+import { Provider } from 'jotai';
 
 interface DemoProps {}
 
 export const Demo: React.FC<DemoProps> = ({}) => {
 	return (
+		<Provider>
+			
 		<article className="relative">
 			<div className="absolute -bottom-3 -right-3 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-4 lg:-right-4">
 				<div className="h-[25px] border-b border-black"></div>
@@ -29,5 +32,6 @@ export const Demo: React.FC<DemoProps> = ({}) => {
 				</div>
 			</div>
 		</article>
+		</Provider>
 	)
 }
