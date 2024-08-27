@@ -18,7 +18,7 @@ interface BlogProps {}
 const Blog: React.FC<BlogProps> = ({}) => {
 	const divRef = useRef<HTMLDivElement>(null)
 	const markdown =
-		'Centering a div is a lot easier then you might think, i promise 😃 \n ```html \n <!-- index.html --> \n<div class="center-me"></div>\n```\n ```css \n /* style.css */ \n .center-me {\n\tmargin: 0 auto;\n} \n```'
+		'Centering a div is a lot easier then you might think, I promise 😃 \n ```html \n <!-- index.html --> \n<div class="center-me"></div>\n```\n ```css \n /* style.css */ \n .center-me {\n\tmargin: 0 auto;\n} \n```'
 
 	useEffect(() => {
 		if (divRef.current) {

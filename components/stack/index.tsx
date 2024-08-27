@@ -1,14 +1,12 @@
 import React, { PropsWithChildren, ReactNode } from 'react'
 import ContributionView from './ContributionView'
-import OnTheHorizon from './OnTheHorizon'
-import StackGrid from './StackGrid'
 
 interface Props {
 	contributionsCollection: any
 }
 
 const Title: React.FC<PropsWithChildren> = ({ children }) => {
-	return <h2 className="mb-3 text-5xl font-bold lg:text-7xl">{children}</h2>
+	return <h2 className="mb-3 text-4xl font-bold">{children}</h2>
 }
 
 interface ComponentChipProps {
@@ -28,7 +26,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 	return (
 		<section className="mx-auto w-screen max-w-7xl space-y-8 bg-white p-5 pb-0 sm:space-y-20 md:pt-10 lg:space-y-28">
 			<div>
-				<Title>What do i know?</Title>
+				<Title>What do I know?</Title>
 
 				<div className="relative mb-5">
 					<h3 className="mb-1 text-2xl font-bold">Front-end development</h3>
@@ -83,8 +81,8 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				</ul>
 			</div>
 
-			<div>
-				<Title>What am i up too lately?</Title>
+			<div className="pb-8 md:pb-32">
+				<Title>What am I up to lately?</Title>
 				<p className="mb-2 max-w-4xl text-base text-black">
 					I spend most of my time writing code for my side projects. I love learning new stuff and always try to make
 					sure I understand the technologies I use. As a competitive person, I&apos;m always up for a challenge and love
@@ -92,7 +90,6 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				</p>
 				<ContributionView contributionsCollection={contributionsCollection} />
 			</div>
-			<OnTheHorizon />
 		</section>
 	)
 }

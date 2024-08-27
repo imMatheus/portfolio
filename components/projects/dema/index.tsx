@@ -43,29 +43,34 @@ const Dema: React.FC = ({}) => {
 					Software engineer, April 2023 - Now
 					<br />
 					<br />
-					<p className="font-medium underline">Contributions:</p>
-					<ul className="list-disc pl-4">
-						<li>Built our Shopify connector handling all order and inventory data for our Shopify customers</li>
+					<p className="mb-0 text-lg font-medium">Contributions:</p>
+					<ul className="space-y-1 pl-0">
+						<li>- Migrated our app from static in-house SCSS component library to a customized Chakra UI flow</li>
 						<li>
-							Created a monorepo for all 4 connectors saving multipe ours of dev time for our engineers. Used turborepo
-							and deployed it to k8s
+							- Lead the rebranding of the platform after Dema underwent a full rebrand as a company. Organized a
+							hackathon for my team and did the entire rebranding in one single day. This involved color changes, layout
+							changes and full component api rewrites
 						</li>
+						<li>- Built our Shopify connector handling all order and inventory data for our Shopify customers</li>
 						<li>
-							Lead the rebranding of the platform after Dema underwhent a full rebrand as a company. Organzied a one-day
-							hackothon for my team and did the entire rebranding in one day. This involed color changes, layout changes
-							and and component api changes
-						</li>
-						<li>Worked on our dashboard page</li>
-						<li>Worked on our MMM page which helped our users</li>
-						<li>Took ownership of our public website and helping development on woards</li>
-						<li>
-							Bought a polaroid camera on my very first day, which has taken well over 300 pictures and has been a core
-							part of the internal employee branding. I also took it one step further on my 1 year anniversary and
+							- Bought a polaroid camera on my very first day, which has taken well over 300 pictures and has been a
+							core part of the internal employee branding. I also took it one step further on my 1 year anniversary and
 							created a custom page with all polaroids.{' '}
-							<a href="https://polaroids.dema.ai" target="_blank" rel="noreferrer" className="underline">
-								See it here
+							<a
+								href="https://polaroids.dema.ai"
+								target="_blank"
+								rel="noreferrer"
+								className="inline-flex items-center gap-1 border-b border-b-current"
+							>
+								See it here <ExternalLink className="h-4 w-4" />
 							</a>
 						</li>
+						<li>
+							- Created a monorepo for all our E-com data services, saving multiple hours of dev-time for our engineers.
+							Used turborepo and deployed it to k8s
+						</li>
+						<li>- Worked on our Apollo API and built</li>
+						<li>- Took ownership of our public website and helping development</li>
 					</ul>
 				</ProjectDescription>
 				<LinkWrapper>

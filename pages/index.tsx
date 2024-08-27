@@ -8,6 +8,7 @@ import Hero from '@/components/Hero'
 import Projects from '@/components/projects'
 import Stack from '@/components/stack'
 import Contact from '@/components/Contact'
+import OnTheHorizon from '@/components/OnTheHorizon'
 
 interface Data {
 	pinnedItems: any
@@ -114,7 +115,8 @@ const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
 			<Stack contributionsCollection={contributionsCollection} />
 
 			<Projects contributionsCollection={contributionsCollection} />
-			<Contact />
+			{/* <Contact /> */}
+			<OnTheHorizon />
 		</div>
 	)
 }
