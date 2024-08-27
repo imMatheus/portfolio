@@ -27,9 +27,7 @@ const Projects: React.FC<Props> = ({}) => {
 			<Spacer url="dema-black.svg" />
 
 			<section className="bg-[#000]">
-				<ProjectWrapper>
-					<VercelUi />
-				</ProjectWrapper>
+				<VercelUi />
 			</section>
 
 			<Spacer url="black-white.svg" />

@@ -63,6 +63,15 @@ module.exports = {
 				lg: '1024px',
 				xl: '1280px',
 				'2xl': '1536px'
+			},
+			keyframes: {
+				'spinner-spin': {
+					'0%': { opacity: '1' },
+					'100%': { opacity: '0.15' }
+				}
+			},
+			animation: {
+				'spinner-spin': 'spinner-spin 1.2s linear infinite'
 			}
 		}
 	},
