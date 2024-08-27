@@ -20,7 +20,6 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 		setLoading(true)
 		let answers: { input: string; output: string; correct: boolean }[] = []
 
-		// a sleep function that blocks code from running for 'ms' millisecs
 		function sleep(ms: number) {
 			return new Promise((resolve) => setTimeout(resolve, ms))
 		}
@@ -30,7 +29,6 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 			const args = currentCase[0]
 			const expected = currentCase[1]
 
-			// the request that we send to the piston api
 			const requestOptions = {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -44,7 +42,6 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 				})
 			}
 
-			// sending the request
 			await fetch('https://emkc.org/api/v1/piston/execute', requestOptions)
 				.then((response) => response.json())
 				.then((data) => {
@@ -69,13 +66,11 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 
 	return (
 		<div className="flex min-h-[250px] flex-1 flex-col overflow-y-scroll md:max-h-[640px]">
-			<div className="flex-1 bg-[#1e1e1e] pt-3">
+			<div className="flex-1 bg-white pt-3">
 				<Editor
-					// height="95%"
-					theme="vs-dark"
+					theme="light"
 					language={'javascript'}
 					onChange={(e) => setCode(e || '')}
-					// onMount={handleEditorDidMount}
 					value={code}
 					options={{
 						automaticLayout: true,
@@ -94,27 +89,27 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 					}}
 				/>
 			</div>
-			<div className="bg-[#2a2a2a] p-4 text-gray-100">
+			<div className="bg-neutral-100 p-4 text-gray-900">
 				<div className="flex flex-shrink-0 flex-wrap justify-end">
 					<button
 						onClick={async () => {
 							await runCodeHandler()
 						}}
 						disabled={loading}
-						className="rounded-md bg-blurple px-3 py-1 transition-opacity hover:opacity-70 disabled:opacity-30"
+						className="rounded-md bg-blue-600 px-3 py-1 text-white transition-opacity hover:opacity-70 disabled:opacity-30"
 					>
 						Run code
 					</button>
 				</div>
 				{loading ? (
-					<div className="mx-auto my-5 h-6 w-6 animate-spin rounded-full border-4 border-[#1e1e1e] border-t-blurple md:h-8 md:w-8"></div>
+					<div className="mx-auto my-5 h-6 w-6 animate-spin rounded-full border-4 border-neutral-300 border-t-blue-600 md:h-8 md:w-8"></div>
 				) : (
 					testOutputs.length > 0 && (
 						<div className="my-5">
 							{testOutputs.length === testOutputs.filter((a) => a.correct).length ? (
-								<h3 className="text-xl font-semibold text-apple">Completed</h3>
+								<h3 className="text-xl font-semibold text-green-600">Completed</h3>
 							) : (
-								<h3 className="text-xl font-semibold text-carnelian">Failed</h3>
+								<h3 className="text-xl font-semibold text-red-600">Failed</h3>
 							)}
 							<div className="mt-2 flex flex-wrap gap-3">
 								{testOutputs.map((testCase, i) => (
@@ -124,33 +119,33 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 										}}
 										key={i}
 										className={classNames(
-											'relative cursor-pointer rounded-md bg-[#1e1e1e] px-3 py-1 text-xs 2xl:text-sm',
-											selectedIndex === i && 'opacity-70'
+											'relative cursor-pointer rounded-md bg-neutral-200 px-3 py-1 text-xs 2xl:text-sm',
+											selectedIndex !== i && 'opacity-70'
 										)}
 									>
 										Test case {i + 1}
 										<div
 											className={classNames(
 												'absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full',
-												testCase.correct ? 'bg-apple' : 'bg-carnelian'
+												testCase.correct ? 'bg-green-600' : 'bg-red-600'
 											)}
 										></div>
 									</div>
 								))}
 							</div>
-							<div className="mt-3 text-gray-200">
+							<div className="mt-3 text-gray-800">
 								<h3 className="mb-1 mt-6 text-lg font-bold">Input</h3>
-								<pre className="rounded-md bg-[#1e1e1e] p-4">
+								<pre className="rounded-md bg-neutral-200 p-4">
 									<code>{`a = ${testOutputs[selectedIndex].input.split(', ')[0]}\nb = ${
 										testOutputs[selectedIndex].input.split(', ')[1]
 									}`}</code>
 								</pre>
 								<h3 className="mb-1 mt-6 text-lg font-bold">Output</h3>
-								<pre className="rounded-md bg-[#1e1e1e] p-4">
+								<pre className="rounded-md bg-neutral-200 p-4">
 									<code>{testOutputs[selectedIndex].output}</code>
 								</pre>
 								<h3 className="mb-1 mt-6 text-lg font-bold">Expected Output</h3>
-								<pre className="rounded-md bg-[#1e1e1e] p-4">
+								<pre className="rounded-md bg-neutral-200 p-4">
 									<code>{cases[selectedIndex][1]}</code>
 								</pre>
 							</div>

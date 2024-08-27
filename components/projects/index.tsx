@@ -1,5 +1,3 @@
-'use client'
-
 import React, { PropsWithChildren } from 'react'
 import LucioCode from './luciocode/LucioCode'
 
@@ -20,7 +18,7 @@ export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
 const Projects: React.FC<Props> = ({}) => {
 	return (
 		<div className="relative w-screen">
-			<section className="bg-dema">
+			<section className="relative bg-dema">
 				<ProjectWrapper>
 					<Dema />
 				</ProjectWrapper>
