@@ -10,7 +10,7 @@ const SidebarButton: React.FC<PropsWithChildren> = ({ children }) => {
 
 export const Sidebar: React.FC = () => {
 	return (
-		<div className="space-y-4 bg-neutral-50 px-2 py-4">
+		<div className="h-full space-y-4 bg-neutral-50 px-2 py-4">
 			<SidebarButton>
 				<svg
 					width="24"

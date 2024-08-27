@@ -19,7 +19,7 @@ const OnTheHorizon: React.FC<OnTheHorizonProps> = ({}) => {
 					<div className="absolute h-[14rem] w-[14rem] rounded-full bg-yellow-600/100 transition-all delay-300 group-hover:h-[15rem] group-hover:w-[15rem]"></div>
 					<div className="absolute h-[12rem] w-[12rem] rounded-full bg-yellow-700"></div>
 				</div>
-				<div className="absolute z-10 max-sm:right-0 max-sm:top-4 sm:left-1/2 sm:top-1/2 sm:translate-x-[10rem]">
+				<div className="absolute z-10 hidden max-sm:left-0 max-sm:top-4 max-sm:translate-x-7 min-[430px]:block sm:right-1/2 sm:top-1/2 sm:-translate-x-[10rem]">
 					<Image alt="hover action arrow" className="w-32" src={HoverArrow} />
 				</div>
 			</div>

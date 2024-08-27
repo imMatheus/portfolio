@@ -9,7 +9,7 @@ export const Content: React.FC<ContentProps> = ({}) => {
 	const [chartGraph, setChartGraph] = useState<'line' | 'column' | 'area'>('line')
 	return (
 		<div className="h-full w-full">
-			<div className="flex w-full items-center justify-between border-b border-b-neutral-200 px-6 py-2">
+			<div className="flex w-full items-center justify-between border-b border-b-neutral-200 px-3 py-2 md:px-6">
 				<div className="flex items-center">
 					<p className="text-base font-medium text-neutral-800">Starting view</p>
 				</div>

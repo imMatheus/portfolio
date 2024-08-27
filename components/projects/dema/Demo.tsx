@@ -23,7 +23,9 @@ export const Demo: React.FC<DemoProps> = ({}) => {
 				<div className="flex h-full flex-col">
 					<Nav />
 					<div className="flex">
-						<Sidebar />
+						<div className="hidden md:block">
+							<Sidebar />
+						</div>
 						<Content />
 					</div>
 				</div>

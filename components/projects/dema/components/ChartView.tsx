@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Area, AreaChart, Bar, BarChart, Line, LineChart, XAxis, YAxis } from 'recharts'
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '../../../ui/chart'
 import { cn } from 'lib/utils'
@@ -16,6 +16,24 @@ const chartConfig = {
 
 export const ChartView: React.FC<{ chartGraph: 'line' | 'column' | 'area' }> = ({ chartGraph }) => {
 	const [showCompare, setShowCompare] = useState(true)
+	const chartContainerRef = useRef<HTMLDivElement>(null)
+	const [showYAxis, setShowYAxis] = useState(true)
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (chartContainerRef.current) {
+				const containerWidth = chartContainerRef.current.offsetWidth
+				setShowYAxis(containerWidth > 480) // Adjust this value as needed
+			}
+		}
+
+		handleResize() // Initial check
+		window.addEventListener('resize', handleResize)
+
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	}, [])
 
 	const sharedComponents = (
 		<>
@@ -33,12 +51,14 @@ export const ChartView: React.FC<{ chartGraph: 'line' | 'column' | 'area' }> = (
 					})
 				}}
 			/>
-			<YAxis
-				tickLine={false}
-				axisLine={false}
-				tickMargin={8}
-				tickFormatter={(value) => `${Number(value).toLocaleString('en-US')}`}
-			/>
+			{showYAxis && (
+				<YAxis
+					tickLine={false}
+					axisLine={false}
+					tickMargin={8}
+					tickFormatter={(value) => `${Number(value).toLocaleString('en-US')}`}
+				/>
+			)}
 			<ChartTooltip
 				content={
 					<ChartTooltipContent
@@ -81,7 +101,7 @@ export const ChartView: React.FC<{ chartGraph: 'line' | 'column' | 'area' }> = (
 				</button>
 			</div>
 
-			<ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full px-4">
+			<ChartContainer config={chartConfig} ref={chartContainerRef} className="aspect-auto h-[250px] w-full px-4">
 				{chartGraph === 'line' ? (
 					<LineChart
 						accessibilityLayer

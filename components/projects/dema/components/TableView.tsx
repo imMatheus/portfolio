@@ -4,11 +4,11 @@ import React, { Fragment } from 'react'
 export const TableView: React.FC = () => {
 	return (
 		<div>
-			<div className="grid max-h-96 grid-cols-4 overflow-y-auto">
-				<div className="border-b border-r px-2 py-3 text-sm font-medium">Channel</div>
-				<div className="border-b border-r px-2 py-3 text-sm font-medium">Channel group</div>
-				<div className="border-b border-r px-2 py-3 text-sm font-medium">Visits</div>
-				<div className="border-b px-2 py-3 text-sm font-medium">Sales</div>
+			<div className="grid max-h-72 grid-cols-4 overflow-y-auto md:max-h-96">
+				<div className="border-b border-r px-2 py-3 text-xs font-medium md:text-sm">Channel</div>
+				<div className="border-b border-r px-2 py-3 text-xs font-medium md:text-sm">Channel group</div>
+				<div className="border-b border-r px-2 py-3 text-xs font-medium md:text-sm">Visits</div>
+				<div className="border-b px-2 py-3 text-xs font-medium md:text-sm">Sales</div>
 				{data.map((row, index) => (
 					<Fragment key={index}>
 						<div className="border-b border-r px-2 py-1 text-xs">{row.channel}</div>

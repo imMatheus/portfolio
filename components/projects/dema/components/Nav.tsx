@@ -19,7 +19,7 @@ const Logo = () => {
 
 export const Nav: React.FC<NavProps> = ({}) => {
 	return (
-		<div className="font- flex h-12 items-center justify-between border-b border-b-neutral-200 pl-4">
+		<div className=" flex h-12 items-center justify-between border-b border-b-neutral-200 pl-4">
 			<div className="flex h-full gap-8">
 				<Logo />
 				<div className="flex text-sm">
@@ -28,8 +28,8 @@ export const Nav: React.FC<NavProps> = ({}) => {
 						Reports
 						<div className="absolute bottom-0 left-0 h-1 w-full bg-dema-blue"></div>
 					</div>
-					<div className="flex items-center px-3">Optimizations</div>
-					<div className="flex items-center px-3">Settings</div>
+					<div className="hidden items-center px-3 md:flex">Optimizations</div>
+					<div className="hidden items-center px-3 md:flex">Settings</div>
 				</div>
 			</div>
 		</div>

@@ -19,18 +19,18 @@ const Dema: React.FC = ({}) => {
 				<Image
 					src={WinnerImage}
 					alt="Winner polaroid"
-					className="z-[1] w-36 translate-x-1 -rotate-3  border-[3px] border-black"
+					className="z-[1] w-40 translate-x-1 -rotate-3  border-[3px] border-black"
 				/>
-				<Image src={SelfieImage} alt="Selfie polaroid" className="w-36 -translate-y-2 border-[3px] border-black" />
+				<Image src={SelfieImage} alt="Selfie polaroid" className="w-40 -translate-y-2 border-[3px] border-black" />
 				<Image
 					src={CompanyUpdateImage}
 					alt="Company update polaroid"
-					className="w-36 -translate-y-8 translate-x-6 rotate-3 border-[3px] border-black"
+					className="w-40 -translate-y-8 translate-x-6 rotate-3 border-[3px] border-black"
 				/>
 				<Image
 					src={WiredImage}
 					alt="Wired polaroid"
-					className="w-36 -translate-y-4 translate-x-0 border-[3px] border-black"
+					className="w-40 -translate-y-4 translate-x-0 border-[3px] border-black"
 				/>
 
 				<div className="absolute -left-3 top-32 -translate-x-full">
