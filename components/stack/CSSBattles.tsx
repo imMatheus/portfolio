@@ -15,14 +15,14 @@ interface CSSBattlesProps {}
 export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 	return (
 		<div>
-			<Title>Rank 1000 on CSS Battles</Title>
+			<Title>Rank #1000 on CSS Battles</Title>
 			<p className="mb-2 max-w-4xl text-base text-black">
 				I really like CSS (I don&apos;t really get the hate), and one of my favorite sites is{' '}
 				<a href="https://cssbattles.com" className="underline" target="">
 					CSS Battles
 				</a>{' '}
-				where you can compete with CSS. I used to play it a lot and got to rank 800, but now im sitting at around{' '}
-				<b>1000</b>. There is about <b>350k</b> users on the platform.
+				where you can compete with CSS. I used to play it a lot and at one point I got to rank 800, but now im siting at
+				around <b>1000</b>. There is about <b>350k</b> total users on the platform.
 			</p>
 
 			<div className="rounded-2xl bg-[#07080b]">
@@ -46,7 +46,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 			</div>
 
 			<div className="mt-4 grid grid-cols-2 gap-2 bg-[#000] p-2 lg:grid-cols-4">
-				<a href="https://cssbattle.dev/leaderboard/target/122" className="bg-neutral-200 px-2 pt-2">
+				<a href="https://cssbattle.dev/leaderboard/target/122" className="bg-neutral-200 px-2 pt-2" target="_blank">
 					<Image src={Tetris} className="" alt="Tetris css battles" />
 					<div className="py-3">
 						<p className="text-lg font-medium text-[#6b7b8e]">
@@ -54,7 +54,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 						</p>
 					</div>
 				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/89" className="bg-neutral-200 px-2 pt-2">
+				<a href="https://cssbattle.dev/leaderboard/target/89" className="bg-neutral-200 px-2 pt-2" target="_blank">
 					<Image src={Summit} className="" alt="Tetris css battles" />
 					<div className="py-3">
 						<p className="text-lg font-medium text-[#6b7b8e]">
@@ -63,7 +63,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 					</div>
 				</a>
 
-				<a href="https://cssbattle.dev/leaderboard/target/129" className="bg-neutral-200 px-2 pt-2">
+				<a href="https://cssbattle.dev/leaderboard/target/129" className="bg-neutral-200 px-2 pt-2" target="_blank">
 					<Image src={LetterB} className="" alt="Tetris css battles" />
 					<div className="py-3">
 						<p className="text-lg font-medium text-[#6b7b8e]">
@@ -71,7 +71,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 						</p>
 					</div>
 				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/126" className="bg-neutral-200 px-2 pt-2">
+				<a href="https://cssbattle.dev/leaderboard/target/126" className="bg-neutral-200 px-2 pt-2" target="_blank">
 					<Image src={LetterA} className="" alt="Tetris css battles" />
 					<div className="py-3">
 						<p className="text-lg font-medium text-[#6b7b8e]">
@@ -79,7 +79,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 						</p>
 					</div>
 				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/140" className="bg-neutral-200 px-2 pt-2">
+				<a href="https://cssbattle.dev/leaderboard/target/140" className="bg-neutral-200 px-2 pt-2" target="_blank">
 					<Image src={Eclipse} className="" alt="Tetris css battles" />
 					<div className="py-3">
 						<p className="text-lg font-medium text-[#6b7b8e]">
@@ -87,7 +87,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 						</p>
 					</div>
 				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/126" className="bg-neutral-200 px-2 pt-2">
+				<a href="https://cssbattle.dev/leaderboard/target/126" className="bg-neutral-200 px-2 pt-2" target="_blank">
 					<Image src={Duck} className="" alt="Tetris css battles" />
 					<div className="py-3">
 						<p className="text-lg font-medium text-[#6b7b8e]">
@@ -95,7 +95,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 						</p>
 					</div>
 				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/76" className="bg-neutral-200 px-2 pt-2">
+				<a href="https://cssbattle.dev/leaderboard/target/76" className="bg-neutral-200 px-2 pt-2" target="_blank">
 					<Image src={Bee} className="" alt="Tetris css battles" />
 					<div className="py-3">
 						<p className="text-lg font-medium text-[#6b7b8e]">
@@ -103,7 +103,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 						</p>
 					</div>
 				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/67" className="bg-neutral-200 px-2 pt-2">
+				<a href="https://cssbattle.dev/leaderboard/target/67" className="bg-neutral-200 px-2 pt-2" target="_blank">
 					<Image src={VideoReel} className="" alt="Tetris css battles" />
 					<div className="py-3">
 						<p className="text-lg font-medium text-[#6b7b8e]">

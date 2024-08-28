@@ -46,7 +46,7 @@ const About: React.FC = () => {
 							</div>
 							<div className="flex h-full w-full flex-col">
 								<div className="relative h-full w-full">
-									<Image src="/p-2-medium.jpeg" className="" layout="fill" objectFit="cover" alt="headshot" />
+									<Image src="/p-3.JPEG" className="bg-bottom" layout="fill" objectFit="cover" alt="headshot" />
 								</div>
 							</div>
 						</div>

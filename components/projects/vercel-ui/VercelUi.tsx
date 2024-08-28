@@ -16,8 +16,7 @@ const VercelUi: React.FC<VercelUiProps> = ({}) => {
 				<ProjectTitle>Vercel UI</ProjectTitle>
 				<ProjectDescription>
 					Design library inspired by Vercels design system. It&apos;s the same concept as ShadcnUI but does tackle some
-					issue I felt ShadcnUI skips ove. Like handling multi-part components with multiple different sizes, for
-					example
+					issue I felt ShadcnUI skips ove. Like handling multi-part components with multiple different sizes.
 				</ProjectDescription>
 				<LinkWrapper>
 					{/* <Link href="https://github.com/imMatheus/vercel-ui" Icon={GitHub} text="Repository" />
