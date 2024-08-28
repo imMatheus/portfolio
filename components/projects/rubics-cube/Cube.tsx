@@ -4,7 +4,7 @@ import Sides from './Sides'
 const Cube: React.FC = ({}) => {
 	const colors = ['#fdf0d5', '#3a86ff', '#8338ec', '#ff006e', '#ffbe0b', '#fb5607'] as const
 	return (
-		<div className="relative my-10 grid h-[35rem] w-full place-items-center rounded-md border-2 border-black bg-white">
+		<div className="relative my-10 grid h-[28rem] w-full place-items-center rounded-md border-2 border-black bg-white md:h-[35rem]">
 			<div
 				className="absolute inset-0 opacity-100"
 				style={{

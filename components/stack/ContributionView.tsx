@@ -9,7 +9,7 @@ const ContributionView: React.FC<ContributionViewProps> = ({ contributionsCollec
 	let index = 0
 	return (
 		<div className="w-full max-w-max overflow-x-visible">
-			<h3 className="mb-1 mt-6 text-lg font-bold">
+			<h3 className="mb-1 mt-6 font-bold">
 				{contributionsCollection.totalContributions} total github contributions in the last year
 			</h3>
 			<div className="relative flex w-full max-w-max justify-end">

@@ -16,7 +16,7 @@ const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
 					color="#99c100"
 					stars={0}
 					description="Analytics platform for E-commerce"
-					language="Typescript"
+					language=""
 					link="dema"
 					commits={0}
 					isWork

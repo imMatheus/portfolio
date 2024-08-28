@@ -1,12 +1,14 @@
 import React, { PropsWithChildren, ReactNode } from 'react'
 import ContributionView from './ContributionView'
+import Image from 'next/image'
+import { CSSBattles } from './CSSBattles'
 
 interface Props {
 	contributionsCollection: any
 }
 
-const Title: React.FC<PropsWithChildren> = ({ children }) => {
-	return <h2 className="mb-3 text-4xl font-bold">{children}</h2>
+export const Title: React.FC<PropsWithChildren> = ({ children }) => {
+	return <h2 className="mb-3 text-3xl font-bold">{children}</h2>
 }
 
 interface ComponentChipProps {
@@ -24,12 +26,12 @@ const CompetentChip: React.FC<ComponentChipProps> = ({ className, children }) =>
 
 const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 	return (
-		<section className="mx-auto w-screen max-w-7xl space-y-8 bg-white p-5 pb-0 sm:space-y-20 md:pt-10 lg:space-y-28">
+		<section className="mx-auto w-screen max-w-7xl space-y-8 bg-white p-5 pb-0 sm:space-y-20 md:pt-10">
 			<div>
 				<Title>What do I know?</Title>
 
 				<div className="relative mb-5">
-					<h3 className="mb-1 text-2xl font-bold">Front-end development</h3>
+					<h3 className="mb-1 text-base font-bold">Front-end development</h3>
 					<ul className="flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
 						<CompetentChip>React</CompetentChip>
 						<CompetentChip>React Native</CompetentChip>
@@ -42,7 +44,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					</ul>
 				</div>
 
-				<h3 className="mb-1 text-2xl font-bold">API</h3>
+				<h3 className="mb-1 text-base font-bold">API</h3>
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
 					<CompetentChip>REST</CompetentChip>
 					<CompetentChip>tRPC</CompetentChip>
@@ -51,7 +53,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					<CompetentChip>Apollo</CompetentChip>
 				</ul>
 
-				<h3 className="mb-1 text-2xl font-bold">Back-end development</h3>
+				<h3 className="mb-1 text-base font-bold">Back-end development</h3>
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
 					<CompetentChip>SQL</CompetentChip>
 					<CompetentChip>Express</CompetentChip>
@@ -62,17 +64,17 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					<CompetentChip>Firebase</CompetentChip>
 				</ul>
 
-				<h3 className="mb-1 text-2xl font-bold">Languages</h3>
+				<h3 className="mb-1 text-base font-bold">Languages</h3>
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
-					<CompetentChip>JavaScript</CompetentChip>
 					<CompetentChip>Typescript</CompetentChip>
+					<CompetentChip>Golang</CompetentChip>
 					<CompetentChip>Swedish 🇸🇪</CompetentChip>
 					<CompetentChip>English 🏴󠁧󠁢󠁥󠁮󠁧󠁿</CompetentChip>
 					<CompetentChip>Portuguese 🇵🇹</CompetentChip>
 					<CompetentChip>Spanish 🇪🇸</CompetentChip>
 				</ul>
 
-				<h3 className="mb-1 text-2xl font-bold">Devops & CI/CD</h3>
+				<h3 className="mb-1 text-base font-bold">Devops & CI/CD</h3>
 				<ul className="mb-5 flex max-w-2xl flex-wrap gap-x-2 gap-y-2 pl-0 text-xl">
 					<CompetentChip>Docker</CompetentChip>
 					<CompetentChip>Jest</CompetentChip>
@@ -82,12 +84,14 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 			</div>
 
 			<div className="pb-8 md:pb-32">
-				<Title>What am I up to lately?</Title>
+				{/* <Title>What am I up to lately?</Title>
 				<p className="mb-2 max-w-4xl text-base text-black">
 					I spend most of my time writing code for my side projects. I love learning new stuff and always try to make
 					sure I understand the technologies I use. As a competitive person, I&apos;m always up for a challenge and love
 					putting my skills to the test on websites like CSS Battles and LeetCode
-				</p>
+				</p> */}
+				<CSSBattles />
+
 				<ContributionView contributionsCollection={contributionsCollection} />
 			</div>
 		</section>

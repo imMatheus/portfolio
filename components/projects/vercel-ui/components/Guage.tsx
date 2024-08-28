@@ -76,10 +76,10 @@ const Gauge: React.FC<GaugeProps> = ({ size = 'medium', value, showValue, colors
 					cx="50"
 					cy="50"
 					r="45"
-					stroke-width="10"
-					stroke-dashoffset="0"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeWidth="10"
+					strokeDashoffset="0"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 					className={cn(
 						'stroke-[var(--secondary-color)] transition-all duration-1000 ease-in-out',
 						'[stroke-dasharray:calc(var(--stroke-percent)_*_var(--percent-to-px))_var(--circumference)]',
@@ -99,10 +99,10 @@ const Gauge: React.FC<GaugeProps> = ({ size = 'medium', value, showValue, colors
 					cx="50"
 					cy="50"
 					r="45"
-					stroke-width="10"
-					stroke-dashoffset="0"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeWidth="10"
+					strokeDashoffset="0"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 					data-geist-progress-circle-fg=""
 					className={cn(
 						'stroke-[var(--primary-color)] transition-all duration-1000 ease-in-out',

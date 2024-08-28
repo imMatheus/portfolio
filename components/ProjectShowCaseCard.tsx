@@ -5,7 +5,7 @@ interface ProjectShowCaseCardProps {
 	title: string
 	color: string
 	stars: number
-	language: string
+	language?: string
 	description: string
 	link: string
 	commits: number
@@ -43,13 +43,15 @@ const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
 							<p className="text-sm font-light">{description}</p>
 						</div>
 						<div className="mt-auto flex flex-wrap gap-4 pt-4">
-							<div className="flex items-center gap-1 text-xs">
-								<div
-									className="h-2 w-2 rounded-full"
-									style={{ backgroundColor: language === 'HTML' ? '#563d7c' : color }}
-								></div>{' '}
-								{language === 'HTML' ? 'CSS' : language}
-							</div>
+							{language && (
+								<div className="flex items-center gap-1 text-xs">
+									<div
+										className="h-2 w-2 rounded-full"
+										style={{ backgroundColor: language === 'HTML' ? '#563d7c' : color }}
+									></div>{' '}
+									{language === 'HTML' ? 'CSS' : language}
+								</div>
+							)}
 							{stars ? (
 								<div className="flex items-center gap-0.5 text-xs">
 									<Star className="-mt-[1px] h-4 w-4" /> {stars}

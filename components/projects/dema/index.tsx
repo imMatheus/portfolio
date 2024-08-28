@@ -2,7 +2,7 @@ import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import Link from '../Link'
 import LinkWrapper from '../LinkWrapper'
-import { ExternalLink } from 'react-feather'
+import { AlertCircle, ExternalLink } from 'react-feather'
 import ProjectDescription from '../ProjectDescription'
 import { Demo } from './Demo'
 import Image from 'next/image'
@@ -19,7 +19,7 @@ const Dema: React.FC = ({}) => {
 				<Image
 					src={WinnerImage}
 					alt="Winner polaroid"
-					className="z-[1] w-40 translate-x-1 -rotate-3  border-[3px] border-black"
+					className="z-[1] w-40 translate-x-1 -rotate-3 border-[3px] border-black"
 				/>
 				<Image src={SelfieImage} alt="Selfie polaroid" className="w-40 -translate-y-2 border-[3px] border-black" />
 				<Image
@@ -44,14 +44,13 @@ const Dema: React.FC = ({}) => {
 					<br />
 					<br />
 					<p className="mb-0 text-lg font-medium">Contributions:</p>
-					<ul className="space-y-1 pl-0">
+					<ul className="max-w-[80ch] space-y-2 pl-0">
 						<li>- Migrated our app from static in-house SCSS component library to a customized Chakra UI flow</li>
 						<li>
 							- Lead the rebranding of the platform after Dema underwent a full rebrand as a company. Organized a
 							hackathon for my team and did the entire rebranding in one single day. This involved color changes, layout
 							changes and full component api rewrites
 						</li>
-						<li>- Built our Shopify connector handling all order and inventory data for our Shopify customers</li>
 						<li>
 							- Bought a polaroid camera on my very first day, which has taken well over 300 pictures and has been a
 							core part of the internal employee branding. I also took it one step further on my 1 year anniversary and
@@ -66,17 +65,26 @@ const Dema: React.FC = ({}) => {
 							</a>
 						</li>
 						<li>
-							- Created a monorepo for all our E-com data services, saving multiple hours of dev-time for our engineers.
+							- Built our Shopify connector handling all order and inventory data for our Shopify customers. Later I
+							created a monorepo for all our E-com data services, saving multiple hours of dev-time for our engineers.
 							Used turborepo and deployed it to k8s
 						</li>
-						<li>- Worked on our Apollo API and built</li>
-						<li>- Took ownership of our public website and helping development</li>
 					</ul>
 				</ProjectDescription>
 				<LinkWrapper>
 					<Link href="https://dema.ai/" Icon={ExternalLink} text="Live site" />
 				</LinkWrapper>
 
+				<div className="mb-4 flex items-baseline gap-2 rounded-md border border-blue-800 bg-blue-100 p-4 text-blue-800">
+					<AlertCircle className="h-4 w-4 flex-shrink-0 translate-y-0.5 text-inherit" />
+
+					<p className="text-sm">
+						Dema (the company I work at) is an analytis platform for e-commerce that help companies understand there
+						profitably. Its a very cool platform and down below is a small replica I made to showcase sort of how it
+						looks but also some things you can do. Of course there is A LOT more to the platform than what is down below
+						{':)'}
+					</p>
+				</div>
 				<Demo />
 			</div>
 		</div>

@@ -1,5 +1,7 @@
 import React from 'react'
 import { cn } from 'lib/utils'
+import ClickHere from './click-here.svg'
+import Image from 'next/image'
 
 interface RightPanelProps {
 	chartGraph: 'line' | 'column' | 'area'
@@ -16,7 +18,12 @@ export const RightPanel: React.FC<RightPanelProps> = ({ chartGraph, setChartGrap
 					Visits
 				</button>
 
-				<div className="flex flex-wrap gap-y-1">
+				<div className="relative flex flex-wrap gap-y-1">
+					<Image
+						src={ClickHere}
+						alt="Click here arrows"
+						className="absolute -left-0 -top-3 -translate-x-full -translate-y-1/2"
+					/>
 					<button
 						className={cn(
 							'flex h-8 w-8 cursor-pointer items-center justify-center bg-neutral-200 text-gray-700',
