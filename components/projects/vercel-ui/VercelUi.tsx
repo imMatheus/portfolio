@@ -14,7 +14,10 @@ const VercelUi: React.FC<VercelUiProps> = ({}) => {
 		<div id="vercel-ui" className="vercel-ui-style-wrapper font-sans text-white">
 			<ProjectWrapper>
 				<ProjectTitle>Vercel UI</ProjectTitle>
-				<ProjectDescription>
+				<ProjectDescription className="text-white">
+					Creator and sole maintainer, 2024
+					<br />
+					<br />
 					Design library inspired by Vercels design system. It&apos;s the same concept as ShadcnUI but does tackle some
 					issue I felt ShadcnUI skips ove. Like handling multi-part components with multiple different sizes.
 				</ProjectDescription>

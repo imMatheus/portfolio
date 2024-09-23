@@ -1,6 +1,6 @@
 import React from 'react'
 import { Title } from './index'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Tetris from './tetris.png'
 import LetterA from './letter-a.png'
 import LetterB from './letter-b.png'
@@ -10,9 +10,48 @@ import Eclipse from './eclipse.png'
 import Bee from './bee.png'
 import VideoReel from './video-reel.png'
 
+interface CSSBattleCardProps {
+	image: StaticImageData
+	rank: number
+	target: number
+}
+
+const CSSBattleCard: React.FC<CSSBattleCardProps> = ({ image, rank, target }) => {
+	return (
+		<div className="group relative">
+			<div className="absolute inset-0 bg-dema group-odd:bg-[#ffdf00]"></div>
+			<a
+				href={`https://cssbattle.dev/leaderboard/target/${target}`}
+				className="relative block bg-neutral-200 px-2 pt-2 transition-transform hover:translate-x-1.5 group-odd:hover:-translate-y-1.5 group-even:hover:translate-y-1.5"
+				target="_blank"
+			>
+				<Image src={image} className="" alt="Tetris css battles" />
+				<div className="py-3">
+					<p className="text-lg font-medium text-[#6b7b8e]">
+						Rank <b>#{rank}</b> in the world
+					</p>
+				</div>
+			</a>
+		</div>
+	)
+}
+
+export default CSSBattleCard
+
 interface CSSBattlesProps {}
 
 export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
+	const battles = [
+		{ image: Tetris, rank: 36, target: 122 },
+		{ image: Summit, rank: 74, target: 89 },
+		{ image: LetterB, rank: 36, target: 129 },
+		{ image: LetterA, rank: 38, target: 126 },
+		{ image: Eclipse, rank: 52, target: 140 },
+		{ image: Duck, rank: 62, target: 126 },
+		{ image: Bee, rank: 86, target: 76 },
+		{ image: VideoReel, rank: 74, target: 67 }
+	]
+
 	return (
 		<div>
 			<Title>Rank #1000 on CSS Battles</Title>
@@ -45,72 +84,10 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 				</div>
 			</div>
 
-			<div className="mt-4 grid grid-cols-2 gap-2 bg-[#000] p-2 lg:grid-cols-4">
-				<a href="https://cssbattle.dev/leaderboard/target/122" className="bg-neutral-200 px-2 pt-2" target="_blank">
-					<Image src={Tetris} className="" alt="Tetris css battles" />
-					<div className="py-3">
-						<p className="text-lg font-medium text-[#6b7b8e]">
-							Rank <b>#36</b> in the world
-						</p>
-					</div>
-				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/89" className="bg-neutral-200 px-2 pt-2" target="_blank">
-					<Image src={Summit} className="" alt="Tetris css battles" />
-					<div className="py-3">
-						<p className="text-lg font-medium text-[#6b7b8e]">
-							Rank <b>#74</b> in the world
-						</p>
-					</div>
-				</a>
-
-				<a href="https://cssbattle.dev/leaderboard/target/129" className="bg-neutral-200 px-2 pt-2" target="_blank">
-					<Image src={LetterB} className="" alt="Tetris css battles" />
-					<div className="py-3">
-						<p className="text-lg font-medium text-[#6b7b8e]">
-							Rank <b>#36</b> in the world
-						</p>
-					</div>
-				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/126" className="bg-neutral-200 px-2 pt-2" target="_blank">
-					<Image src={LetterA} className="" alt="Tetris css battles" />
-					<div className="py-3">
-						<p className="text-lg font-medium text-[#6b7b8e]">
-							Rank <b>#38</b> in the world
-						</p>
-					</div>
-				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/140" className="bg-neutral-200 px-2 pt-2" target="_blank">
-					<Image src={Eclipse} className="" alt="Tetris css battles" />
-					<div className="py-3">
-						<p className="text-lg font-medium text-[#6b7b8e]">
-							Rank <b>#52</b> in the world
-						</p>
-					</div>
-				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/126" className="bg-neutral-200 px-2 pt-2" target="_blank">
-					<Image src={Duck} className="" alt="Tetris css battles" />
-					<div className="py-3">
-						<p className="text-lg font-medium text-[#6b7b8e]">
-							Rank <b>#62</b> in the world
-						</p>
-					</div>
-				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/76" className="bg-neutral-200 px-2 pt-2" target="_blank">
-					<Image src={Bee} className="" alt="Tetris css battles" />
-					<div className="py-3">
-						<p className="text-lg font-medium text-[#6b7b8e]">
-							Rank <b>#86</b> in the world
-						</p>
-					</div>
-				</a>
-				<a href="https://cssbattle.dev/leaderboard/target/67" className="bg-neutral-200 px-2 pt-2" target="_blank">
-					<Image src={VideoReel} className="" alt="Tetris css battles" />
-					<div className="py-3">
-						<p className="text-lg font-medium text-[#6b7b8e]">
-							Rank <b>#74</b> in the world
-						</p>
-					</div>
-				</a>
+			<div className="mt-4 grid grid-cols-2 gap-3 bg-[#000] p-3 lg:grid-cols-4">
+				{battles.map((battle, index) => (
+					<CSSBattleCard key={index} {...battle} />
+				))}
 			</div>
 		</div>
 	)

@@ -18,8 +18,15 @@ const LucioCode: React.FC = ({}) => {
 				The link below links to a very early version built over one year ago, I am not yet done with an MVP of what I
 				want LucioCode to be. But a new, updated version is coming in a near future
 				<br /> */}
+				April - Mars 2021
+				<br />
+				<br />
 				<span className="font-medium">TLDR;</span> It&apos;s Leetcode and CSS battles combined into one that I made in
 				early 2021 for fun, this project also landed me my first job as a software engineer.
+				<br />
+				<br />
+				This project was also what landed me my first ever software engineering job, so it holds a special place in my
+				heart.
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/lucio/tree/old_master" Icon={GitHub} text="Repository" />

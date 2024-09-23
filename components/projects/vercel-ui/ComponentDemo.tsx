@@ -81,7 +81,7 @@ export const ComponentDemo: React.FC = () => {
 				</Button>
 			</div>
 
-			<div className="relative left-1/2 mb-2 flex w-max translate-x-[calc(-50%_-_var(--offset))] gap-2 transition-transform delay-75 duration-300 group-hover:translate-x-[calc(-50%_+_var(--offset))]">
+			<div className="relative left-1/2 mb-2 flex w-max translate-x-[calc(-50%_-_var(--offset))] gap-2 transition-transform delay-[50ms] duration-300 group-hover:translate-x-[calc(-50%_+_var(--offset))]">
 				<Badge variant="gray">gray</Badge>
 				<Badge variant="gray-subtle">gray-subtle</Badge>
 				<Badge variant="blue">blue</Badge>
@@ -118,7 +118,7 @@ export const ComponentDemo: React.FC = () => {
 				<Badge variant="teal-subtle">teal-subtle</Badge>
 			</div>
 
-			<div className="relative left-1/2 mb-2 flex w-max translate-x-[calc(-50%_-_var(--offset))] gap-2 transition-transform delay-100 duration-300 group-hover:translate-x-[calc(-50%_+_var(--offset))]">
+			<div className="relative left-1/2 mb-2 flex w-max translate-x-[calc(-50%_+_var(--offset))] gap-2 transition-transform delay-100 duration-300 group-hover:translate-x-[calc(-50%_-_var(--offset))]">
 				<Gauge size="small" value={50} />
 				<Gauge size="small" value={80} />
 				<Gauge size="small" value={10} />
@@ -187,7 +187,7 @@ export const ComponentDemo: React.FC = () => {
 				<Gauge size="small" value={95} />
 			</div>
 
-			<div className="relative left-1/2 mb-2 flex w-max translate-x-[calc(-50%_+_var(--offset))] gap-2 transition-transform delay-150 duration-300 group-hover:translate-x-[calc(-50%_-_var(--offset))]">
+			<div className="relative left-1/2 mb-2 flex w-max translate-x-[calc(-50%_-_var(--offset))] gap-2 transition-transform delay-150 duration-300 group-hover:translate-x-[calc(-50%_+_var(--offset))]">
 				<Snippet text="npm init next-app" width="230px" />
 				<Snippet text="Blue" prompt={false} type="success" width="120px" />
 				<Snippet text="Matheus" width="200px" />

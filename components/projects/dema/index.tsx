@@ -48,8 +48,7 @@ const Dema: React.FC = ({}) => {
 						<li>- Migrated our app from static in-house SCSS component library to a customized Chakra UI flow</li>
 						<li>
 							- Lead the rebranding of the platform after Dema underwent a full rebrand as a company. Organized a
-							hackathon for my team and did the entire rebranding in one single day. This involved color changes, layout
-							changes and full component api rewrites
+							hackathon for my team and did the entire rebranding in one single day.
 						</li>
 						<li>
 							- Bought a polaroid camera on my very first day, which has taken well over 300 pictures and has been a
