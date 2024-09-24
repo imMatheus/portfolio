@@ -23,7 +23,7 @@ const RubiksCube: React.FC = ({}) => {
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://github.com/imMatheus/css-only-rubiks-cube" Icon={GitHub} text="Repository" />
-				<Link href="https://rubiks-cube-eight.vercel.app/" Icon={ExternalLink} text="Live site" />
+				<Link href="https://cube.immatheus.com/" Icon={ExternalLink} text="Live site" />
 			</LinkWrapper>
 			<Cube />
 		</div>
