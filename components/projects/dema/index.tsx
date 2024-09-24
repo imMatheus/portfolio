@@ -46,13 +46,13 @@ const Dema: React.FC = ({}) => {
 					<ul className="max-w-[80ch] space-y-2 pl-0">
 						<li>- Migrated our app from static in-house SCSS component library to a customized Chakra UI flow</li>
 						<li>
-							- Lead the rebranding of the platform after Dema underwent a full rebrand as a company. Organized a
-							hackathon for my team and did the entire rebranding in one single day.
+							- Led the rebranding of the platform after Dema underwent a full rebrand as a company. Organized a
+							hackathon for my team and completed the entire rebranding in one single day.
 						</li>
 						<li>
-							- Bought a polaroid camera on my very first day, which has taken well over 300 pictures and has been a
-							core part of the internal employee branding. I also took it one step further on my 1 year anniversary and
-							created a custom page with all polaroids.{' '}
+							- Bought a Polaroid camera on my very first day, which has taken well over 300 pictures and has been a
+							core part of the internal employee branding. I also took it one step further on my 1-year anniversary and
+							created a custom page with all Polaroids.{' '}
 							<a
 								href="https://polaroids.dema.ai"
 								target="_blank"
@@ -63,12 +63,12 @@ const Dema: React.FC = ({}) => {
 							</a>
 						</li>
 						<li>
-							- Built our Shopify connector handling all order and inventory data for our Shopify customers. Later I
-							created a monorepo for all our E-com data services, saving multiple hours of dev-time for our engineers.
-							Used turborepo and deployed it to k8s
+							- Built our Shopify connector handling all order and inventory data for our Shopify customers. Later, I
+							created a monorepo for all our e-commerce data services, saving multiple hours of dev-time for our
+							engineers. Used Turborepo and deployed it to K8s
 						</li>
 						<li>
-							- Improved table performance with 1000x. And rebuilt internal state flows to use jotai which drastically
+							- Improved table performance by 1000x. Rebuilt internal state flows to use Jotai, which drastically
 							improved user experience
 						</li>
 					</ul>
