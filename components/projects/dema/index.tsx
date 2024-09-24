@@ -43,8 +43,36 @@ const Dema: React.FC = ({}) => {
 					Software engineer, April 2023 - Now
 					<br />
 					<br />
-					<ul className="max-w-[80ch] space-y-2 pl-0">
-						<li>- Migrated our app from static in-house SCSS component library to a customized Chakra UI flow</li>
+					<ul className="max-w-[80ch] list-disc space-y-4 pl-5">
+						<li>
+							Full-stack ownership of the web-app.
+							<ul className="list-disc space-y-1 pl-5">
+								<li>Improved table performance by 100x.</li>
+								<li>Fully changed UI and UX flows.</li>
+								<li>Owned internal state management with Jotai</li>
+								<li>Led many end-to-end features</li>
+							</ul>
+						</li>
+						<li>
+							Built our Shopify integration handling all order and inventory data for our Shopify customers. Later, I
+							created a monorepo for all our other e-commerce integrations, saving multiple hours of dev-time for our
+							engineers. Used Turborepo and deployed it to K8s
+						</li>
+						<li>
+							Bought a Polaroid camera on my very first day, which has taken well over 300 pictures and has been a core
+							part of the internal employee branding. I also took it one step further on my 1-year anniversary and
+							created a custom page with all Polaroids.{' '}
+							<a
+								href="https://polaroids.dema.ai"
+								target="_blank"
+								rel="noreferrer"
+								className="inline-flex items-center gap-1 border-b border-b-current"
+							>
+								See it here <ExternalLink className="h-4 w-4" />
+							</a>
+						</li>
+
+						{/* <li>- Migrated our app from static in-house SCSS component library to a customized Chakra UI flow</li>
 						<li>
 							- Led the rebranding of the platform after Dema underwent a full rebrand as a company. Organized a
 							hackathon for my team and completed the entire rebranding in one single day.
@@ -70,7 +98,7 @@ const Dema: React.FC = ({}) => {
 						<li>
 							- Improved table performance by 1000x. Rebuilt internal state flows to use Jotai, which drastically
 							improved user experience
-						</li>
+						</li> */}
 					</ul>
 				</ProjectDescription>
 				<LinkWrapper>
