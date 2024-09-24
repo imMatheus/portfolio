@@ -73,8 +73,8 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 				<a href="https://cssbattles.com" className="underline" target="">
 					CSS Battles
 				</a>{' '}
-				where you can compete with CSS. I used to play it a lot and at one point I got to rank 800, but now im siting at
-				around <b>1000</b>. There is about <b>350k</b> total users on the platform.
+				where you can compete with CSS. I used to play it a lot and at one point I got to rank 800, but now im sitting
+				at around <b>1000</b>. There is about <b>350k</b> total users on the platform.
 			</p>
 
 			<div className="rounded-2xl bg-[#07080b]">
