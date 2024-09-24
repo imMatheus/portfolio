@@ -19,7 +19,8 @@ const VercelUi: React.FC<VercelUiProps> = ({}) => {
 					<br />
 					<br />
 					Design library inspired by Vercels design system. It&apos;s the same concept as ShadcnUI but does tackle some
-					issue I felt ShadcnUI skips ove. Like handling multi-part components with multiple different sizes.
+					issue I felt ShadcnUI skips over, like handling multi-part components with multiple different sizes for
+					example.
 				</ProjectDescription>
 				<LinkWrapper>
 					{/* <Link href="https://github.com/imMatheus/vercel-ui" Icon={GitHub} text="Repository" />
