@@ -43,7 +43,6 @@ const Dema: React.FC = ({}) => {
 					Software engineer, April 2023 - Now
 					<br />
 					<br />
-					<p className="mb-0 text-lg font-medium">Contributions:</p>
 					<ul className="max-w-[80ch] space-y-2 pl-0">
 						<li>- Migrated our app from static in-house SCSS component library to a customized Chakra UI flow</li>
 						<li>
@@ -67,6 +66,10 @@ const Dema: React.FC = ({}) => {
 							- Built our Shopify connector handling all order and inventory data for our Shopify customers. Later I
 							created a monorepo for all our E-com data services, saving multiple hours of dev-time for our engineers.
 							Used turborepo and deployed it to k8s
+						</li>
+						<li>
+							- Improved table performance with 1000x. And rebuilt internal state flows to use jotai which drastically
+							improved user experience
 						</li>
 					</ul>
 				</ProjectDescription>

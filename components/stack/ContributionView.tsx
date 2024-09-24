@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ContributionSquare from './ContributionSquare'
+import { Title } from '.'
 
 interface ContributionViewProps {
 	contributionsCollection: any
@@ -8,10 +9,9 @@ interface ContributionViewProps {
 const ContributionView: React.FC<ContributionViewProps> = ({ contributionsCollection }) => {
 	let index = 0
 	return (
-		<div className="w-full max-w-max overflow-x-visible">
-			<h3 className="mb-1 mt-6 font-bold">
-				{contributionsCollection.totalContributions} total github contributions in the last year
-			</h3>
+		<div className="mt-6 w-full max-w-max overflow-x-visible">
+			<Title>{contributionsCollection.totalContributions} total github contributions in the last year</Title>
+
 			<div className="relative flex w-full max-w-max justify-end">
 				<div className="absolute -bottom-2 -right-2 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-4 lg:-right-4"></div>
 				<div className="absolute -bottom-1 -right-1 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-2 lg:-right-2"></div>

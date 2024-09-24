@@ -26,7 +26,7 @@ const CompetentChip: React.FC<ComponentChipProps> = ({ className, children }) =>
 
 const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 	return (
-		<section className="mx-auto w-screen max-w-7xl space-y-8 bg-white p-5 pb-0 sm:space-y-20 md:pt-10">
+		<section className="mx-auto w-screen max-w-7xl space-y-8 bg-white p-5 pb-8 sm:space-y-20 md:pb-32 md:pt-10">
 			<div>
 				<Title>What do I know?</Title>
 
@@ -83,17 +83,17 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 				</ul>
 			</div>
 
-			<div className="pb-8 md:pb-32">
-				{/* <Title>What am I up to lately?</Title>
+			<CSSBattles />
+			{/* <div className="pb-8 md:pb-32"> */}
+			{/* <Title>What am I up to lately?</Title>
 				<p className="mb-2 max-w-4xl text-base text-black">
 					I spend most of my time writing code for my side projects. I love learning new stuff and always try to make
 					sure I understand the technologies I use. As a competitive person, I&apos;m always up for a challenge and love
 					putting my skills to the test on websites like CSS Battles and LeetCode
 				</p> */}
-				<CSSBattles />
 
-				<ContributionView contributionsCollection={contributionsCollection} />
-			</div>
+			<ContributionView contributionsCollection={contributionsCollection} />
+			{/* </div> */}
 		</section>
 	)
 }

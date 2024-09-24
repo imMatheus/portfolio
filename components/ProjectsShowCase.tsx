@@ -33,6 +33,17 @@ const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
 						key={pinnedItem.name}
 					/>
 				))}
+
+				<StackCard
+					title="Acasting.se"
+					color="#462197"
+					stars={0}
+					description="Modern casting platform"
+					language=""
+					link="acasting"
+					commits={0}
+					isWork
+				/>
 			</section>
 		</>
 	)

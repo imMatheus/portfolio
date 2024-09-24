@@ -9,17 +9,30 @@ import Summit from './summit.png'
 import Eclipse from './eclipse.png'
 import Bee from './bee.png'
 import VideoReel from './video-reel.png'
+import { cn } from 'lib/utils'
 
 interface CSSBattleCardProps {
 	image: StaticImageData
 	rank: number
 	target: number
+	index: number
 }
 
-const CSSBattleCard: React.FC<CSSBattleCardProps> = ({ image, rank, target }) => {
+const CSSBattleCard: React.FC<CSSBattleCardProps> = ({ image, rank, target, index }) => {
 	return (
 		<div className="group relative">
-			<div className="absolute inset-0 bg-dema group-odd:bg-[#ffdf00]"></div>
+			<div
+				className={cn('absolute inset-0', {
+					'bg-red-600': index === 0,
+					'bg-blue-600': index === 1,
+					'bg-green-600': index === 2,
+					'bg-yellow-600': index === 3,
+					'bg-purple-600': index === 4,
+					'bg-orange-600': index === 5,
+					'bg-pink-600': index === 6,
+					'bg-cyan-600': index === 7
+				})}
+			></div>
 			<a
 				href={`https://cssbattle.dev/leaderboard/target/${target}`}
 				className="relative block bg-neutral-200 px-2 pt-2 transition-transform hover:translate-x-1.5 group-odd:hover:-translate-y-1.5 group-even:hover:translate-y-1.5"
@@ -78,7 +91,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 						</div>
 						<p className="font-semibold text-[#ffdf00]">Matheus Mendes</p>
 					</div>
-					<div className="text-[#cbd1e1]">53700.24</div>
+					<div className="text-[#cbd1e1]">53700.24 points</div>
 					<div className="text-[#cbd1e1]">(84 Targets)</div>
 					<div className="text-xl text-[#6b7b8e]">#1146</div>
 				</div>
@@ -86,7 +99,7 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 
 			<div className="mt-4 grid grid-cols-2 gap-3 bg-[#000] p-3 lg:grid-cols-4">
 				{battles.map((battle, index) => (
-					<CSSBattleCard key={index} {...battle} />
+					<CSSBattleCard key={battle.target} {...battle} index={index} />
 				))}
 			</div>
 		</div>

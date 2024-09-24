@@ -7,6 +7,7 @@ import Twitter from './twitter/Twitter'
 import Cube from './rubics-cube'
 import Dema from './dema'
 import VercelUi from './vercel-ui/VercelUi'
+import { Acasting } from './acasting/Acasting'
 interface Props {
 	contributionsCollection: any
 }
@@ -38,7 +39,23 @@ const Projects: React.FC<Props> = ({}) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="white-apple.svg" />
+			<Spacer url="white-purple.svg" />
+
+			{/* <Spacer url="apple-white.svg" /> */}
+
+			{/* <section className="bg-purple-800"> */}
+			{/* <section className="bg-purple-800"> */}
+			{/* <section className="bg-[#8338ec]"> */}
+			{/* <section className="bg-[#8E68DE]"> */}
+			{/* <section className="bg-[#3E1D86]"> */}
+			<section className="bg-[#462197]">
+				{/* <section className="bg-[#7f56dae6]"> */}
+				<ProjectWrapper>
+					<Acasting />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer url="purple-apple-2.svg" />
 
 			<section className="bg-apple">
 				<ProjectWrapper>
