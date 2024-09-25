@@ -27,7 +27,7 @@ export const Acasting: React.FC<AcastingProps> = ({}) => {
 					<li>Handled billions of row reads, and millions of row writes</li>
 					<li>Developed a custom in-house chat to reduce our monthly costs by over $500/month</li>
 					<li>Worked on our recommendation engine</li>
-					<li>Implemented mobile design and responsibility</li>
+					<li>Implemented mobile design and responsiveness</li>
 					<li>Introduced our location feature, helping 100s of casters find amongst 1000+ locations</li>
 				</ul>
 			</ProjectDescription>
