@@ -14,6 +14,11 @@ export default function Document() {
 					href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
 					rel="stylesheet"
 				/>
+				<script
+					defer
+					src="https://cloud.umami.is/script.js"
+					data-website-id="ea7908f0-4fda-4d58-979d-60a7e8406419"
+				></script>
 			</Head>
 			<body>
 				<Main />
