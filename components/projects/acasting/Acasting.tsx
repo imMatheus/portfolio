@@ -32,11 +32,13 @@ export const Acasting: React.FC = ({}) => {
 				<Link href="https://acasting.se/" Icon={ExternalLink} text="Live site" />
 			</LinkWrapper>
 
-			<div className="mt-4 flex w-full gap-4">
+			{/* <div className="mt-4 flex w-full gap-4">
 				<ProjectImage src="https://cdn.midjourney.com/39bc997f-49c8-4bc5-a1c2-a0e09fd3c804/0_2.png" alt="Acasting" />
 				<ProjectImage src="https://cdn.midjourney.com/39bc997f-49c8-4bc5-a1c2-a0e09fd3c804/0_2.png" alt="Acasting" />
 				<ProjectImage src="https://cdn.midjourney.com/39bc997f-49c8-4bc5-a1c2-a0e09fd3c804/0_2.png" alt="Acasting" />
-			</div>
+				<ProjectImage src="https://cdn.midjourney.com/39bc997f-49c8-4bc5-a1c2-a0e09fd3c804/0_2.png" alt="Acasting" />
+				<ProjectImage src="https://cdn.midjourney.com/39bc997f-49c8-4bc5-a1c2-a0e09fd3c804/0_2.png" alt="Acasting" />
+			</div> */}
 		</div>
 	)
 }
@@ -48,9 +50,9 @@ interface ImageProps {
 
 const ProjectImage: React.FC<ImageProps> = ({ src, alt }) => {
 	return (
-		<div className="relative flex w-full min-w-0 shrink-0 grow-0 basis-[60%] font-sans sm:basis-[36%] md:basis-1/3 lg:basis-[50%] 2xl:basis-1/3">
+		<div className="relative flex w-full min-w-0 shrink-0 grow-0 basis-[60%] font-sans sm:basis-[36%] md:basis-1/3 lg:basis-[25%] 2xl:basis-1/3">
 			<div className="relative aspect-[0.8/1] h-full w-full">
-				<Image src={src} alt={alt} fill className="rounded-2xl object-cover" />
+				<img src={src} alt={alt} className="h-full w-full rounded-2xl object-cover" />
 				<div className="absolute inset-0 rounded-2xl bg-black/30"></div>
 			</div>
 

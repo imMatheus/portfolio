@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectsShowCase from './ProjectsShowCase'
-import { GitHub, Linkedin, Instagram } from 'react-feather'
+import { GitHub, Linkedin } from 'react-feather'
 import styles from './spacer.module.scss'
 
 const HeaderSpan: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -29,8 +29,17 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 					</h1>
 					<div className="flex items-center gap-4">
 						<a href="https://github.com/imMatheus" target="_blank" rel="noreferrer" className="group relative">
-							<div className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors group-hover:bg-gray-800/20 sm:h-10 sm:w-10"></div>
+							<div className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors group-hover:bg-gray-800/10 sm:h-10 sm:w-10"></div>
 							<GitHub className="relative h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
+						</a>
+
+						<a href="https://x.com/whosmatu" target="_blank" rel="noreferrer" className="group relative">
+							<div className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors group-hover:bg-gray-800/10 sm:h-10 sm:w-10"></div>
+							<svg viewBox="0 0 24 24" aria-hidden="true" className="relative h-5 w-5 cursor-pointer sm:h-6 sm:w-6">
+								<g>
+									<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+								</g>
+							</svg>
 						</a>
 
 						<a
@@ -39,7 +48,7 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 							rel="noreferrer"
 							className="group relative"
 						>
-							<div className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors group-hover:bg-gray-800/20 sm:h-10 sm:w-10"></div>
+							<div className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors group-hover:bg-gray-800/10 sm:h-10 sm:w-10"></div>
 							<Linkedin className="relative h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
 						</a>
 					</div>
