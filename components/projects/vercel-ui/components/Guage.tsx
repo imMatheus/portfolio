@@ -71,7 +71,7 @@ const Gauge: React.FC<GaugeProps> = ({ size = 'medium', value, showValue, colors
 				'--primary-color': `${primaryColor}`
 			}}
 		>
-			<svg fill="none" viewBox="0 0 100 100" height={sizes[size].circle} width={sizes[size].circle} stroke-width="2">
+			<svg fill="none" viewBox="0 0 100 100" height={sizes[size].circle} width={sizes[size].circle} strokeWidth="2">
 				<circle
 					cx="50"
 					cy="50"

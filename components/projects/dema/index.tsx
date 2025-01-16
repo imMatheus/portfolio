@@ -47,7 +47,7 @@ const Dema: React.FC = ({}) => {
 						<li>
 							Full-stack ownership of the web-app.
 							<ul className="list-disc space-y-1 pl-5">
-								<li>Improved table performance by 100x.</li>
+								<li>Improved performance all over the app</li>
 								<li>Fully changed UI and UX flows.</li>
 								<li>Owned internal state management with Jotai</li>
 								<li>Led many end-to-end features</li>
