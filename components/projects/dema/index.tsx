@@ -19,30 +19,30 @@ const Dema: React.FC = ({}) => {
 				href="https://polaroids.dema.ai"
 				target="_blank"
 				rel="noreferrer"
-				className="group absolute -top-16 right-0 z-[3] hidden grid-cols-2 lg:grid"
+				className="group absolute -top-16 right-0 z-[3] grid-cols-2 lg:grid"
 			>
 				<Image
 					src={WinnerImage}
 					alt="Winner polaroid"
-					className="z-[1] w-40 translate-x-1 -rotate-3 border-[3px] border-black transition-all duration-100 group-hover:translate-x-0 group-hover:rotate-0"
+					className="z-[1] hidden w-40 translate-x-1 -rotate-3 border-[3px] border-black transition-all duration-100 group-hover:translate-x-0 group-hover:rotate-0 lg:block"
 				/>
 				<Image
 					src={SelfieImage}
 					alt="Selfie polaroid"
-					className="w-40 -translate-y-2 border-[3px] border-black transition-all duration-100 group-hover:-translate-x-2 group-hover:translate-y-3 group-hover:rotate-6"
+					className="hidden w-40 -translate-y-2 border-[3px] border-black transition-all duration-100 group-hover:-translate-x-2 group-hover:translate-y-3 group-hover:rotate-6 lg:block"
 				/>
 				<Image
 					src={CompanyUpdateImage}
 					alt="Company update polaroid"
-					className="w-40 -translate-y-8 translate-x-6 rotate-3 border-[3px] border-black transition-all duration-100 group-hover:translate-x-2 group-hover:rotate-6"
+					className="w-28 -translate-x-3 translate-y-2 rotate-3 border-[3px] border-black transition-all duration-100 lg:w-40 lg:-translate-y-8 lg:translate-x-6 lg:group-hover:translate-x-2 lg:group-hover:rotate-6"
 				/>
 				<Image
 					src={WiredImage}
 					alt="Wired polaroid"
-					className="w-40 -translate-y-4 translate-x-0 border-[3px] border-black transition-all duration-100 group-hover:-translate-x-2 group-hover:-rotate-6"
+					className="hidden w-40 -translate-y-4 translate-x-0 border-[3px] border-black transition-all duration-100 group-hover:-translate-x-2 group-hover:-rotate-6 lg:block"
 				/>
 
-				<div className="absolute -left-3 top-32 -translate-x-full transition-all duration-100 group-hover:left-0 group-hover:-rotate-3">
+				<div className="absolute -left-3 top-32 hidden -translate-x-full transition-all duration-100 group-hover:left-0 group-hover:-rotate-3 lg:block">
 					<Image src={PolaroidsArrow} alt="Polaroid arrow" className="w-64" />
 				</div>
 			</a>
