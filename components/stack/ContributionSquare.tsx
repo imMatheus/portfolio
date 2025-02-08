@@ -29,11 +29,11 @@ const ContributionSquare: React.FC<ContributionSquareProps> = ({ count, color, c
 			{/* The dialog over the hovered square */}
 			<div
 				className={cn(
-					`absolute ${isTopRank ? '-bottom-2' : '-top-2'} ${
-						isLeft ? '-left-4' : isRight ? '-right-4' : 'left-1/2'
-					} z-10 hidden w-max ${isTopRank ? 'translate-y-full' : '-translate-y-full'} ${
-						!isLeft && !isRight && '-translate-x-1/2'
-					} rounded-md bg-black/90 px-4 py-1 text-xs text-white group-hover:block sm:hover:block md:text-sm`
+					'absolute z-10 hidden w-max rounded-md bg-black/90 px-4 py-1 text-xs text-white group-hover:block sm:hover:block md:text-sm',
+					isTopRank ? '-bottom-2' : '-top-2',
+					isLeft ? '-left-4' : isRight ? '-right-4' : 'left-1/2',
+					isTopRank ? 'translate-y-full' : '-translate-y-full',
+					!isLeft && !isRight && '-translate-x-1/2'
 				)}
 			>
 				{count == 0
