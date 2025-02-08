@@ -76,14 +76,14 @@ export const Lovable: React.FC = ({}) => {
 									Building products takes too long. We started Lovable to fix this.
 									<br />
 									<br />
-									Today, we're officially launching the world’s first AI Full Stack Engineer
+									Today, we`&apos;re officially launching the world`&apos;s first AI Full Stack Engineer
 									<br />
 									<br />
 									Lovable reliably replicates the capabilities of a full stack engineer and handles everything from
 									design to database operations by integrating with Supabase.
 									<br />
 									<br />
-									So what’s new exactly? 🧵
+									So what`&apos;s new exactly? 🧵
 								</pre>
 								<div className="text-text-grayed mt-3 flex max-w-md justify-between text-[#536471]">
 									<div className="group flex items-center gap-1 hover:text-twitter-blue">

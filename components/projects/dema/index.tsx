@@ -52,7 +52,7 @@ const Dema: React.FC = ({}) => {
 					Software engineer, April 2023 - Now
 					<br />
 					<br />
-					<ul className="max-w-[80ch] list-disc space-y-2 pl-5">
+					<ul className="max-w-[80ch] list-disc space-y-3 pl-5">
 						<li>
 							Full-stack ownership of the web-app (core product).
 							<ul className="list-disc space-y-1 pl-5">
