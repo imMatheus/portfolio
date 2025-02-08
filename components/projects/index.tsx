@@ -9,6 +9,7 @@ import Dema from './dema'
 import VercelUi from './vercel-ui/VercelUi'
 import { Acasting } from './acasting/Acasting'
 import { Overwatch } from './overwatch/Overwatch'
+import { Lovable } from './lovable/Lovable'
 interface Props {
 	contributionsCollection: any
 }
@@ -28,6 +29,13 @@ const Projects: React.FC<Props> = ({}) => {
 
 			<Spacer url="dema-black.svg" />
 
+			<section className="bg-[#000]">
+				<ProjectWrapper>
+					<Lovable />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer url="dema-black.svg" />
 			<section className="bg-[#b8c6dd]">
 				<ProjectWrapper>
 					<Overwatch />
