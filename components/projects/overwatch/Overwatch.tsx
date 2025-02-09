@@ -36,11 +36,11 @@ export const Overwatch: React.FC<OverwatchProps> = ({}) => {
 					</ul>
 				</ProjectDescription>
 				<div className="mt-8 space-y-3">
-					<HeroCard name="Winston" image={Winston} width="85%" progressColor="#b1b5c9" />
-					<HeroCard name="Reinhardt" image={Reinhardt} width="82%" progressColor="#a4aeb1" />
-					<HeroCard name="Zarya" image={Zarya} width="79%" progressColor="#f695c4" />
-					<HeroCard name="Lucio" image={Lucio} width="76%" progressColor="#99d675" />
-					<HeroCard name="D.Va" image={Dva} width="73%" progressColor="#f9a4d2" />
+					<HeroCard rank={30} name="Winston" image={Winston} width="85%" progressColor="#b1b5c9" />
+					<HeroCard rank={100} name="Reinhardt" image={Reinhardt} width="82%" progressColor="#a4aeb1" />
+					<HeroCard rank={500} name="Zarya" image={Zarya} width="79%" progressColor="#f695c4" />
+					<HeroCard rank={500} name="Lucio" image={Lucio} width="76%" progressColor="#99d675" />
+					<HeroCard rank={500} name="D.Va" image={Dva} width="73%" progressColor="#f9a4d2" />
 				</div>
 			</div>
 		</div>
@@ -52,11 +52,12 @@ interface HeroCardProps {
 	image: any
 	width: string
 	progressColor: string
+	rank: number
 }
 
-const HeroCard: React.FC<HeroCardProps> = ({ name, image, width, progressColor }) => {
+const HeroCard: React.FC<HeroCardProps> = ({ name, image, width, progressColor, rank }) => {
 	return (
-		<div className="group flex bg-[#f3f5f9]">
+		<div className="flex bg-[#f3f5f9]">
 			<Image
 				src={image}
 				alt={name}
@@ -64,13 +65,13 @@ const HeroCard: React.FC<HeroCardProps> = ({ name, image, width, progressColor }
 				width={60}
 				height={60}
 			/>
-			<div className="w-full">
-				<div
-					className="flex h-full items-center pl-4 transition-[filter] duration-300 group-hover:[image-rendering:pixelated]"
-					style={{ width, backgroundColor: progressColor }}
-				>
+			<div className="relative w-full">
+				<div className="flex h-full items-center pl-4" style={{ width, backgroundColor: progressColor }}>
 					<h4 className="text-2xl font-bold uppercase tracking-wider">{name}</h4>
 				</div>
+				<h3 className="absolute right-4 top-1/2 -translate-y-1/2 text-2xl font-bold uppercase tracking-wider">
+					#{rank}
+				</h3>
 			</div>
 		</div>
 	)

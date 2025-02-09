@@ -10,6 +10,7 @@ import VercelUi from './vercel-ui/VercelUi'
 import { Acasting } from './acasting/Acasting'
 import { Overwatch } from './overwatch/Overwatch'
 import { Lovable } from './lovable/Lovable'
+import { Billboard } from './billboard/Billboard'
 interface Props {
 	contributionsCollection: any
 }
@@ -18,7 +19,7 @@ export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
 	return <div className="mx-auto w-screen max-w-7xl overflow-hidden p-4 sm:px-8 sm:py-6">{children}</div>
 }
 
-const Projects: React.FC<Props> = ({}) => {
+export const Projects: React.FC<Props> = ({}) => {
 	return (
 		<div className="relative w-screen">
 			<section className="relative bg-dema">
@@ -35,13 +36,6 @@ const Projects: React.FC<Props> = ({}) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="dema-black.svg" />
-			<section className="bg-[#b8c6dd]">
-				<ProjectWrapper>
-					<Overwatch />
-				</ProjectWrapper>
-			</section>
-
 			<Spacer url="black-white.svg" />
 
 			<section className="bg-[#000]">
@@ -53,6 +47,12 @@ const Projects: React.FC<Props> = ({}) => {
 			<section className="bg-white">
 				<ProjectWrapper>
 					<Cube />
+				</ProjectWrapper>
+			</section>
+			<Spacer url="dema-black.svg" />
+			<section className="bg-[#b8c6dd]">
+				<ProjectWrapper>
+					<Overwatch />
 				</ProjectWrapper>
 			</section>
 
@@ -82,6 +82,12 @@ const Projects: React.FC<Props> = ({}) => {
 
 			<Spacer url="apple-white.svg" />
 
+			<section className="bg-white">
+				<ProjectWrapper>
+					<Billboard />
+				</ProjectWrapper>
+			</section>
+
 			{/* <section className="bg-[#000]">
 				<ProjectWrapper>
 					<Twitter />
@@ -100,5 +106,3 @@ const Projects: React.FC<Props> = ({}) => {
 		</div>
 	)
 }
-
-export default Projects
