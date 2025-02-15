@@ -3,11 +3,11 @@ import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
 import OverwatchImage from './overwatch-logo.png'
-import Winston from './winston.png'
-import Lucio from './lucio.png'
-import Reinhardt from './reinhardt.png'
-import Zarya from './zarya.png'
-import Dva from './dva.png'
+// import Winston from './winston.png'
+// import Lucio from './lucio.png'
+// import Reinhardt from './reinhardt.png'
+// import Zarya from './zarya.png'
+// import Dva from './dva.png'
 
 interface OverwatchProps {}
 

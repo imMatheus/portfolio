@@ -14,16 +14,15 @@ const About: React.FC = () => {
 						<h2 className="mb-3 text-4xl font-bold">About me</h2>
 						<p className="mb-2 max-w-[80ch] text-base md:mb-4">
 							I am a full-stack developer with experience in web applications and apps.
-							<br /> <br /> At my current job, I work as a software engineer working on implement a data driven web ui
-							for an analytics platform{' '}
+							<br /> <br /> Currently I work as a software engineer at{' '}
 							<Link
-								href="https://dema.ai"
+								href="https://midjourney.com"
 								passHref
 								target="_blank"
 								rel="noopener noreferrer"
-								className="cursor-pointer font-medium transition-all hover:text-dema-dark"
+								className="cursor-pointer font-medium transition-all hover:text-[#f2330d]"
 							>
-								@Dema
+								@Midjourney
 							</Link>
 						</p>
 					</div>

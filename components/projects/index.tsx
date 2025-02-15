@@ -11,6 +11,7 @@ import { Acasting } from './acasting/Acasting'
 import { Overwatch } from './overwatch/Overwatch'
 import { Lovable } from './lovable/Lovable'
 import { Billboard } from './billboard/Billboard'
+import { Midjourney } from './midjourney/Midjourney'
 interface Props {
 	contributionsCollection: any
 }
@@ -22,6 +23,15 @@ export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
 export const Projects: React.FC<Props> = ({}) => {
 	return (
 		<div className="relative w-screen">
+			<section className="relative">
+				{/* <section className="relative bg-[#f2330d]"> */}
+				<ProjectWrapper>
+					<Midjourney />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer url="white-dema.svg" />
+
 			<section className="relative bg-dema">
 				<ProjectWrapper>
 					<Dema />
@@ -85,11 +95,11 @@ export const Projects: React.FC<Props> = ({}) => {
 
 			<Spacer url="apple-white.svg" />
 
-			<section className="bg-white">
+			{/* <section className="bg-white">
 				<ProjectWrapper>
 					<Billboard />
 				</ProjectWrapper>
-			</section>
+			</section> */}
 
 			{/* <section className="bg-[#000]">
 				<ProjectWrapper>
