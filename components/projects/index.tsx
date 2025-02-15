@@ -38,25 +38,28 @@ export const Projects: React.FC<Props> = ({}) => {
 
 			<Spacer url="black-white.svg" />
 
-			<section className="bg-[#000]">
-				<VercelUi />
-			</section>
-
-			<Spacer url="black-white.svg" />
-
 			<section className="bg-white">
 				<ProjectWrapper>
 					<Cube />
 				</ProjectWrapper>
 			</section>
-			<Spacer url="dema-black.svg" />
+
+			{/* <div className="rotate-180"> */}
+			<Spacer url="white-black.svg" />
+			{/* </div> */}
+
+			<section className="bg-[#000]">
+				<VercelUi />
+			</section>
+
+			<Spacer url="black-overwatch.svg" />
 			<section className="bg-[#b8c6dd]">
 				<ProjectWrapper>
 					<Overwatch />
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="white-purple.svg" />
+			<Spacer url="overwatch-purple.svg" />
 
 			{/* <Spacer url="apple-white.svg" /> */}
 

@@ -35,13 +35,13 @@ export const Overwatch: React.FC<OverwatchProps> = ({}) => {
 						<li>I was 13-16 years old btw</li>
 					</ul>
 				</ProjectDescription>
-				<div className="mt-8 space-y-3">
+				{/* <div className="mt-8 space-y-3">
 					<HeroCard rank={30} name="Winston" image={Winston} width="85%" progressColor="#b1b5c9" />
 					<HeroCard rank={100} name="Reinhardt" image={Reinhardt} width="82%" progressColor="#a4aeb1" />
 					<HeroCard rank={500} name="Zarya" image={Zarya} width="79%" progressColor="#f695c4" />
 					<HeroCard rank={500} name="Lucio" image={Lucio} width="76%" progressColor="#99d675" />
 					<HeroCard rank={500} name="D.Va" image={Dva} width="73%" progressColor="#f9a4d2" />
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)

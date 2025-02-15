@@ -49,7 +49,7 @@ const Dema: React.FC = ({}) => {
 			<div className="relative z-[1]">
 				<ProjectTitle>Dema.ai</ProjectTitle>
 				<ProjectDescription>
-					Software engineer, April 2023 - Now
+					Software engineer, April 2023 - February 2025
 					<br />
 					<br />
 					<ul className="max-w-[80ch] list-disc space-y-3 pl-5">
