@@ -27,7 +27,7 @@ const CompetentChip: React.FC<ComponentChipProps> = ({ className, children }) =>
 const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 	return (
 		<section className="mx-auto w-screen max-w-7xl space-y-8 bg-white p-5 pb-8 sm:space-y-20 md:pb-32 md:pt-10">
-			<div>
+			{/* <div>
 				<Title>What do I know?</Title>
 
 				<div className="relative mb-5">
@@ -81,7 +81,7 @@ const Stack: React.FC<Props> = ({ contributionsCollection }) => {
 					<CompetentChip>EsLint</CompetentChip>
 					<CompetentChip>Puppeteer</CompetentChip>
 				</ul>
-			</div>
+			</div> */}
 
 			<CSSBattles />
 			{/* <div className="pb-8 md:pb-32"> */}

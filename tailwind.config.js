@@ -3,7 +3,8 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				grotesk: ["'Space Grotesk'", 'sans-serif']
+				grotesk: ["'Space Grotesk'", 'sans-serif'],
+				inter: ['Inter', 'sans-serif']
 			},
 			colors: {
 				blurple: '#5865f2',

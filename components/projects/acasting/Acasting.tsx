@@ -25,7 +25,10 @@ export const Acasting: React.FC = ({}) => {
 					<li>Developed a custom in-house chat to reduce our monthly costs by over $500/month</li>
 					<li>Worked on our recommendation engine</li>
 					<li>Implemented mobile design and responsiveness</li>
-					<li>Introduced our location feature, helping 100s of casters find amongst 1000+ locations</li>
+					<li>
+						Introduced our location feature, helping 100s of casters find amongst 1000+ locations (very similar to
+						Airbnb)
+					</li>
 				</ul>
 			</ProjectDescription>
 			<LinkWrapper>
