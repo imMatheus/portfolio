@@ -15,7 +15,7 @@ const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
 					title="Midjourney"
 					color="#99c100"
 					stars={0}
-					description="Good ai images"
+					description="Making images look good"
 					language=""
 					link="midjourney"
 					commits={0}
