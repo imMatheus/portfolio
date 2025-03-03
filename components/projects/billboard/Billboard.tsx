@@ -3,32 +3,126 @@ import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
 import Image from 'next/image'
 import { MoreHorizontal } from 'react-feather'
+import { cn } from 'lib/utils'
+import Link from 'next/link'
+
+type Billboard = {
+	caption: string
+	imgUrl: string
+	comments: number
+	retweets: number
+	likes: string
+	views: string
+	link: string
+	date: string
+	className?: string
+}
+
+const billboards: Billboard[] = [
+	{
+		caption: "it's always the CS grads' fault",
+		imgUrl: 'https://pbs.twimg.com/media/GiBxSz9bcAAJ0qF?format=jpg&name=medium',
+		comments: 58,
+		retweets: 514,
+		likes: '11k',
+		views: '410k',
+		link: 'https://x.com/whosmatu/status/1882629609256267776',
+		date: 'Jan 24 2025'
+	},
+	{
+		caption: 'ai is a zero sum game',
+		imgUrl: 'https://pbs.twimg.com/media/GiXuBheaYAEBZU2?format=jpg&name=small',
+		comments: 12,
+		retweets: 47,
+		likes: '1.4k',
+		views: '44k',
+		link: 'https://x.com/whosmatu/status/1884176730736451799',
+		date: 'Jan 28 2025'
+	},
+
+	{
+		caption: 'we are only 7 really good tabs away from agi, make it happen @cursor_ai',
+		imgUrl: 'https://pbs.twimg.com/media/GhyRG6FbsAA4wdf?format=jpg&name=small',
+		comments: 46,
+		retweets: 93,
+		likes: '2.9k',
+		views: '133k',
+		link: 'https://x.com/whosmatu/status/1881540556708577790',
+		date: 'Jan 21 2025'
+	},
+	// {
+	// 	caption: '/imagine @midjourney',
+	// 	imgUrl: 'https://pbs.twimg.com/media/Gh41xSibMAABpT9?format=jpg&name=small',
+	// 	comments: 6,
+	// 	retweets: 0,
+	// 	likes: '61k',
+	// 	views: '1.8k',
+	// 	link: 'https://x.com/whosmatu/status/1882001319621464145',
+	// 	date: 'Jan 22 2025'
+	// },
+	{
+		caption: "money can't buy happiness, but it can get you a $500b cluster",
+		imgUrl: 'https://pbs.twimg.com/media/Gh786wCaMAEjpI5?format=jpg&name=small',
+		comments: 15,
+		retweets: 15,
+		likes: '553',
+		views: '27k',
+		link: 'https://x.com/whosmatu/status/1882219783556592014',
+		date: 'Jan 23 2025'
+	},
+	{
+		caption: 'you can just not answer things',
+		imgUrl: 'https://pbs.twimg.com/media/GiM64LYbgAE8KhT?format=jpg&name=small',
+		comments: 10,
+		retweets: 6,
+		likes: '178',
+		views: '10k',
+		link: 'https://x.com/whosmatu/status/1883416653104595276',
+		date: 'Jan 26 2025'
+	},
+
+	{
+		caption: 'pay to win',
+		imgUrl: 'https://pbs.twimg.com/media/GiVAsaUagAANQ_P?format=jpg&name=small',
+		comments: 24,
+		retweets: 20,
+		likes: '458',
+		views: '63k',
+		link: 'https://x.com/whosmatu/status/1883983386496360812',
+		date: 'Jan 27 2025'
+	}
+]
 
 export const Billboard: React.FC = ({}) => {
 	return (
-		<div>
+		<div className="mx-auto max-w-[90rem] p-4 pb-20">
 			<ProjectTitle>
-				<p className="gap-4">Twitter billboards</p>
+				<p className="gap-4 text-center">Twitter billboards</p>
 			</ProjectTitle>
-			<ProjectDescription>
-				I made some fake billboards on my own and posted them to twitter and some of them went pretty well, you might
-				have seen some of them eve
+			<ProjectDescription className="mx-auto max-w-[70ch]">
+				<p className="text-center">
+					I made some fake billboards on my own and posted them to twitter and some of them went pretty well, you might
+					have seen some of them even!
+				</p>
 			</ProjectDescription>
 
-			<div className="grid">
-				<TwitterCard />
-				<TwitterCard />
-				<TwitterCard />
-				<TwitterCard />
+			<div className="mt-5 grid grid-rows-[masonry] gap-2 md:mt-8 md:grid-cols-2 md:gap-4 xl:grid-cols-3">
+				{billboards.map((billboard) => (
+					<TwitterCard key={billboard.imgUrl} billboard={billboard} />
+				))}
 			</div>
 		</div>
 	)
 }
 
-const TwitterCard = () => {
+const TwitterCard = ({ billboard }: { billboard: Billboard }) => {
 	return (
-		<article className="mt-2 max-w-3xl rounded-md border bg-white text-[rgb(15_20_25)] transition-colors">
-			<div className="flex items-start gap-3 p-3 xl:gap-4 xl:p-4">
+		<Link
+			href={billboard.link}
+			target="_blank"
+			className={cn('h-max rounded-md border text-[rgb(15_20_25)] transition-colors', billboard.className)}
+		>
+			<div className="flex items-start gap-3 p-3 xl:p-4">
 				<div className="flex flex-col items-end">
 					<div className="relative flex-shrink-0 overflow-hidden bg-white">
 						<Image
@@ -52,25 +146,19 @@ const TwitterCard = () => {
 
 						<div className="relative ml-auto">
 							<div className="group relative">
-								<div className="group-hover:bg-carolina/20 absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors"></div>
+								<div className="group-hover:bg-carolina/20 absolute left-1/2 top-1/2 h-[22px] w-[22px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors"></div>
 								<MoreHorizontal className="text-text-grayed group-hover:text-carolina relative h-4 w-4" />
 							</div>
 						</div>
 					</div>
 					<pre className="min-w-0 whitespace-pre-wrap break-words font-inter text-[rgb(15_20_25)]">
-						it&apos;s always the CS grads&apos; fault
-						<Image
-							src="https://pbs.twimg.com/media/GiBxSz9bcAAJ0qF?format=jpg&name=medium"
-							alt="Github billboard"
-							width={380}
-							className="mt-3 rounded-lg"
-							height={500}
-						/>
+						{billboard.caption}
+						<Image src={billboard.imgUrl} alt="Github billboard" width={780} className="mt-3 rounded-lg" height={500} />
 					</pre>
-					<div className="text-text-grayed mt-3 flex max-w-md justify-between text-[#536471]">
-						<div className="group flex items-center gap-1 hover:text-twitter-blue">
-							<div className="relative h-4 w-4 xl:h-5 xl:w-5">
-								<div className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-blue/20 xl:h-8 xl:w-8"></div>
+					<div className="text-text-grayed mt-3 flex max-w-md gap-6 text-[#536471]">
+						<div className="group flex items-center gap-1.5 hover:text-twitter-blue">
+							<div className="relative h-4 w-4">
+								<div className="absolute left-1/2 top-1/2 h-[22px] w-[22px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-blue/20"></div>
 
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -83,11 +171,11 @@ const TwitterCard = () => {
 									</g>
 								</svg>
 							</div>
-							<span className="text-[13px] transition-colors">73</span>
+							<span className="text-[13px] transition-colors">{billboard.comments}</span>
 						</div>
-						<div className="group flex items-center gap-1 hover:text-twitter-olive">
-							<div className="relative h-4 w-4 xl:h-5 xl:w-5">
-								<div className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-olive/20 xl:h-8 xl:w-8"></div>
+						<div className="group flex items-center gap-1.5 hover:text-twitter-olive">
+							<div className="relative h-4 w-4">
+								<div className="absolute left-1/2 top-1/2 h-[22px] w-[22px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-olive/20"></div>
 
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -100,11 +188,11 @@ const TwitterCard = () => {
 									</g>
 								</svg>
 							</div>
-							<span className="text-[13px] transition-colors">142</span>
+							<span className="text-[13px] transition-colors">{billboard.retweets}</span>
 						</div>
-						<div className="group flex items-center gap-1 hover:text-twitter-candy-pink">
-							<div className="relative h-4 w-4 xl:h-5 xl:w-5">
-								<div className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-candy-pink/20 xl:h-8 xl:w-8"></div>
+						<div className="group flex items-center gap-1.5 hover:text-twitter-candy-pink">
+							<div className="relative h-4 w-4">
+								<div className="absolute left-1/2 top-1/2 h-[22px] w-[22px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-candy-pink/20"></div>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
@@ -116,23 +204,28 @@ const TwitterCard = () => {
 									</g>
 								</svg>
 							</div>
-							<span className="text-[13px] transition-colors">642</span>
+							<span className="text-[13px] transition-colors">{billboard.likes}</span>
 						</div>
-						<div className="group flex items-center gap-1 hover:text-twitter-blue">
-							<div className="relative h-4 w-4 xl:h-5 xl:w-5">
-								<div className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-blue/20 xl:h-8 xl:w-8"></div>
+						<div className="group flex items-center gap-1.5 hover:text-twitter-blue">
+							<div className="relative h-4 w-4">
+								<div className="absolute left-1/2 top-1/2 h-[22px] w-[22px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-blue/20"></div>
 
-								<svg viewBox="0 0 24 24" aria-hidden="true" className="transition-colors group-hover:fill-twitter-blue">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									aria-hidden="true"
+									className="transition-colors group-hover:fill-twitter-blue"
+								>
 									<g>
-										<path d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z"></path>
+										<path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"></path>
 									</g>
 								</svg>
 							</div>
-							<span className="text-[13px] transition-colors">759</span>
+							<span className="text-[13px] transition-colors">{billboard.views}</span>
 						</div>
 					</div>
 				</div>
 			</div>
-		</article>
+		</Link>
 	)
 }

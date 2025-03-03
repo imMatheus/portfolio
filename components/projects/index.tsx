@@ -95,11 +95,9 @@ export const Projects: React.FC<Props> = ({}) => {
 
 			<Spacer url="apple-white.svg" />
 
-			{/* <section className="bg-white">
-				<ProjectWrapper>
-					<Billboard />
-				</ProjectWrapper>
-			</section> */}
+			<section className="bg-white">
+				<Billboard />
+			</section>
 
 			{/* <section className="bg-[#000]">
 				<ProjectWrapper>
