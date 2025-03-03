@@ -102,7 +102,7 @@ export const Billboard: React.FC = ({}) => {
 			<ProjectDescription className="mx-auto max-w-[70ch]">
 				<p className="text-center">
 					I made some fake billboards on my own and posted them to twitter and some of them went pretty well, you might
-					have seen some of them even!
+					have seen some of them.
 				</p>
 			</ProjectDescription>
 
