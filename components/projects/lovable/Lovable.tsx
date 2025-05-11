@@ -50,8 +50,8 @@ export const Lovable: React.FC = ({}) => {
 										width={40}
 										height={40}
 										className="rounded-md"
-										src="https://pbs.twimg.com/profile_images/1899496737913348097/QI4DSMeL_400x400.jpg"
-										alt={`Matheus profile image`}
+										src="https://pbs.twimg.com/profile_images/1915780454092779520/PIxdzAvI_400x400.jpg"
+										alt={`Lovable profile image`}
 									/>
 								</div>
 							</div>
