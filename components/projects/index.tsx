@@ -17,7 +17,7 @@ interface Props {
 }
 
 export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
-	return <div className="mx-auto w-screen max-w-7xl overflow-hidden p-4 sm:px-8 sm:py-6">{children}</div>
+	return <div className="mx-auto w-screen max-w-7xl overflow-hidden bg-white p-4 sm:px-8 sm:py-6">{children}</div>
 }
 
 export const Projects: React.FC<Props> = ({}) => {
