@@ -24,6 +24,16 @@ const About: React.FC = () => {
 							>
 								@Midjourney
 							</Link>
+							, and also a scout for{' '}
+							<Link
+								href="https://a16z.com/"
+								passHref
+								target="_blank"
+								rel="noopener noreferrer"
+								className="cursor-pointer font-medium transition-all hover:text-[#f71830]"
+							>
+								@a16z
+							</Link>
 						</p>
 					</div>
 
@@ -45,7 +55,7 @@ const About: React.FC = () => {
 							</div>
 							<div className="flex h-full w-full flex-col">
 								<div className="relative h-full w-full">
-									<Image src="/p-3.JPEG" className="bg-bottom" layout="fill" objectFit="cover" alt="headshot" />
+									<Image src="/profile.jpeg" className="bg-bottom" layout="fill" objectFit="cover" alt="headshot" />
 								</div>
 							</div>
 						</div>
