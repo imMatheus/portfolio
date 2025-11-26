@@ -13,7 +13,16 @@ const About: React.FC = () => {
 					<div className="max-w-[70ch]">
 						<h2 className="mb-3 text-4xl font-bold">About me</h2>
 						<p className="mb-2 max-w-[80ch] text-base md:mb-4">
-							I am a full-stack developer with experience in web applications and apps.
+							I am a full-stack developer from{' '}
+							<span className="group font-bold">
+								<span className="group-hover:text-[#006aa7]">S</span>
+								<span className="group-hover:text-[#fecc02]">w</span>
+								<span className="group-hover:text-[#006aa7]">e</span>
+								<span className="group-hover:text-[#fecc02]">d</span>
+								<span className="group-hover:text-[#006aa7]">e</span>
+								<span className="group-hover:text-[#fecc02]">n</span>
+							</span>{' '}
+							with experience in web applications and apps.
 							<br /> <br /> Currently I work as a software engineer at{' '}
 							<Link
 								href="https://midjourney.com"

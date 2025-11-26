@@ -7,15 +7,15 @@ import { setContext } from '@apollo/client/link/context'
 import Hero from '@/components/Hero'
 import { Projects } from '@/components/projects'
 import Stack from '@/components/stack'
-import Contact from '@/components/Contact'
-import OnTheHorizon from '@/components/OnTheHorizon'
+// import Contact from '@/components/Contact'
+// import OnTheHorizon from '@/components/OnTheHorizon'
 
 interface Data {
 	pinnedItems: any
 	contributionsCollection: any
 }
 
-export const getStaticProps: GetStaticProps<Data> = async (context) => {
+export const getStaticProps: GetStaticProps<Data> = async () => {
 	const httpLink = createHttpLink({
 		uri: 'https://api.github.com/graphql'
 	})
