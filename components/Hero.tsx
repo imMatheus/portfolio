@@ -32,7 +32,6 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 							<div className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors group-hover:bg-gray-800/10 sm:h-10 sm:w-10"></div>
 							<GitHub className="relative h-5 w-5 cursor-pointer sm:h-6 sm:w-6" />
 						</a>
-
 						<a href="https://x.com/whosmatu" target="_blank" rel="noreferrer" className="group relative">
 							<div className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors group-hover:bg-gray-800/10 sm:h-10 sm:w-10"></div>
 							<svg viewBox="0 0 24 24" aria-hidden="true" className="relative h-5 w-5 cursor-pointer sm:h-6 sm:w-6">
@@ -41,7 +40,6 @@ const Hero: React.FC<Props> = ({ pinnedItems }) => {
 								</g>
 							</svg>
 						</a>
-
 						<a
 							href="https://www.linkedin.com/in/matheus-mendes-dev/"
 							target="_blank"
