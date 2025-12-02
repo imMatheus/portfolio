@@ -1,9 +1,9 @@
 import React, { PropsWithChildren } from 'react'
 import LucioCode from './luciocode/LucioCode'
 
-import Sorter from './sorter/Sorter'
+// import Sorter from './sorter/Sorter'
 import Spacer from '../Spacer'
-import Twitter from './twitter/Twitter'
+// import Twitter from './twitter/Twitter'
 import Cube from './rubics-cube'
 import Dema from './dema'
 import VercelUi from './vercel-ui/VercelUi'

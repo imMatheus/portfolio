@@ -15,7 +15,8 @@ export const Midjourney: React.FC<MidjourneyProps> = ({}) => {
 				<Image src={MidjourneyImage} alt="Midjourney" className="inline h-20 w-20 object-contain" />
 			</ProjectTitle>
 			<ProjectDescription>
-				Software engineer, February 2025 - Now
+				<p>Software engineer, February 2025 - Now</p>
+				<br />
 				<ul className="max-w-[80ch] list-disc space-y-3 pl-5">
 					<li>
 						Adding ability to have multiple layers and rotate layers in the editor on the website

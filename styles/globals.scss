@@ -252,3 +252,13 @@ html {
 .hljs {
 	background-color: transparent !important;
 }
+
+// Shiki code block styles (custom CodeBlock component)
+.shiki {
+	overflow-x: auto;
+	
+	code {
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+}

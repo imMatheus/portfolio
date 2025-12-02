@@ -1,0 +1,52 @@
+---
+title: My First Blog Post
+date: 2024-01-15
+description: Welcome to my blog! This is my first post where I'll share some thoughts and demonstrate MDX features including code highlighting and interactive components.
+image: /profile.jpeg
+---
+
+Welcome to my blog! I'm excited to share my thoughts and experiences with you. This first post will demonstrate some of the features available in my blog system.
+
+## Getting Started
+
+This blog is built with Next.js and MDX, which allows me to write content using Markdown while also embedding React components directly in my posts.
+
+## Code Highlighting
+
+Here's an example of code highlighting using Shiki:
+
+```ts utils.ts
+function greet(name: string): string {
+	return `Hello, ${name}! Welcome to my blog.`
+}
+
+const message = greet('Reader')
+console.log(message)
+```
+
+And here's another example without a filename:
+
+```js
+const example = 'No filename shown here'
+console.log(example)
+```
+
+The syntax highlighting is powered by Shiki, which uses the same TextMate grammar engine as VS Code, ensuring accurate and beautiful code highlighting.
+
+## Interactive Components
+
+One of the cool features of MDX is that I can embed React components directly in my blog posts. Here's a simple counter component:
+
+<Counter />
+
+Try clicking the buttons to interact with it!
+
+## Images
+
+I can also include images in my blog posts. Here's a photo:
+
+![My Profile](/profile.jpeg)
+
+## Conclusion
+
+This is just the beginning. I'll be sharing more posts about web development, React, TypeScript, and other topics that interest me. Stay tuned!

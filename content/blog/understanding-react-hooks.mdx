@@ -1,0 +1,116 @@
+---
+title: Understanding React Hooks
+date: 2024-01-10
+description: A deep dive into React Hooks, exploring useState, useEffect, and custom hooks with practical examples.
+---
+
+React Hooks revolutionized how we write React components by allowing us to use state and other React features in functional components. In this post, we'll explore some of the most commonly used hooks.
+
+## useState Hook
+
+The `useState` hook is the most fundamental hook in React. It allows functional components to manage local state:
+
+```tsx
+import { useState } from 'react'
+
+function Counter() {
+	const [count, setCount] = useState(0)
+
+	return (
+		<div>
+			<p>You clicked {count} times</p>
+			<button onClick={() => setCount(count + 1)}>Click me</button>
+		</div>
+	)
+}
+```
+
+```css
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+```
+
+```html
+<div class="container">
+	<h1>Hello, World!</h1>
+</div>
+```
+
+The `useState` hook returns an array with two elements:
+
+1. The current state value
+2. A function to update the state
+
+## useEffect Hook
+
+The `useEffect` hook lets you perform side effects in functional components. It's similar to `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` combined:
+
+```javascript
+import { useState, useEffect } from 'react'
+
+function DataFetcher() {
+	const [data, setData] = useState(null)
+	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		// This function runs after every render
+		fetch('/api/data')
+			.then((response) => response.json())
+			.then((data) => {
+				setData(data)
+				setLoading(false)
+			})
+
+		// Cleanup function (optional)
+		return () => {
+			// Cleanup code here
+		}
+	}, []) // Empty array means this effect runs only once
+
+	if (loading) return <div>Loading...</div>
+	return <div>{JSON.stringify(data)}</div>
+}
+```
+
+## Custom Hooks
+
+You can create your own custom hooks to extract component logic into reusable functions:
+
+```typescript
+import { useState, useEffect } from 'react'
+
+function useWindowWidth() {
+	const [width, setWidth] = useState(window.innerWidth)
+
+	useEffect(() => {
+		const handleResize = () => setWidth(window.innerWidth)
+		window.addEventListener('resize', handleResize)
+
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
+	return width
+}
+
+// Usage in a component
+function MyComponent() {
+	const width = useWindowWidth()
+	return <div>Window width: {width}px</div>
+}
+```
+
+## Rules of Hooks
+
+There are two important rules to follow when using hooks:
+
+1. **Only call hooks at the top level** - Don't call hooks inside loops, conditions, or nested functions
+2. **Only call hooks from React functions** - Call hooks from React functional components or custom hooks
+
+## Conclusion
+
+React Hooks provide a powerful and elegant way to manage state and side effects in functional components. They make code more reusable and easier to understand. As you continue to work with React, you'll find hooks becoming an essential part of your development toolkit.

@@ -7,12 +7,23 @@ import { setContext } from '@apollo/client/link/context'
 import Hero from '@/components/Hero'
 import { Projects } from '@/components/projects'
 import Stack from '@/components/stack'
+import Blog from '@/components/Blog'
+import { getAllPosts } from '../lib/blog'
 // import Contact from '@/components/Contact'
 // import OnTheHorizon from '@/components/OnTheHorizon'
 
 interface Data {
 	pinnedItems: any
 	contributionsCollection: any
+	posts: Array<{
+		slug: string
+		frontmatter: {
+			title: string
+			date: string
+			description: string
+			image?: string
+		}
+	}>
 }
 
 export const getStaticProps: GetStaticProps<Data> = async () => {
@@ -89,17 +100,19 @@ export const getStaticProps: GetStaticProps<Data> = async () => {
 
 	const pinnedItems = user.pinnedItems.edges.map(({ node }: any) => node)
 	const contributionsCollection = user.contributionsCollection.contributionCalendar
+	const posts = getAllPosts()
 
 	return {
 		props: {
 			pinnedItems,
-			contributionsCollection
+			contributionsCollection,
+			posts
 		},
 		revalidate: 60 * 60 * 12 // 12 hours
 	}
 }
 
-const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
+const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection, posts }) => {
 	return (
 		<div className="h-auto border-black text-black">
 			<Head>
@@ -115,6 +128,7 @@ const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
 			<Stack contributionsCollection={contributionsCollection} />
 
 			<Projects contributionsCollection={contributionsCollection} />
+			<Blog posts={posts} />
 			{/* <Contact /> */}
 			{/* <OnTheHorizon /> */}
 		</div>
