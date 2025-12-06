@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
 import MidjourneyImage from './midjourney-logo.png'
@@ -8,11 +8,21 @@ import { ExternalLink } from 'react-feather'
 interface MidjourneyProps {}
 
 export const Midjourney: React.FC<MidjourneyProps> = ({}) => {
+	const [test, setTest] = useState<number[]>([])
+	const [_, force] = useState({})
+
+	const f = useMemo(() => {
+		console.log(test)
+	}, [test])
+
+	console.log('RE RENDER')
 	return (
 		<div className="" id="midjourney">
 			<ProjectTitle>
 				<p className="mr-2 inline-block">Midjourney</p>
 				<Image src={MidjourneyImage} alt="Midjourney" className="inline h-20 w-20 object-contain" />
+				<button onClick={() => setTest((c) => [...c, 1])}>inc</button>
+				<button onClick={() => force({})}>force render</button>
 			</ProjectTitle>
 			<ProjectDescription>
 				<p>Software engineer, February 2025 - Now</p>

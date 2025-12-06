@@ -1,0 +1,59 @@
+---
+title: Why your react app is slow, and why useMemo won't fix it.
+date: 2025-12-02
+description: In the era of AI slop react code, a fast app is hard to come by. Even experienced devs have a hard time doing it right. In this post, we'll explore why your react app is slow, and why useMemo or other duck-tape solutions won't fix it.
+image: https://cdn.midjourney.com/d719ca3c-7ea2-4634-bb4f-ab5a03f5a568/0_0.png
+---
+
+In the era of AI slop react code, creating an app is faster than ever, but creating a fast app is harder than ever. Even experienced devs have a hard time doing it right and tend to overcomplicate things with _duck-tape solutions_, the `Just one more useMemo bro, trust` mindset. In this post, we'll explore why your react app is slow, and why useMemo or other _duck-tape solutions_ won't fix it and what some common anit-patterns are that you should avoid and how to think about performance in general.
+
+These points are mainly coming from my learnings working at [@Midjourney](https://www.midjourney.com), where i've had the pressure to work some amazing devs, primarily [Cheng Lou](https://x.com/_chenglou) and [Benjamin San Souci](https://x.com/bsansouci). The Midjourney website servers millions of users a month and is maintained by ~5 full time engineers.
+
+There are 4 main points I want to cover in this post:
+
+1. Rerenders are not the enemy
+2. Data structures are the key to performance, you should try to _actually_ think about it
+3. State management is key.
+4. Why **useMemo** or **useCallback** won't fix it.
+5. Dependency hell is probably slowing you down, keeping it lean will save you headaches
+6. Web dev is easy, you are making it hard.
+
+## Why **useMemo** or **useCallback** won't fix it.
+
+When peoples apps become slow, they tend to go into panic mode and just slap a **useMemo** or **useCallback** on anything they can find praying to javascript gods that it will work, more often than not they also use **useMemo** and **useCallback** before even getting a performance issue in the spirit of `this might be slow, so might be good to memo it just because`.
+
+If I got a pennie for everytime I've seen code like this I might finally be able to my Vercel bill:
+
+```tsx aa.tsx {2,4-6}
+const UserComponent = ({ age, userArray }) => {
+	const name = useMemo(() => {
+		if (age > 21) return 'unc'
+		return 'noob'
+	}, [])
+
+	const hasMatheus = useMemo(() => {
+		return userArray.some((user) => user.name === 'matheus')
+	}, [userArray]) // [!code hl:4]
+
+	const getNames = useCallback(() => {
+		return userArray.map((user) => user.name)
+	}, [userArry])
+}
+```
+
+There are couple of issues with code like this. To begin, take the first **useMemo** example here, the check for `age > 21` is basically free. It's easy to feel like hooks are these magical things but they are really not, they are normal javascript functions and have their own code to run that is very much not free, so in this case you probably made you app objectivly slower as the `>` check is less computational heavy then invokation of `useMemo`.
+The second `useMemo` might seem more reasonable, but it's probably not. It for sure the depends on the full context here to say if this `useMemo` makes sense or not, but some good rule of thumbs are:
+
+1. Does `userArray` have `< 1000` items? It's most likely fine to iterate over on each render and does not need a `useMemo`
+2. Is `UserComponent` used once per screen or can it be used hundrets at the same time? If its only used once, its fine, if its many times the `useMemo` wont really help due to it still needing to compute it for each components, so you end up with a `N*M` issue where `N` is the length of `userArray` and `M` is the number of components, so you should probably hoiste up the `hasMatheus` calculation one level up in the component tree and remove the `useMemo`
+3. Are you just doing a simple calculation, say `x > y`, `x + y`, `array.lenght`, `someBoolean ? { foo } : { bar }`, you should simply never use `useMemo` for that.
+
+The times that you actually want to use `useMemo` is usually for heavy instanctionas of object, think initiallicing an amplitude object for tracking events.
+
+Circling back to the third code example there with the `useCallback`, this is a funny one and I've honestly seen this _soooo_ many times and my only logical reason as to why i belive people use `useCallback` is that either its simply just AI slop and they have no clue how to write code so they just accept it, or they simply think that the hook "caches" the response of the function calculation and so that makes the function _blazingly faaast_. `useCallback` only really has two cases where it makes sense to use which is either if the function is used as dependecy in a `useEffect` or `useMemo`, or when you have function that you need to pass as a prop to another component and that entire component is `memoized` which means it will only re-run once the props change.
+
+Another case where I see people justify using `useMemo` is when they have some hook that is used in many places
+
+## Rerenders are not the enemy
+
+When I look at other codebases one of the biggest patterns I see is that devs do everything in their power to avoid rerenders. They split up their components so that all of does not re-render,

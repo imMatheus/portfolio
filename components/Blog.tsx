@@ -47,11 +47,11 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
 								<p className="line-clamp-3 text-gray-600">{post.frontmatter.description}</p>
 								{post.frontmatter.image && (
 									<div className="relative mt-4 h-48 w-full overflow-hidden rounded-md">
-										<Image
+										<img
 											src={post.frontmatter.image}
 											alt={post.frontmatter.title}
-											fill
-											className="object-cover transition-transform group-hover:scale-105"
+											// fill
+											className="size-full object-cover transition-transform group-hover:scale-105"
 										/>
 									</div>
 								)}

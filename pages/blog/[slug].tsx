@@ -8,6 +8,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { useMDXComponents } from '../../mdx-components'
 import { visit } from 'unist-util-visit'
+import Link from 'next/link'
 
 interface BlogPostProps {
 	post: {
@@ -130,19 +131,28 @@ const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
 				<title>{post.frontmatter.title} | Matheus Mendes</title>
 				<meta name="description" content={post.frontmatter.description} />
 			</Head>
-			<article className="mx-auto max-w-4xl px-4 py-12 md:px-8">
-				<header className="mb-8">
-					<h1 className="mb-4 text-4xl font-bold md:text-5xl">{post.frontmatter.title}</h1>
-					<div className="mb-6 text-gray-600">
-						<time dateTime={post.frontmatter.dateISO || post.frontmatter.date}>{post.frontmatter.date}</time>
+			<article className="mx-auto max-w-4xl px-4 py-12 font-inter md:px-8">
+				<header className="mb-8  border-b-gray-200">
+					<div className="mb-4 border-b border-dotted pb-2">
+						<h1 className="mb-4 text-xl font-bold md:text-5xl">{post.frontmatter.title}</h1>
+
+						<div className="flex items-center gap-2 text-sm text-stone-700">
+							<time className="" dateTime={post.frontmatter.dateISO || post.frontmatter.date}>
+								{post.frontmatter.date}
+							</time>
+							<span className="text-xs text-stone-500">|</span>
+							<Link href="https://x.com/whosmatu" className="text-carnelian hover:font-bold">
+								@whosmatu
+							</Link>
+						</div>
 					</div>
 					{post.frontmatter.image && (
-						<div className="relative mb-8 h-64 w-full overflow-hidden rounded-lg md:h-96">
-							<Image src={post.frontmatter.image} alt={post.frontmatter.title} fill className="object-cover" priority />
+						<div className="relative mb-8 aspect-[7/3] w-full overflow-hidden rounded-lg">
+							<img src={post.frontmatter.image} alt={post.frontmatter.title} className="size-full object-cover" />
 						</div>
 					)}
 				</header>
-				<div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-code:rounded prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-sm prose-pre:bg-transparent prose-pre:p-0">
+				<div className="prose prose-stone max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-gray-700 prose-a:text-carnelian prose-a:no-underline hover:prose-a:underline prose-code:rounded prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-sm prose-pre:bg-transparent prose-pre:p-0">
 					<MDXRemote {...post.serializedContent} components={useMDXComponents()} />
 				</div>
 			</article>
