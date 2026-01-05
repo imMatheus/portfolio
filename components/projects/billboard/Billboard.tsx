@@ -129,7 +129,7 @@ const TwitterCard = ({ billboard }: { billboard: Billboard }) => {
 							width={40}
 							height={40}
 							className="rounded-full"
-							src="https://pbs.twimg.com/profile_images/1899496737913348097/QI4DSMeL_400x400.jpg"
+							src="https://pbs.twimg.com/profile_images/1998291267302883328/M2XiEKAx_400x400.jpg"
 							alt={`Matheus profile image`}
 						/>
 					</div>
