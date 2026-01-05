@@ -21,6 +21,7 @@ interface CodeBlockProps {
 	children?: React.ReactNode | string
 	className?: string
 	filename?: string
+	highlightedLines?: number[]
 }
 
 const langs = ['js', 'ts', 'tsx', 'jsx', 'css', 'html', 'json', 'markdown', 'python', 'bash', 'sql']
@@ -31,7 +32,7 @@ const shiki = createHighlighterCoreSync({
 	engine: createJavaScriptRegexEngine()
 })
 
-export const CodeBlock: React.FC<CodeBlockProps> = ({ children, className = '', filename }) => {
+export const CodeBlock: React.FC<CodeBlockProps> = ({ children, className = '', filename, highlightedLines = [] }) => {
 	// Extract language from className (format: language-typescript)
 	const match = className.match(/language-(\w+)/)
 	const language = langs.find((lang) => lang === match?.[1]) || 'markdown'
@@ -63,10 +64,23 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ children, className = '', 
 	// Replace tabs with 2 spaces before highlighting
 	code = code.replace(/\t/g, '  ')
 
-	const html = shiki.codeToHtml(code, {
+	let html = shiki.codeToHtml(code, {
 		lang: language,
 		theme: 'github-light'
 	})
+
+	// Post-process HTML to add highlighting classes to specific lines
+	if (highlightedLines.length > 0) {
+		// Shiki wraps each line in a <span class="line">...</span>
+		// We'll iterate through the lines and add the highlighted-line class to specified lines
+		const lineNumberRegex = /<span class="line">/g
+		let lineCounter = 1
+		html = html.replace(lineNumberRegex, (match) => {
+			const shouldHighlight = highlightedLines.includes(lineCounter)
+			lineCounter++
+			return shouldHighlight ? '<span class="line highlighted-line">' : match
+		})
+	}
 
 	// return (
 	// 	<div className="not-prose relative my-6">
@@ -107,8 +121,8 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ children, className = '', 
 					<div className="h-2 w-2 rounded-full border border-black"></div>
 					{filename && <div className="pl-1 text-xs">{filename}</div>}
 				</div>
-				<div className="flex h-full flex-col p-2">
-					<div className="overflow-x-auto p-4">
+				<div className="flex h-full flex-col p-4 pl-1">
+					<div className="overflow-x-auto">
 						<div dangerouslySetInnerHTML={{ __html: html }} className="text-xs" />
 					</div>
 				</div>

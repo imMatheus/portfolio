@@ -22,7 +22,7 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
 	}
 
 	return (
-		<section className="bg-gray-50 py-12 md:py-16">
+		<section className="bg-[#f7f7f4] py-12 md:py-16">
 			<div className="mx-auto max-w-7xl px-4 md:px-8">
 				<h2 className="mb-8 text-3xl font-bold md:text-4xl">Blog</h2>
 				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

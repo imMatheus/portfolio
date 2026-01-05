@@ -5,11 +5,11 @@ description: In the era of AI slop react code, a fast app is hard to come by. Ev
 image: https://cdn.midjourney.com/d719ca3c-7ea2-4634-bb4f-ab5a03f5a568/0_0.png
 ---
 
-In the era of AI slop react code, creating an app is faster than ever, but creating a fast app is harder than ever. Even experienced devs have a hard time doing it right and tend to overcomplicate things with _duct-tape solutions_, the `Just one more useMemo bro, trust` mindset. In this post, we'll explore why your react app is slow, and why useMemo or other _duct-tape solutions_ won't fix it and what some common anti-patterns are that you should avoid and how to think about performance in general.
+In the era of AI slop react code, creating an app is faster than ever, but creating a fast app is harder than ever. Even experienced devs have a hard time doing it right and tend to overcomplicated things with _duct-tape solutions_, the `Just one more useMemo bro, trust` mindset. In this post, we'll explore why your react app is slow, and why useMemo or other _duct-tape solutions_ won't fix it and what some common anti-patterns are that you should avoid and how to think about performance in general.
 
 These points are mainly coming from my learnings working at [@Midjourney](https://www.midjourney.com), where I've had the pressure to work with some amazing devs, primarily [Cheng Lou](https://x.com/_chenglou) and [Benjamin San Souci](https://x.com/bsansouci). The Midjourney website serves millions of users a month and is maintained by ~5 full time engineers.
 
-There are 4 main points I want to cover in this post:
+There are 6 main points I want to cover in this post:
 
 1. Rerenders are not the enemy
 2. Data structures are the key to performance, you should try to _actually_ think about it
@@ -24,7 +24,7 @@ When people's apps become slow, they tend to go into panic mode and just slap a 
 
 If I got a penny for every time I've seen code like this I might finally be able to pay my Vercel bill:
 
-```tsx aa.tsx {2,4-6}
+```tsx {2-2, 7-7, 11-11}
 const UserComponent = ({ age, userArray }) => {
 	const name = useMemo(() => {
 		if (age > 21) return 'unc'
@@ -33,7 +33,7 @@ const UserComponent = ({ age, userArray }) => {
 
 	const hasMatheus = useMemo(() => {
 		return userArray.some((user) => user.name === 'matheus')
-	}, [userArray]) // [!code hl:4]
+	}, [userArray])
 
 	const getNames = useCallback(() => {
 		return userArray.map((user) => user.name)
@@ -41,7 +41,7 @@ const UserComponent = ({ age, userArray }) => {
 }
 ```
 
-There are a couple of issues with code like this. To begin, take the first **useMemo** example here, the check for `age > 21` is basically free. It's easy to feel like hooks are these magical things but they are really not, they are normal JavaScript functions and have their own code to run that is very much not free, so in this case you probably made your app objectively slower as the `>` check is less computationally heavy than invocation of `useMemo`.
+There are a couple of issues with code like this. To begin, take the first **useMemo** example here, the check for `age > 21` is basically free already and adding the **useMemo** does nothing in practice. It's easy to feel like hooks are these magical things but they are really not, they are normal JavaScript functions and have their own code to run that is very much not free, so in this case you probably made your app objectively slower as the `>` check is less computationally heavy than invocation of `useMemo`.
 
 The second `useMemo` might seem more reasonable, but it's probably not. It for sure depends on the full context here to say if this `useMemo` makes sense or not, but some good rules of thumb are:
 
@@ -54,6 +54,50 @@ The times that you actually want to use `useMemo` is usually for heavy instantia
 Circling back to the third code example there with the `useCallback`, this is a funny one and I've honestly seen this _soooo_ many times and my only logical reason as to why I believe people use `useCallback` is that either it's simply just AI slop and they have no clue how to write code so they just accept it, or they simply think that the hook "caches" the response of the function calculation and so that makes the function _blazingly faaast_. `useCallback` only really has two cases where it makes sense to use which is either if the function is used as a dependency in a `useEffect` or `useMemo`, or when you have a function that you need to pass as a prop to another component and that entire component is `memoized` which means it will only re-run once the props change.
 
 Another case where I see people justify using `useMemo` is when they have some hook that is used in many places
+
+The problem with wrapping you hooks in **useMemo** calls everywhere is that most of the time its some data manipulation that is usually based on some array coming from a prop that is not referentially stable, meaning the actual array object is different on each render, so the **useMemo** is basically useless. Another issue is that this mentally is sort of just trying to sweep the problems under the rug adn eventually it will catch up to you. If you have 10 pieces of state all wrapped in **useMemo** calls and that are like a chain depending on each other, as soon as one of them changes, all of them will re-run and you will hit freeze frames in your app.
+
+There are a couple of easy fall pits here, and it generally just is about the state management of you app.
+
+1. You are fetching the wrong data format, and overcompensating for it.
+2. You have crazy state chains that can just simple be in a big context.
+
+For point one this is usually when you have code like this:
+
+```tsx
+const SomeComponent = () => {
+	const { data } = useQuery(()=> {
+		return fetch('https://api.example.com/data')
+	})
+
+	return <DataComponent data={data} />
+}
+
+const DataComponent = ({ data }) => {
+	const formattedData = useMemo(() => {
+		return data.map((item) => ({...item, isAdult: item.age > 21}))
+	}, [data])
+
+	return ...
+}
+```
+
+This is a _veeery_ common pattern I see in code bases where basically there is some data you are fetching from the backend that is not exactly what you need, but you pass it around to other components that then need it in some other way so they for example use a _.map()_ or _.filter()_ on it and then the developer thinks, `"Oh this might be expensive, I should probably memo it! 🤓☝️"`. The problem here is that this very easily gets out of hand as the complexity grows and more components start to depend on the data. The patter you want to follow is to try and fetch the data at the highest common level possible and then in the actuall fetch just tranform the data to what you need. This makes code first of all more readable as its easy to see where you fetched the data is also where the format of it is defined, but you don't need to add a **useMemo** call. So in this case it would look like this:
+
+```tsx
+const SomeComponent = () => {
+	const { data } = useQuery(()=> {
+		const fetchedData = fetch('https://api.example.com/data')
+		return fetchedData.map((item) => ({...item, isAdult: item.age > 21}))
+	})
+
+	return <DataComponent data={data} />
+}
+
+const DataComponent = ({ data }) => {
+	return ...
+}
+```
 
 ## Rerenders are not the enemy
 

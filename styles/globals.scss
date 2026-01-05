@@ -256,9 +256,22 @@ html {
 // Shiki code block styles (custom CodeBlock component)
 .shiki {
 	overflow-x: auto;
-	
+
 	code {
 		font-size: 0.875rem;
 		line-height: 1.5;
 	}
+}
+
+.shiki .line {
+	padding: 0px 0px 0px 12px;
+}
+
+// Highlighted code lines
+.shiki .line.highlighted-line {
+	background-color: rgba(255, 235, 59, 0.2);
+	// display: block;
+	// margin: 0 -1rem;
+	// padding: 0 1rem;
+	border-left: 3px solid rgba(255, 193, 7, 0.5);
 }

@@ -31,6 +31,16 @@ const components: MDXComponents = {
 			codeElement?.props?.title ||
 			null
 		
+		// Extract highlighted lines from data-highlighted-lines attribute
+		const highlightedLinesStr = 
+			props['data-highlighted-lines'] || 
+			codeElement?.props?.['data-highlighted-lines'] ||
+			null
+		
+		const highlightedLines = highlightedLinesStr 
+			? highlightedLinesStr.split(',').map(Number).filter(n => !isNaN(n))
+			: []
+		
 		// Handle both direct code element and nested structure
 		let codeProps = null
 		let codeContent = null
@@ -47,7 +57,11 @@ const components: MDXComponents = {
 		
 		if (codeProps && codeContent) {
 			return (
-				<CodeBlock className={codeProps.className || ''} filename={filename}>
+				<CodeBlock 
+					className={codeProps.className || ''} 
+					filename={filename}
+					highlightedLines={highlightedLines}
+				>
 					{codeContent}
 				</CodeBlock>
 			)

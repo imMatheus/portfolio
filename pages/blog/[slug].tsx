@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
-import Image from 'next/image'
 import { getPostBySlug, getPostSlugs } from '../../lib/blog'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -46,36 +45,74 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) 
 		}
 	}
 
-	// Custom remark plugin to extract filename from code block meta
-	// Supports syntax like: ```typescript filename.ts
+	// Custom remark plugin to extract filename and line highlighting from code block meta
+	// Supports syntax like: ```typescript filename.ts {4-6} or ```typescript {4-6}
 	const remarkExtractFilename = () => {
 		return (tree: any) => {
 			visit(tree, 'code', (node: any) => {
 				if (node.meta) {
-					// Meta string contains the filename (e.g., "filename.ts" or "title=filename.ts")
 					const meta = node.meta.trim()
-					// Extract filename from meta (could be just filename or "title=filename")
-					const filenameMatch = meta.match(/(?:title=)?(.+)/)
-					if (filenameMatch) {
-						node.data = node.data || {}
-						node.data.hProperties = node.data.hProperties || {}
-						node.data.hProperties['data-filename'] = filenameMatch[1]
+
+					// Extract line highlighting range (e.g., {4-6}, {1}, {1,3,5}, {1-3, 5-8})
+					const lineRangeMatch = meta.match(/\{([\d,\s-]+)\}/)
+					let highlightedLines: number[] = []
+
+					if (lineRangeMatch) {
+						const rangeStr = lineRangeMatch[1]
+						// Parse ranges like "4-6", "1", "1,3,5", "1-3, 5-8"
+						const parts = rangeStr.split(',')
+						for (const part of parts) {
+							const trimmed = part.trim()
+							if (trimmed.includes('-')) {
+								const [start, end] = trimmed.split('-').map((s: string) => Number(s.trim()))
+								for (let i = start; i <= end; i++) {
+									highlightedLines.push(i)
+								}
+							} else if (trimmed) {
+								highlightedLines.push(Number(trimmed))
+							}
+						}
+					}
+
+					// Remove line highlighting from meta to extract filename
+					const metaWithoutLines = meta.replace(/\{[\d,\s-]+\}/g, '').trim()
+
+					// Extract filename from remaining meta (could be just filename or "title=filename")
+					const filenameMatch = metaWithoutLines.match(/(?:title=)?(.+)/)
+					const filename = filenameMatch && filenameMatch[1] ? filenameMatch[1].trim() : null
+
+					node.data = node.data || {}
+					node.data.hProperties = node.data.hProperties || {}
+
+					if (filename) {
+						node.data.hProperties['data-filename'] = filename
+					}
+
+					if (highlightedLines.length > 0) {
+						node.data.hProperties['data-highlighted-lines'] = highlightedLines.join(',')
 					}
 				}
 			})
 		}
 	}
 
-	// Custom rehype plugin to pass filename from code to pre element
+	// Custom rehype plugin to pass filename and line highlighting from code to pre element
 	const rehypePassFilename = () => {
 		return (tree: any) => {
 			visit(tree, 'element', (node: any) => {
 				if (node.tagName === 'pre' && node.children?.[0]?.tagName === 'code') {
 					const codeNode = node.children[0]
 					const filename = codeNode.properties?.['data-filename']
+					const highlightedLines = codeNode.properties?.['data-highlighted-lines']
+
+					node.properties = node.properties || {}
+
 					if (filename) {
-						node.properties = node.properties || {}
 						node.properties['data-filename'] = filename
+					}
+
+					if (highlightedLines) {
+						node.properties['data-highlighted-lines'] = highlightedLines
 					}
 				}
 			})
@@ -130,18 +167,23 @@ const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
 			<Head>
 				<title>{post.frontmatter.title} | Matheus Mendes</title>
 				<meta name="description" content={post.frontmatter.description} />
+				<style>{`
+					body {
+						background-color: #f7f7f4;
+					}
+				`}</style>
 			</Head>
 			<article className="mx-auto max-w-4xl px-4 py-12 font-inter md:px-8">
 				<header className="mb-8  border-b-gray-200">
 					<div className="mb-4 border-b border-dotted pb-2">
-						<h1 className="mb-4 text-xl font-bold md:text-5xl">{post.frontmatter.title}</h1>
+						<h1 className="mb-2 text-balance text-3xl font-semibold">{post.frontmatter.title}</h1>
 
-						<div className="flex items-center gap-2 text-sm text-stone-700">
+						<div className="flex items-center gap-2 text-sm text-[#7a7973]">
 							<time className="" dateTime={post.frontmatter.dateISO || post.frontmatter.date}>
 								{post.frontmatter.date}
 							</time>
 							<span className="text-xs text-stone-500">|</span>
-							<Link href="https://x.com/whosmatu" className="text-carnelian hover:font-bold">
+							<Link href="https://x.com/whosmatu" className="text-carnelian hover:underline">
 								@whosmatu
 							</Link>
 						</div>
@@ -152,7 +194,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
 						</div>
 					)}
 				</header>
-				<div className="prose prose-stone max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-gray-700 prose-a:text-carnelian prose-a:no-underline hover:prose-a:underline prose-code:rounded prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-sm prose-pre:bg-transparent prose-pre:p-0">
+				<div className="prose prose-stone max-w-none prose-headings:font-bold prose-a:text-carnelian prose-a:no-underline hover:prose-a:underline prose-code:rounded prose-code:bg-stone-200 prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-sm prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:bg-transparent prose-pre:p-0">
 					<MDXRemote {...post.serializedContent} components={useMDXComponents()} />
 				</div>
 			</article>
