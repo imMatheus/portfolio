@@ -127,9 +127,9 @@ const Dema: React.FC = ({}) => {
 					<AlertCircle className="h-4 w-4 flex-shrink-0 translate-y-0.5 text-inherit" />
 
 					<p className="text-sm">
-						Dema (the company I work at) is an analytis platform for e-commerce that help companies understand there
-						profitably. Its a very cool platform and down below is a small replica I made to showcase sort of how it
-						looks but also some things you can do. Of course there is A LOT more to the platform than what is down below
+						Dema is an analytis platform for e-commerce that help companies understand there profitably. Its a very cool
+						platform and down below is a small replica to showcase sort of how it looks but also some things you can do.
+						Of course there is A LOT more to the platform than what is down below
 						{':)'}
 					</p>
 				</div>
