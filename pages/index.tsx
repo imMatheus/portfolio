@@ -15,7 +15,36 @@ interface Data {
 	contributionsCollection: any
 }
 
+const emptyContributionsCollection = {
+	totalContributions: 0,
+	weeks: [
+		{
+			firstDay: new Date().toISOString().slice(0, 10),
+			contributionDays: [
+				{
+					date: new Date().toISOString().slice(0, 10),
+					color: '#ebedf0',
+					contributionCount: 0,
+					weekday: 0,
+					contributionLevel: 'NONE'
+				}
+			]
+		}
+	]
+}
+
 export const getStaticProps: GetStaticProps<Data> = async () => {
+	// Allow local/CI builds without a GitHub token.
+	if (!process.env.GITHUB_ACCESS_TOKEN) {
+		return {
+			props: {
+				pinnedItems: [],
+				contributionsCollection: emptyContributionsCollection
+			},
+			revalidate: 60 * 60 * 12 // 12 hours
+		}
+	}
+
 	const httpLink = createHttpLink({
 		uri: 'https://api.github.com/graphql'
 	})
@@ -34,61 +63,70 @@ export const getStaticProps: GetStaticProps<Data> = async () => {
 		cache: new InMemoryCache()
 	})
 
-	const { data } = await client.query({
-		query: gql`
-			{
-				user(login: "imMatheus") {
-					pinnedItems(first: 6) {
-						totalCount
-						edges {
-							node {
-								... on Repository {
-									name
-									url
-									refs(refPrefix: "refs/heads/", last: 3) {
-										nodes {
-											target {
-												... on Commit {
-													history {
-														totalCount
+	let pinnedItems: any[] = []
+	let contributionsCollection: any = emptyContributionsCollection
+
+	try {
+		const { data } = await client.query({
+			query: gql`
+				{
+					user(login: "imMatheus") {
+						pinnedItems(first: 6) {
+							totalCount
+							edges {
+								node {
+									... on Repository {
+										name
+										url
+										refs(refPrefix: "refs/heads/", last: 3) {
+											nodes {
+												target {
+													... on Commit {
+														history {
+															totalCount
+														}
 													}
 												}
 											}
 										}
-									}
-									stargazerCount
-									description
-									primaryLanguage {
-										name
-										color
+										stargazerCount
+										description
+										primaryLanguage {
+											name
+											color
+										}
 									}
 								}
 							}
 						}
-					}
-					contributionsCollection {
-						contributionCalendar {
-							totalContributions
-							weeks {
-								firstDay
-								contributionDays {
-									date
-									color
-									contributionCount
-									weekday
-									contributionLevel
+						contributionsCollection {
+							contributionCalendar {
+								totalContributions
+								weeks {
+									firstDay
+									contributionDays {
+										date
+										color
+										contributionCount
+										weekday
+										contributionLevel
+									}
 								}
 							}
 						}
 					}
 				}
-			}
-		`
-	})
-	const { user } = data
+			`
+		})
+		const { user } = data
 
-	const pinnedItems = user.pinnedItems.edges.map(({ node }: any) => node)
-	const contributionsCollection = user.contributionsCollection.contributionCalendar
+		pinnedItems = user.pinnedItems.edges.map(({ node }: any) => node)
+		contributionsCollection = user.contributionsCollection.contributionCalendar
+	} catch (e) {
+		// Swallow GitHub API failures (e.g., expired token) and render a safe fallback.
+		pinnedItems = []
+		contributionsCollection = emptyContributionsCollection
+	}
 
 	return {
 		props: {
