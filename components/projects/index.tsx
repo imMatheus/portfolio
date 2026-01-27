@@ -20,7 +20,7 @@ export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
 	return <div className="mx-auto w-screen max-w-7xl overflow-hidden p-4 sm:px-8 sm:py-6">{children}</div>
 }
 
-export const Projects: React.FC<Props> = ({}) => {
+export const Projects: React.FC<Props> = ({ }) => {
 	return (
 		<div className="relative w-screen">
 			<section className="relative bg-white">
@@ -95,9 +95,9 @@ export const Projects: React.FC<Props> = ({}) => {
 
 			<Spacer url="apple-white.svg" />
 
-			<section className="bg-white">
+			{/* <section className="bg-white">
 				<Billboard />
-			</section>
+			</section> */}
 
 			{/* <section className="bg-[#000]">
 				<ProjectWrapper>
