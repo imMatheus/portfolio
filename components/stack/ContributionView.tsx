@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ContributionSquare from './ContributionSquare'
 import { Title } from '.'
 
@@ -8,27 +8,32 @@ interface ContributionViewProps {
 
 const ContributionView: React.FC<ContributionViewProps> = ({ contributionsCollection }) => {
 	let index = 0
+	const firstWeekday = contributionsCollection.weeks[0].contributionDays[0].weekday
+
 	return (
 		<div className="mt-6 w-full max-w-max overflow-x-visible">
 			<Title>{contributionsCollection.totalContributions} total github contributions in the last year</Title>
 
-			<div className="relative flex w-full max-w-max justify-end">
-				<div className="absolute -bottom-2 -right-2 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-4 lg:-right-4"></div>
-				<div className="absolute -bottom-1 -right-1 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-2 lg:-right-2"></div>
-				<div className="relative grid grid-flow-col grid-rows-[repeat(7,1fr)] gap-0.5 rounded-md border border-black bg-white p-2 lg:max-w-max xl:gap-1">
-					{/* making sure weekdays line up */}
-					{contributionsCollection.weeks[0].contributionDays[0].weekday !== 0 &&
-						Array.from(Array(1).keys()).map((i) => <div key={i}></div>)}
+			<div
+				className={`
+					relative flex w-full max-w-max justify-end
+					before:absolute before:-bottom-2 before:-right-2 before:h-full before:w-full before:rounded-md before:border before:border-black before:bg-white before:transition-all lg:before:-bottom-4 lg:before:-right-4
+					after:absolute after:-bottom-1 after:-right-1 after:h-full after:w-full after:rounded-md after:border after:border-black after:bg-white after:transition-all lg:after:-bottom-2 lg:after:-right-2
+				`}
+			>
+				<div className="relative z-10 grid grid-flow-col grid-rows-[repeat(7,1fr)] gap-0.5 rounded-md border border-black bg-white p-2 lg:max-w-max xl:gap-1">
+					{Array.from({ length: firstWeekday }, (_, i) => (
+						<div key={`spacer-${i}`} />
+					))}
 
-					{contributionsCollection.weeks.map((week: any, i: number) =>
-						week.contributionDays.map((day: any, j: number) => (
+					{contributionsCollection.weeks.map((week: any) =>
+						week.contributionDays.map((day: any) => (
 							<ContributionSquare
 								key={day.date}
 								date={day.date}
 								index={++index}
 								color={day.color}
 								count={day.contributionCount}
-								contributionLevel={day.contributionLevel}
 							/>
 						))
 					)}
