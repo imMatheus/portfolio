@@ -25,7 +25,7 @@ const PUZZLES: PuzzleData[] = [
 			[9, 5, 1, null, 4, 3, 6, 2, 8],
 			[5, 1, 9, 3, null, 6, 8, 7, 4],
 			[2, 4, null, 9, 5, 7, 1, 3, 6],
-			[7, 6, 3, 4, 1, 8, 2, null, 9],
+			[7, 6, 3, 4, 1, 8, 2, null, 9]
 		],
 		solution: [
 			[4, 3, 5, 2, 6, 9, 7, 8, 1],
@@ -36,8 +36,8 @@ const PUZZLES: PuzzleData[] = [
 			[9, 5, 1, 7, 4, 3, 6, 2, 8],
 			[5, 1, 9, 3, 2, 6, 8, 7, 4],
 			[2, 4, 8, 9, 5, 7, 1, 3, 6],
-			[7, 6, 3, 4, 1, 8, 2, 5, 9],
-		],
+			[7, 6, 3, 4, 1, 8, 2, 5, 9]
+		]
 	},
 	{
 		puzzle: [
@@ -49,7 +49,7 @@ const PUZZLES: PuzzleData[] = [
 			[1, 7, 9, 3, 2, 6, 8, null, 5],
 			[8, 4, 5, 2, null, 9, 3, 6, 7],
 			[9, 1, 3, 7, 6, 8, 5, 2, null],
-			[null, 2, 7, 4, 3, 5, 1, 9, 8],
+			[null, 2, 7, 4, 3, 5, 1, 9, 8]
 		],
 		solution: [
 			[5, 8, 1, 6, 7, 2, 4, 3, 9],
@@ -60,8 +60,8 @@ const PUZZLES: PuzzleData[] = [
 			[1, 7, 9, 3, 2, 6, 8, 4, 5],
 			[8, 4, 5, 2, 1, 9, 3, 6, 7],
 			[9, 1, 3, 7, 6, 8, 5, 2, 4],
-			[6, 2, 7, 4, 3, 5, 1, 9, 8],
-		],
+			[6, 2, 7, 4, 3, 5, 1, 9, 8]
+		]
 	},
 	{
 		puzzle: [
@@ -73,7 +73,7 @@ const PUZZLES: PuzzleData[] = [
 			[6, 1, 2, 5, 7, 8, null, 9, 4],
 			[2, 6, 9, 3, 1, 4, 7, null, 5],
 			[null, 4, 8, 7, 6, 9, 2, 3, 1],
-			[7, 3, 1, 8, 5, null, 6, 4, 9],
+			[7, 3, 1, 8, 5, null, 6, 4, 9]
 		],
 		solution: [
 			[1, 2, 6, 4, 3, 7, 9, 5, 8],
@@ -84,9 +84,9 @@ const PUZZLES: PuzzleData[] = [
 			[6, 1, 2, 5, 7, 8, 3, 9, 4],
 			[2, 6, 9, 3, 1, 4, 7, 8, 5],
 			[5, 4, 8, 7, 6, 9, 2, 3, 1],
-			[7, 3, 1, 8, 5, 2, 6, 4, 9],
-		],
-	},
+			[7, 3, 1, 8, 5, 2, 6, 4, 9]
+		]
+	}
 ]
 
 export function getRandomPuzzle(): PuzzleData {
@@ -98,7 +98,7 @@ export function initializeBoard(puzzle: SudokuGrid): GameBoard {
 		row.map((value) => ({
 			value,
 			isGiven: value !== null,
-			hasConflict: false,
+			hasConflict: false
 		}))
 	)
 }
@@ -144,7 +144,7 @@ export function findConflicts(board: GameBoard): GameBoard {
 	return board.map((row, r) =>
 		row.map((cell, c) => ({
 			...cell,
-			hasConflict: conflicts[r][c],
+			hasConflict: conflicts[r][c]
 		}))
 	)
 }

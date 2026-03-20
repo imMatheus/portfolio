@@ -101,7 +101,7 @@ const Sorter: React.FC = ({}) => {
 			</LinkWrapper>
 
 			<div className="flex flex-wrap items-center gap-x-6 lg:gap-x-8">
-				<div className="min-w-[11rem] flex flex-col">
+				<div className="flex min-w-[11rem] flex-col">
 					<label htmlFor="sorter-number-of-bars" className="text-lg font-bold">
 						Number of bars: {numberOfBars}
 					</label>
@@ -132,7 +132,7 @@ const Sorter: React.FC = ({}) => {
 					</div>
 				</div>
 
-				<div className="min-w-[14rem] flex flex-col">
+				<div className="flex min-w-[14rem] flex-col">
 					<label htmlFor="sorter-animation-speed" className="text-lg font-bold">
 						Animation speed: {animationSpeed}ms
 					</label>

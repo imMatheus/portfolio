@@ -15,10 +15,7 @@ const ContributionSquare: React.FC<ContributionSquareProps> = ({ count, color, d
 	const isRight = index > 330
 	const isTop = (index - 1) % 7 <= 2
 
-	const label =
-		count === 0
-			? `No contributions on ${date}`
-			: `${count} contribution${count > 1 ? 's' : ''} on ${date}`
+	const label = count === 0 ? `No contributions on ${date}` : `${count} contribution${count > 1 ? 's' : ''} on ${date}`
 
 	return (
 		<div

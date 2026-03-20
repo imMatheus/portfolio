@@ -83,7 +83,7 @@ module.exports = {
 					email: 'var(--color-jmail-email)',
 					document: 'var(--color-jmail-document)',
 					imessage: 'var(--color-jmail-imessage)',
-					appointment: 'var(--color-jmail-appointment)',
+					appointment: 'var(--color-jmail-appointment)'
 				}
 			},
 			screens: {

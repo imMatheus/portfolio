@@ -5,12 +5,48 @@ const ROWS = 20
 
 const TETROMINOES: Record<string, { shape: number[][]; color: string }> = {
 	I: { shape: [[1, 1, 1, 1]], color: '#00d4aa' },
-	O: { shape: [[1, 1], [1, 1]], color: '#fee75c' },
-	T: { shape: [[0, 1, 0], [1, 1, 1]], color: '#c084fc' },
-	S: { shape: [[0, 1, 1], [1, 1, 0]], color: '#57f287' },
-	Z: { shape: [[1, 1, 0], [0, 1, 1]], color: '#ed4245' },
-	J: { shape: [[1, 0, 0], [1, 1, 1]], color: '#5865f2' },
-	L: { shape: [[0, 0, 1], [1, 1, 1]], color: '#f97316' },
+	O: {
+		shape: [
+			[1, 1],
+			[1, 1]
+		],
+		color: '#fee75c'
+	},
+	T: {
+		shape: [
+			[0, 1, 0],
+			[1, 1, 1]
+		],
+		color: '#c084fc'
+	},
+	S: {
+		shape: [
+			[0, 1, 1],
+			[1, 1, 0]
+		],
+		color: '#57f287'
+	},
+	Z: {
+		shape: [
+			[1, 1, 0],
+			[0, 1, 1]
+		],
+		color: '#ed4245'
+	},
+	J: {
+		shape: [
+			[1, 0, 0],
+			[1, 1, 1]
+		],
+		color: '#5865f2'
+	},
+	L: {
+		shape: [
+			[0, 0, 1],
+			[1, 1, 1]
+		],
+		color: '#f97316'
+	}
 }
 
 const PIECE_KEYS = Object.keys(TETROMINOES)
@@ -38,9 +74,7 @@ interface Cell {
 }
 
 function createEmptyBoard(): Cell[][] {
-	return Array.from({ length: ROWS }, () =>
-		Array.from({ length: COLS }, () => ({ filled: false, color: '' }))
-	)
+	return Array.from({ length: ROWS }, () => Array.from({ length: COLS }, () => ({ filled: false, color: '' })))
 }
 
 const TetrisGame: React.FC = () => {
@@ -78,7 +112,7 @@ const TetrisGame: React.FC = () => {
 	}, [])
 
 	const lockAndSpawn = useCallback(() => {
-		const b = boardRef.current.map(row => row.map(cell => ({ ...cell })))
+		const b = boardRef.current.map((row) => row.map((cell) => ({ ...cell })))
 		const { shape, color } = currentRef.current
 		const { r, c } = posRef.current
 
@@ -93,7 +127,7 @@ const TetrisGame: React.FC = () => {
 		// Clear lines
 		let cleared = 0
 		for (let row = ROWS - 1; row >= 0; row--) {
-			if (b[row].every(cell => cell.filled)) {
+			if (b[row].every((cell) => cell.filled)) {
 				b.splice(row, 1)
 				b.unshift(Array.from({ length: COLS }, () => ({ filled: false, color: '' })))
 				cleared++
@@ -102,8 +136,8 @@ const TetrisGame: React.FC = () => {
 		}
 
 		setBoard(b)
-		setLines(prev => prev + cleared)
-		setScore(prev => prev + [0, 100, 300, 500, 800][cleared])
+		setLines((prev) => prev + cleared)
+		setScore((prev) => prev + [0, 100, 300, 500, 800][cleared])
 
 		const np = next
 		const startC = Math.floor(COLS / 2) - Math.floor(np.shape[0].length / 2)
@@ -122,7 +156,7 @@ const TetrisGame: React.FC = () => {
 		const { r, c } = posRef.current
 		const { shape } = currentRef.current
 		if (!collides(boardRef.current, shape, r + 1, c)) {
-			setPos(p => ({ ...p, r: p.r + 1 }))
+			setPos((p) => ({ ...p, r: p.r + 1 }))
 		} else {
 			lockAndSpawn()
 		}
@@ -167,19 +201,19 @@ const TetrisGame: React.FC = () => {
 
 			switch (e.key) {
 				case 'ArrowLeft':
-					if (!collides(boardRef.current, shape, r, c - 1)) setPos(p => ({ ...p, c: p.c - 1 }))
+					if (!collides(boardRef.current, shape, r, c - 1)) setPos((p) => ({ ...p, c: p.c - 1 }))
 					break
 				case 'ArrowRight':
-					if (!collides(boardRef.current, shape, r, c + 1)) setPos(p => ({ ...p, c: p.c + 1 }))
+					if (!collides(boardRef.current, shape, r, c + 1)) setPos((p) => ({ ...p, c: p.c + 1 }))
 					break
 				case 'ArrowDown':
-					if (!collides(boardRef.current, shape, r + 1, c)) setPos(p => ({ ...p, r: p.r + 1 }))
+					if (!collides(boardRef.current, shape, r + 1, c)) setPos((p) => ({ ...p, r: p.r + 1 }))
 					break
 				case 'ArrowUp':
 				case ' ': {
 					const rotated = rotateMatrix(shape)
 					if (!collides(boardRef.current, rotated, r, c)) {
-						setCurrent(prev => ({ ...prev, shape: rotated }))
+						setCurrent((prev) => ({ ...prev, shape: rotated }))
 					}
 					break
 				}
@@ -203,7 +237,7 @@ const TetrisGame: React.FC = () => {
 	}, [handleKey])
 
 	// Merge current piece onto display board
-	const display = board.map(row => row.map(cell => ({ ...cell })))
+	const display = board.map((row) => row.map((cell) => ({ ...cell })))
 	if (!gameOver) {
 		for (let dr = 0; dr < current.shape.length; dr++) {
 			for (let dc = 0; dc < current.shape[0].length; dc++) {
@@ -250,7 +284,7 @@ const TetrisGame: React.FC = () => {
 						style={{
 							gridTemplateColumns: `repeat(${COLS}, 1fr)`,
 							gridTemplateRows: `repeat(${ROWS}, 1fr)`,
-							gap: '1px',
+							gap: '1px'
 						}}
 					>
 						{display.flat().map((cell, i) => (
@@ -282,7 +316,7 @@ const TetrisGame: React.FC = () => {
 									style={{
 										gridTemplateColumns: 'repeat(4, 1fr)',
 										gridTemplateRows: 'repeat(4, 1fr)',
-										gap: '1px',
+										gap: '1px'
 									}}
 								>
 									{nextGrid.flat().map((color, i) => (
@@ -298,14 +332,8 @@ const TetrisGame: React.FC = () => {
 					</div>
 				</div>
 
-				{!started && !gameOver && (
-					<div className="mt-3 text-center text-xs text-[#aeaeb2]">Press any key to start</div>
-				)}
-				{gameOver && (
-					<div className="mt-3 text-center text-xs text-[#ed4245]">
-						Game Over! Press R to restart
-					</div>
-				)}
+				{!started && !gameOver && <div className="mt-3 text-center text-xs text-[#aeaeb2]">Press any key to start</div>}
+				{gameOver && <div className="mt-3 text-center text-xs text-[#ed4245]">Game Over! Press R to restart</div>}
 			</fieldset>
 		</div>
 	)

@@ -16,6 +16,22 @@ import { Midjourney } from './midjourney/Midjourney'
 import { Jmail } from './jmail/Jmail'
 import { Spotilist } from './spotilist/Spotilist'
 import { Sudoku } from './sudoku/Sudoko'
+import {
+	WhiteBlackWhite,
+	WhiteDema,
+	DemaBlack,
+	BlackWhite,
+	WhiteBlack,
+	BlackOverwatch,
+	OverwatchDark,
+	DarkPurple,
+	PurpleApple2,
+	AppleTeal,
+	BlackBee,
+	BeeBlurple,
+	BlurpleWhite
+} from 'lib/spacers/index'
+
 interface Props {
 	contributionsCollection: any
 }
@@ -24,7 +40,7 @@ export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
 	return <div className="mx-auto w-screen max-w-7xl overflow-hidden p-4 sm:px-8 sm:py-6">{children}</div>
 }
 
-export const Projects: React.FC<Props> = ({ }) => {
+export const Projects: React.FC<Props> = ({}) => {
 	return (
 		<div className="relative w-screen">
 			<section className="relative bg-white">
@@ -34,14 +50,18 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="white-black-white.svg" />
+			<Spacer>
+				<WhiteBlackWhite />
+			</Spacer>
 			<section className="bg-white">
 				<ProjectWrapper>
 					<Jmail />
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="white-dema.svg" />
+			<Spacer>
+				<WhiteDema />
+			</Spacer>
 
 			<section className="relative bg-dema">
 				<ProjectWrapper>
@@ -49,7 +69,9 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="dema-black.svg" />
+			<Spacer>
+				<DemaBlack />
+			</Spacer>
 
 			<section className="bg-[#000]">
 				<ProjectWrapper>
@@ -63,7 +85,9 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="black-white.svg" />
+			<Spacer>
+				<BlackWhite />
+			</Spacer>
 
 			<section className="bg-white">
 				<ProjectWrapper>
@@ -72,21 +96,27 @@ export const Projects: React.FC<Props> = ({ }) => {
 			</section>
 
 			{/* <div className="rotate-180"> */}
-			<Spacer url="white-black.svg" />
+			<Spacer>
+				<WhiteBlack />
+			</Spacer>
 			{/* </div> */}
 
 			<section className="bg-[#000]">
 				<VercelUi />
 			</section>
 
-			<Spacer url="black-overwatch.svg" />
+			<Spacer>
+				<BlackOverwatch />
+			</Spacer>
 			<section className="bg-[#b8c6dd]">
 				<ProjectWrapper>
 					<Overwatch />
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="overwatch-dark.svg" />
+			<Spacer>
+				<OverwatchDark />
+			</Spacer>
 
 			<section className="bg-[#181818]">
 				<ProjectWrapper>
@@ -94,7 +124,9 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="dark-purple.svg" />
+			<Spacer>
+				<DarkPurple />
+			</Spacer>
 
 			{/* <section className="bg-purple-800"> */}
 			{/* <section className="bg-purple-800"> */}
@@ -108,7 +140,9 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="purple-apple-2.svg" />
+			<Spacer>
+				<PurpleApple2 />
+			</Spacer>
 
 			<section className="bg-apple">
 				<ProjectWrapper>
@@ -116,7 +150,9 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="apple-teal.svg" />
+			<Spacer>
+				<AppleTeal />
+			</Spacer>
 
 			<section className="bg-[#008080]">
 				<ProjectWrapper>
@@ -134,15 +170,15 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="black-bee.svg" /> */}
+			<Spacer><BlackBee /></Spacer> */}
 
-			{/* <Spacer url="bee-blurple.svg" />
+			{/* <Spacer><BeeBlurple /></Spacer>
 			<section className="bg-blurple">
 				<ProjectWrapper>
 					<Sorter />
 				</ProjectWrapper>
 			</section>
-			<Spacer url="blurple-white.svg" /> */}
+			<Spacer><BlurpleWhite /></Spacer> */}
 		</div>
 	)
 }

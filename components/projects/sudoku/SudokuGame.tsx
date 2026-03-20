@@ -3,14 +3,14 @@ import { getRandomPuzzle, initializeBoard, findConflicts, isBoardComplete, GameB
 
 const Win95TitleBar: React.FC<{ title: string; onClose?: () => void }> = ({ title, onClose }) => (
 	<div
-		className="flex items-center justify-between px-1.5 py-0.5 select-none"
+		className="flex select-none items-center justify-between px-1.5 py-0.5"
 		style={{ background: 'linear-gradient(90deg, #000080, #1084d0)' }}
 	>
-		<span className="text-white text-xs font-bold truncate">{title}</span>
+		<span className="truncate text-xs font-bold text-white">{title}</span>
 		{onClose && (
 			<button
 				onClick={onClose}
-				className="text-black text-xs font-bold px-1.5 py-0 leading-none cursor-pointer"
+				className="cursor-pointer px-1.5 py-0 text-xs font-bold leading-none text-black"
 				style={{
 					backgroundColor: '#c0c0c0',
 					borderTop: '2px solid #ffffff',
@@ -22,7 +22,7 @@ const Win95TitleBar: React.FC<{ title: string; onClose?: () => void }> = ({ titl
 					fontSize: '10px',
 					display: 'flex',
 					alignItems: 'center',
-					justifyContent: 'center',
+					justifyContent: 'center'
 				}}
 			>
 				x
@@ -36,7 +36,7 @@ const raised = {
 	borderLeft: '2px solid #ffffff',
 	borderBottom: '2px solid #808080',
 	borderRight: '2px solid #808080',
-	backgroundColor: '#c0c0c0',
+	backgroundColor: '#c0c0c0'
 }
 
 const inset = {
@@ -44,7 +44,7 @@ const inset = {
 	borderLeft: '2px solid #808080',
 	borderBottom: '2px solid #ffffff',
 	borderRight: '2px solid #ffffff',
-	backgroundColor: '#c0c0c0',
+	backgroundColor: '#c0c0c0'
 }
 
 export const SudokuGame: React.FC = () => {
@@ -55,32 +55,36 @@ export const SudokuGame: React.FC = () => {
 
 	const boardWithConflicts = useMemo(() => findConflicts(board), [board])
 
-	const handleCellClick = useCallback((row: number, col: number) => {
-		if (isWon) return
-		if (board[row][col].isGiven) {
-			setSelectedCell(null)
-			return
-		}
-		setSelectedCell({ row, col })
-	}, [board, isWon])
+	const handleCellClick = useCallback(
+		(row: number, col: number) => {
+			if (isWon) return
+			if (board[row][col].isGiven) {
+				setSelectedCell(null)
+				return
+			}
+			setSelectedCell({ row, col })
+		},
+		[board, isWon]
+	)
 
-	const handleNumberInput = useCallback((num: number) => {
-		if (!selectedCell || isWon) return
-		const { row, col } = selectedCell
-		if (board[row][col].isGiven) return
+	const handleNumberInput = useCallback(
+		(num: number) => {
+			if (!selectedCell || isWon) return
+			const { row, col } = selectedCell
+			if (board[row][col].isGiven) return
 
-		const newBoard = board.map((r, ri) =>
-			r.map((cell, ci) =>
-				ri === row && ci === col ? { ...cell, value: num } : cell
+			const newBoard = board.map((r, ri) =>
+				r.map((cell, ci) => (ri === row && ci === col ? { ...cell, value: num } : cell))
 			)
-		)
-		setBoard(newBoard)
+			setBoard(newBoard)
 
-		if (isBoardComplete(newBoard, puzzleData.solution)) {
-			setIsWon(true)
-			setSelectedCell(null)
-		}
-	}, [selectedCell, board, puzzleData.solution, isWon])
+			if (isBoardComplete(newBoard, puzzleData.solution)) {
+				setIsWon(true)
+				setSelectedCell(null)
+			}
+		},
+		[selectedCell, board, puzzleData.solution, isWon]
+	)
 
 	const handleClear = useCallback(() => {
 		if (!selectedCell || isWon) return
@@ -88,9 +92,7 @@ export const SudokuGame: React.FC = () => {
 		if (board[row][col].isGiven) return
 
 		const newBoard = board.map((r, ri) =>
-			r.map((cell, ci) =>
-				ri === row && ci === col ? { ...cell, value: null } : cell
-			)
+			r.map((cell, ci) => (ri === row && ci === col ? { ...cell, value: null } : cell))
 		)
 		setBoard(newBoard)
 	}, [selectedCell, board, isWon])
@@ -104,12 +106,9 @@ export const SudokuGame: React.FC = () => {
 	}, [])
 
 	return (
-		<div className="mt-8 flex flex-col items-center md:items-start md:flex-row gap-6 relative">
+		<div className="relative mt-8 flex flex-col items-center gap-6 md:flex-row md:items-start">
 			{/* Main Sudoku Window */}
-			<div
-				className="w-full max-w-[400px] sm:max-w-[460px] shadow-[3px_3px_0px_#000]"
-				style={raised}
-			>
+			<div className="w-full max-w-[400px] shadow-[3px_3px_0px_#000] sm:max-w-[460px]" style={raised}>
 				<Win95TitleBar title={isWon ? 'You Win!' : 'Easy mode'} onClose={handleNewGame} />
 				<div className="p-1.5" style={{ backgroundColor: '#c0c0c0' }}>
 					<div style={inset}>
@@ -125,7 +124,7 @@ export const SudokuGame: React.FC = () => {
 										<button
 											key={`${ri}-${ci}`}
 											onClick={() => handleCellClick(ri, ci)}
-											className="aspect-square flex items-center justify-center font-mono font-bold cursor-pointer text-lg sm:text-2xl p-0"
+											className="flex aspect-square cursor-pointer items-center justify-center p-0 font-mono text-lg font-bold sm:text-2xl"
 											style={{
 												backgroundColor: isSelected
 													? '#a0a0e0'
@@ -137,7 +136,7 @@ export const SudokuGame: React.FC = () => {
 												borderTop: ri === 0 ? 'none' : ri === 3 || ri === 6 ? '2px solid #000' : 'none',
 												borderLeft: ci === 0 ? 'none' : ci === 3 || ci === 6 ? '2px solid #000' : 'none',
 												color: cell.isGiven ? '#000000' : '#00008b',
-												minHeight: '36px',
+												minHeight: '36px'
 											}}
 										>
 											{cell.value || ''}
@@ -152,16 +151,16 @@ export const SudokuGame: React.FC = () => {
 
 			{/* Number Pad Window */}
 			<div
-				className="w-full max-w-[280px] sm:max-w-[300px] md:self-start md:mt-8 shadow-[3px_3px_0px_#000] z-10"
+				className="z-10 w-full max-w-[280px] shadow-[3px_3px_0px_#000] sm:max-w-[300px] md:mt-8 md:self-start"
 				style={raised}
 			>
 				<Win95TitleBar title="Number pad" />
-				<div className="p-2 grid grid-cols-5 gap-1" style={{ backgroundColor: '#c0c0c0' }}>
+				<div className="grid grid-cols-5 gap-1 p-2" style={{ backgroundColor: '#c0c0c0' }}>
 					{['X', 1, 2, 3, 4, 5, 6, 7, 8, 9].map((val) => (
 						<button
 							key={val}
 							onClick={() => (val === 'X' ? handleClear() : handleNumberInput(val as number))}
-							className="font-mono font-bold text-xl sm:text-2xl py-2 cursor-pointer active:border-t-[#808080] active:border-l-[#808080] active:border-b-[#ffffff] active:border-r-[#ffffff]"
+							className="cursor-pointer py-2 font-mono text-xl font-bold active:border-b-[#ffffff] active:border-l-[#808080] active:border-r-[#ffffff] active:border-t-[#808080] sm:text-2xl"
 							style={raised}
 						>
 							{val}

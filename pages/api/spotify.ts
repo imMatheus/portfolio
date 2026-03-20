@@ -17,12 +17,12 @@ async function getAccessToken() {
 		method: 'POST',
 		headers: {
 			Authorization: `Basic ${basic}`,
-			'Content-Type': 'application/x-www-form-urlencoded',
+			'Content-Type': 'application/x-www-form-urlencoded'
 		},
 		body: new URLSearchParams({
 			grant_type: 'refresh_token',
-			refresh_token: REFRESH_TOKEN,
-		}),
+			refresh_token: REFRESH_TOKEN
+		})
 	})
 
 	const data = await res.json()
@@ -36,11 +36,10 @@ async function fetchSpotifyData(accessToken: string) {
 		fetch(`${BASE_URL}/me/player/currently-playing`, { headers }),
 		fetch(`${BASE_URL}/me/player/recently-played?limit=10`, { headers }),
 		fetch(`${BASE_URL}/me/top/artists?limit=10`, { headers }),
-		fetch(`${BASE_URL}/me/top/tracks?limit=10`, { headers }),
+		fetch(`${BASE_URL}/me/top/tracks?limit=10`, { headers })
 	])
 
-	const currentlyPlaying =
-		currentlyPlayingRes.status === 200 ? await currentlyPlayingRes.json() : null
+	const currentlyPlaying = currentlyPlayingRes.status === 200 ? await currentlyPlayingRes.json() : null
 
 	const recentTracks = recentRes.status === 200 ? await recentRes.json() : { items: [] }
 	const topArtists = topArtistsRes.status === 200 ? await topArtistsRes.json() : { items: [] }
@@ -49,29 +48,32 @@ async function fetchSpotifyData(accessToken: string) {
 	return {
 		currentlyPlaying: currentlyPlaying
 			? {
-				isPlaying: currentlyPlaying.is_playing,
-				title: currentlyPlaying.item?.name,
-				artist: currentlyPlaying.item?.artists?.map((a: any) => a.name).join(', '),
-				albumArt: currentlyPlaying.item?.album?.images?.[0]?.url,
-				progressMs: currentlyPlaying.progress_ms,
-				durationMs: currentlyPlaying.item?.duration_ms,
-			}
+					isPlaying: currentlyPlaying.is_playing,
+					title: currentlyPlaying.item?.name,
+					artist: currentlyPlaying.item?.artists?.map((a: any) => a.name).join(', '),
+					albumArt: currentlyPlaying.item?.album?.images?.[0]?.url,
+					progressMs: currentlyPlaying.progress_ms,
+					durationMs: currentlyPlaying.item?.duration_ms
+			  }
 			: null,
-		recentTracks: recentTracks.items?.map((item: any) => ({
-			title: item.track?.name,
-			artist: item.track?.artists?.map((a: any) => a.name).join(', '),
-			albumArt: item.track?.album?.images?.[1]?.url || item.track?.album?.images?.[0]?.url,
-			playedAt: item.played_at,
-		})) || [],
-		topArtists: topArtists.items?.map((artist: any) => ({
-			name: artist.name,
-			image: artist.images?.[1]?.url || artist.images?.[0]?.url,
-		})) || [],
-		topTracks: topTracks.items?.map((track: any) => ({
-			title: track.name,
-			artist: track.artists?.map((a: any) => a.name).join(', '),
-			albumArt: track.album?.images?.[1]?.url || track.album?.images?.[0]?.url,
-		})) || [],
+		recentTracks:
+			recentTracks.items?.map((item: any) => ({
+				title: item.track?.name,
+				artist: item.track?.artists?.map((a: any) => a.name).join(', '),
+				albumArt: item.track?.album?.images?.[1]?.url || item.track?.album?.images?.[0]?.url,
+				playedAt: item.played_at
+			})) || [],
+		topArtists:
+			topArtists.items?.map((artist: any) => ({
+				name: artist.name,
+				image: artist.images?.[1]?.url || artist.images?.[0]?.url
+			})) || [],
+		topTracks:
+			topTracks.items?.map((track: any) => ({
+				title: track.name,
+				artist: track.artists?.map((a: any) => a.name).join(', '),
+				albumArt: track.album?.images?.[1]?.url || track.album?.images?.[0]?.url
+			})) || []
 	}
 }
 

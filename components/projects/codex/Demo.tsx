@@ -19,9 +19,7 @@ const Demo: React.FC = () => {
 						<div className="h-3 w-3 rounded-full bg-[#febc2e]"></div>
 						<div className="h-3 w-3 rounded-full bg-[#28c840]"></div>
 					</div>
-					<span className="flex-1 text-center text-xs text-[#4d4d4d]">
-						codex — ~/Desktop/codex/codex-rs — 80×24
-					</span>
+					<span className="flex-1 text-center text-xs text-[#4d4d4d]">codex — ~/Desktop/codex/codex-rs — 80×24</span>
 				</div>
 
 				{/* Terminal content */}
@@ -39,17 +37,15 @@ const Demo: React.FC = () => {
 
 					{/* Tip */}
 					<p className="text-xs text-[#007aff]">
-						<span className="font-bold">Tip:</span> New Try the{' '}
-						<span className="font-bold">Codex App</span> with 2x rate limits until April 2nd.
-						Run &apos;codex app&apos; or visit the Codex landing page
+						<span className="font-bold">Tip:</span> New Try the <span className="font-bold">Codex App</span> with 2x
+						rate limits until April 2nd. Run &apos;codex app&apos; or visit the Codex landing page
 					</p>
 
 					{/* AI response */}
 					<p className="text-xs text-[#1d1d1f]">
-						<span className="text-[#34c759]">●</span> Executing your sequence exactly as
-						requested: first <code className="text-[#af52de]">sleep 20</code>, then{' '}
-						<code className="text-[#af52de]">git pull</code>, then{' '}
-						<code className="text-[#af52de]">sleep 120</code>.
+						<span className="text-[#34c759]">●</span> Executing your sequence exactly as requested: first{' '}
+						<code className="text-[#af52de]">sleep 20</code>, then <code className="text-[#af52de]">git pull</code>,
+						then <code className="text-[#af52de]">sleep 120</code>.
 					</p>
 
 					{/* Tetris game */}

@@ -33,7 +33,9 @@ export const Lovable: React.FC = ({}) => {
 				<video autoPlay loop muted playsInline className="inline h-20 w-20 -translate-y-1" src="/lovable-heart.mp4" />
 			</ProjectTitle>
 			<ProjectDescription>
-				<p>Part-time consultant, November 2024 <ProjectTag isWork /></p>
+				<p>
+					Part-time consultant, November 2024 <ProjectTag isWork />
+				</p>
 
 				<br />
 

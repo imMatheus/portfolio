@@ -15,9 +15,8 @@ export const Codex: React.FC = () => {
 			<ProjectDescription>
 				2025 <ProjectTag isWork={false} />
 				<br />
-				<br />
-				I forked  fork of OpenAI&apos;s Codex CLI. An open-source coding agent that runs in your terminal.
-				Try the Tetris game below.
+				<br />I forked fork of OpenAI&apos;s Codex CLI. An open-source coding agent that runs in your terminal. Try the
+				Tetris game below.
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://x.com/whosmatu/status/2028292331708039518" Icon={Twitter} text="My tweet" />

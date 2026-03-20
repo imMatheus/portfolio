@@ -16,8 +16,9 @@ export const Spotilist: React.FC = () => {
 			<ProjectDescription className="text-white/80">
 				March 2024, <ProjectTag isWork={false} />
 				<br />
-				<br />
-				I absolutely love music and listen to it all the time. I get over 100,000 minutes on my Spotify Wrapped, but I did not want to wait until the end of the year to see what I enjoy listening to, so I reverse-engineered the Spotify API to get my listening stats and display them on a website.
+				<br />I absolutely love music and listen to it all the time. I get over 100,000 minutes on my Spotify Wrapped,
+				but I did not want to wait until the end of the year to see what I enjoy listening to, so I reverse-engineered
+				the Spotify API to get my listening stats and display them on a website.
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://music.immatheus.com" Icon={ExternalLink} text="Live Site" />

@@ -125,17 +125,21 @@ export const SpotilistDemo: React.FC = () => {
 			) : data ? (
 				<div className="space-y-6">
 					{/* Currently Playing */}
-					<div className="mb-4 w-max relative">
+					<div className="relative mb-4 w-max">
 						<div className="z-10 py-4">
-							<h2 className="text-2xl font-bold leading-9 lg:text-3xl lg:leading-10">
-								Currently playing
-							</h2>
+							<h2 className="text-2xl font-bold leading-9 lg:text-3xl lg:leading-10">Currently playing</h2>
 							<p className="text-sm text-gray-400 lg:text-base">
 								{data.currentlyPlaying?.isPlaying
 									? "This is a certified hood banger! Don't @ me 😤"
 									: 'Nothing playing right now'}
 							</p>
-							<Image src="/spotilist-arrow.png" alt="Spotilist" width={215} height={103} className="max-lg:hidden absolute -right-10 top-1/2 -translate-y-1/2 translate-x-full w-[215px] h-[103px] object-contain" />
+							<Image
+								src="/spotilist-arrow.png"
+								alt="Spotilist"
+								width={215}
+								height={103}
+								className="absolute -right-10 top-1/2 h-[103px] w-[215px] -translate-y-1/2 translate-x-full object-contain max-lg:hidden"
+							/>
 						</div>
 						{data.currentlyPlaying ? (
 							<div className="flex max-w-max gap-3 rounded-md md:gap-4">
@@ -151,18 +155,14 @@ export const SpotilistDemo: React.FC = () => {
 									</div>
 								)}
 								<div>
-									<h3 className="mb-1 text-base font-semibold sm:text-lg md:text-xl">
-										{data.currentlyPlaying.title}
-									</h3>
-									<p className="text-sm text-gray-300 md:text-base">
-										{data.currentlyPlaying.artist}
-									</p>
+									<h3 className="mb-1 text-base font-semibold sm:text-lg md:text-xl">{data.currentlyPlaying.title}</h3>
+									<p className="text-sm text-gray-300 md:text-base">{data.currentlyPlaying.artist}</p>
 									<div className="mt-3">
 										<div className="h-1 w-44 overflow-hidden rounded-full bg-[#4d4c4c]">
 											<div
 												className="h-1 bg-spotify-green"
 												style={{
-													width: `${(data.currentlyPlaying.progressMs / data.currentlyPlaying.durationMs) * 100}%`,
+													width: `${(data.currentlyPlaying.progressMs / data.currentlyPlaying.durationMs) * 100}%`
 												}}
 											/>
 										</div>
@@ -175,14 +175,14 @@ export const SpotilistDemo: React.FC = () => {
 					{/* Recent Streams */}
 					{data.recentTracks.length > 0 && (
 						<div>
-							<h3 className="mb-3 text-xs font-medium uppercase tracking-wider text-white/60">
-								Recent Streams
-							</h3>
+							<h3 className="mb-3 text-xs font-medium uppercase tracking-wider text-white/60">Recent Streams</h3>
 							<div className="grid grid-cols-1 gap-1 md:grid-cols-2">
 								{data.recentTracks.map((track, i) => (
 									<div
 										key={`${track.title}-${i}`}
-										className={`flex items-center gap-3 rounded-lg p-1.5 transition-colors hover:bg-white/5 ${i >= 5 ? 'hidden md:flex' : ''}`}
+										className={`flex items-center gap-3 rounded-lg p-1.5 transition-colors hover:bg-white/5 ${
+											i >= 5 ? 'hidden md:flex' : ''
+										}`}
 									>
 										{track.albumArt && (
 											<Image
@@ -194,16 +194,10 @@ export const SpotilistDemo: React.FC = () => {
 											/>
 										)}
 										<div className="min-w-0 flex-1">
-											<p className="truncate text-sm font-medium text-white">
-												{track.title}
-											</p>
-											<p className="truncate text-xs text-white/50">
-												{track.artist}
-											</p>
+											<p className="truncate text-sm font-medium text-white">{track.title}</p>
+											<p className="truncate text-xs text-white/50">{track.artist}</p>
 										</div>
-										<span className="flex-shrink-0 text-xs text-white/30">
-											{timeAgo(track.playedAt)}
-										</span>
+										<span className="flex-shrink-0 text-xs text-white/30">{timeAgo(track.playedAt)}</span>
 									</div>
 								))}
 							</div>
@@ -216,24 +210,19 @@ export const SpotilistDemo: React.FC = () => {
 							<h3 className="mb-3 text-xs font-medium uppercase tracking-wider text-white/60">
 								Top Artists <span className="normal-case tracking-normal text-white/30">· Last 6 months</span>
 							</h3>
-							<div className="flex gap-4 flex-wrap overflow-x-auto pb-2">
+							<div className="flex flex-wrap gap-4 overflow-x-auto pb-2">
 								{data.topArtists.map((artist) => (
-									<div
-										key={artist.name}
-										className="flex flex-shrink-0 flex-col items-center gap-2"
-									>
+									<div key={artist.name} className="flex flex-shrink-0 flex-col items-center gap-2">
 										{artist.image && (
 											<Image
 												src={artist.image}
 												alt={artist.name}
 												width={80}
 												height={80}
-												className="size-14 md:size-20 rounded-full object-cover"
+												className="size-14 rounded-full object-cover md:size-20"
 											/>
 										)}
-										<span className="max-w-[80px] truncate text-xs text-white/70">
-											{artist.name}
-										</span>
+										<span className="max-w-[80px] truncate text-xs text-white/70">{artist.name}</span>
 									</div>
 								))}
 							</div>
@@ -250,11 +239,11 @@ export const SpotilistDemo: React.FC = () => {
 								{data.topTracks.map((track, i) => (
 									<div
 										key={`${track.title}-${i}`}
-										className={`flex items-center gap-3 rounded-lg p-1.5 transition-colors hover:bg-white/5 ${i >= 5 ? 'hidden md:flex' : ''}`}
+										className={`flex items-center gap-3 rounded-lg p-1.5 transition-colors hover:bg-white/5 ${
+											i >= 5 ? 'hidden md:flex' : ''
+										}`}
 									>
-										<span className="w-4 flex-shrink-0 text-right text-sm font-medium text-white/30">
-											{i + 1}
-										</span>
+										<span className="w-4 flex-shrink-0 text-right text-sm font-medium text-white/30">{i + 1}</span>
 										{track.albumArt && (
 											<Image
 												src={track.albumArt}
@@ -265,12 +254,8 @@ export const SpotilistDemo: React.FC = () => {
 											/>
 										)}
 										<div className="min-w-0 flex-1">
-											<p className="truncate text-sm font-medium text-white">
-												{track.title}
-											</p>
-											<p className="truncate text-xs text-white/50">
-												{track.artist}
-											</p>
+											<p className="truncate text-sm font-medium text-white">{track.title}</p>
+											<p className="truncate text-xs text-white/50">{track.artist}</p>
 										</div>
 									</div>
 								))}
