@@ -59,7 +59,7 @@ export const Jmail: React.FC = () => {
 				</div>
 			</ProjectTitle>
 			<ProjectDescription>
-				February 2026 - Now <ProjectTag isWork />
+				February 2026 - Now <ProjectTag isWork={false} />
 				<br />
 				<br />
 				Jmail is project maintained by a group of self organized hackers in the SF area and its goal is to build a platform to make it accessible to learn about the Jeffery Epstein case.

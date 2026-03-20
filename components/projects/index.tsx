@@ -32,7 +32,7 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="white-dema.svg" />
+			<Spacer url="white-black-white.svg" />
 			<section className="bg-white">
 				<ProjectWrapper>
 					<Jmail />
@@ -78,11 +78,7 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="overwatch-purple.svg" />
-
-			{/* <Spacer url="apple-white.svg" /> */}
-
-			{/* <Spacer url="white-black.svg" /> */}
+			<Spacer url="overwatch-dark.svg" />
 
 			<section className="bg-[#181818]">
 				<ProjectWrapper>
@@ -90,8 +86,7 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="black-dema.svg" />
-
+			<Spacer url="dark-purple.svg" />
 
 			{/* <section className="bg-purple-800"> */}
 			{/* <section className="bg-purple-800"> */}

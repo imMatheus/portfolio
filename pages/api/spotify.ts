@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID!
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET!
-const REFRESH_TOKEN = process.env.REFRSH_TOKEN!
+const REFRESH_TOKEN = process.env.REFRESH_TOKEN!
 
 const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token'
 const BASE_URL = 'https://api.spotify.com/v1'
@@ -49,13 +49,13 @@ async function fetchSpotifyData(accessToken: string) {
 	return {
 		currentlyPlaying: currentlyPlaying
 			? {
-					isPlaying: currentlyPlaying.is_playing,
-					title: currentlyPlaying.item?.name,
-					artist: currentlyPlaying.item?.artists?.map((a: any) => a.name).join(', '),
-					albumArt: currentlyPlaying.item?.album?.images?.[0]?.url,
-					progressMs: currentlyPlaying.progress_ms,
-					durationMs: currentlyPlaying.item?.duration_ms,
-			  }
+				isPlaying: currentlyPlaying.is_playing,
+				title: currentlyPlaying.item?.name,
+				artist: currentlyPlaying.item?.artists?.map((a: any) => a.name).join(', '),
+				albumArt: currentlyPlaying.item?.album?.images?.[0]?.url,
+				progressMs: currentlyPlaying.progress_ms,
+				durationMs: currentlyPlaying.item?.duration_ms,
+			}
 			: null,
 		recentTracks: recentTracks.items?.map((item: any) => ({
 			title: item.track?.name,
