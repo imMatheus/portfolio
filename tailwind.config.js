@@ -8,6 +8,7 @@ module.exports = {
 				roboto: ['Roboto', 'sans-serif']
 			},
 			colors: {
+				'spotify-green': '#1ed760',
 				blurple: '#5865f2',
 				apple: '#57f287',
 				bee: '#fee75c',

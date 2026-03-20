@@ -13,6 +13,7 @@ import { Lovable } from './lovable/Lovable'
 import { Billboard } from './billboard/Billboard'
 import { Midjourney } from './midjourney/Midjourney'
 import { Jmail } from './jmail/Jmail'
+import { Spotilist } from './spotilist/Spotilist'
 interface Props {
 	contributionsCollection: any
 }
@@ -80,6 +81,17 @@ export const Projects: React.FC<Props> = ({ }) => {
 			<Spacer url="overwatch-purple.svg" />
 
 			{/* <Spacer url="apple-white.svg" /> */}
+
+			{/* <Spacer url="white-black.svg" /> */}
+
+			<section className="bg-[#181818]">
+				<ProjectWrapper>
+					<Spotilist />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer url="black-dema.svg" />
+
 
 			{/* <section className="bg-purple-800"> */}
 			{/* <section className="bg-purple-800"> */}
