@@ -12,6 +12,7 @@ import { Overwatch } from './overwatch/Overwatch'
 import { Lovable } from './lovable/Lovable'
 import { Billboard } from './billboard/Billboard'
 import { Midjourney } from './midjourney/Midjourney'
+import { Jmail } from './jmail/Jmail'
 interface Props {
 	contributionsCollection: any
 }
@@ -27,6 +28,13 @@ export const Projects: React.FC<Props> = ({ }) => {
 				{/* <section className="relative bg-[#f2330d]"> */}
 				<ProjectWrapper>
 					<Midjourney />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer url="white-dema.svg" />
+			<section className="bg-white">
+				<ProjectWrapper>
+					<Jmail />
 				</ProjectWrapper>
 			</section>
 
@@ -94,6 +102,8 @@ export const Projects: React.FC<Props> = ({ }) => {
 			</section>
 
 			<Spacer url="apple-white.svg" />
+
+
 
 			{/* <section className="bg-white">
 				<Billboard />
