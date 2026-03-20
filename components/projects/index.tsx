@@ -10,10 +10,12 @@ import VercelUi from './vercel-ui/VercelUi'
 import { Acasting } from './acasting/Acasting'
 import { Overwatch } from './overwatch/Overwatch'
 import { Lovable } from './lovable/Lovable'
+import { Codex } from './codex/Codex'
 import { Billboard } from './billboard/Billboard'
 import { Midjourney } from './midjourney/Midjourney'
 import { Jmail } from './jmail/Jmail'
 import { Spotilist } from './spotilist/Spotilist'
+import { Sudoku } from './sudoku/Sudoko'
 interface Props {
 	contributionsCollection: any
 }
@@ -52,6 +54,12 @@ export const Projects: React.FC<Props> = ({ }) => {
 			<section className="bg-[#000]">
 				<ProjectWrapper>
 					<Lovable />
+				</ProjectWrapper>
+			</section>
+
+			<section className="bg-[#000]">
+				<ProjectWrapper>
+					<Codex />
 				</ProjectWrapper>
 			</section>
 
@@ -108,9 +116,13 @@ export const Projects: React.FC<Props> = ({ }) => {
 				</ProjectWrapper>
 			</section>
 
-			<Spacer url="apple-white.svg" />
+			<Spacer url="apple-teal.svg" />
 
-
+			<section className="bg-[#008080]">
+				<ProjectWrapper>
+					<Sudoku />
+				</ProjectWrapper>
+			</section>
 
 			{/* <section className="bg-white">
 				<Billboard />

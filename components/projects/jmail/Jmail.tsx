@@ -66,7 +66,19 @@ export const Jmail: React.FC = () => {
 				I build and scrapped all the data for JeffTube on my own initially , and right after launch it got integrated into the Jmail organization where I helped out on the main platform. I later built the entire frontend for JCal which shows a calendar of all the events related to the case.
 				<br />
 				<br />
-				Jmail has gotten over 150 million views and has been featured in many news outlets and online .
+
+				<br />
+				<ul className="max-w-[80ch] list-disc space-y-3 pl-5">
+					<li>
+						<b>JeffTube</b> got over 150k likes and over 10 million views on twitter in total, here are some tweets <a href="https://x.com/whosmatu/status/2019501503581651042" target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">here</a> and <a href="https://x.com/jmailarchive/status/2023199834128421106" target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">here</a>
+					</li>
+					<li>
+						Videos on <b>JeffTube</b> have gotten over 13 million views
+					</li>
+					<li>
+						<b>Jmail</b> has gotten over 150 million views and has been featured in many news outlets and online
+					</li>
+				</ul>
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://jmail.world" Icon={ExternalLink} text="Jmail" />
@@ -101,7 +113,7 @@ export const Jmail: React.FC = () => {
 			<div className="w-full mt-32 h-[500px]">
 				{sorted.map((item, index) => (
 					<div key={item}
-						className={cn("absolute border rounded-xl bottom-0 left-0 right-0 delay-[200ms] transition-transform duration-500 w-full h-[500px]", index === 0 && "z-[3]", index === 1 && "z-[2] scale-95 -translate-y-12 hover:-translate-y-14 hover:delay-0 hover:duration-150", index === 2 && "z-[1] scale-[0.9] -translate-y-24 hover:-translate-y-28 hover:delay-0 hover:duration-150")} style={{ animation: index === 2 ? `slide-down-and-around 400ms ease-in-out` : '' }}>
+						className={cn("absolute border rounded-xl bottom-0 left-0 right-0 delay-[200ms] transition-transform duration-500 w-full h-[500px] shadow-sm", index === 0 && "z-[3]", index === 1 && "z-[2] scale-95 -translate-y-12 hover:-translate-y-14 hover:delay-0 hover:duration-150", index === 2 && "z-[1] scale-[0.9] -translate-y-24 hover:-translate-y-28 hover:delay-0 hover:duration-150")} style={{ animation: index === 2 ? `slide-down-and-around 400ms ease-in-out` : '' }}>
 						{appComponents[item]}
 					</div>
 				))}
