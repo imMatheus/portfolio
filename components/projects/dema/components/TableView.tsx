@@ -4,7 +4,7 @@ import React, { Fragment } from 'react'
 export const TableView: React.FC = () => {
 	return (
 		<div>
-			<div className="grid max-h-72 grid-cols-4 overflow-y-auto md:max-h-96">
+			<div className="grid max-h-48 grid-cols-4 overflow-y-auto md:max-h-[268px]">
 				<div className="border-b border-r px-2 py-3 text-xs font-medium md:text-sm">Channel</div>
 				<div className="border-b border-r px-2 py-3 text-xs font-medium md:text-sm">Channel group</div>
 				<div className="border-b border-r px-2 py-3 text-xs font-medium md:text-sm">Visits</div>
