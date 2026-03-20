@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import OverwatchImage from './overwatch-logo.png'
 // import Winston from './winston.png'
 // import Lucio from './lucio.png'
@@ -22,7 +23,7 @@ export const Overwatch: React.FC<OverwatchProps> = ({}) => {
 					</p>
 				</ProjectTitle>
 				<ProjectDescription>
-					2017 - 2020
+					2017 - 2020 <ProjectTag isWork={false} />
 					<br />
 					<br />
 					<ul className="list-disc space-y-2 pl-5">

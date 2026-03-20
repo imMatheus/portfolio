@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import { MoreHorizontal } from 'react-feather'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -32,7 +33,7 @@ export const Lovable: React.FC = ({}) => {
 				<video autoPlay loop muted playsInline className="inline h-20 w-20 -translate-y-1" src="/lovable-heart.mp4" />
 			</ProjectTitle>
 			<ProjectDescription>
-				<p>Part-time consultant, November 2024</p>
+				<p>Part-time consultant, November 2024 <ProjectTag isWork /></p>
 
 				<br />
 

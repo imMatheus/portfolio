@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import LinkWrapper from '../LinkWrapper'
 import Link from '../Link'
 import { ExternalLink } from 'react-feather'
@@ -12,8 +13,27 @@ import { JCalApp } from './JCalApp'
 
 export const Jmail: React.FC = () => {
 	const [open, setOpen] = useState<'jmail' | 'jefftube' | 'jcal'>('jmail')
+	const [indicator, setIndicator] = useState({ left: 0, width: 0 })
+	const buttonsRef = useRef<(HTMLButtonElement | null)[]>([])
 
 	const items = ['jmail', 'jefftube', 'jcal'] as const
+	const icons: Record<typeof items[number], string> = {
+		jmail: '/jmail.png',
+		jefftube: '/jefftube.png',
+		jcal: '/jcal.png',
+	}
+
+	const updateIndicator = useCallback(() => {
+		const idx = items.indexOf(open)
+		const btn = buttonsRef.current[idx]
+		if (btn) {
+			setIndicator({ left: btn.offsetLeft, width: btn.offsetWidth })
+		}
+	}, [open])
+
+	useEffect(() => {
+		updateIndicator()
+	}, [updateIndicator])
 
 	const appComponents: Record<typeof items[number], React.ReactNode> = {
 		jmail: <JmailApp onNavigate={setOpen} />,
@@ -39,7 +59,7 @@ export const Jmail: React.FC = () => {
 				</div>
 			</ProjectTitle>
 			<ProjectDescription>
-				February 2026 - Now
+				February 2026 - Now <ProjectTag isWork />
 				<br />
 				<br />
 				Jmail is project maintained by a group of self organized hackers in the SF area and its goal is to build a platform to make it accessible to learn about the Jeffery Epstein case.
@@ -54,12 +74,29 @@ export const Jmail: React.FC = () => {
 				<Link href="https://jmail.world/calendar" Icon={ExternalLink} text="JCal" />
 			</LinkWrapper>
 
-			<div className="flex border my-3 w-max bg-border rounded-full">
-				{items.map((item) => (
-					<button key={item} className={cn("border-2 capitalize font-medium text-lg w-full px-3 h-10 rounded-full cursor-pointer", item === open ? "bg-white border-black" : "border-transparent")} onClick={() => setOpen(item)}>
-						{item}
-					</button>
-				))}
+			<div className="relative my-3 inline-block">
+				<div className="absolute -right-2 -bottom-2 h-full w-full rounded-md border border-black bg-white"></div>
+				<div className="absolute -right-1 -bottom-1 h-full w-full rounded-md border border-black bg-white"></div>
+				<div className="relative flex rounded-md border border-black bg-white p-0.5">
+					<div
+						className="absolute top-0.5 bottom-0.5 rounded bg-black transition-all duration-300 ease-in-out"
+						style={{ left: indicator.left, width: indicator.width }}
+					/>
+					{items.map((item, i) => (
+						<button
+							key={item}
+							ref={(el) => { buttonsRef.current[i] = el }}
+							className={cn(
+								"relative z-10 flex items-center gap-1.5 capitalize font-medium text-sm px-3 py-1 rounded cursor-pointer transition-colors duration-300",
+								item === open ? "text-white" : "text-black"
+							)}
+							onClick={() => setOpen(item)}
+						>
+							<Image src={icons[item]} alt={item} width={18} height={18} className="h-[18px] w-[18px] object-contain" />
+							{item}
+						</button>
+					))}
+				</div>
 			</div>
 			<div className="w-full mt-32 h-[500px]">
 				{sorted.map((item, index) => (

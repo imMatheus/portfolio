@@ -2,6 +2,7 @@ import React from 'react'
 import LinkWrapper from '../LinkWrapper'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import { ExternalLink } from 'react-feather'
 import Link from '../Link'
 import Image from 'next/image'
@@ -11,7 +12,7 @@ export const Acasting: React.FC = ({}) => {
 		<div id="acasting" className="relative text-white">
 			<ProjectTitle>Acasting.se</ProjectTitle>
 			<ProjectDescription>
-				First software engineer, part-time consultant, November 2023 - March 2024
+				First software engineer, part-time consultant, November 2023 - March 2024 <ProjectTag isWork />
 				<br />
 				<br />
 				<ul className="max-w-[80ch] list-disc space-y-3 pl-5">

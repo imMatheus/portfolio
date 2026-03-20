@@ -4,6 +4,7 @@ import Link from '../Link'
 import LinkWrapper from '../LinkWrapper'
 import { GitHub, ExternalLink } from 'react-feather'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import Demo from './Demo'
 
 const LucioCode: React.FC = ({}) => {
@@ -18,7 +19,7 @@ const LucioCode: React.FC = ({}) => {
 				The link below links to a very early version built over one year ago, I am not yet done with an MVP of what I
 				want LucioCode to be. But a new, updated version is coming in a near future
 				<br /> */}
-				April - Mars 2021
+				April - Mars 2021 <ProjectTag isWork={false} />
 				<br />
 				<br />
 				<span className="font-medium">TLDR;</span> It&apos;s Leetcode and CSS battles combined into one that I made in

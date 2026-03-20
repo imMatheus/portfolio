@@ -4,6 +4,7 @@ import Link from '../Link'
 import LinkWrapper from '../LinkWrapper'
 import { AlertCircle, ExternalLink } from 'react-feather'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import { Demo } from './Demo'
 import Image from 'next/image'
 import WinnerImage from './polaroids/winner.png'
@@ -49,7 +50,7 @@ const Dema: React.FC = ({}) => {
 			<div className="relative z-[1]">
 				<ProjectTitle>Dema.ai</ProjectTitle>
 				<ProjectDescription>
-					Software engineer, April 2023 - February 2025
+					Software engineer, April 2023 - February 2025 <ProjectTag isWork />
 					<br />
 					<br />
 					<ul className="max-w-[80ch] list-disc space-y-3 pl-5">

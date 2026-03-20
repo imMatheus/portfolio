@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import LinkWrapper from '../LinkWrapper'
 import Link from '../Link'
 import { ExternalLink, GitHub } from 'react-feather'
@@ -15,7 +16,7 @@ const VercelUi: React.FC<VercelUiProps> = ({}) => {
 			<ProjectWrapper>
 				<ProjectTitle>Vercel UI</ProjectTitle>
 				<ProjectDescription className="text-white">
-					Creator and sole maintainer, 2024
+					Creator and sole maintainer, 2024 <ProjectTag isWork={false} />
 					<br />
 					<br />
 					Design library inspired by Vercels design system. It&apos;s the same concept as ShadcnUI but does tackle some

@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import MidjourneyImage from './midjourney-logo.png'
 import Image from 'next/image'
 import { ExternalLink } from 'react-feather'
@@ -15,7 +16,7 @@ export const Midjourney: React.FC<MidjourneyProps> = ({}) => {
 				<Image src={MidjourneyImage} alt="Midjourney" className="inline h-20 w-20 object-contain" />
 			</ProjectTitle>
 			<ProjectDescription>
-				Software engineer, February 2025 - Now
+				Software engineer, February 2025 - Now <ProjectTag isWork />
 				<ul className="max-w-[80ch] list-disc space-y-3 pl-5">
 					<li>
 						Adding ability to have multiple layers and rotate layers in the editor on the website

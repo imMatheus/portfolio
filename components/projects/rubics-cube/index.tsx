@@ -3,6 +3,7 @@ import ProjectTitle from '../ProjectTitle'
 import Link from '../Link'
 import LinkWrapper from '../LinkWrapper'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import { GitHub, ExternalLink } from 'react-feather'
 import Cube from './Cube'
 
@@ -11,7 +12,7 @@ const RubiksCube: React.FC = ({}) => {
 		<div id="rubiks-cube">
 			<ProjectTitle>CSS only Rubiks cube</ProjectTitle>
 			<ProjectDescription>
-				October 2022
+				October 2022 <ProjectTag isWork={false} />
 				<br />
 				<br />
 				The project below was made with a total of ZERO lines of Javascript, its all just CSS. Every animation, hover

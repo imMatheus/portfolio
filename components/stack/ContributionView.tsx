@@ -12,7 +12,7 @@ const ContributionView: React.FC<ContributionViewProps> = ({ contributionsCollec
 
 	return (
 		<div className="mt-6 w-full max-w-max overflow-x-visible">
-			<Title>{contributionsCollection.totalContributions} total github contributions in the last year</Title>
+			<Title>{contributionsCollection.totalContributions} total public github contributions in the last year</Title>
 
 			<div
 				className={`
