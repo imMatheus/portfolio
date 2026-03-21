@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-interface MetaDataProps {}
-
-const MetaData: React.FC<MetaDataProps> = ({}) => {
+const MetaData: React.FC = () => {
 	return (
 		<div className="text-text-grayed mt-3 flex max-w-md justify-between">
 			<div className="group flex cursor-default items-center gap-3 hover:text-twitter-blue">

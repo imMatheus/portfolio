@@ -10,9 +10,7 @@ import OverwatchImage from './overwatch-logo.png'
 // import Zarya from './zarya.png'
 // import Dva from './dva.png'
 
-interface OverwatchProps {}
-
-export const Overwatch: React.FC<OverwatchProps> = ({}) => {
+export const Overwatch: React.FC = () => {
 	return (
 		<div id="dema" className="pb-5 font-sans">
 			<div className="relative">

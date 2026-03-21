@@ -1,9 +1,7 @@
 import React, { PropsWithChildren } from 'react'
 import LucioCode from './luciocode/LucioCode'
 
-import Sorter from './sorter/Sorter'
 import Spacer from '../Spacer'
-import Twitter from './twitter/Twitter'
 import Cube from './rubics-cube'
 import Dema from './dema'
 import VercelUi from './vercel-ui/VercelUi'
@@ -11,7 +9,6 @@ import { Acasting } from './acasting/Acasting'
 import { Overwatch } from './overwatch/Overwatch'
 import { Lovable } from './lovable/Lovable'
 import { Codex } from './codex/Codex'
-import { Billboard } from './billboard/Billboard'
 import { Midjourney } from './midjourney/Midjourney'
 import { Jmail } from './jmail/Jmail'
 import { Spotilist } from './spotilist/Spotilist'
@@ -29,21 +26,14 @@ import {
 	PurpleApple2,
 	AppleTeal,
 	TealWhite,
-	BlackBlack,
-	BlackBee,
-	BeeBlurple,
-	BlurpleWhite
+	BlackBlack
 } from 'lib/spacers/index'
-
-interface Props {
-	contributionsCollection: any
-}
 
 export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
 	return <div className="mx-auto w-screen max-w-7xl overflow-hidden p-4 sm:px-8 sm:py-6">{children}</div>
 }
 
-export const Projects: React.FC<Props> = ({}) => {
+export const Projects: React.FC = () => {
 	return (
 		<div className="relative w-screen">
 			<section className="relative bg-white">
@@ -176,26 +166,6 @@ export const Projects: React.FC<Props> = ({}) => {
 					<Daij />
 				</ProjectWrapper>
 			</section>
-
-			{/* <section className="bg-white">
-				<Billboard />
-			</section> */}
-
-			{/* <section className="bg-[#000]">
-				<ProjectWrapper>
-					<Twitter />
-				</ProjectWrapper>
-			</section>
-
-			<Spacer><BlackBee /></Spacer> */}
-
-			{/* <Spacer><BeeBlurple /></Spacer>
-			<section className="bg-blurple">
-				<ProjectWrapper>
-					<Sorter />
-				</ProjectWrapper>
-			</section>
-			<Spacer><BlurpleWhite /></Spacer> */}
 		</div>
 	)
 }

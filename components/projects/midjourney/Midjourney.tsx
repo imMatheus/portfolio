@@ -6,9 +6,7 @@ import MidjourneyImage from './midjourney-logo.png'
 import Image from 'next/image'
 import { ExternalLink } from 'react-feather'
 
-interface MidjourneyProps {}
-
-export const Midjourney: React.FC<MidjourneyProps> = ({}) => {
+export const Midjourney: React.FC = () => {
 	return (
 		<div className="" id="midjourney">
 			<ProjectTitle>

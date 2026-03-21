@@ -8,9 +8,7 @@ import { ExternalLink, GitHub } from 'react-feather'
 import { ComponentDemo } from './ComponentDemo'
 import { ProjectWrapper } from '..'
 
-interface VercelUiProps {}
-
-const VercelUi: React.FC<VercelUiProps> = ({}) => {
+const VercelUi: React.FC = () => {
 	return (
 		<div id="vercel-ui" className="vercel-ui-style-wrapper font-sans text-white">
 			<ProjectWrapper>
