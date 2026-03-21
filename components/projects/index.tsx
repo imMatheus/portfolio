@@ -29,6 +29,7 @@ import {
 	PurpleApple2,
 	AppleTeal,
 	TealWhite,
+	BlackBlack,
 	BlackBee,
 	BeeBlurple,
 	BlurpleWhite
@@ -80,6 +81,10 @@ export const Projects: React.FC<Props> = ({}) => {
 					<Lovable />
 				</ProjectWrapper>
 			</section>
+
+			<Spacer>
+				<BlackBlack />
+			</Spacer>
 
 			<section className="bg-[#000]">
 				<ProjectWrapper>

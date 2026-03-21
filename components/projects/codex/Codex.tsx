@@ -11,9 +11,9 @@ import Demo from './Demo'
 export const Codex: React.FC = () => {
 	return (
 		<div className="text-[#f4f4f5]">
-			<ProjectTitle>Codex</ProjectTitle>
+			<ProjectTitle>Codex form</ProjectTitle>
 			<ProjectDescription>
-				2025 <ProjectTag isWork={false} />
+				March 2026 <ProjectTag isWork={false} />
 				<br />
 				<br />I forked fork of OpenAI&apos;s Codex CLI. An open-source coding agent that runs in your terminal. Try the
 				Tetris game below.
