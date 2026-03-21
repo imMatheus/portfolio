@@ -46,8 +46,8 @@ export const Midjourney: React.FC<MidjourneyProps> = ({}) => {
 						</ul>
 					</li>
 					<li>
-						Added a popup that showed when users ran out out of credits that let them buy new onces or upgrade plane
-						very easily. This popup alone payed for my salary within a couple of weeks
+						Added a popup that showed when users ran out of credits that let them buy new ones or upgrade plan
+						very easily. This popup alone paid for my salary within a couple of weeks
 					</li>
 				</ul>
 			</ProjectDescription>

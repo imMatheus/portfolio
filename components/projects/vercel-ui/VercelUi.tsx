@@ -19,8 +19,8 @@ const VercelUi: React.FC<VercelUiProps> = ({}) => {
 					Creator and sole maintainer, 2024 <ProjectTag isWork={false} />
 					<br />
 					<br />
-					Design library inspired by Vercels design system. It&apos;s the same concept as ShadcnUI but does tackle some
-					issue I felt ShadcnUI skips over, like handling multi-part components with multiple different sizes for
+					Design library inspired by Vercel&apos;s design system. It&apos;s the same concept as ShadcnUI but does tackle some
+					issues I felt ShadcnUI skips over, like handling multi-part components with multiple different sizes for
 					example.
 				</ProjectDescription>
 				<LinkWrapper>

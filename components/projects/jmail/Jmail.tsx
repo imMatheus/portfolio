@@ -68,9 +68,9 @@ export const Jmail: React.FC = () => {
 				February 2026 - Now <ProjectTag isWork={false} />
 				<br />
 				<br />
-				Jmail is project maintained by a group of self organized hackers in the SF area and its goal is to build a
-				platform to make it accessible to learn about the Jeffery Epstein case. I build and scrapped all the data for
-				JeffTube on my own initially , and right after launch it got integrated into the Jmail organization where I
+				Jmail is a project maintained by a group of self-organized hackers in the SF area and its goal is to build a
+				platform to make it accessible to learn about the Jeffrey Epstein case. I built and scraped all the data for
+				JeffTube on my own initially, and right after launch it got integrated into the Jmail organization where I
 				helped out on the main platform. I later built the entire frontend for JCal which shows a calendar of all the
 				events related to the case.
 				<br />

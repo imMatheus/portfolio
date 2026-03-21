@@ -29,7 +29,7 @@ export const Overwatch: React.FC<OverwatchProps> = ({}) => {
 					<ul className="list-disc space-y-2 pl-5">
 						<li>
 							I was consistently in the top #500 rankings for europe on playstation with multiple different accounts,
-							peking at top #30 at points.
+							peaking at top #30 at points.
 						</li>
 						<li>Competed for the scandinavian team in the world cups for Playstation</li>
 						<li>For certain heroes I was in the top #100 for and peaked #7 for Winston at a certain point.</li>

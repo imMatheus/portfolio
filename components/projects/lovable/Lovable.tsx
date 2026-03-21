@@ -40,7 +40,7 @@ export const Lovable: React.FC = ({}) => {
 				<br />
 
 				<p className="mb-4">
-					Built their landing page over a couple days while i was solo traveling in Thailand. This was part of their
+					Built their landing page over a couple days while I was solo traveling in Thailand. This was part of their
 					rebrand for their third launch, which happened to make them the fastest growing company in Europe ever.
 				</p>
 

@@ -15,7 +15,7 @@ export const Daij: React.FC = () => {
 				March 2026, <ProjectTag isWork={false} />
 				<br />
 				<br />I used <a href="https://strudel.cc/">Strudel</a> to generate the music via each of the 3 big models via
-				their CLI. Then i made a website where users can listen to all the songs and vote on to determine the best LLM
+				their CLI. Then I made a website where users can listen to all the songs and vote to determine the best LLM
 				for music taste.
 			</ProjectDescription>
 			<LinkWrapper>
