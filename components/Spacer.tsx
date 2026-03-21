@@ -6,7 +6,7 @@ interface SpacerProps {
 
 const Spacer: React.FC<SpacerProps> = ({ children }) => {
 	return (
-		<div className="relative w-full h-40 sm:h-56 md:h-64 lg:h-80 [&>svg]:absolute [&>svg]:inset-0 [&>svg]:w-full [&>svg]:h-full">
+		<div className="relative h-40 w-full sm:h-56 md:h-64 lg:h-80 [&>svg]:absolute [&>svg]:inset-0 [&>svg]:h-full [&>svg]:w-full">
 			{children}
 		</div>
 	)

@@ -37,7 +37,8 @@ const Demo: React.FC = () => {
 
 					{/* Tip */}
 					<p className="text-xs text-[#007aff] max-md:hidden">
-						<span className="font-bold">Tip:</span> this is an interactive demo, click on the tetris game and use the arrows to play!
+						<span className="font-bold">Tip:</span> this is an interactive demo, click on the tetris game and use the
+						arrows to play!
 					</p>
 
 					{/* AI response */}

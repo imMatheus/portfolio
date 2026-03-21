@@ -1,12 +1,29 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react'
 
-const SONG_A = 'https://pub-5b5da887d0d44388ac15fa702af1c2c6.r2.dev/claude/a-deep-house-track-with-a-four-on-the-floor-kick.wav'
-const SONG_B = 'https://pub-5b5da887d0d44388ac15fa702af1c2c6.r2.dev/chatgpt/minimalist-repetition-with-subtle-variations.wav'
+const SONG_A =
+	'https://pub-5b5da887d0d44388ac15fa702af1c2c6.r2.dev/claude/a-deep-house-track-with-a-four-on-the-floor-kick.wav'
+const SONG_B =
+	'https://pub-5b5da887d0d44388ac15fa702af1c2c6.r2.dev/chatgpt/minimalist-repetition-with-subtle-variations.wav'
 
 const MODELS = [
-	{ company: 'ANTHROPIC', name: 'Claude', color: '#d97757', image: 'https://cdn.midjourney.com/3a45bb45-929b-47d0-baa1-d043df6912cf/0_0.png' },
-	{ company: 'OPENAI', name: 'ChatGPT', color: '#10a37f', image: 'https://cdn.midjourney.com/e3c988a8-78d0-46d2-9638-ec6d66c660b3/0_0.png' },
-	{ company: 'GOOGLE', name: 'Gemini', color: '#4285f4', image: 'https://cdn.midjourney.com/be7d14e2-325a-4d31-96bc-a33550273e36/0_0.png' },
+	{
+		company: 'ANTHROPIC',
+		name: 'Claude',
+		color: '#d97757',
+		image: 'https://cdn.midjourney.com/3a45bb45-929b-47d0-baa1-d043df6912cf/0_0.png'
+	},
+	{
+		company: 'OPENAI',
+		name: 'ChatGPT',
+		color: '#10a37f',
+		image: 'https://cdn.midjourney.com/e3c988a8-78d0-46d2-9638-ec6d66c660b3/0_0.png'
+	},
+	{
+		company: 'GOOGLE',
+		name: 'Gemini',
+		color: '#4285f4',
+		image: 'https://cdn.midjourney.com/be7d14e2-325a-4d31-96bc-a33550273e36/0_0.png'
+	}
 ]
 
 const SONGS = [
@@ -15,17 +32,21 @@ const SONGS = [
 	{ title: 'Redline Pursuit', artist: 'Claude', src: SONG_A },
 	{ title: 'Dust on the Dashboard', artist: 'Claude', src: SONG_A },
 	{ title: 'Midnight Frequencies', artist: 'Claude', src: SONG_B },
-	{ title: 'Stayin\' On The Floor', artist: 'Claude', src: SONG_B },
+	{ title: "Stayin' On The Floor", artist: 'Claude', src: SONG_B },
 	{ title: 'Slap City Strut', artist: 'Claude', src: SONG_B },
-	{ title: 'Fuego en la Calle', artist: 'Claude', src: SONG_B },
+	{ title: 'Fuego en la Calle', artist: 'Claude', src: SONG_B }
 ]
 
 function getArtistImage(artist: string) {
 	switch (artist) {
-		case 'Claude': return 'https://cdn.midjourney.com/3a45bb45-929b-47d0-baa1-d043df6912cf/0_0.png'
-		case 'ChatGPT': return 'https://cdn.midjourney.com/e3c988a8-78d0-46d2-9638-ec6d66c660b3/0_0.png'
-		case 'Gemini': return 'https://cdn.midjourney.com/be7d14e2-325a-4d31-96bc-a33550273e36/0_0.png'
-		default: return ''
+		case 'Claude':
+			return 'https://cdn.midjourney.com/3a45bb45-929b-47d0-baa1-d043df6912cf/0_0.png'
+		case 'ChatGPT':
+			return 'https://cdn.midjourney.com/e3c988a8-78d0-46d2-9638-ec6d66c660b3/0_0.png'
+		case 'Gemini':
+			return 'https://cdn.midjourney.com/be7d14e2-325a-4d31-96bc-a33550273e36/0_0.png'
+		default:
+			return ''
 	}
 }
 
@@ -37,7 +58,10 @@ function formatTime(s: number) {
 
 const ClaudeIcon = () => (
 	<svg className="inline-block size-3" preserveAspectRatio="xMidYMid" viewBox="0 0 256 257">
-		<path fill="#D97757" d="m50.228 170.321 50.357-28.257.843-2.463-.843-1.361h-2.462l-8.426-.518-28.775-.778-24.952-1.037-24.175-1.296-6.092-1.297L0 125.796l.583-3.759 5.12-3.434 7.324.648 16.202 1.101 24.304 1.685 17.629 1.037 26.118 2.722h4.148l.583-1.685-1.426-1.037-1.101-1.037-25.147-17.045-27.22-18.017-14.258-10.37-7.713-5.25-3.888-4.925-1.685-10.758 7-7.713 9.397.649 2.398.648 9.527 7.323 20.35 15.75L94.817 91.9l3.889 3.24 1.555-1.102.195-.777-1.75-2.917-14.453-26.118-15.425-26.572-6.87-11.018-1.814-6.61c-.648-2.723-1.102-4.991-1.102-7.778l7.972-10.823L71.42 0 82.05 1.426l4.472 3.888 6.61 15.101 10.694 23.786 16.591 32.34 4.861 9.592 2.592 8.879.973 2.722h1.685v-1.556l1.36-18.211 2.528-22.36 2.463-28.776.843-8.1 4.018-9.722 7.971-5.25 6.222 2.981 5.12 7.324-.713 4.73-3.046 19.768-5.962 30.98-3.889 20.739h2.268l2.593-2.593 10.499-13.934 17.628-22.036 7.778-8.749 9.073-9.657 5.833-4.601h11.018l8.1 12.055-3.628 12.443-11.342 14.388-9.398 12.184-13.48 18.147-8.426 14.518.778 1.166 2.01-.194 30.46-6.481 16.462-2.982 19.637-3.37 8.88 4.148.971 4.213-3.5 8.62-20.998 5.184-24.628 4.926-36.682 8.685-.454.324.519.648 16.526 1.555 7.065.389h17.304l32.21 2.398 8.426 5.574 5.055 6.805-.843 5.184-12.962 6.611-17.498-4.148-40.83-9.721-14-3.5h-1.944v1.167l11.666 11.406 21.387 19.314 26.767 24.887 1.36 6.157-3.434 4.86-3.63-.518-23.526-17.693-9.073-7.972-20.545-17.304h-1.36v1.814l4.73 6.935 25.017 37.59 1.296 11.536-1.814 3.76-6.481 2.268-7.13-1.297-14.647-20.544-15.1-23.138-12.185-20.739-1.49.843-7.194 77.448-3.37 3.953-7.778 2.981-6.48-4.925-3.436-7.972 3.435-15.749 4.148-20.544 3.37-16.333 3.046-20.285 1.815-6.74-.13-.454-1.49.194-15.295 20.999-23.267 31.433-18.406 19.702-4.407 1.75-7.648-3.954.713-7.064 4.277-6.286 25.47-32.405 15.36-20.092 9.917-11.6-.065-1.686h-.583L44.07 198.125l-12.055 1.555-5.185-4.86.648-7.972 2.463-2.593 20.35-13.999-.064.065Z"></path>
+		<path
+			fill="#D97757"
+			d="m50.228 170.321 50.357-28.257.843-2.463-.843-1.361h-2.462l-8.426-.518-28.775-.778-24.952-1.037-24.175-1.296-6.092-1.297L0 125.796l.583-3.759 5.12-3.434 7.324.648 16.202 1.101 24.304 1.685 17.629 1.037 26.118 2.722h4.148l.583-1.685-1.426-1.037-1.101-1.037-25.147-17.045-27.22-18.017-14.258-10.37-7.713-5.25-3.888-4.925-1.685-10.758 7-7.713 9.397.649 2.398.648 9.527 7.323 20.35 15.75L94.817 91.9l3.889 3.24 1.555-1.102.195-.777-1.75-2.917-14.453-26.118-15.425-26.572-6.87-11.018-1.814-6.61c-.648-2.723-1.102-4.991-1.102-7.778l7.972-10.823L71.42 0 82.05 1.426l4.472 3.888 6.61 15.101 10.694 23.786 16.591 32.34 4.861 9.592 2.592 8.879.973 2.722h1.685v-1.556l1.36-18.211 2.528-22.36 2.463-28.776.843-8.1 4.018-9.722 7.971-5.25 6.222 2.981 5.12 7.324-.713 4.73-3.046 19.768-5.962 30.98-3.889 20.739h2.268l2.593-2.593 10.499-13.934 17.628-22.036 7.778-8.749 9.073-9.657 5.833-4.601h11.018l8.1 12.055-3.628 12.443-11.342 14.388-9.398 12.184-13.48 18.147-8.426 14.518.778 1.166 2.01-.194 30.46-6.481 16.462-2.982 19.637-3.37 8.88 4.148.971 4.213-3.5 8.62-20.998 5.184-24.628 4.926-36.682 8.685-.454.324.519.648 16.526 1.555 7.065.389h17.304l32.21 2.398 8.426 5.574 5.055 6.805-.843 5.184-12.962 6.611-17.498-4.148-40.83-9.721-14-3.5h-1.944v1.167l11.666 11.406 21.387 19.314 26.767 24.887 1.36 6.157-3.434 4.86-3.63-.518-23.526-17.693-9.073-7.972-20.545-17.304h-1.36v1.814l4.73 6.935 25.017 37.59 1.296 11.536-1.814 3.76-6.481 2.268-7.13-1.297-14.647-20.544-15.1-23.138-12.185-20.739-1.49.843-7.194 77.448-3.37 3.953-7.778 2.981-6.48-4.925-3.436-7.972 3.435-15.749 4.148-20.544 3.37-16.333 3.046-20.285 1.815-6.74-.13-.454-1.49.194-15.295 20.999-23.267 31.433-18.406 19.702-4.407 1.75-7.648-3.954.713-7.064 4.277-6.286 25.47-32.405 15.36-20.092 9.917-11.6-.065-1.686h-.583L44.07 198.125l-12.055 1.555-5.185-4.86.648-7.972 2.463-2.593 20.35-13.999-.064.065Z"
+		></path>
 	</svg>
 )
 
@@ -49,17 +73,44 @@ const ChatGPTIcon = () => (
 
 const GeminiIcon = () => (
 	<svg className="inline-block size-3" viewBox="0 0 296 298" fill="none">
-		<mask id="gemini__a" width="296" height="298" x="0" y="0" maskUnits="userSpaceOnUse" style={{ maskType: 'alpha' as const }}>
-			<path fill="#3186FF" d="M141.201 4.886c2.282-6.17 11.042-6.071 13.184.148l5.985 17.37a184.004 184.004 0 0 0 111.257 113.049l19.304 6.997c6.143 2.227 6.156 10.91.02 13.155l-19.35 7.082a184.001 184.001 0 0 0-109.495 109.385l-7.573 20.629c-2.241 6.105-10.869 6.121-13.133.025l-7.908-21.296a184 184 0 0 0-109.02-108.658l-19.698-7.239c-6.102-2.243-6.118-10.867-.025-13.132l20.083-7.467A183.998 183.998 0 0 0 133.291 26.28l7.91-21.394Z"></path>
+		<mask
+			id="gemini__a"
+			width="296"
+			height="298"
+			x="0"
+			y="0"
+			maskUnits="userSpaceOnUse"
+			style={{ maskType: 'alpha' as const }}
+		>
+			<path
+				fill="#3186FF"
+				d="M141.201 4.886c2.282-6.17 11.042-6.071 13.184.148l5.985 17.37a184.004 184.004 0 0 0 111.257 113.049l19.304 6.997c6.143 2.227 6.156 10.91.02 13.155l-19.35 7.082a184.001 184.001 0 0 0-109.495 109.385l-7.573 20.629c-2.241 6.105-10.869 6.121-13.133.025l-7.908-21.296a184 184 0 0 0-109.02-108.658l-19.698-7.239c-6.102-2.243-6.118-10.867-.025-13.132l20.083-7.467A183.998 183.998 0 0 0 133.291 26.28l7.91-21.394Z"
+			></path>
 		</mask>
 		<g mask="url(#gemini__a)">
 			<ellipse cx="163" cy="149" fill="#3689FF" rx="196" ry="159"></ellipse>
 			<ellipse cx="33.5" cy="142.5" fill="#F6C013" rx="68.5" ry="72.5" style={{ filter: 'blur(32px)' }}></ellipse>
 			<ellipse cx="19.5" cy="148.5" fill="#F6C013" rx="68.5" ry="72.5" style={{ filter: 'blur(32px)' }}></ellipse>
-			<path fill="#FA4340" d="M194 10.5C172 82.5 65.5 134.333 22.5 135L144-66l50 76.5Z" style={{ filter: 'blur(32px)' }}></path>
-			<path fill="#FA4340" d="M190.5-12.5C168.5 59.5 62 111.333 19 112L140.5-89l50 76.5Z" style={{ filter: 'blur(32px)' }}></path>
-			<path fill="#14BB69" d="M194.5 279.5C172.5 207.5 66 155.667 23 155l121.5 201 50-76.5Z" style={{ filter: 'blur(32px)' }}></path>
-			<path fill="#14BB69" d="M196.5 320.5C174.5 248.5 68 196.667 25 196l121.5 201 50-76.5Z" style={{ filter: 'blur(32px)' }}></path>
+			<path
+				fill="#FA4340"
+				d="M194 10.5C172 82.5 65.5 134.333 22.5 135L144-66l50 76.5Z"
+				style={{ filter: 'blur(32px)' }}
+			></path>
+			<path
+				fill="#FA4340"
+				d="M190.5-12.5C168.5 59.5 62 111.333 19 112L140.5-89l50 76.5Z"
+				style={{ filter: 'blur(32px)' }}
+			></path>
+			<path
+				fill="#14BB69"
+				d="M194.5 279.5C172.5 207.5 66 155.667 23 155l121.5 201 50-76.5Z"
+				style={{ filter: 'blur(32px)' }}
+			></path>
+			<path
+				fill="#14BB69"
+				d="M196.5 320.5C174.5 248.5 68 196.667 25 196l121.5 201 50-76.5Z"
+				style={{ filter: 'blur(32px)' }}
+			></path>
 		</g>
 	</svg>
 )
@@ -87,27 +138,30 @@ export const DaijDemo: React.FC = () => {
 		}
 	}, [])
 
-	const playSong = useCallback((index: number) => {
-		const audio = audioRef.current
-		if (!audio) return
+	const playSong = useCallback(
+		(index: number) => {
+			const audio = audioRef.current
+			if (!audio) return
 
-		if (currentSongIndex === index) {
-			if (isPlaying) {
-				audio.pause()
-				setIsPlaying(false)
-			} else {
-				audio.play()
-				setIsPlaying(true)
+			if (currentSongIndex === index) {
+				if (isPlaying) {
+					audio.pause()
+					setIsPlaying(false)
+				} else {
+					audio.play()
+					setIsPlaying(true)
+				}
+				return
 			}
-			return
-		}
 
-		audio.src = SONGS[index].src
-		audio.play()
-		setCurrentSongIndex(index)
-		setIsPlaying(true)
-		setCurrentTime(0)
-	}, [currentSongIndex, isPlaying])
+			audio.src = SONGS[index].src
+			audio.play()
+			setCurrentSongIndex(index)
+			setIsPlaying(true)
+			setCurrentTime(0)
+		},
+		[currentSongIndex, isPlaying]
+	)
 
 	const togglePlay = useCallback(() => {
 		const audio = audioRef.current
@@ -133,18 +187,21 @@ export const DaijDemo: React.FC = () => {
 		playSong(next)
 	}, [currentSongIndex, playSong])
 
-	const seek = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-		const audio = audioRef.current
-		if (!audio || !duration) return
-		const rect = e.currentTarget.getBoundingClientRect()
-		const pct = (e.clientX - rect.left) / rect.width
-		audio.currentTime = pct * duration
-	}, [duration])
+	const seek = useCallback(
+		(e: React.MouseEvent<HTMLDivElement>) => {
+			const audio = audioRef.current
+			if (!audio || !duration) return
+			const rect = e.currentTarget.getBoundingClientRect()
+			const pct = (e.clientX - rect.left) / rect.width
+			audio.currentTime = pct * duration
+		},
+		[duration]
+	)
 
 	const progress = duration ? (currentTime / duration) * 100 : 0
 
 	return (
-		<article className="relative max-w-4xl mt-12">
+		<article className="relative mt-12 max-w-4xl">
 			<div className="absolute -bottom-3 -right-3 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-4 lg:-right-4">
 				<div className="h-[25px] border-b border-black"></div>
 			</div>
@@ -166,13 +223,19 @@ export const DaijDemo: React.FC = () => {
 					</h3> */}
 
 					{/* Model Cards */}
-					<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+					<div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
 						{MODELS.map((model) => (
 							<div key={model.name} className="group block">
 								<div className="mb-2">
 									<div className="flex items-center gap-1">
-										{model.name === 'ChatGPT' ? <ChatGPTIcon /> : model.name === 'Gemini' ? <GeminiIcon /> : <ClaudeIcon />}
-										<p className="text-[11px] font-medium tracking-wider uppercase text-gray-400">{model.company}</p>
+										{model.name === 'ChatGPT' ? (
+											<ChatGPTIcon />
+										) : model.name === 'Gemini' ? (
+											<GeminiIcon />
+										) : (
+											<ClaudeIcon />
+										)}
+										<p className="text-[11px] font-medium uppercase tracking-wider text-gray-400">{model.company}</p>
 									</div>
 									<p className="font-medium tracking-wider">{model.name}</p>
 								</div>
@@ -183,7 +246,7 @@ export const DaijDemo: React.FC = () => {
 										alt={model.name}
 										className="aspect-square w-full object-cover transition-all duration-500 ease-out group-hover:scale-[1.05] group-hover:blur-[3px]"
 									/>
-									<div className="pointer-events-none absolute inset-0 rounded-2xl ring-[0.5px] ring-black/15 ring-inset"></div>
+									<div className="pointer-events-none absolute inset-0 rounded-2xl ring-[0.5px] ring-inset ring-black/15"></div>
 								</div>
 							</div>
 						))}
@@ -204,11 +267,11 @@ export const DaijDemo: React.FC = () => {
 									onClick={() => playSong(i)}
 									className="group relative flex cursor-pointer items-center gap-3 py-2 pr-2 transition-colors hover:bg-gray-50"
 								>
-									<div className="absolute right-0 bottom-0 left-0 h-[0.5px] bg-black/[0.15]"></div>
+									<div className="absolute bottom-0 left-0 right-0 h-[0.5px] bg-black/[0.15]"></div>
 									<div className="relative size-10 shrink-0 overflow-hidden rounded-md">
 										{/* eslint-disable-next-line @next/next/no-img-element */}
 										<img src={getArtistImage(song.artist)} alt={song.title} className="size-full object-cover" />
-										<div className="pointer-events-none absolute inset-0 rounded-md ring-[0.5px] ring-black/10 ring-inset"></div>
+										<div className="pointer-events-none absolute inset-0 rounded-md ring-[0.5px] ring-inset ring-black/10"></div>
 										<div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
 											<span className="text-sm text-white">{currentSongIndex === i && isPlaying ? '⏸' : '▶'}</span>
 										</div>
@@ -223,7 +286,7 @@ export const DaijDemo: React.FC = () => {
 					</div>
 					{/* Player Bar */}
 					{currentSong && (
-						<div className="mt-8 rounded-xl mx-auto border border-black/10 w-72 md:w-96 bg-white shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
+						<div className="mx-auto mt-8 w-72 rounded-xl border border-black/10 bg-white shadow-[0_4px_24px_rgba(0,0,0,0.12)] md:w-96">
 							<div className="flex items-center gap-3 p-3">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
 								<img
@@ -243,7 +306,13 @@ export const DaijDemo: React.FC = () => {
 										className="flex size-8 cursor-pointer items-center justify-center rounded-md transition-colors hover:bg-gray-100"
 										aria-label="Previous"
 									>
-										<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="14"
+											height="14"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+										>
 											<rect x="4" y="4" width="3" height="16"></rect>
 											<polygon points="20,4 9,12 20,20"></polygon>
 										</svg>
@@ -254,12 +323,24 @@ export const DaijDemo: React.FC = () => {
 										aria-label={isPlaying ? 'Pause' : 'Play'}
 									>
 										{isPlaying ? (
-											<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="14"
+												height="14"
+												viewBox="0 0 24 24"
+												fill="currentColor"
+											>
 												<rect x="5" y="4" width="4" height="16"></rect>
 												<rect x="15" y="4" width="4" height="16"></rect>
 											</svg>
 										) : (
-											<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="14"
+												height="14"
+												viewBox="0 0 24 24"
+												fill="currentColor"
+											>
 												<polygon points="6,4 20,12 6,20"></polygon>
 											</svg>
 										)}
@@ -269,7 +350,13 @@ export const DaijDemo: React.FC = () => {
 										className="flex size-8 cursor-pointer items-center justify-center rounded-md transition-colors hover:bg-gray-100"
 										aria-label="Next"
 									>
-										<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="14"
+											height="14"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+										>
 											<polygon points="4,4 15,12 4,20"></polygon>
 											<rect x="17" y="4" width="3" height="16"></rect>
 										</svg>

@@ -14,8 +14,10 @@ export const Daij: React.FC = () => {
 			<ProjectDescription>
 				March 2026, <ProjectTag isWork={false} />
 				<br />
-				<br />
-				I used <a href="https://strudel.cc/">Strudel</a> to generate the music via each of the 3 big models via their CLI. Then i made a website where users can listen to all the songs and vote on to determine the best LLM for music taste.</ProjectDescription>
+				<br />I used <a href="https://strudel.cc/">Strudel</a> to generate the music via each of the 3 big models via
+				their CLI. Then i made a website where users can listen to all the songs and vote on to determine the best LLM
+				for music taste.
+			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://daij.immatheus.com" Icon={ExternalLink} text="Live Site" />
 				<Link href="https://github.com/imMatheus/daij" Icon={GitHub} text="GitHub" />
