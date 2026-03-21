@@ -16,6 +16,7 @@ import { Midjourney } from './midjourney/Midjourney'
 import { Jmail } from './jmail/Jmail'
 import { Spotilist } from './spotilist/Spotilist'
 import { Sudoku } from './sudoku/Sudoko'
+import { Daij } from './daij/Daij'
 import {
 	WhiteBlackWhite,
 	WhiteDema,
@@ -27,6 +28,7 @@ import {
 	DarkPurple,
 	PurpleApple2,
 	AppleTeal,
+	TealWhite,
 	BlackBee,
 	BeeBlurple,
 	BlurpleWhite
@@ -157,6 +159,16 @@ export const Projects: React.FC<Props> = ({}) => {
 			<section className="bg-[#008080]">
 				<ProjectWrapper>
 					<Sudoku />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer>
+				<TealWhite />
+			</Spacer>
+
+			<section className="bg-white">
+				<ProjectWrapper>
+					<Daij />
 				</ProjectWrapper>
 			</section>
 

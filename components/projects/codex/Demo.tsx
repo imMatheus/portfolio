@@ -36,16 +36,13 @@ const Demo: React.FC = () => {
 					</div>
 
 					{/* Tip */}
-					<p className="text-xs text-[#007aff]">
-						<span className="font-bold">Tip:</span> New Try the <span className="font-bold">Codex App</span> with 2x
-						rate limits until April 2nd. Run &apos;codex app&apos; or visit the Codex landing page
+					<p className="text-xs text-[#007aff] max-md:hidden">
+						<span className="font-bold">Tip:</span> this is an interactive demo, click on the tetris game and use the arrows to play!
 					</p>
 
 					{/* AI response */}
-					<p className="text-xs text-[#1d1d1f]">
-						<span className="text-[#34c759]">●</span> Executing your sequence exactly as requested: first{' '}
-						<code className="text-[#af52de]">sleep 20</code>, then <code className="text-[#af52de]">git pull</code>,
-						then <code className="text-[#af52de]">sleep 120</code>.
+					<p className="text-xs text-[#1d1d1f] max-md:hidden">
+						<span className="text-[#34c759]">●</span> Fix all bugs ever!
 					</p>
 
 					{/* Tetris game */}
@@ -67,7 +64,7 @@ const Demo: React.FC = () => {
 
 					{/* Bottom bar */}
 					<div className="border-t border-[#e5e5ea] pt-1 text-xs text-[#aeaeb2]">
-						gpt-5.3-codex high · 99% left · ~/Desktop/codex/codex-rs
+						gpt-5.3-codex high · 18% left · ~/Desktop/codex/codex-rs
 					</div>
 				</div>
 			</div>
