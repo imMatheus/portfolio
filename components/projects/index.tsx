@@ -19,14 +19,18 @@ import {
 	WhiteDema,
 	DemaBlack,
 	BlackWhite,
-	WhiteBlack,
 	BlackOverwatch,
 	OverwatchDark,
 	DarkPurple,
 	PurpleApple2,
 	AppleTeal,
 	TealWhite,
-	BlackBlack
+	BlackBlack,
+	WhiteOverwatch,
+	DarkWhite,
+	WhiteTeal,
+	TealBlack,
+	BlackPurple,
 } from 'lib/spacers/index'
 
 export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
@@ -36,130 +40,149 @@ export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
 export const Projects: React.FC = () => {
 	return (
 		<div className="relative w-screen">
+			{/* 1. Midjourney (white) */}
 			<section className="relative bg-white">
-				{/* <section className="relative bg-[#f2330d]"> */}
 				<ProjectWrapper>
 					<Midjourney />
 				</ProjectWrapper>
 			</section>
 
+			{/* white → white */}
 			<Spacer>
 				<WhiteBlackWhite />
 			</Spacer>
+
+			{/* 2. Jmail (white) */}
 			<section className="bg-white">
 				<ProjectWrapper>
 					<Jmail />
 				</ProjectWrapper>
 			</section>
 
+			{/* white → dema */}
 			<Spacer>
 				<WhiteDema />
 			</Spacer>
 
+			{/* 3. Dema (dema green) */}
 			<section className="relative bg-dema">
 				<ProjectWrapper>
 					<Dema />
 				</ProjectWrapper>
 			</section>
 
+			{/* dema → black */}
 			<Spacer>
 				<DemaBlack />
 			</Spacer>
 
+			{/* 4. Lovable (black) */}
 			<section className="bg-[#000]">
 				<ProjectWrapper>
 					<Lovable />
 				</ProjectWrapper>
 			</section>
 
+			{/* black → black (red accent) */}
 			<Spacer>
 				<BlackBlack />
 			</Spacer>
 
+			{/* 5. Codex (black) */}
 			<section className="bg-[#000]">
 				<ProjectWrapper>
 					<Codex />
 				</ProjectWrapper>
 			</section>
 
+			{/* black → white */}
 			<Spacer>
 				<BlackWhite />
 			</Spacer>
 
+			{/* 6. Cube (white) */}
 			<section className="bg-white">
 				<ProjectWrapper>
 					<Cube />
 				</ProjectWrapper>
 			</section>
 
-
-
+			{/* white → overwatch */}
 			<Spacer>
-				<BlackOverwatch />
+				<WhiteOverwatch />
 			</Spacer>
+
+			{/* 7. Overwatch (overwatch blue) */}
 			<section className="bg-[#b8c6dd]">
 				<ProjectWrapper>
 					<Overwatch />
 				</ProjectWrapper>
 			</section>
 
+			{/* overwatch → dark */}
 			<Spacer>
 				<OverwatchDark />
 			</Spacer>
 
+			{/* 8. Spotilist (dark) */}
 			<section className="bg-[#181818]">
 				<ProjectWrapper>
 					<Spotilist />
 				</ProjectWrapper>
 			</section>
 
+			{/* dark → white */}
 			<Spacer>
-				<DarkPurple />
+				<DarkWhite />
 			</Spacer>
 
-
-			<Spacer>
-				<AppleTeal />
-			</Spacer>
-
-
-
+			{/* 9. Daij (white) */}
 			<section className="bg-white">
 				<ProjectWrapper>
 					<Daij />
 				</ProjectWrapper>
 			</section>
 
+			{/* white → teal */}
 			<Spacer>
-				<TealWhite />
+				<WhiteTeal />
 			</Spacer>
 
-
+			{/* 10. Sudoku (teal) */}
 			<section className="bg-[#008080]">
 				<ProjectWrapper>
 					<Sudoku />
 				</ProjectWrapper>
 			</section>
 
-
+			{/* teal → black */}
 			<Spacer>
-				<WhiteBlack />
+				<TealBlack />
 			</Spacer>
 
+			{/* 11. VercelUi (black) */}
 			<section className="bg-[#000]">
 				<VercelUi />
 			</section>
 
+			{/* black → purple */}
+			<Spacer>
+				<BlackPurple />
+			</Spacer>
+
+			{/* 12. Acasting (purple) */}
 			<section className="bg-[#462197]">
 				<ProjectWrapper>
 					<Acasting />
 				</ProjectWrapper>
 			</section>
 
+			{/* purple → apple */}
 			<Spacer>
 				<PurpleApple2 />
 			</Spacer>
 
+			{/* 13. LucioCode (apple green) */}
 			<section className="bg-apple">
 				<ProjectWrapper>
 					<LucioCode />
