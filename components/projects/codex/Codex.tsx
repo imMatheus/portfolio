@@ -15,8 +15,7 @@ export const Codex: React.FC = () => {
 			<ProjectDescription>
 				March 2026 <ProjectTag isWork={false} />
 				<br />
-				<br />I forked OpenAI&apos;s Codex CLI. An open-source coding agent that runs in your terminal. Try the
-				Tetris game below.
+				<br />I forked OpenAI&apos;s Codex CLI and added different games to it that would play while you agent was running. You could play, Tetris, Flappy Bird, Wordle, Subway surfers, snake and Connect 4
 			</ProjectDescription>
 			<LinkWrapper>
 				<Link href="https://x.com/whosmatu/status/2028292331708039518" Icon={Twitter} text="My tweet" />

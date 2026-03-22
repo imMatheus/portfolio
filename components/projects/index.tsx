@@ -92,15 +92,7 @@ export const Projects: React.FC = () => {
 				</ProjectWrapper>
 			</section>
 
-			{/* <div className="rotate-180"> */}
-			<Spacer>
-				<WhiteBlack />
-			</Spacer>
-			{/* </div> */}
 
-			<section className="bg-[#000]">
-				<VercelUi />
-			</section>
 
 			<Spacer>
 				<BlackOverwatch />
@@ -125,13 +117,40 @@ export const Projects: React.FC = () => {
 				<DarkPurple />
 			</Spacer>
 
-			{/* <section className="bg-purple-800"> */}
-			{/* <section className="bg-purple-800"> */}
-			{/* <section className="bg-[#8338ec]"> */}
-			{/* <section className="bg-[#8E68DE]"> */}
-			{/* <section className="bg-[#3E1D86]"> */}
+
+			<Spacer>
+				<AppleTeal />
+			</Spacer>
+
+
+
+			<section className="bg-white">
+				<ProjectWrapper>
+					<Daij />
+				</ProjectWrapper>
+			</section>
+
+			<Spacer>
+				<TealWhite />
+			</Spacer>
+
+
+			<section className="bg-[#008080]">
+				<ProjectWrapper>
+					<Sudoku />
+				</ProjectWrapper>
+			</section>
+
+
+			<Spacer>
+				<WhiteBlack />
+			</Spacer>
+
+			<section className="bg-[#000]">
+				<VercelUi />
+			</section>
+
 			<section className="bg-[#462197]">
-				{/* <section className="bg-[#7f56dae6]"> */}
 				<ProjectWrapper>
 					<Acasting />
 				</ProjectWrapper>
@@ -144,26 +163,6 @@ export const Projects: React.FC = () => {
 			<section className="bg-apple">
 				<ProjectWrapper>
 					<LucioCode />
-				</ProjectWrapper>
-			</section>
-
-			<Spacer>
-				<AppleTeal />
-			</Spacer>
-
-			<section className="bg-[#008080]">
-				<ProjectWrapper>
-					<Sudoku />
-				</ProjectWrapper>
-			</section>
-
-			<Spacer>
-				<TealWhite />
-			</Spacer>
-
-			<section className="bg-white">
-				<ProjectWrapper>
-					<Daij />
 				</ProjectWrapper>
 			</section>
 		</div>
