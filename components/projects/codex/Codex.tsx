@@ -10,7 +10,7 @@ import Demo from './Demo'
 
 export const Codex: React.FC = () => {
 	return (
-		<div className="text-[#f4f4f5]">
+		<div id="codex" className="text-[#f4f4f5]">
 			<ProjectTitle>Codex fork</ProjectTitle>
 			<ProjectDescription>
 				March 2026 <ProjectTag isWork={false} />
