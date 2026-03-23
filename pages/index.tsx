@@ -114,7 +114,7 @@ const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
 			<About />
 			<Stack contributionsCollection={contributionsCollection} />
 
-			<Projects contributionsCollection={contributionsCollection} />
+			<Projects />
 			{/* <Contact /> */}
 			{/* <OnTheHorizon /> */}
 		</div>
