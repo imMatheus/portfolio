@@ -7,9 +7,9 @@ const ActionButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
 			style={{ opacity: props.disabled ? 0.65 : 1 }}
 			{...props}
 		>
-			<div className="absolute -right-2 -bottom-2 h-full w-full rounded-md border border-black bg-white"></div>
-			<div className="absolute -right-1 -bottom-1 h-full w-full rounded-md border border-black bg-white"></div>
-			<div className="relative rounded-md border border-black bg-white py-1 px-2">{children}</div>
+			<div className="absolute -bottom-2 -right-2 h-full w-full rounded-md border border-black bg-white"></div>
+			<div className="absolute -bottom-1 -right-1 h-full w-full rounded-md border border-black bg-white"></div>
+			<div className="relative rounded-md border border-black bg-white px-2 py-1">{children}</div>
 		</button>
 	)
 }

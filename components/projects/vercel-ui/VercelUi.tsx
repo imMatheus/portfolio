@@ -1,25 +1,24 @@
 import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import LinkWrapper from '../LinkWrapper'
 import Link from '../Link'
 import { ExternalLink, GitHub } from 'react-feather'
 import { ComponentDemo } from './ComponentDemo'
 import { ProjectWrapper } from '..'
 
-interface VercelUiProps {}
-
-const VercelUi: React.FC<VercelUiProps> = ({}) => {
+const VercelUi: React.FC = () => {
 	return (
 		<div id="vercel-ui" className="vercel-ui-style-wrapper font-sans text-white">
 			<ProjectWrapper>
 				<ProjectTitle>Vercel UI</ProjectTitle>
 				<ProjectDescription className="text-white">
-					Creator and sole maintainer, 2024
+					Creator and sole maintainer, 2024 <ProjectTag isWork={false} />
 					<br />
 					<br />
-					Design library inspired by Vercels design system. It&apos;s the same concept as ShadcnUI but does tackle some
-					issue I felt ShadcnUI skips over, like handling multi-part components with multiple different sizes for
+					Design library inspired by Vercel&apos;s design system. It&apos;s the same concept as ShadcnUI but does tackle some
+					issues I felt ShadcnUI skips over, like handling multi-part components with multiple different sizes for
 					example.
 				</ProjectDescription>
 				<LinkWrapper>

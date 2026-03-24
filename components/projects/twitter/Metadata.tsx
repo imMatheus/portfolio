@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-interface MetaDataProps {}
-
-const MetaData: React.FC<MetaDataProps> = ({}) => {
+const MetaData: React.FC = () => {
 	return (
 		<div className="text-text-grayed mt-3 flex max-w-md justify-between">
 			<div className="group flex cursor-default items-center gap-3 hover:text-twitter-blue">
 				<div className="relative h-4 w-4 xl:h-5 xl:w-5">
-					<div className="absolute top-1/2 left-1/2 h-7 w-7 -translate-y-1/2 -translate-x-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-blue/20 xl:h-8 xl:w-8"></div>
+					<div className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-blue/20 xl:h-8 xl:w-8"></div>
 
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +22,7 @@ const MetaData: React.FC<MetaDataProps> = ({}) => {
 			</div>
 			<div className="group flex cursor-default items-center gap-3 hover:text-twitter-olive">
 				<div className="relative h-4 w-4 xl:h-5 xl:w-5">
-					<div className="absolute top-1/2 left-1/2 h-7 w-7 -translate-y-1/2 -translate-x-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-olive/20 xl:h-8 xl:w-8"></div>
+					<div className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-olive/20 xl:h-8 xl:w-8"></div>
 
 					{/* <Image src="/heart.svg" alt="gg" layout="fill" className="group-hover:[--twitter-meta-color:#f00]" /> */}
 					<svg
@@ -42,7 +40,7 @@ const MetaData: React.FC<MetaDataProps> = ({}) => {
 			</div>
 			<div className="group flex cursor-default items-center gap-3 hover:text-twitter-candy-pink">
 				<div className="relative h-4 w-4 xl:h-5 xl:w-5">
-					<div className="absolute top-1/2 left-1/2 h-7 w-7 -translate-y-1/2 -translate-x-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-candy-pink/20 xl:h-8 xl:w-8"></div>
+					<div className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-candy-pink/20 xl:h-8 xl:w-8"></div>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
@@ -58,7 +56,7 @@ const MetaData: React.FC<MetaDataProps> = ({}) => {
 			</div>
 			<div className="group flex cursor-default items-center gap-3 hover:text-twitter-blue">
 				<div className="relative h-4 w-4 xl:h-5 xl:w-5">
-					<div className="absolute top-1/2 left-1/2 h-7 w-7 -translate-y-1/2 -translate-x-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-blue/20 xl:h-8 xl:w-8"></div>
+					<div className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors group-hover:bg-twitter-blue/20 xl:h-8 xl:w-8"></div>
 
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

@@ -4,9 +4,11 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				grotesk: ["'Space Grotesk'", 'sans-serif'],
-				inter: ['Inter', 'sans-serif']
+				inter: ['Inter', 'sans-serif'],
+				roboto: ['Roboto', 'sans-serif']
 			},
 			colors: {
+				'spotify-green': '#1ed760',
 				blurple: '#5865f2',
 				apple: '#57f287',
 				bee: '#fee75c',
@@ -56,6 +58,32 @@ module.exports = {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				jmail: {
+					surface: 'var(--color-jmail-surface)',
+					'surface-alt': 'var(--color-jmail-surface-alt)',
+					'surface-hover': 'var(--color-jmail-surface-hover)',
+					'surface-selected': 'var(--color-jmail-surface-selected)',
+					'surface-selected-soft': 'var(--color-jmail-surface-selected-soft)',
+					text: 'var(--color-jmail-text)',
+					'text-secondary': 'var(--color-jmail-text-secondary)',
+					'text-muted': 'var(--color-jmail-text-muted)',
+					'text-dim': 'var(--color-jmail-text-dim)',
+					'text-dimmer': 'var(--color-jmail-text-dimmer)',
+					border: 'var(--color-jmail-border)',
+					'border-light': 'var(--color-jmail-border-light)',
+					'border-lighter': 'var(--color-jmail-border-lighter)',
+					primary: 'var(--color-jmail-primary)',
+					'primary-hover': 'var(--color-jmail-primary-hover)',
+					'button-border': 'var(--color-jmail-button-border)',
+					notable: 'var(--color-jmail-notable)',
+					'secondary-container': 'var(--color-jmail-secondary-container)',
+					'on-secondary-container': 'var(--color-jmail-on-secondary-container)',
+					flight: 'var(--color-jmail-flight)',
+					email: 'var(--color-jmail-email)',
+					document: 'var(--color-jmail-document)',
+					imessage: 'var(--color-jmail-imessage)',
+					appointment: 'var(--color-jmail-appointment)'
 				}
 			},
 			screens: {

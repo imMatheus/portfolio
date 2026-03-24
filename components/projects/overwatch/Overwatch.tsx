@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import OverwatchImage from './overwatch-logo.png'
 // import Winston from './winston.png'
 // import Lucio from './lucio.png'
@@ -9,9 +10,7 @@ import OverwatchImage from './overwatch-logo.png'
 // import Zarya from './zarya.png'
 // import Dva from './dva.png'
 
-interface OverwatchProps {}
-
-export const Overwatch: React.FC<OverwatchProps> = ({}) => {
+export const Overwatch: React.FC = () => {
 	return (
 		<div id="dema" className="pb-5 font-sans">
 			<div className="relative">
@@ -22,13 +21,13 @@ export const Overwatch: React.FC<OverwatchProps> = ({}) => {
 					</p>
 				</ProjectTitle>
 				<ProjectDescription>
-					2017 - 2020
+					2017 - 2020 <ProjectTag isWork={false} />
 					<br />
 					<br />
 					<ul className="list-disc space-y-2 pl-5">
 						<li>
 							I was consistently in the top #500 rankings for europe on playstation with multiple different accounts,
-							peking at top #30 at points.
+							peaking at top #30 at points.
 						</li>
 						<li>Competed for the scandinavian team in the world cups for Playstation</li>
 						<li>For certain heroes I was in the top #100 for and peaked #7 for Winston at a certain point.</li>

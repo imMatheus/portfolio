@@ -25,7 +25,7 @@ const About: React.FC = () => {
 							with experience in web applications and apps.
 							<br /> <br /> Currently I work as a software engineer at{' '}
 							<Link
-								href="https://midjourney.com"
+								href="https://midjourney.com/explore"
 								passHref
 								target="_blank"
 								rel="noopener noreferrer"

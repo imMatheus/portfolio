@@ -1,13 +1,12 @@
 import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import MidjourneyImage from './midjourney-logo.png'
 import Image from 'next/image'
 import { ExternalLink } from 'react-feather'
 
-interface MidjourneyProps {}
-
-export const Midjourney: React.FC<MidjourneyProps> = ({}) => {
+export const Midjourney: React.FC = () => {
 	return (
 		<div className="" id="midjourney">
 			<ProjectTitle>
@@ -15,7 +14,7 @@ export const Midjourney: React.FC<MidjourneyProps> = ({}) => {
 				<Image src={MidjourneyImage} alt="Midjourney" className="inline h-20 w-20 object-contain" />
 			</ProjectTitle>
 			<ProjectDescription>
-				Software engineer, February 2025 - Now
+				Software engineer, February 2025 - Now <ProjectTag isWork />
 				<ul className="max-w-[80ch] list-disc space-y-3 pl-5">
 					<li>
 						Adding ability to have multiple layers and rotate layers in the editor on the website
@@ -45,8 +44,8 @@ export const Midjourney: React.FC<MidjourneyProps> = ({}) => {
 						</ul>
 					</li>
 					<li>
-						Added a popup that showed when users ran out out of credits that let them buy new onces or upgrade plane
-						very easily. This popup alone payed for my salary within a couple of weeks
+						Added a popup that showed when users ran out of credits that let them buy new ones or upgrade plan
+						very easily. This popup alone paid for my salary within a couple of weeks
 					</li>
 				</ul>
 			</ProjectDescription>

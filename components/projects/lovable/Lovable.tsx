@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectTitle from '../ProjectTitle'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import { MoreHorizontal } from 'react-feather'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -32,12 +33,14 @@ export const Lovable: React.FC = ({}) => {
 				<video autoPlay loop muted playsInline className="inline h-20 w-20 -translate-y-1" src="/lovable-heart.mp4" />
 			</ProjectTitle>
 			<ProjectDescription>
-				<p>Part-time consultant, November 2024</p>
+				<p>
+					Part-time consultant, November 2024 <ProjectTag isWork />
+				</p>
 
 				<br />
 
 				<p className="mb-4">
-					Built their landing page over a couple days while i was solo traveling in Thailand. This was part of their
+					Built their landing page over a couple days while I was solo traveling in Thailand. This was part of their
 					rebrand for their third launch, which happened to make them the fastest growing company in Europe ever.
 				</p>
 

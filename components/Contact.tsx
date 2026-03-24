@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { GitHub, Linkedin, Instagram } from 'react-feather'
+import { GitHub, Linkedin } from 'react-feather'
 
 const Contact: React.FC = ({}) => {
 	return (

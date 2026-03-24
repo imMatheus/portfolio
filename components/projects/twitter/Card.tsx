@@ -25,7 +25,7 @@ const Marked: React.FC<MarkedProps> = ({ href, children }) => {
 
 const Card: React.FC = ({}) => {
 	return (
-		<article className="text-[rgb(15_20_25)] mt-2 max-w-3xl rounded-md bg-white transition-colors">
+		<article className="mt-2 max-w-3xl rounded-md bg-white text-[rgb(15_20_25)] transition-colors">
 			<div className="flex items-start gap-3 p-3 xl:gap-4 xl:p-4">
 				<div className="flex flex-col items-end">
 					<div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-full bg-white xl:h-12 xl:w-12">

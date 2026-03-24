@@ -1,0 +1,29 @@
+import React from 'react'
+import ProjectTitle from '../ProjectTitle'
+import Link from '../Link'
+import LinkWrapper from '../LinkWrapper'
+import { GitHub } from 'react-feather'
+import { Twitter } from 'react-feather'
+import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
+import Demo from './Demo'
+
+export const Codex: React.FC = () => {
+	return (
+		<div id="codex" className="text-[#f4f4f5]">
+			<ProjectTitle>Codex fork</ProjectTitle>
+			<ProjectDescription>
+				March 2026 <ProjectTag isWork={false} />
+				<br />
+				<br />I forked OpenAI&apos;s Codex CLI and added different games to it that would play while you agent was running. You could play, Tetris, Flappy Bird, Wordle, Subway surfers, snake and Connect 4
+			</ProjectDescription>
+			<LinkWrapper>
+				<Link href="https://x.com/whosmatu/status/2028292331708039518" Icon={Twitter} text="My tweet" />
+				<Link href="https://github.com/imMatheus/codex" Icon={GitHub} text="Repository" />
+			</LinkWrapper>
+			<Demo />
+		</div>
+	)
+}
+
+export default Codex

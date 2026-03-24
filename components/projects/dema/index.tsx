@@ -4,6 +4,7 @@ import Link from '../Link'
 import LinkWrapper from '../LinkWrapper'
 import { AlertCircle, ExternalLink } from 'react-feather'
 import ProjectDescription from '../ProjectDescription'
+import ProjectTag from '../ProjectTag'
 import { Demo } from './Demo'
 import Image from 'next/image'
 import WinnerImage from './polaroids/winner.png'
@@ -49,7 +50,7 @@ const Dema: React.FC = ({}) => {
 			<div className="relative z-[1]">
 				<ProjectTitle>Dema.ai</ProjectTitle>
 				<ProjectDescription>
-					Software engineer, April 2023 - February 2025
+					Software engineer, April 2023 - February 2025 <ProjectTag isWork />
 					<br />
 					<br />
 					<ul className="max-w-[80ch] list-disc space-y-3 pl-5">
@@ -59,7 +60,7 @@ const Dema: React.FC = ({}) => {
 								<li>Owned internal state management with Jotai</li>
 								<li>
 									Led and developed a <b>Product Segmentation</b> feature on my own that single-handedly secured
-									multiple clients. This featured handles and labels tens-of-thousands of products per day.{' '}
+									multiple clients. This feature handles and labels tens-of-thousands of products per day.{' '}
 									<a
 										href="https://www.dema.ai/changelog/segmentations-label-your-products"
 										target="_blank"
@@ -127,7 +128,7 @@ const Dema: React.FC = ({}) => {
 					<AlertCircle className="h-4 w-4 flex-shrink-0 translate-y-0.5 text-inherit" />
 
 					<p className="text-sm">
-						Dema is an analytis platform for e-commerce that help companies understand there profitably. Its a very cool
+						Dema is an analytics platform for e-commerce that helps companies understand their profitability. It&apos;s a very cool
 						platform and down below is a small replica to showcase sort of how it looks but also some things you can do.
 						Of course there is A LOT more to the platform than what is down below
 						{':)'}
