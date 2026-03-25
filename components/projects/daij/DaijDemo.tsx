@@ -1,10 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react'
 
-const SONG_A =
-	'https://pub-5b5da887d0d44388ac15fa702af1c2c6.r2.dev/claude/a-deep-house-track-with-a-four-on-the-floor-kick.wav'
-const SONG_B =
-	'https://pub-5b5da887d0d44388ac15fa702af1c2c6.r2.dev/chatgpt/minimalist-repetition-with-subtle-variations.wav'
-
 const MODELS = [
 	{
 		company: 'ANTHROPIC',
@@ -27,14 +22,14 @@ const MODELS = [
 ]
 
 const SONGS = [
-	{ title: 'Industrial Havoc', artist: 'Gemini', src: SONG_A },
-	{ title: 'City Lights Pull', artist: 'ChatGPT', src: SONG_A },
-	{ title: 'Redline Pursuit', artist: 'Claude', src: SONG_A },
-	{ title: 'Dust on the Dashboard', artist: 'Claude', src: SONG_A },
-	{ title: 'Midnight Frequencies', artist: 'Claude', src: SONG_B },
-	{ title: "Stayin' On The Floor", artist: 'Claude', src: SONG_B },
-	{ title: 'Slap City Strut', artist: 'Claude', src: SONG_B },
-	{ title: 'Fuego en la Calle', artist: 'Claude', src: SONG_B }
+	{ title: 'Midnight Ink', artist: 'Gemini', src: 'https://cdn.daij.net/gemini/background-music-for-studying-late-at-night.mp3' },
+	{ title: 'Dialogue in Felt and Skin', artist: 'Gemini', src: 'https://cdn.daij.net/gemini/a-conversation-between-piano-and-drums.mp3' },
+	{ title: 'Blue Salon Waltz', artist: 'ChatGPT', src: 'https://cdn.daij.net/chatgpt/a-classical-waltz-in-three-four-time.mp3' },
+	{ title: 'Solstice Carousel', artist: 'ChatGPT', src: 'https://cdn.daij.net/chatgpt/a-jazz-ballad-with-walking-bass.mp3' },
+	{ title: 'Dark Roller', artist: 'Claude', src: 'https://cdn.daij.net/claude/a-drum-and-bass-roller.mp3' },
+	{ title: "Mouth Music", artist: 'Claude', src: 'https://cdn.daij.net/claude/a-song-built-entirely-from-vocal-samples.mp3' },
+	{ title: 'Pixel Quest', artist: 'Claude', src: 'https://cdn.daij.net/claude/an-8-bit-chiptune-adventure-theme.mp3' },
+	{ title: 'Quest for the Golden Pixel', artist: 'Gemini', src: 'https://cdn.daij.net/gemini/an-8-bit-chiptune-adventure-theme.mp3' }
 ]
 
 function getArtistImage(artist: string) {
