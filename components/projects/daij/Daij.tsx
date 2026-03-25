@@ -19,7 +19,7 @@ export const Daij: React.FC = () => {
 				for music taste.
 			</ProjectDescription>
 			<LinkWrapper>
-				<Link href="https://daij.immatheus.com" Icon={ExternalLink} text="Live Site" />
+				<Link href="https://daij.net" Icon={ExternalLink} text="Live Site" />
 				<Link href="https://github.com/imMatheus/daij" Icon={GitHub} text="GitHub" />
 			</LinkWrapper>
 			<DaijDemo />
