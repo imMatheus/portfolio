@@ -7,6 +7,7 @@ import { setContext } from '@apollo/client/link/context'
 import Hero from '@/components/Hero'
 import { Projects } from '@/components/projects'
 import Stack from '@/components/stack'
+import Footer from '@/components/Footer'
 // import Contact from '@/components/Contact'
 // import OnTheHorizon from '@/components/OnTheHorizon'
 
@@ -117,6 +118,7 @@ const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
 			<Projects />
 			{/* <Contact /> */}
 			{/* <OnTheHorizon /> */}
+			<Footer />
 		</div>
 	)
 }

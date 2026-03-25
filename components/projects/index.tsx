@@ -31,6 +31,7 @@ import {
 	WhiteTeal,
 	TealBlack,
 	BlackPurple,
+	AppleWhite,
 } from 'lib/spacers/index'
 
 export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
@@ -188,6 +189,11 @@ export const Projects: React.FC = () => {
 					<LucioCode />
 				</ProjectWrapper>
 			</section>
+
+			{/* apple → white */}
+			<Spacer>
+				<AppleWhite />
+			</Spacer>
 		</div>
 	)
 }
