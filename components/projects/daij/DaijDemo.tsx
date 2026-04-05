@@ -5,19 +5,19 @@ const MODELS = [
 		company: 'ANTHROPIC',
 		name: 'Claude',
 		color: '#d97757',
-		image: 'https://cdn.midjourney.com/3a45bb45-929b-47d0-baa1-d043df6912cf/0_0.png'
+		image: 'https://cdn.midjourney.com/3a45bb45-929b-47d0-baa1-d043df6912cf/0_0_640_N.webp'
 	},
 	{
 		company: 'OPENAI',
 		name: 'ChatGPT',
 		color: '#10a37f',
-		image: 'https://cdn.midjourney.com/e3c988a8-78d0-46d2-9638-ec6d66c660b3/0_0.png'
+		image: 'https://cdn.midjourney.com/e3c988a8-78d0-46d2-9638-ec6d66c660b3/0_0_640_N.webp'
 	},
 	{
 		company: 'GOOGLE',
 		name: 'Gemini',
 		color: '#4285f4',
-		image: 'https://cdn.midjourney.com/be7d14e2-325a-4d31-96bc-a33550273e36/0_0.png'
+		image: 'https://cdn.midjourney.com/be7d14e2-325a-4d31-96bc-a33550273e36/0_0_640_N.webp'
 	}
 ]
 
