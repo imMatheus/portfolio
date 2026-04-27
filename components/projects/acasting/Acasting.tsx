@@ -20,7 +20,7 @@ export const Acasting: React.FC = ({}) => {
 						Built out the entire app, end to end, together with another engineer, and launched the first version in a
 						single month
 					</li>
-					<li>Scaled from 0 to 20k users</li>
+					<li>Scaled from 0 to +25k users</li>
 					<li>Was involved in all technical decisions</li>
 					<li>Handled billions of row reads, and millions of row writes</li>
 					<li>Developed a custom in-house chat to reduce our monthly costs by over $500/month</li>
