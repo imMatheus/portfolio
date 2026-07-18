@@ -1,5 +1,6 @@
 import React from 'react'
 import { Linkedin } from 'react-feather'
+import ResumeButton from './ResumeButton'
 
 const Footer: React.FC = () => {
 	return (
@@ -30,7 +31,9 @@ const Footer: React.FC = () => {
 						<Linkedin className="h-5 w-5" />
 					</a>
 				</div>
-				<p className="text-xs text-gray-400">&copy; {new Date().getFullYear()} Matheus Mendes</p>
+				<ResumeButton />
+
+				<p className="text-xs mt-5 text-gray-400">&copy; {new Date().getFullYear()} Matheus Mendes</p>
 			</div>
 		</footer>
 	)

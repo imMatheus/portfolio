@@ -4,6 +4,7 @@ import { Calendar, Award, AlertTriangle } from 'react-feather'
 import Link from 'next/link'
 import Image from 'next/image'
 import AboutArrow from './about-arrow.svg'
+import ResumeButton from './ResumeButton'
 
 const About: React.FC = () => {
 	return (
@@ -44,6 +45,7 @@ const About: React.FC = () => {
 								@a16z
 							</Link>
 						</p>
+						<ResumeButton className="mt-6" />
 					</div>
 
 					<article className="relative h-32 w-32 flex-shrink-0 self-end max-md:mb-6 md:mb-10 md:h-52 md:w-52 lg:h-64 lg:w-64">

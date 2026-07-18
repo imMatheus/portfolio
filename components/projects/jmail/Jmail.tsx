@@ -147,7 +147,7 @@ export const Jmail: React.FC = () => {
 							index === 1 && 'z-[2] -translate-y-12 scale-95 hover:-translate-y-14 hover:delay-0 hover:duration-150',
 							index === 2 && 'z-[1] -translate-y-24 scale-[0.9] hover:-translate-y-28 hover:delay-0 hover:duration-150'
 						)}
-						style={{ animation: index === 2 ? `slide-down-and-around 400ms ease-in-out` : '' }}
+						style={index === 2 ? { animation: `slide-down-and-around 400ms ease-in-out` } : undefined}
 					>
 						{appComponents[item]}
 					</div>
