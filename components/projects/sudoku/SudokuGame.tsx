@@ -1,5 +1,12 @@
 import React, { useState, useCallback, useMemo } from 'react'
-import { getRandomPuzzle, initializeBoard, findConflicts, isBoardComplete, GameBoard } from './sudoku-utils'
+import {
+	getInitialPuzzle,
+	getRandomPuzzle,
+	initializeBoard,
+	findConflicts,
+	isBoardComplete,
+	GameBoard
+} from './sudoku-utils'
 
 const Win95TitleBar: React.FC<{ title: string; onClose?: () => void }> = ({ title, onClose }) => (
 	<div
@@ -48,7 +55,7 @@ const inset = {
 }
 
 export const SudokuGame: React.FC = () => {
-	const [puzzleData, setPuzzleData] = useState(() => getRandomPuzzle())
+	const [puzzleData, setPuzzleData] = useState(getInitialPuzzle)
 	const [board, setBoard] = useState<GameBoard>(() => initializeBoard(puzzleData.puzzle))
 	const [selectedCell, setSelectedCell] = useState<{ row: number; col: number } | null>(null)
 	const [isWon, setIsWon] = useState(false)

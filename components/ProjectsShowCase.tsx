@@ -28,19 +28,25 @@ const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
 		)
 	}
 
+	const cards = [
+		<StackCard key="midjourney" title="Midjourney" color="#99c100" stars={0} description="Making images look good" language="" link="midjourney" commits={0} isWork />,
+		makePinnedCard('jefftube', 'jmail'),
+		<StackCard key="dema" title="Dema" color="#99c100" stars={0} description="Analytics platform for E-commerce" language="" link="dema" commits={0} isWork />,
+		makePinnedCard('codex', 'codex'),
+		makePinnedCard('css-only-rubiks-cube', 'rubiks-cube'),
+		makePinnedCard('daij', 'daij'),
+		makePinnedCard('vercel-ui', 'vercel-ui'),
+		makePinnedCard('lucio', 'luciocode'),
+		<StackCard key="acasting" title="Acasting.se" color="#462197" stars={0} description="Modern casting platform" language="" link="acasting" commits={0} isWork />
+	].filter(Boolean) as React.ReactElement[]
+
 	return (
 		<>
 			<h2 className="mb-5 text-center text-3xl font-semibold sm:text-4xl">Things I&apos;ve worked on</h2>
 			<section className="mx-auto mb-12 grid max-w-[85rem] grid-cols-1 justify-center gap-6 bg-blue-600/0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-				<StackCard title="Midjourney" color="#99c100" stars={0} description="Making images look good" language="" link="midjourney" commits={0} isWork />
-				{makePinnedCard('jefftube', 'jmail')}
-				<StackCard title="Dema" color="#99c100" stars={0} description="Analytics platform for E-commerce" language="" link="dema" commits={0} isWork />
-				{makePinnedCard('codex', 'codex')}
-				{makePinnedCard('css-only-rubiks-cube', 'rubiks-cube')}
-				{makePinnedCard('daij', 'daij')}
-				{makePinnedCard('vercel-ui', 'vercel-ui')}
-				{makePinnedCard('lucio', 'luciocode')}
-				<StackCard title="Acasting.se" color="#462197" stars={0} description="Modern casting platform" language="" link="acasting" commits={0} isWork />
+				{cards.map((card, i) =>
+					React.cloneElement(card, { className: i >= 3 ? 'hidden sm:block' : '' })
+				)}
 			</section>
 		</>
 	)

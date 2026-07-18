@@ -211,7 +211,7 @@ export const SpotilistDemo: React.FC = () => {
 								Top Artists <span className="normal-case tracking-normal text-white/30">· Last 6 months</span>
 							</h3>
 							<div className="flex flex-wrap gap-4 overflow-x-auto pb-2">
-								{data.topArtists.map((artist) => (
+								{data.topArtists.slice(0, 8).map((artist) => (
 									<div key={artist.name} className="flex flex-shrink-0 flex-col items-center gap-2">
 										{artist.image && (
 											<Image

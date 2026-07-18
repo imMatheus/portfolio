@@ -16,8 +16,10 @@ const Cube: React.FC = ({}) => {
 						.join(', ')})`
 				}}
 			></div>
-			<div className="cube-container">
-				<Sides />
+			<div className="scale-90">
+				<div className="cube-container">
+					<Sides />
+				</div>
 			</div>
 		</div>
 	)

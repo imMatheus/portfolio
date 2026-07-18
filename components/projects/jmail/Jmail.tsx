@@ -48,19 +48,19 @@ export const Jmail: React.FC = () => {
 
 	return (
 		<div id="jmail" className="relative">
-			<ProjectTitle>
+			<ProjectTitle className="text-4xl md:text-6xl 2xl:text-7xl">
 				<div className="inline-block">
 					<span className="">Jmail</span>
-					<Image src="/jmail.png" width={70} height={70} alt="Jmail" className="inline h-16 w-16 object-contain" />
+					<Image src="/jmail.png" width={70} height={70} alt="Jmail" className="inline h-12 w-12 object-contain" />
 					<span className="">, JeffTube</span>
-					<Image src="/jefftube.png" width={70} height={70} alt="Jmail" className="inline h-16 w-16 object-contain" />
+					<Image src="/jefftube.png" width={70} height={70} alt="Jmail" className="inline h-12 w-12 object-contain" />
 					<span className="">, JCal</span>
 					<Image
 						src="/jcal.png"
 						width={70}
 						height={70}
 						alt="Jmail"
-						className="inline h-16 w-16 -translate-y-2 object-contain"
+						className="inline h-12 w-12 -translate-y-2 object-contain"
 					/>
 				</div>
 			</ProjectTitle>

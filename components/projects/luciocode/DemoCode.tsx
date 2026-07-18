@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Editor from '@monaco-editor/react'
 import classNames from 'classnames'
 
 interface DemoCodeProps {}
@@ -66,27 +65,17 @@ const DemoCode: React.FC<DemoCodeProps> = ({}) => {
 
 	return (
 		<div className="flex min-h-[250px] flex-1 flex-col overflow-y-scroll md:max-h-[640px]">
-			<div className="flex-1 bg-white pt-3">
-				<Editor
-					theme="light"
-					language={'javascript'}
-					onChange={(e) => setCode(e || '')}
+			<div className="flex flex-1 bg-white pt-3">
+				<label htmlFor="demo-code" className="sr-only">
+					JavaScript code
+				</label>
+				<textarea
+					id="demo-code"
 					value={code}
-					options={{
-						automaticLayout: true,
-						inherit: true,
-						scrollBeyondLastLine: false,
-						minimap: {
-							enabled: false
-						},
-						scrollbar: {
-							alwaysConsumeMouseWheel: false
-						},
-						fontSize: 16,
-						wordWrap: 'on',
-						wordWrapMinified: true,
-						wrappingIndent: 'same'
-					}}
+					onChange={(event) => setCode(event.target.value)}
+					spellCheck={false}
+					wrap="soft"
+					className="min-h-[250px] w-full flex-1 resize-none bg-white px-4 py-3 font-mono text-base leading-6 text-gray-900 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-600"
 				/>
 			</div>
 			<div className="bg-neutral-100 p-4 text-gray-900">

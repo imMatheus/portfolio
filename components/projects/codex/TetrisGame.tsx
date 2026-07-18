@@ -51,6 +51,10 @@ const TETROMINOES: Record<string, { shape: number[][]; color: string }> = {
 
 const PIECE_KEYS = Object.keys(TETROMINOES)
 
+function piece(key: keyof typeof TETROMINOES) {
+	return { key, ...TETROMINOES[key] }
+}
+
 function randomPiece() {
 	const key = PIECE_KEYS[Math.floor(Math.random() * PIECE_KEYS.length)]
 	return { key, ...TETROMINOES[key] }
@@ -79,8 +83,8 @@ function createEmptyBoard(): Cell[][] {
 
 const TetrisGame: React.FC = () => {
 	const [board, setBoard] = useState<Cell[][]>(createEmptyBoard)
-	const [current, setCurrent] = useState(() => randomPiece())
-	const [next, setNext] = useState(() => randomPiece())
+	const [current, setCurrent] = useState(() => piece('T'))
+	const [next, setNext] = useState(() => piece('I'))
 	const [pos, setPos] = useState({ r: 0, c: Math.floor(COLS / 2) - 1 })
 	const [score, setScore] = useState(0)
 	const [lines, setLines] = useState(0)

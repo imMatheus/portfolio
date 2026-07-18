@@ -2,13 +2,14 @@ import React, { PropsWithChildren, ReactNode } from 'react'
 import ContributionView from './ContributionView'
 import Image from 'next/image'
 import { CSSBattles } from './CSSBattles'
+import { cn } from 'lib/utils'
 
 interface Props {
 	contributionsCollection: any
 }
 
-export const Title: React.FC<PropsWithChildren> = ({ children }) => {
-	return <h2 className="mb-3 text-3xl font-bold">{children}</h2>
+export const Title: React.FC<PropsWithChildren<{ className?: string }>> = ({ children, className }) => {
+	return <h2 className={cn('mb-3 text-3xl font-bold', className)}>{children}</h2>
 }
 
 interface ComponentChipProps {

@@ -136,7 +136,7 @@ export const JmailApp: React.FC<{ onNavigate?: (app: 'jmail' | 'jefftube' | 'jca
 			{/* Body */}
 			<div className="flex min-h-0 flex-1 overflow-hidden">
 				{/* Sidebar */}
-				<div className="w-[132px] shrink-0 bg-jmail-surface px-1 py-1.5">
+				<div className="hidden w-[132px] shrink-0 bg-jmail-surface px-1 py-1.5 md:block">
 					<div className="mx-0.5 mb-2 flex items-center gap-1.5 rounded-full bg-jmail-secondary-container px-2.5 py-1.5">
 						<svg
 							className="h-4 w-4 text-jmail-on-secondary-container"

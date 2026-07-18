@@ -15,8 +15,9 @@ const ResumeButton: React.FC<ResumeButtonProps> = ({ className = '' }) => {
 		>
 			<div className="absolute -bottom-2 -right-2 h-full w-full rounded-md border border-black bg-white"></div>
 			<div className="absolute -bottom-1 -right-1 h-full w-full rounded-md border border-black bg-white"></div>
-			<div className="relative flex items-center gap-1 rounded-md border border-black bg-white px-2 py-1 font-medium">
-				<ExternalLink className="h-4 w-4 flex-shrink-0 2xl:h-5 2xl:w-5" /> View resume
+			<div className="relative flex items-center gap-1.5 rounded-md border border-black bg-white px-2 py-1 font-medium">
+				<ExternalLink className="h-4 w-4 flex-shrink-0 2xl:h-5 2xl:w-5" />
+				View resume
 			</div>
 		</a>
 	)

@@ -35,7 +35,7 @@ const Dema: React.FC = ({}) => {
 				<Image
 					src={CompanyUpdateImage}
 					alt="Company update polaroid"
-					className="w-28 -translate-x-3 translate-y-2 rotate-3 border-[3px] border-black transition-all duration-100 lg:w-40 lg:-translate-y-8 lg:translate-x-6 lg:group-hover:translate-x-2 lg:group-hover:rotate-6"
+					className="w-28 -translate-x-3 -translate-y-2 rotate-3 border-[3px] border-black transition-all duration-100 lg:w-40 lg:-translate-y-8 lg:translate-x-6 lg:group-hover:translate-x-2 lg:group-hover:rotate-6"
 				/>
 				<Image
 					src={WiredImage}

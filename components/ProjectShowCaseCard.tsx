@@ -10,6 +10,7 @@ interface ProjectShowCaseCardProps {
 	link: string
 	commits: number
 	isWork?: boolean
+	className?: string
 }
 
 const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
@@ -20,10 +21,11 @@ const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
 	commits,
 	link,
 	description,
-	isWork
+	isWork,
+	className
 }) => {
 	return (
-		<a href={`#${link}`}>
+		<a href={`#${link}`} className={className}>
 			<article className="relative transition-transform hover:rotate-2 even:hover:-rotate-2">
 				<div className="absolute -bottom-3 -right-3 h-full w-full rounded-md border border-black bg-white transition-all lg:-bottom-4 lg:-right-4">
 					<div className="h-[25px] border-b border-black"></div>

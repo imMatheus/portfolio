@@ -55,7 +55,7 @@ export const JeffTubeApp: React.FC<{ onNavigate?: (app: 'jmail' | 'jefftube' | '
 			{/* Body */}
 			<div className="flex min-h-0 flex-1 overflow-hidden">
 				{/* Sidebar */}
-				<div className="w-[120px] shrink-0 overflow-y-auto border-r border-jmail-border bg-jmail-surface px-1.5 py-2">
+				<div className="hidden w-[120px] shrink-0 overflow-y-auto border-r border-jmail-border bg-jmail-surface px-1.5 py-2 md:block">
 					<div className="flex items-center gap-3 rounded-lg bg-jmail-surface-hover px-2 py-1.5">
 						<svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-jmail-text" fill="currentColor">
 							<path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z" />

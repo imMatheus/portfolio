@@ -93,6 +93,10 @@ export function getRandomPuzzle(): PuzzleData {
 	return PUZZLES[Math.floor(Math.random() * PUZZLES.length)]
 }
 
+export function getInitialPuzzle(): PuzzleData {
+	return PUZZLES[0]
+}
+
 export function initializeBoard(puzzle: SudokuGrid): GameBoard {
 	return puzzle.map((row) =>
 		row.map((value) => ({

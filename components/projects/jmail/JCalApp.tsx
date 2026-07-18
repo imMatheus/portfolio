@@ -79,7 +79,7 @@ export const JCalApp: React.FC<{ onNavigate?: (app: 'jmail' | 'jefftube' | 'jcal
 			{/* Body */}
 			<div className="flex min-h-0 flex-1 overflow-hidden">
 				{/* Sidebar */}
-				<div className="w-[132px] shrink-0 overflow-y-auto border-r border-jmail-border bg-jmail-surface px-2 py-2">
+				<div className="hidden w-[132px] shrink-0 overflow-y-auto border-r border-jmail-border bg-jmail-surface px-2 py-2 md:block">
 					{/* Month nav */}
 					<div className="mb-1 flex items-center justify-between">
 						<span className="text-xs font-semibold text-jmail-text">July 2014</span>

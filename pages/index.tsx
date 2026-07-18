@@ -101,11 +101,45 @@ export const getStaticProps: GetStaticProps<Data> = async () => {
 }
 
 const Home: NextPage<Data> = ({ pinnedItems, contributionsCollection }) => {
+	const title = 'Matheus Mendes — Software Engineer'
+	const description = 'Software engineer building polished web products, interactive experiences, and full-stack applications.'
+	const siteUrl = 'https://www.immatheus.com/'
+	const imageUrl = `${siteUrl}profile.jpeg`
+	const structuredData = {
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: 'Matheus Mendes',
+		url: siteUrl,
+		image: imageUrl,
+		jobTitle: 'Software Engineer',
+		sameAs: [
+			'https://github.com/imMatheus',
+			'https://x.com/whosmatu',
+			'https://www.linkedin.com/in/matheus-mendes-dev/'
+		]
+	}
+
 	return (
 		<div className="h-auto border-black text-black">
 			<Head>
-				<title>Matheus Mendes</title>
-				<meta name="description" content="Full-stack developer - Matheus Mendes" />
+				<title>{title}</title>
+				<meta name="description" content={description} />
+				<meta name="robots" content="index,follow" />
+				<link rel="canonical" href={siteUrl} />
+				<meta property="og:type" content="website" />
+				<meta property="og:site_name" content="Matheus Mendes" />
+				<meta property="og:title" content={title} />
+				<meta property="og:description" content={description} />
+				<meta property="og:url" content={siteUrl} />
+				<meta property="og:image" content={imageUrl} />
+				<meta property="og:image:width" content="399" />
+				<meta property="og:image:height" content="400" />
+				<meta property="og:image:alt" content="Portrait of Matheus Mendes" />
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:title" content={title} />
+				<meta name="twitter:description" content={description} />
+				<meta name="twitter:image" content={imageUrl} />
+				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
 				<link
 					rel="icon"
 					href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏻‍💻</text></svg>"

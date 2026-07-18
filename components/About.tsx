@@ -45,7 +45,7 @@ const About: React.FC = () => {
 								@a16z
 							</Link>
 						</p>
-						<ResumeButton className="mt-6" />
+						<ResumeButton className="mb-6 sm:mb-0" />
 					</div>
 
 					<article className="relative h-32 w-32 flex-shrink-0 self-end max-md:mb-6 md:mb-10 md:h-52 md:w-52 lg:h-64 lg:w-64">

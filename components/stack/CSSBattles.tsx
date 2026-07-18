@@ -77,29 +77,9 @@ export const CSSBattles: React.FC<CSSBattlesProps> = ({}) => {
 				at around <b>1000</b>. There is about <b>350k</b> total users on the platform.
 			</p>
 
-			<div className="rounded-2xl bg-[#07080b]">
-				<div className="flex justify-between rounded-2xl bg-[linear-gradient(95.41deg,rgba(45,55,64,0.5)_0,rgba(39,45,52,0.5)_101.76%)] px-4 py-3 shadow-[0px_8px_20px_rgba(0,0,0,.1),0px_24px_50px_rgba(0,0,0,.15),inset_1px_1px_3px_hsla(0,0%,100%,.1)] max-md:flex-wrap md:flex-row md:items-center">
-					<div className="flex items-center gap-4 max-md:mb-2 max-md:w-full">
-						<div className="relative h-10 w-10 rounded-full border-2 border-[#ffdf00]">
-							<Image
-								src="/p-2-medium.jpeg"
-								className="rounded-full border-2 border-gray-800"
-								layout="fill"
-								objectFit="cover"
-								alt="headshot"
-							/>
-						</div>
-						<p className="font-semibold text-[#ffdf00]">Matheus Mendes</p>
-					</div>
-					<div className="text-[#cbd1e1]">53700.24 points</div>
-					<div className="text-[#cbd1e1] ">(84 Targets)</div>
-					<div className="text-xl text-[#6b7b8e]">#1146</div>
-				</div>
-			</div>
-
 			<div className="mt-4 grid grid-cols-2 gap-3 bg-[#000] p-3 lg:grid-cols-4">
 				{battles.map((battle, index) => (
-					<CSSBattleCard key={battle.target} {...battle} index={index} />
+					<CSSBattleCard key={`${battle.target}-${index}`} {...battle} index={index} />
 				))}
 			</div>
 		</div>
