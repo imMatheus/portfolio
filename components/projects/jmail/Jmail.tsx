@@ -65,7 +65,7 @@ export const Jmail: React.FC = () => {
 				</div>
 			</ProjectTitle>
 			<ProjectDescription>
-				February 2026 - Now <ProjectTag isWork={false} />
+				February 2026 - April 2026 <ProjectTag isWork={false} />
 				<br />
 				<br />
 				Jmail is a project maintained by a group of self-organized hackers in the SF area and its goal is to build a
