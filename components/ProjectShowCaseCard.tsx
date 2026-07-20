@@ -1,24 +1,16 @@
 import React from 'react'
-import { Star, GitCommit } from 'react-feather'
 
 interface ProjectShowCaseCardProps {
 	title: string
-	color: string
-	stars: number
 	language?: string
 	description: string
 	link: string
-	commits: number
 	isWork?: boolean
 	className?: string
 }
 
 const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
 	title,
-	color,
-	stars,
-	language,
-	commits,
 	link,
 	description,
 	isWork,
@@ -40,40 +32,19 @@ const ProjectShowCaseCard: React.FC<ProjectShowCaseCardProps> = ({
 						<div className="h-2 w-2 rounded-full border border-black"></div>
 					</div>
 					<div className="flex h-full flex-col p-2">
-						<div>
+						<div className="flex items-center gap-2">
 							<h2 className="text-lg font-medium">{title}</h2>
-							<p className="text-sm font-light">{description}</p>
-						</div>
-						<div className="mt-auto flex flex-wrap gap-4 pt-4">
-							{language && (
-								<div className="flex items-center gap-1 text-xs">
-									<div
-										className="h-2 w-2 rounded-full"
-										style={{ backgroundColor: language === 'HTML' ? '#563d7c' : color }}
-									></div>{' '}
-									{language === 'HTML' ? 'CSS' : language}
-								</div>
-							)}
-							{stars ? (
-								<div className="flex items-center gap-0.5 text-xs">
-									<Star className="-mt-[1px] h-4 w-4" /> {stars}
-								</div>
-							) : null}
-							{commits ? (
-								<div className="flex items-center gap-0.5 text-xs">
-									<GitCommit className="-mt-[1px] h-4 w-4" /> {commits}
-								</div>
-							) : null}
 							{isWork ? (
-								<p className="border border-dotted  border-amber-600 bg-amber-200 px-2 py-0.5 text-[9px] leading-none text-amber-900">
+								<p className="border border-dotted border-amber-600 bg-amber-200 px-2 py-0.5 text-[9px] leading-none text-amber-900">
 									Work
 								</p>
 							) : (
-								<p className="border border-dotted  border-blue-600 bg-blue-200 px-2 py-0.5 text-[9px] leading-none text-blue-900">
+								<p className="border border-dotted border-blue-600 bg-blue-200 px-2 py-0.5 text-[9px] leading-none text-blue-900">
 									Sideproject
 								</p>
 							)}
 						</div>
+						<p className="text-sm font-light">{description}</p>
 					</div>
 				</div>
 			</article>

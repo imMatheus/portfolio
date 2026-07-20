@@ -45,24 +45,7 @@ export const getStaticProps: GetStaticProps<Data> = async () => {
 							node {
 								... on Repository {
 									name
-									url
-									refs(refPrefix: "refs/heads/", last: 3) {
-										nodes {
-											target {
-												... on Commit {
-													history {
-														totalCount
-													}
-												}
-											}
-										}
-									}
-									stargazerCount
 									description
-									primaryLanguage {
-										name
-										color
-									}
 								}
 							}
 						}

@@ -18,26 +18,22 @@ const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
 			<StackCard
 				key={name}
 				title={item.name}
-				color={item.primaryLanguage?.color ?? '#888'}
-				stars={item.stargazerCount}
 				description={item.description}
-				language={item.primaryLanguage?.name ?? ''}
 				link={link}
-				commits={item.refs?.nodes?.[0]?.target?.history?.totalCount ?? 0}
 			/>
 		)
 	}
 
 	const cards = [
-		<StackCard key="midjourney" title="Midjourney" color="#99c100" stars={0} description="Making images look good" language="" link="midjourney" commits={0} isWork />,
+		<StackCard key="midjourney" title="Midjourney" description="Making images look good" link="midjourney" isWork />,
 		makePinnedCard('jefftube', 'jmail'),
-		<StackCard key="dema" title="Dema" color="#99c100" stars={0} description="Analytics platform for E-commerce" language="" link="dema" commits={0} isWork />,
+		<StackCard key="dema" title="Dema" description="Analytics platform for E-commerce" link="dema" isWork />,
 		makePinnedCard('codex', 'codex'),
 		makePinnedCard('css-only-rubiks-cube', 'rubiks-cube'),
 		makePinnedCard('daij', 'daij'),
 		makePinnedCard('vercel-ui', 'vercel-ui'),
 		makePinnedCard('lucio', 'luciocode'),
-		<StackCard key="acasting" title="Acasting.se" color="#462197" stars={0} description="Modern casting platform" language="" link="acasting" commits={0} isWork />
+		<StackCard key="acasting" title="Acasting.se" description="Modern casting platform" link="acasting" isWork />
 	].filter(Boolean) as React.ReactElement[]
 
 	return (
