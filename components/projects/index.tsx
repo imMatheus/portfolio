@@ -16,7 +16,10 @@ import { Jmail } from './jmail/Jmail'
 import { Spotilist } from './spotilist/Spotilist'
 import { Sudoku } from './sudoku/Sudoko'
 import { Daij } from './daij/Daij'
+import { Hone } from './hone/Hone'
 import {
+	WhiteHone,
+	HoneWhite,
 	WhiteMidjourneyWhite,
 	WhiteDema,
 	DemaBlack,
@@ -41,6 +44,23 @@ export const ProjectWrapper: React.FC<PropsWithChildren> = ({ children }) => {
 export const Projects: React.FC = () => {
 	return (
 		<div className="relative w-screen">
+			{/* white → hone */}
+			<Spacer>
+				<WhiteHone />
+			</Spacer>
+
+			{/* 0. Hone (black) */}
+			<section className="bg-[#000]">
+				<ProjectWrapper>
+					<Hone />
+				</ProjectWrapper>
+			</section>
+
+			{/* hone → white */}
+			<Spacer>
+				<HoneWhite />
+			</Spacer>
+
 			{/* 1. Midjourney (white) */}
 			<section className="relative bg-white">
 				<ProjectWrapper>

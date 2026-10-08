@@ -14,7 +14,7 @@ export const Midjourney: React.FC = () => {
 				<Image src={MidjourneyImage} alt="Midjourney" className="inline h-20 w-20 object-contain" />
 			</ProjectTitle>
 			<ProjectDescription>
-				Software engineer, February 2025 - Now <ProjectTag isWork />
+				Software engineer, February 2025 - September 2026 <ProjectTag isWork />
 				<ul className="max-w-[80ch] list-disc space-y-3 pl-5">
 					<li>
 						Adding ability to have multiple layers and rotate layers in the editor on the website
@@ -44,8 +44,8 @@ export const Midjourney: React.FC = () => {
 						</ul>
 					</li>
 					<li>
-						Added a popup that showed when users ran out of credits that let them buy new ones or upgrade plan
-						very easily. This popup alone paid for my salary within a couple of weeks
+						Added a popup that showed when users ran out of credits that let them buy new ones or upgrade plan very
+						easily. This popup alone paid for my salary within a couple of weeks
 					</li>
 				</ul>
 			</ProjectDescription>
