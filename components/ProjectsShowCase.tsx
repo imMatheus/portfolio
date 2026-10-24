@@ -25,6 +25,7 @@ const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
 	}
 
 	const cards = [
+		<StackCard key="hone" title="Hone" description="Where I currently work as a software engineer" link="hone" isWork />,
 		<StackCard key="midjourney" title="Midjourney" description="Making images look good" link="midjourney" isWork />,
 		makePinnedCard('jefftube', 'jmail'),
 		<StackCard key="dema" title="Dema" description="Analytics platform for E-commerce" link="dema" isWork />,
@@ -32,8 +33,7 @@ const ProjectsShowCase: React.FC<Props> = ({ pinnedItems }) => {
 		makePinnedCard('css-only-rubiks-cube', 'rubiks-cube'),
 		makePinnedCard('daij', 'daij'),
 		makePinnedCard('vercel-ui', 'vercel-ui'),
-		makePinnedCard('lucio', 'luciocode'),
-		<StackCard key="acasting" title="Acasting.se" description="Modern casting platform" link="acasting" isWork />
+		makePinnedCard('lucio', 'luciocode')
 	].filter(Boolean) as React.ReactElement[]
 
 	return (
